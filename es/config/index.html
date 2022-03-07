@@ -11,7 +11,7 @@
 var opensdg = {
 
   // A base URL for asynchronous calls to SDG data.
-  remoteDataBaseUrl: 'https://open-sdg.org/open-sdg-data-starter/es',
+  remoteDataBaseUrl: 'https://dnstestenvironment.github.io/dns-data/es',
 
   chartConfigAlterations: [],
   // A hook which can be used to modify the configuration for Chart.js.
@@ -133,7 +133,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20220307141915">
+        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20220307143628">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -1262,6 +1262,18 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.indicator_metadata_form'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('indicator_tabs', {"tab_1":"","tab_2":"","tab_3":"","tab_4":""});
+        var propertyEditor = editor.getEditor('root.indicator_tabs');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: indicator_tabs');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.indicator_tabs'));
 
     
@@ -1428,11 +1440,23 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.non_global_metadata'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('progress_status', {"status_heading":"","status_types":[]});
+        var propertyEditor = editor.getEditor('root.progress_status');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: progress_status');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.progress_status'));
 
     
       try {
-        var currentValue = normalizeCurrentValue('remote_data_prefix', "https://open-sdg.org/open-sdg-data-starter");
+        var currentValue = normalizeCurrentValue('remote_data_prefix', "https://dnstestenvironment.github.io/dns-data/");
         var propertyEditor = editor.getEditor('root.remote_data_prefix');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -1458,7 +1482,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('reporting_status', {"title":"status.reporting_status","description":"status.description","disaggregation_tabs":false,"status_types":[{"value":"complete","label":"status.reported"},{"value":"inprogress","label":"status.statistics_in_progress"},{"value":"notstarted","label":"status.exploring_data_sources"},{"value":"notapplicable","label":"status.not_applicable"}]});
+        var currentValue = normalizeCurrentValue('reporting_status', {"title":"status.reporting_status","description":"status.description","disaggregation_tabs":false,"status_types":[{"value":"complete","label":"status.reported","hide_on_goal_pages":false},{"value":"inprogress","label":"status.statistics_in_progress","hide_on_goal_pages":false},{"value":"notstarted","label":"status.exploring_data_sources","hide_on_goal_pages":false},{"value":"notapplicable","label":"status.not_applicable","hide_on_goal_pages":false}]});
         var propertyEditor = editor.getEditor('root.reporting_status');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -1472,7 +1496,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('repository_url_data', "https://github.com/open-sdg/open-sdg-data-starter");
+        var currentValue = normalizeCurrentValue('repository_url_data', "https://github.com/DnsTestEnvironment/dns-data");
         var propertyEditor = editor.getEditor('root.repository_url_data');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -1704,12 +1728,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Buscar';</script>
 
-<script src='/dns-indicators/assets/js/sdg.js?v=20220307141915'></script>
+<script src='/dns-indicators/assets/js/sdg.js?v=20220307143628'></script>
 
 
     
     
-    <script src="/dns-indicators/assets/js/custom.js?v=20220307141915"></script><script>
+    <script src="/dns-indicators/assets/js/custom.js?v=20220307143628"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
