@@ -1,4 +1,4 @@
-accessible_charts: true
+﻿accessible_charts: true
 accessible_tabs: true
 analytics:
   ua: ''
@@ -135,15 +135,15 @@ hide_single_unit: true
 indicator_config_form:
   enabled: true
   dropdowns: []
-  repository_link: '/tree/develop/indicator-config'
+  repository_link: /tree/develop/indicator-config
   translation_link: ''
 indicator_data_form:
   enabled: true
-  repository_link: '/tree/develop/data'
+  repository_link: /tree/develop/data
 indicator_metadata_form:
   enabled: true
   dropdowns: []
-  repository_link: '/tree/develop/meta'
+  repository_link: /tree/develop/meta
   translation_link: ''
   language: ''
   scopes:
@@ -151,6 +151,11 @@ indicator_metadata_form:
     - global
   exclude_fields: []
   translated: false
+indicator_tabs:
+  tab_1: ''
+  tab_2: ''
+  tab_3: ''
+  tab_4: ''
 languages:
   - en
   - es
@@ -206,21 +211,36 @@ metadata_tabs: []
 news:
   category_links: false
 non_global_metadata: indicator.national_metadata
-remote_data_prefix: 'https://open-sdg.org/open-sdg-data-starter'
+progress_status:
+  status_heading: ''
+  status_types: []
+remote_data_prefix: 'https://dnstestenvironment.github.io/dns-data/'
 reporting_status:
   title: status.reporting_status
   description: status.description
   disaggregation_tabs: false
-repository_url_data: 'https://github.com/open-sdg/open-sdg-data-starter'
-repository_url_site: ''
+  status_types:
+    - value: complete
+      label: status.reported
+      hide_on_goal_pages: false
+    - value: inprogress
+      label: status.statistics_in_progress
+      hide_on_goal_pages: false
+    - value: notstarted
+      label: status.exploring_data_sources
+      hide_on_goal_pages: false
+    - value: notapplicable
+      label: status.not_applicable
+      hide_on_goal_pages: false
+repository_url_data: 'https://github.com/DnsTestEnvironment/dns-data'
+repository_url_site: 'https://github.com/DnsTestEnvironment/dns-indicators'
 search_index_boost: []
 search_index_extra_fields: []
 series_toggle: true
-sharethis_property: ''
 site_config_form:
   enabled: true
   dropdowns: []
-  repository_link: '/tree/develop/_data'
+  repository_link: /tree/develop/_data
   translation_link: ''
 validate_indicator_config: false
 validate_site_config: false
