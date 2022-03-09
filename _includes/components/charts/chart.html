@@ -1,0 +1,31 @@
+{% if include.graph_type %}
+
+    <div id="dataset-size-warning" style="display:none">
+      <i class="fa fa-bolt"></i> {{ t.indicator.dataset_size_warning }}
+    </div>
+
+    {% assign graph_template = 'components/charts/' | append: include.graph_type | append: '.html' %}
+    <div id="selectionsChart">
+      <div id="chart-canvas">
+        <h3 class="chart-title">
+          {{ meta.graph_title | t }}
+          {% if meta.indicator != "8.2.ab" %}
+            <br>
+            <small>{{ meta.computation_units }}</small>
+          {% else %}
+            <br>
+            <small>in %</small>
+          {% endif %}
+        </h3>
+        <div id="chart" class="plot-container">
+          {% include {{graph_template}} %}
+        </div>
+        <div id="plotLegend"></div>
+      </div>
+      <button id="btnSave" title="{{ t.indicator.download_chart_image_title }}" class='btn btn-primary btn-download'>
+        {{ t.indicator.download_chart_image }}
+      </button>
+    </div>
+    <div id="chartSelectionDownload"></div>
+
+{% endif %}

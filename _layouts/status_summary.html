@@ -1,0 +1,131 @@
+{% include multilingual.html %}
+{% include head.html %}
+{% include header.html %}
+
+<div id="main-content" class="container reportingstatus">
+
+  <h1>{{ t.summary.status_summary }}</h1>
+
+  {%- for goalreport in site.data.reporting.goals -%}
+    {%- assign goal_number = goalreport.goal -%}
+    {%- assign goal_short_key = goal_number | append: '-short' -%}
+    {%- assign goal_short = t.global_goals[goal_short_key] -%}
+    <div class="goal">
+      <div class="frameStatus">
+        <a href="{{ site.baseurl }}{{ baseurl_folder }}/{{ goal_number }}/">
+          <img src="{{ site.goal_image_base }}/{{ current_language }}/{{ goal_number }}.png" alt="{{ goal_short }} - {{ t.general.goal }} {{ goal_number }}" width="95%" min-height="60px"/>
+        </a>
+      </div>
+      <div>
+          <h3 class="status-goal">
+            <a href="{{ site.baseurl }}{{ baseurl_folder }}/{{ goal_number }}/"><span class="visible-xs">{{ t.summary.goal }} {{ goal_number}} - <span>{{ goal_short }}</a>
+          </h3>
+          {% assign goal_indicators = site.data.meta | where: 'sdg_goal', goal_number | sort: 'indicator_sort_order' | group_by: 'target_id' %}
+            {% for group in goal_indicators %}
+              {% for indicator in group.items %}
+                {% for i in (1..3) %}
+                  {% assign hty_active = "history_active_" | append: i %}
+                  {% assign hty_indicator = "history_indicator_" | append: i %}
+                  {% assign idc_sort_order = indicator["indicator_sort_order"] %}
+                  {% if indicator[hty_active] == true %}
+
+                    {% assign indicator_key = idc_sort_order | append: "_" | append: i %}
+                    {% assign target_key = indicator_key | append: "_target" %}
+
+                    <table class="table table-hover tableresp">
+                      <tr>
+                        <th width="10%"> <div class=responsiveText>{{ t.summary.indicator }}</div> </th>
+                        <th colspan="9"> <a href=" {{ site.baseurl }}{{ baseurl_folder }}/{{ idc_sort_order }}/ "><div class=responsiveText>{{ t.summary[indicator_key] }}</div></a> </th> <!--{{ indicator[hty_indicator] }}</div></a> </th>-->
+                      </tr>
+                      <tr>
+                        <th> <div class=responsiveText>{{ t.summary.target }}</div></th>
+                        {% assign target = "history_target_" | append: i %}
+                        <td colspan="9"> <div class=responsiveText>{{ t.summary[target_key] }}</div> </td> <!--{{ indicator[target]}}</div> </td>-->
+
+                      </tr>
+
+                      <tr>
+                        <th> <div class=responsiveText>{{ t.general.year }}</div> </th>
+                        {% assign letters = "i,h,g,f,e,d,c,b,a" | split: ',' %}
+                        {% assign add = letters.size %}
+                        {% for j in letters %}
+                          {% assign year = "history_year_" | append: j | append: "_" | append: i %}
+                          {% if indicator[year] %}
+                            {% if j == 'i' or j == 'h' or j == 'g' or j == 'f' or j == 'e' %}
+                              <td width="10%" align="center" class="hidden-xs"> <p><span class="responsiveText hidden-xs">{{ indicator[year] }}</span></p> </td>
+                            {% else %}
+                              <td width="10%" align="center"> <p><span class="responsiveText">{{ indicator[year] }}</span></p> </td>
+                            {% endif %}
+
+                            {% assign add = add | minus: 1 %}
+                          {% endif %}
+                        {% endfor %}
+
+                        {% if add == letters.size %}
+                          {% assign add = add | minus: 1 %}
+                        {% endif %}
+
+                        {% for k in (1..add) %}<!--add empty cells-->
+                          {% if k > 5 %}
+                            <td width="10%" align="center"> </td>
+                          {% else %}
+                            <td width="10%" align="center" class="hidden-xs"> </td>
+                          {% endif %}
+                        {% endfor %}
+                      </tr>
+
+                      <tr>
+                        <th> <div class=responsiveText>{{ t.general.status }}</div> </th>
+                        {% for j in letters %}
+                          {% assign status = "history_status_year_" | append: j | append: "_" | append: i %}
+                          {% if indicator[status] %}
+
+                            {% if indicator[status] == 'x' %}
+                              {% assign status_title = t.status['nebel'] %}
+                            {% elsif indicator[status] == 'Sonne' %}
+                              {% assign status_title = t.status['sonne'] %}
+                            {% elsif indicator[status] == 'Leicht bewölkt' %}
+                              {% assign status_title = t.status['leicht bewölkt'] %}
+                            {% elsif indicator[status] == 'Wolke' %}
+                              {% assign status_title = t.status['wolke'] %}
+                            {% elsif indicator[status] == 'Blitz' %}
+                              {% assign status_title = t.status['blitz'] %}
+                            {% endif %}
+
+                            {% if j == 'i' or j == 'h' or j == 'g' or j == 'f' or j == 'e' %}
+                              <td width="10%" align="center" class="hidden-xs"> <a href=" {{ site.baseurl }}{{ baseurl_folder }}/status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/{{ current_language }}/{{ indicator[status] }}.png" alt="{{ indicator[status] }}" class="responsiveWeather hidden-xs" title="{{ status_title }}"/></a> </td>
+                            {% else %}
+                              <td width="10%" align="center"> <a href=" {{ site.baseurl }}{{ baseurl_folder }}/status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/{{ current_language }}/{{ indicator[status] }}.png" alt="{{ indicator[status] }}" class="responsiveWeather" title="{{ status_title }}"/></a> </td>
+                            {% endif %}
+                          {% elsif j == 'a' %}
+                              <td width="10%" align="center"><p><span class="responsiveText">{{ t.general.no_assessment }}</span></p></td>
+                          {% endif %}
+                        {% endfor %}
+                        {% for k in (1..add) %}
+                          {% if k > 5 %}
+                            <td width="10%" align="center"></td>
+                          {% else %}
+                            <td width="10%" align="center"class="hidden-xs"></td>
+                          {% endif %}
+                        {% endfor %}
+                      </tr>
+                      <tr> <td colspan="10"> &nbsp; </td> </tr>
+                    </table>
+
+                  {% endif %}
+                {% endfor %}
+              {% endfor %}
+            {% endfor %}
+
+          <div class="divider">
+          </div>
+        </div>
+      <!--</li>-->
+      <br style="clear:both;">
+    </div>
+  {%- endfor -%}
+
+  <!--{{ content }}-->
+
+</div>
+{% include footer.html %}

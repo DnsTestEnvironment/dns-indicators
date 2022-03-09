@@ -1,0 +1,117 @@
+{%- include multilingual.html -%}
+{% include head.html %}
+{% include header.html %}
+{% assign goal_number = page.sdg_goal %}
+{% assign goal_title_key = goal_number | append: '-title' %}
+{% assign goal_short_key = goal_number | append: '-short' %}
+{% assign goal_title = t.global_goals[goal_title_key] %}
+{% assign goal_short = t.dns_goals[goal_title_key] %}
+
+<div class="heading goal-{{page.sdg_goal}}">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-4 col-md-3 col-lg-2">
+        <img src="{{ site.goal_image_base }}/{{ current_language }}/{{ goal_number }}.png" alt="{{ goal_short }} - {{ t.general.goal }} {{ goal_number }}" />
+      </div>
+      <div class="col-xs-8 col-md-9 col-lg-10">
+        <h1>
+          <span class="hidden-sm hidden-md hidden-lg titles goal-{{page.sdg_goal}}">{{ t.general.goal }} {{ goal_number }}: {{ goal_short }}</span><span class="hidden-xs titles goal-{{page.sdg_goal}}">{{ goal_title }}</span>
+        </h1>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="underline goal-{{page.sdg_goal}}">
+</div>
+
+<div id="main-content" class="container goal-indicators goal-{{page.sdg_goal}} goal-by-target">
+
+  <!-- <h2 style="margin-top:10px; margin-left: 16px;">
+    <a href="https://dns-dialogfassung.github.io/{{ goal_number }}" style="color: black">  <small>{{ t.general.dialog_target_link_1 }} {{ goal_number}} {{ t.general.dialog_target_link_2}} </small></a>
+  </h2> -->
+
+  {{ content }}
+  {% include components/breadcrumb.html %}
+  {% include components/navigation.html %}
+
+  <div class="visible-md-block visible-lg-block">
+    <div class="col-md-6">
+      <h4>{{ t.general.dns_target }}</h4>
+    </div>
+    <div class="col-md-6">
+      <h4>{{ t.general.indicators }}</h4>
+    </div>
+  </div>
+
+  {% assign goal_indicators = site.data.meta | where: 'sdg_goal', goal_number | sort: 'indicator_sort_order' | group_by: 'target_id' %}
+  {% for group in goal_indicators %}
+    {% assign target_id = group.name %}
+    {% assign target_id_dashes = target_id | replace: ".", "-" %}
+
+    {% assign target_title_key = target_id | append: '-title' %}
+    {% assign target_title_key_dashes = target_id_dashes | append: '-title' %}
+    {% assign target_title = t.dns_targets[target_title_key_dashes] | default: t.dns_targets[target_title_key] %}
+
+
+
+    {% assign size = target_id | size | minus: 2 %}
+    {% assign range_id = target_id | slice: 0, size | replace: "-", "." %}
+
+    {% assign range_title_key = range_id  | append: '-title' %}
+    {% assign target_range = t.dns_ranges[range_title_key] %}
+    <script>console.log({{range_title_key|json}});</script>
+    <script>console.log({{target_title_key|json}});</script>
+    <script>console.log({{target_range|json}});</script>
+    <div class="indicator-cards target col-md-6">
+      <span>
+        {{ target_range }}
+      </span>
+      {{ target_title }}
+    </div>
+    <div class="indicator-cards col-md-6 row no-gutters">
+    {% for indicator in group.items %}
+
+      {% assign status_css = indicator.reporting_status | slugify %}
+      {% if indicator.reporting_status == 'notapplicable' %}
+        {% assign status_desc = t.status.not_applicable %}
+      {% endif %}
+      {% if indicator.reporting_status == 'notstarted' %}
+        {% assign status_desc = t.status.exploring_data_sources %}
+      {% endif %}
+      {% if indicator.reporting_status == 'inprogress' %}
+        {% assign status_desc = t.status.statistics_in_progress %}
+      {% endif %}
+      {% if indicator.reporting_status == 'complete' %}
+        {% assign status_desc = t.status.reported_online %}
+      {% endif %}
+      {% assign tag_classes = "" | split: "," %}
+      {% if indicator.tags %}
+        {% for tag in indicator.tags %}
+          {% assign tag_slug = "indicator-" | append: tag | slugify %}
+          {% assign tag_classes = tag_classes | push: tag_slug %}
+        {% endfor %}
+      {% endif %}
+      {% assign tag_classes = tag_classes | join: " " %}
+
+      <div class="col-md-12 {{ tag_classes }}">
+        <a href="{{ site.baseurl }}{{ baseurl_folder }}/{{ indicator.indicator | slugify }}">
+          <span>
+            {{ indicator.indicator_display }}
+          </span>
+          {{ indicator.indicator | get_indicator_name }}
+          {% if indicator.tags %}
+            <ul class="tags">
+            {% for tag in indicator.tags %}
+              {% assign tag_class = tag | slugify %}
+              <li class="tag-{{ tag_class }} warning">{{ tag | t }}</li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        </a>
+      </div>
+    {% endfor %}
+    </div>
+  {% endfor %}
+</div>
+
+{% include footer.html %}

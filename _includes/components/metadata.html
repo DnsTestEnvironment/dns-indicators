@@ -1,0 +1,126 @@
+<table class="table table-hover">
+  {% for indicator_metadata in site.data.schema %}
+
+    {%- if t.metadata_fields[indicator_metadata.name] -%}
+      {%- assign metadata_label = t.metadata_fields[indicator_metadata.name] -%}
+    {%- else -%}
+      {%- assign metadata_label = indicator_metadata.field.label -%}
+    {%- endif -%}
+
+    {% if indicator_metadata.name contains "source_organisation_" %}
+      {% assign var = 'dontShow' %}
+      {% if indicator_metadata.name contains "short" or indicator_metadata.name contains "_logo" %}
+        {% assign var = 'doShow' %}
+      {% endif %}
+    {% endif %}
+
+    {% if indicator_metadata.field.scope == include.scope %}
+      {% unless var == 'dontShow' or indicator_metadata.name contains "_url_text" or indicator_metadata.name contains "_link_text" or indicator_metadata.name contains "_year" or indicator_metadata.name == "national_indicator_available" or indicator_metadata.name == "national_geographical_coverage" %}
+      <tr>
+        {% if indicator_metadata.field.scope != 'content' and indicator_metadata.field.scope != 'add_info' %}
+
+          {% if meta[indicator_metadata.name] %}
+
+            <th scope="row" height="{{ tableHeight }}" >{{ metadata_label }}</th>
+
+            <td colspan="4">
+              {% if indicator_metadata.name contains "_url" or indicator_metadata.name contains "_link" %}
+                {% assign url_text_name = indicator_metadata.name | replace_first:'_url','_url_text'  %}
+                {% assign url_text_name = url_text_name | replace_first:'_link','_link_text'  %}
+                {% assign url_text = meta[url_text_name] | t %}
+                {% unless url_text %}
+                  {% assign url_text = 'Link' %}
+                {% endunless %}
+
+                {% if meta[indicator_metadata.name] contains "http" or meta[indicator_metadata.name] contains "mailto" %}
+                  <a href="{{ meta[indicator_metadata.name] }}" target="_blank">
+                    {{ url_text }} <span class="visuallyhidden">{{ t.general.opens_new_window }}</span>
+                  </a>
+                {% endif %}
+
+              {% elsif indicator_metadata.field.element == 'multiselect' %}
+                {% for item in meta[indicator_metadata.name] %}
+                  {{ item | t }}{% unless forloop.last %}, {% endunless %}
+                {% endfor %}
+
+              {% else %}
+                {{ meta[indicator_metadata.name] | t | markdownify }}
+              {% endif %}
+            </td>
+
+          {% endif %}
+
+        {% else %} <!-- case: content -->
+          <p> {{ meta[indicator_metadata.name] | t | markdownify }} </p>
+        {% endif %}
+      </tr>
+      {% endunless %}
+
+      {% if indicator_metadata.name contains "_year" %}
+
+        {% if indicator_metadata.name contains "_a_" %}
+          {% assign year_a = meta[indicator_metadata.name] %}
+        {% elsif indicator_metadata.name contains "_b_" %}
+          {% assign year_b = meta[indicator_metadata.name] %}
+        {% elsif indicator_metadata.name contains "_c_" %}
+          {% assign year_c = meta[indicator_metadata.name] %}
+        {% elsif indicator_metadata.name contains "_d_" %}
+          {% assign year_d = meta[indicator_metadata.name] %}
+
+          {% assign status_a_downcase = year_a | downcase %}
+          {% assign title_a = t.status[status_a_downcase] %}
+          {% assign status_b_downcase = year_b | downcase %}
+          {% assign title_b = t.status[status_b_downcase] %}
+          {% assign status_c_downcase = year_c | downcase %}
+          {% assign title_c = t.status[status_c_downcase] %}
+          {% assign status_d_downcase = year_d | downcase %}
+          {% assign title_d = t.status[status_d_downcase] %}
+
+          {% assign alter = 'Keine Bewertung möglich' %}
+
+
+          {% if indicator_metadata.name contains "_status" %}
+            <tr>
+              <th scope="row">{{ metadata_label }} </th>
+              {% if year_d %}
+                <td align="left" style="padding-left: 0px;padding-right: 0px;"><a href=" {{ site.baseurl }}{{ baseurl_folder }}/status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/{{ year_d }}.png" alt="{{ alter }}" class="responsiveWeather" title="{{ title_d }}" style="border: transparent"/></a></td>
+              {% endif %}
+              {% if year_c %}
+                <td align="left" style="padding-left: 0px;padding-right: 0px;"><a href=" {{ site.baseurl }}{{ baseurl_folder }}/status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/{{ year_c }}.png" alt="{{ alter }}" class="responsiveWeather" title="{{ title_c }}" style="border: transparent"/></a></td>
+              {% endif %}
+              {% if year_b %}
+                <td align="left" style="padding-left: 0px;padding-right: 0px;"><a href=" {{ site.baseurl }}{{ baseurl_folder }}/status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/{{ year_b }}.png" alt="{{ alter }}" class="responsiveWeather" title="{{ title_b }}" style="border: transparent"/></a></td>
+              {% endif %}
+              {% if year_a %}
+                <td align="left" style="padding-left: 0px;padding-right: 0px;"><a href=" {{ site.baseurl }}{{ baseurl_folder }}/status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/{{ year_a }}.png" alt="{{ alter }}" class="responsiveWeather" title="{{ title_a }}" style="border: transparent"/></a></td>
+              {% else %}
+                <td align="left" style="margin-bottom: 15px;"><p>{{ alter }}</p></td>
+              {% endif %}
+            </tr>
+          {% else %}
+            <tr>
+              {% if year_a %}
+                <th scope="row" height="">{{ metadata_label }} </th>
+              {% endif %}
+              {% if year_d %}
+                <td align="left" style="margin-bottom: 15px;"><p>{{ year_d }}</p></td>
+              {% endif %}
+              {% if year_c %}
+                <td align="left" style="margin-bottom: 15px;"><p>{{ year_c }}</p></td>
+              {% endif %}
+              {% if year_b %}
+                <td align="left" style="margin-bottom: 15px;"><p>{{ year_b }}</p></td>
+              {% endif %}
+              {% if year_a %}
+                <td align="left" style="margin-bottom: 15px;"><p>{{ year_a }}</p></td>
+              {% endif %}
+            </tr>
+          {% endif %}
+
+        {% endif %}
+
+      {% endif %}
+
+    {% endif %}
+  {% endfor %}
+</table>

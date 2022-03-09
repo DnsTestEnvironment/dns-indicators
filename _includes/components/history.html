@@ -1,0 +1,23 @@
+<!-- Count the non-empty histories (up to 2) -->
+{% assign n_histories = 0 %}
+{% for i in (1..3) %}
+  {% assign hty_active = "history_active_" | append: i %}
+  {% if meta[hty_active] == true %}
+    {% assign n_histories  = n_histories | plus: 1 %}
+  {% endif %}
+{% endfor %}
+
+{% if n_histories > 0 %}
+  <div class="row">
+  {% for i in (1..n_histories) %}
+   {% assign hty_active = "history_active_" | append: i %}
+    {% assign hty_scope = "history_" | append: i %}
+    <div class="col-md-6">
+      {% if n_histories > 1 %}
+        <h4>{{ t.indicator.timeseries }} {{ i }}</h4>
+      {% endif %}
+      {% include components/metadata.html scope=hty_scope %}
+    </div>
+    {% endfor %}
+  </div>
+{% endif %}

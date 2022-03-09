@@ -1,0 +1,161 @@
+{% if current_language == "de" %}
+  {% assign language = "" %}
+{% else %}
+  {% assign language = "en" %}
+{% endif %}
+
+{% include multilingual-js.html key="header" %}
+<a class="sr-only sr-only-focusable" id="skiplink" href="#main-content" tabindex="0">{{ t.header.skip_link }}</a>
+<div id="disclaimer">
+  {% include components/dev-disclaimer.html %}
+</div>
+
+<header role="banner">
+  <div class="container">
+
+    <a class="navbar-brand" href="{{ site.baseurl }}{{ baseurl_folder }}/" id="home">
+      <img src="{{ site.baseurl }}/assets/img/dns_logo.png" alt="{{ t.general.dns }} - {{ t.header.tag_line }}" />
+    </a>
+
+  <div class='hidden visible-xs float-right'>
+    <ul id='accessibility-nav' class='contrast-switcher'></ul>
+    {%- if site.languages.size > 1 -%}
+    <div class="language-toggle-mobile">
+      {% include components/language-toggle.html %}
+    </div>
+    {%- endif -%}
+  </div>
+
+    <nav class="navbar navbar-default" id="main-nav">
+
+      <ul class="top-level">
+        <li id="menuToggle"
+            aria-label="Menu toggle. Click to expand or collapse the menu."
+            aria-haspopup="true"
+            aria-expanded="false">
+          <span data-target="menu" tabindex="0"
+          role="navigation">{{ t.menu.menu }}</span>
+        </li>
+        <li><span data-target="search">{{ t.search.search }}</span></li>
+      </ul>
+
+      <ul class="nav navbar-nav menu-target contrast-switcher" id="menu">
+        {%- if site.menu -%}
+          {%- assign current_path_no_slash = page.url | remove: '/' -%}
+          {%- for item in site.menu -%}
+            {%- assign item_path_no_slash = item.path | remove: '/' -%}
+            {% if item.path contains "status" %}
+              <li class="nav-link {% if current_path_no_slash == item_path_no_slash %}active{% endif %} hidden-sm hidden-md hidden-lg">
+                <a href="{{ site.baseurl }}{{ baseurl_folder }}{{ item.path }}">Status - {{ item.translation_key | t }}</a>
+              </li>
+            {% elsif item.path contains "about" or item.path contains "navigation" or item.path contains "guidance" or item.path contains "facts" %}
+              <li class="nav-link {% if current_path_no_slash == item_path_no_slash %}active{% endif %} hidden-sm hidden-md hidden-lg">
+                <a href="{{ site.baseurl }}{{ baseurl_folder }}{{ item.path }}">{{ item.translation_key | t }}</a>
+              </li>
+            {% else %}
+              {% unless item.path contains "publications" %}
+                <li class="nav-link {% if current_path_no_slash == item_path_no_slash %}active{% endif %}">
+                  <a href="{{ site.baseurl }}{{ baseurl_folder }}{{ item.path }}">{{ item.translation_key | t }}</a>
+                </li>
+              {% endunless %}
+            {% endif %}
+          {%- endfor -%}
+        {%- endif -%}
+
+        <li class="nav-link visible-sm visible-md visible-lg">
+          <a class="status-toggle-button" onclick="$(this).next('.status-toggle').toggle(); return false;" style="margin-right: 0px;">
+            <!--<i class="fa fa-globe"></i>-->
+            <span class="status-toggle-text">{{ t.menu.status_title }}</span>
+            <i class="status-toggle fa fa-chevron-down"></i>
+            <!--<i class="status-toggle fa fa-chevron-up" style="display:none;"></i>-->
+          </a>
+          <ul class="status-options status-toggle">
+            {%- if site.menu -%}
+              {%- assign current_path_no_slash = page.url | remove: '/' -%}
+              {%- for item in site.menu -%}
+                {%- assign item_path_no_slash = item.path | remove: '/' -%}
+                {% if item.path contains "status" %}
+                  <li class="nav-link {% if current_path_no_slash == item_path_no_slash %}active{% endif %}">
+                    <a href="{{ site.baseurl }}{{ baseurl_folder }}{{ item.path }}">{{ item.translation_key | t }}</a>
+                  </li>
+                {% endif %}
+              {%- endfor -%}
+            {%- endif -%}
+          </ul>
+        </li>
+
+        <li class="nav-link visible-sm visible-md visible-lg">
+          <a class="status-toggle-button" onclick="$(this).next('.status-toggle').toggle(); return false;" style="margin-right: 0px;">
+            <!--<i class="fa fa-globe"></i>-->
+            <span class="status-toggle-text">{{ t.menu.about }}</span>
+            <i class="status-toggle fa fa-chevron-down"></i>
+            <!--<i class="status-toggle fa fa-chevron-up" style="display:none;"></i>-->
+          </a>
+          <ul class="status-options status-toggle">
+            {%- if site.menu -%}
+              {%- assign current_path_no_slash = page.url | remove: '/' -%}
+              {%- for item in site.menu -%}
+                {%- assign item_path_no_slash = item.path | remove: '/' -%}
+                {% if item.path contains "about" or item.path contains "navigation" or item.path contains "guidance"  %}
+                  <li class="nav-link {% if current_path_no_slash == item_path_no_slash %}active{% endif %}">
+                    <a href="{{ site.baseurl }}{{ baseurl_folder }}{{ item.path }}">{{ item.translation_key | t }}</a>
+                  </li>
+                {% endif %}
+              {%- endfor -%}
+            {%- endif -%}
+          </ul>
+        </li>
+
+        <li class="nav-link visible-sm visible-md visible-lg">
+          <a class="status-toggle-button" onclick="$(this).next('.status-toggle').toggle(); return false;" style="margin-right: 0px;">
+            <!--<i class="fa fa-globe"></i>-->
+            <span class="status-toggle-text">{{ t.menu.facts }}</span>
+            <i class="status-toggle fa fa-chevron-down"></i>
+            <!--<i class="status-toggle fa fa-chevron-up" style="display:none;"></i>-->
+          </a>
+          <ul class="status-options status-toggle">
+            {%- if site.menu -%}
+              {%- assign current_path_no_slash = page.url | remove: '/' -%}
+              {%- for item in site.menu -%}
+                {%- assign item_path_no_slash = item.path | remove: '/' -%}
+                {% if item.path contains "facts"  %}
+                  <li class="nav-link {% if current_path_no_slash == item_path_no_slash %}active{% endif %}">
+                    <a href="{{ site.baseurl }}{{ baseurl_folder }}{{ item.path }}">{{ item.translation_key | t }}</a>
+                  </li>
+                {% endif %}
+              {%- endfor -%}
+            {%- endif -%}
+          </ul>
+        </li>
+
+        {%- assign current_path_no_slash = page.url | remove: '/' -%}
+        {%- for item in site.menu -%}
+          {% if item.path contains "publications" %}
+
+            {%- assign item_path_no_slash = item.path | remove: '/' -%}
+            <li class="nav-link {% if current_path_no_slash == item_path_no_slash %}active{% endif %}">
+              <a href="{{ site.baseurl }}{{ baseurl_folder }}{{ item.path }}">{{ item.translation_key | t }}</a>
+            </li>
+          {%- endif -%}
+        {%- endfor -%}
+
+        {%- if site.languages.size > 1 -%}
+        <li>
+          {% include components/language-toggle.html %}
+        </li>
+        {%- endif -%}
+        <!---#17 addLinkToOtherPage---start------------>
+        <li class="nav-link">
+          <a href="https://sustainabledevelopment-germany.github.io/{{ language }}/">
+            <img class="link_btn" src="https://g205sdgs.github.io/sdg-indicators/public/SDG Wheel_Transparent.png" title="{{ t.general.link_sdg }}" alt="Link SDG" style="width:24px;height:24px;"/>
+            <span class="hidden-sm hidden-md hidden-lg">SDG-{{ t.menu.platform }}</span>
+          </a>
+        </li>
+        <!---#17 addLinkToOtherPage---stop------------->
+      </ul>
+
+      {% include search.html %}
+
+    </nav>
+  </div>
+</header>
