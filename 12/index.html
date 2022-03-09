@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2CArray.prototype.forEach%2CString.prototype.includes%2CURLSearchParams%2CCustomEvent%2CArray.prototype.includes%2CArray.prototype.filter%2CArray.prototype.some%2CArray.prototype.find%2CArray.prototype.reduce%2CObject.assign%2CArray.isArray%2CObject.values%2CArray.from%2CSet%2CArray.prototype.findIndex"></script>
+        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2CArray.prototype.forEach%2CString.prototype.includes"></script>
 <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/javascript-canvas-to-blob/3.15.0/js/canvas-to-blob.min.js"></script>
 
         <script>
@@ -11,18 +11,14 @@
 var opensdg = {
 
   // A base URL for asynchronous calls to SDG data.
-  remoteDataBaseUrl: 'https://dnstestenvironment.github.io/dns-data/en',
+  remoteDataBaseUrl: 'https://dnstestenvironment.github.io/dns-data',
 
-  chartConfigAlterations: [],
-  // A hook which can be used to modify the configuration for Chart.js.
-  chartConfigAlter: function(callback) {
-    this.chartConfigAlterations.push(callback);
-  },
-
-  tableConfigAlterations: [],
-  // A hook which can be used to modify the configuration for Datatables.
-  tableConfigAlter: function(callback) {
-    this.tableConfigAlterations.push(callback);
+  // A hook which can be replaced to modify the configuration for Chart.js.
+  // To see where this is used, see indicatorView.js createPlot() and updatePlot().
+  // To see an example of replacing it, see binary.html.
+  chartConfigAlter: function(config) {
+    // Alterations go here.
+    return config;
   },
 
   // A hook which can be replaced to alter whether/how the values that are
@@ -31,14 +27,6 @@ var opensdg = {
     // Alterations go here.
     return value;
   },
-
-  // A hook which can be used to alter the data before it is displayed on charts/tables.
-  dataDisplayAlterations: [],
-  dataDisplayAlter: function(callback) {
-    this.dataDisplayAlterations.push(callback);
-  },
-
-  language: 'en',
 };
 
 // For backwards compatibility, some of these might need to be global.
@@ -102,971 +90,580 @@ var translations = {
         <!-- Title and meta description
         ================================================== -->
 
+        <!---#15 setCorrectTitle---start-------------------->
+        <title>
+          
+
+            
+            
+            
+
+            Ziel 12 - Nachhaltige Konsum- und Produktionsmuster sicherstellen
+          
+        </title>
+        <!---#15 setCorrectTitle---stop--------------------->
+
         
-    <title>Goal 12 - Responsible consumption and production - Indicators For The Sustainable Development Goals</title>
+          <meta name="description" content= "Übersichtlicher Stand der Indikatoren der 17 Sustainable Development Goals (SDGs) in Deutschland samt öffentlich zur Verfügung stehender Datengrundlage" >
+        
 
-
-
-        <meta name="description" content="">
         <meta property="og:description" content="">
         
         <meta name="robots" content="noindex, nofollow">
         
         <link rel="canonical" href="/">
 
+        
+
         <!--[if IE 9]>
         <script src="/dns-indicators/assets/js/lib/classList.js"></script>
         <![endif]-->
 
+        <!-- Favicons ================================================== -->
+        <!-- 128x128 -->
+        <!--<link rel="shortcut icon" type="image/ico" href="/dns-indicators/assets/img/favicons/favicon.ico">-->
+        <link rel="icon" type="image/png" href="/dns-indicators/assets/img/favicons/favicon.png"><!-- 192x192, as recommended for Android
+        http://updates.html5rocks.com/2014/11/Support-for-theme-color-in-Chrome-39-for-Android
+        -->
+        <link rel="shortcut icon" href="/dns-indicators/assets/img/favicons/196x196.png" sizes="196x196">
+
+        <link rel="apple-touch-icon" href="/dns-indicators/assets/img/favicons/180x180.png">
+
+        <meta name="msapplication-square70x70logo" content="/dns-indicators/assets/img/favicons/70x70.png">
+        <meta name="msapplication-square150x150logo" content="/dns-indicators/assets/img/favicons/150x150.png">
+        <meta name="msapplication-wide310x150logo" content="/dns-indicators/assets/img/favicons/310x150.png">
+        <meta name="msapplication-square310x310logo" content="/dns-indicators/assets/img/favicons/310x310.png">
+
+
+        <!--
         
-
-
-
-
-<link rel="apple-touch-icon" sizes="180x180" href="/dns-indicators/assets/img/favicons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/dns-indicators/assets/img/favicons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/dns-indicators/assets/img/favicons/favicon-16x16.png">
-<link rel="icon" type="image/x-icon" href="/dns-indicators/assets/img/favicons/favicon.ico" />
-
-
+        -->
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20220307154009">
+        <link rel="stylesheet" href="/dns-indicators/assets/css/default.css?v=20220309080801">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
-        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/>
-        
-
-        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/dns-indicators/assets/css/custom.css?v=20220309080801"><!-- ShareThis BEGIN --><!-- ShareThis END -->
 
     </head>
-<body class="language-en
-layout-goal-by-target-vertical
-">
+<body class="language-de layout-goal-by-target">
 <!-- <div class="container"> -->
 
 
-<script>translations['header'] = {"alpha":"Alpha","default_contrast":"Default contrast","disable_high_contrast":"Disable high contrast","disclaimer":"This is a development website. We welcome your <a href=\"mailto:%email_address\">feedback</a>.","enable_high_contrast":"Enable high contrast","high_contrast":"High contrast","skip_link":"Skip to main content","tag_line":"17 Goals to Transform our World","toggle_menu":"Menu toggle. Click to expand or collapse the menu.","toggle_search":"Search toggle. Click to expand or collapse the search bar."};</script>
 
-<a class="sr-only sr-only-focusable" id="skiplink" href="#main-content" tabindex="0">Skip to main content</a>
+<script>translations['header'] = {"alpha":"Alpha-Version","disclaimer":"Diese Seite befindet sich im Entwicklungsstadium. Wir freuen uns über Ihre <a href=\"mailto:%email_address\">Kommentare</a>.","skip_link":" Zum Hauptinhalt springen","tag_line":""};</script>
+
+<a class="sr-only sr-only-focusable" id="skiplink" href="#main-content" tabindex="0"> Zum Hauptinhalt springen</a>
 <div id="disclaimer">
   <div class="container">
-  <div class="disclaimer-alert">
-    <strong class="phase-tag">Alpha</strong>
-    
-    This is a development website. We welcome your <a href="mailto:test@example.com">feedback</a>.
+  <div class="alert alert-danger" role="alert">
+    <strong class="phase-tag">Alpha-Version</strong>
+    Diese Seite befindet sich im Entwicklungsstadium. Wir freuen uns über Ihre <a href="mailto:DNS-Indikatoren@destatis.de">Kommentare</a>.
   </div>
 </div>
 
 </div>
 
-<header role="banner" class="header-menu-left-aligned">
+<header role="banner">
   <div class="container">
 
-    <div class="logo-and-mobile-widgets">
-      <a class="navbar-brand" href="/dns-indicators/" id="home">
-    <img src="/dns-indicators/assets/img/SDG_logo.png" alt="Sustainable Development Goals - 17 Goals to Transform our World" />
+    <a class="navbar-brand" href="/dns-indicators/" id="home">
+      <img src="/dns-indicators/assets/img/dns_logo.png" alt="Nachhaltige Entwicklung in Deutschland - " />
+    </a>
+
+  <div class='hidden visible-xs float-right'>
+    <ul id='accessibility-nav' class='contrast-switcher'></ul><div class="language-toggle-mobile">
+      <a class="language-toggle-button" onclick="$(this).next('.language-toggle').toggle(); return false;">
+  <i class="fa fa-globe"></i>
+  <span class="language-toggle-text">Deutsch</span>
+  <i class="language-toggle fa fa-chevron-down"></i>
+  <i class="language-toggle fa fa-chevron-up" style="display:none;"></i>
 </a>
-      <div class="mobile-widgets">
-    <ul id='accessibility-nav' class='contrast-switcher'>
-        
-
-    <li class="nav-link contrast contrast-default contrast-type-default">
-        <a title="Disable high contrast"
-           aria-label="Disable high contrast"
-           data-contrast-switch-to="default"
-           href="javascript:void(0)"
-           data-on="click"
-data-event-category="Accessibility"
-data-event-action="Change contrast setting"
-data-event-label="default"
-
-        >A</a>
-    </li>
-    <li class="nav-link contrast contrast-high contrast-type-default">
-        <a title="Enable high contrast"
-           aria-label="Enable high contrast"
-           data-contrast-switch-to="high"
-           href="javascript:void(0)"
-           data-on="click"
-data-event-category="Accessibility"
-data-event-action="Change contrast setting"
-data-event-label="high"
-
-        >A</a>
-    </li>
-
-
-    </ul><div class="language-toggle-mobile">
-        <div class="language-toggle-container">
-  
-  <div class="btn-group language-toggle-dropdown ">
-    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      <span class="language-globe-in-dropdown"><i class="fa fa-globe language-toggle-globe-dropdown"></i></span><span class="language-name">English</span>
-      <span class="language-abbreviation">en</span><i class="language-toggle-caret fa fa-chevron-down"></i></button>
-    <ul class="dropdown-menu"><li class="language-option-es">
-            <a href="/dns-indicators/es/12/">
-              Español
-            </a>
-          </li></ul>
-  </div>
-</div>
+<ul class="language-options language-toggle"><li><a href="/dns-indicators/en/12/">English</a></li></ul>
 
     </div></div>
-    </div>
 
-    <div class="search-and-desktop-widgets">
-      <div id="search" class="menu-target">
-  <form action="/dns-indicators/search/">
-    <label class="sr-only" for="indicator_search">Search</label>
-    <input type="text" name="q" id="indicator_search" title="Search" /><!--
-    --><button aria-label="Search" id="search-btn" type="submit"><i class="fa fa-search" aria-hidden="false"></i></button>
-  </form>
-</div>
+    <nav class="navbar navbar-default" id="main-nav">
 
-      <div class="navbar navbar-default widgets-without-menu">
-        <ul class="nav navbar-nav contrast-switcher"><li class="language-toggle-menu-header">
+      <ul class="top-level">
+        <li id="menuToggle"
+            aria-label="Menu toggle. Click to expand or collapse the menu."
+            aria-haspopup="true"
+            aria-expanded="false">
+          <span data-target="menu" tabindex="0"
+          role="navigation">Menü</span>
+        </li>
+        <li><span data-target="search">Suche</span></li>
+      </ul>
+
+      <ul class="nav navbar-nav menu-target contrast-switcher" id="menu">
+              
+                <li class="nav-link ">
+                  <a href="/dns-indicators/">17 Ziele</a>
+                </li>
+              
             
-
-
-
-
-
-  <div class="language-toggle-container">
-  
-  <div class="btn-group language-toggle-dropdown ">
-    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      <span class="language-globe-in-dropdown"><i class="fa fa-globe language-toggle-globe-dropdown"></i></span><span class="language-name">English</span>
-      <span class="language-abbreviation">en</span><i class="language-toggle-caret fa fa-chevron-down"></i></button>
-    <ul class="dropdown-menu"><li class="language-option-es">
-            <a href="/dns-indicators/es/12/">
-              Español
-            </a>
-          </li></ul>
-  </div>
-</div>
-
-
-
+              <li class="nav-link  hidden-sm hidden-md hidden-lg">
+                <a href="/dns-indicators/status_summary">Status - Übersicht</a>
+              </li>
+            
+              <li class="nav-link  hidden-sm hidden-md hidden-lg">
+                <a href="/dns-indicators/status">Status - Methodik</a>
+              </li>
+            
+              <li class="nav-link  hidden-sm hidden-md hidden-lg">
+                <a href="/dns-indicators/about/">Die&nbspDNS&#8209;Online&nbspPlattform</a>
+              </li>
+            
+              <li class="nav-link  hidden-sm hidden-md hidden-lg">
+                <a href="/dns-indicators/guidance/">Technische&nbspHinweise</a>
+              </li>
+            
+              <li class="nav-link  hidden-sm hidden-md hidden-lg">
+                <a href="/dns-indicators/facts_agenda/">Agenda 2030</a>
+              </li>
+            
+              
+            <li class="nav-link visible-sm visible-md visible-lg">
+          <a class="status-toggle-button" onclick="$(this).next('.status-toggle').toggle(); return false;" style="margin-right: 0px;">
+            <!--<i class="fa fa-globe"></i>-->
+            <span class="status-toggle-text">Bewertung</span>
+            <i class="status-toggle fa fa-chevron-down"></i>
+            <!--<i class="status-toggle fa fa-chevron-up" style="display:none;"></i>-->
+          </a>
+          <ul class="status-options status-toggle">
+                  <li class="nav-link ">
+                    <a href="/dns-indicators/status_summary">Übersicht</a>
+                  </li>
+                
+                  <li class="nav-link ">
+                    <a href="/dns-indicators/status">Methodik</a>
+                  </li>
+                </ul>
         </li>
 
-    <li class="nav-link contrast contrast-default contrast-type-default">
-        <a title="Disable high contrast"
-           aria-label="Disable high contrast"
-           data-contrast-switch-to="default"
-           href="javascript:void(0)"
-           data-on="click"
-data-event-category="Accessibility"
-data-event-action="Change contrast setting"
-data-event-label="default"
+        <li class="nav-link visible-sm visible-md visible-lg">
+          <a class="status-toggle-button" onclick="$(this).next('.status-toggle').toggle(); return false;" style="margin-right: 0px;">
+            <!--<i class="fa fa-globe"></i>-->
+            <span class="status-toggle-text">Über uns</span>
+            <i class="status-toggle fa fa-chevron-down"></i>
+            <!--<i class="status-toggle fa fa-chevron-up" style="display:none;"></i>-->
+          </a>
+          <ul class="status-options status-toggle">
+                  <li class="nav-link ">
+                    <a href="/dns-indicators/about/">Die&nbspDNS&#8209;Online&nbspPlattform</a>
+                  </li>
+                
+                  <li class="nav-link ">
+                    <a href="/dns-indicators/guidance/">Technische&nbspHinweise</a>
+                  </li>
+                </ul>
+        </li>
 
-        >A</a>
-    </li>
-    <li class="nav-link contrast contrast-high contrast-type-default">
-        <a title="Enable high contrast"
-           aria-label="Enable high contrast"
-           data-contrast-switch-to="high"
-           href="javascript:void(0)"
-           data-on="click"
-data-event-category="Accessibility"
-data-event-action="Change contrast setting"
-data-event-label="high"
+        <li class="nav-link visible-sm visible-md visible-lg">
+          <a class="status-toggle-button" onclick="$(this).next('.status-toggle').toggle(); return false;" style="margin-right: 0px;">
+            <!--<i class="fa fa-globe"></i>-->
+            <span class="status-toggle-text">Wissenswertes</span>
+            <i class="status-toggle fa fa-chevron-down"></i>
+            <!--<i class="status-toggle fa fa-chevron-up" style="display:none;"></i>-->
+          </a>
+          <ul class="status-options status-toggle">
+                  <li class="nav-link ">
+                    <a href="/dns-indicators/facts_agenda/">Agenda 2030</a>
+                  </li>
+                </ul>
+        </li><li class="nav-link ">
+              <a href="/dns-indicators/publications/">Publikationen</a>
+            </li><li>
+          <a class="language-toggle-button" onclick="$(this).next('.language-toggle').toggle(); return false;">
+  <i class="fa fa-globe"></i>
+  <span class="language-toggle-text">Deutsch</span>
+  <i class="language-toggle fa fa-chevron-down"></i>
+  <i class="language-toggle fa fa-chevron-up" style="display:none;"></i>
+</a>
+<ul class="language-options language-toggle"><li><a href="/dns-indicators/en/12/">English</a></li></ul>
 
-        >A</a>
-    </li>
+        </li><!---#17 addLinkToOtherPage---start------------>
+        <li class="nav-link">
+          <a href="https://sustainabledevelopment-germany.github.io//">
+            <img class="link_btn" src="https://g205sdgs.github.io/sdg-indicators/public/SDG Wheel_Transparent.png" title="Zur Seite der globalen Indikatoren" alt="Link SDG" style="width:24px;height:24px;"/>
+            <span class="hidden-sm hidden-md hidden-lg">SDG-Berichtsplattform</span>
+          </a>
+        </li>
+        <!---#17 addLinkToOtherPage---stop------------->
+      </ul>
 
-
-        </ul>
-      </div>
-    </div>
-
-    <div class="navbar navbar-default menu-without-widgets" id="main-nav">
-      <ul class="top-level">
-    <li id="menuToggle"
-        aria-label="Menu toggle. Click to expand or collapse the menu."
-        aria-haspopup="true">
-        <button data-target="menu-mobile" aria-expanded="false">Menu</button>
-        <ul class="nav navbar-nav menu-target contrast-switcher" id="menu-mobile"><li class="nav-link ">
-    <a href="/dns-indicators/goals">Goals</a>
-</li><li class="nav-link ">
-    <a href="/dns-indicators/reporting-status">Reporting Status</a>
-</li><li class="nav-link ">
-    <a href="/dns-indicators/about">About</a>
-</li><li class="nav-link ">
-    <a href="/dns-indicators/faq">FAQ</a>
-</li><li class="nav-link ">
-    <a href="/dns-indicators/news">Updates</a>
-</li><li class="language-toggle-menu-header">
-    
-
-
-
-
-
-  <div class="language-toggle-container">
-  
-  <div class="btn-group language-toggle-dropdown ">
-    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      <span class="language-globe-in-dropdown"><i class="fa fa-globe language-toggle-globe-dropdown"></i></span><span class="language-name">English</span>
-      <span class="language-abbreviation">en</span><i class="language-toggle-caret fa fa-chevron-down"></i></button>
-    <ul class="dropdown-menu"><li class="language-option-es">
-            <a href="/dns-indicators/es/12/">
-              Español
-            </a>
-          </li></ul>
-  </div>
+      <div id="search" class="menu-target">
+  <input id="indicator_search" title="Indikatorensuche" placeholder="Indikatorensuche" data-url="/dns-indicators/indicators.json" data-pageurl="/dns-indicators/search/?q=" />
+  <label for="indicator_search">
+    <button id="search-btn" type="submit"><i class="fa fa-search" aria-hidden="false" aria-label=Indikatorensuche></i></button><span>Suche:</span>
+  </label>
 </div>
 
 
-
-</li>
-
-
-
-    <li class="nav-link contrast contrast-default contrast-type-default">
-        <a title="Disable high contrast"
-           aria-label="Disable high contrast"
-           data-contrast-switch-to="default"
-           href="javascript:void(0)"
-           data-on="click"
-data-event-category="Accessibility"
-data-event-action="Change contrast setting"
-data-event-label="default"
-
-        >A</a>
-    </li>
-    <li class="nav-link contrast contrast-high contrast-type-default">
-        <a title="Enable high contrast"
-           aria-label="Enable high contrast"
-           data-contrast-switch-to="high"
-           href="javascript:void(0)"
-           data-on="click"
-data-event-category="Accessibility"
-data-event-action="Change contrast setting"
-data-event-label="high"
-
-        >A</a>
-    </li>
-
-
-
-</ul>
-
-    </li>
-    <li id="searchToggle"
-        aria-label="Search toggle. Click to expand or collapse the search bar."
-        aria-haspopup="true">
-        <button data-target="search-mobile" aria-expanded="false">Search</button>
-        <div id="search-mobile" class="menu-target">
-  <form action="/dns-indicators/search/">
-    <label class="sr-only" for="indicator_search-mobile">Search</label>
-    <input type="text" name="q" id="indicator_search-mobile" title="Search" /><!--
-    --><button aria-label="Search" id="search-mobile-btn" type="submit"><i class="fa fa-search" aria-hidden="false"></i></button>
-  </form>
-</div>
-
-    </li>
-</ul>
-      <ul class="nav navbar-nav menu-target " id="menu"><li class="nav-link ">
-    <a href="/dns-indicators/goals">Goals</a>
-</li><li class="nav-link ">
-    <a href="/dns-indicators/reporting-status">Reporting Status</a>
-</li><li class="nav-link ">
-    <a href="/dns-indicators/about">About</a>
-</li><li class="nav-link ">
-    <a href="/dns-indicators/faq">FAQ</a>
-</li><li class="nav-link ">
-    <a href="/dns-indicators/news">Updates</a>
-</li>
-
-</ul>
-
-    </div>
-
+    </nav>
   </div>
-
 </header>
-<div id="top" tabindex=-1></div>
 
 
 
 
-<div class="container">
-  <ol class="breadcrumb">
-  
-  <li><a href="/dns-indicators/">Home</a></li>
-  <li><a href="/dns-indicators/goals">Goals</a></li>
-  
-  
-</ol>
 
-  
-</div>
 
-<div class="heading goal-banner goal-12">
+
+<div class="heading goal-12">
   <div class="container">
     <div class="row">
-      <div class="col-xs-4 col-md-3 col-lg-2 goal-tiles">
-        <img src="https://open-sdg.org/sdg-translations/assets/img/goals/en/12.png" alt="Responsible consumption and production - Goal 12" id="goal-12" class="goal-icon-image goal-icon-image-" />
+      <div class="col-xs-4 col-md-3 col-lg-2">
+        <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/dns/de/12.png" alt="Nachhaltige Konsum- und Produktionsmuster sicherstellen - Ziel 12" />
       </div>
       <div class="col-xs-8 col-md-9 col-lg-10">
         <h1>
-          <span class="hidden-sm hidden-md hidden-lg">Goal 12: </span>Ensure sustainable consumption and production patterns
+          <span class="hidden-sm hidden-md hidden-lg titles goal-12">Ziel 12: Nachhaltige Konsum- und Produktionsmuster sicherstellen</span><span class="hidden-xs titles goal-12">Nachhaltige Konsum- und Produktionsmuster sicherstellen</span>
         </h1>
       </div>
     </div>
   </div>
 </div>
+<div class="underline goal-12">
+</div>
 
+<div id="main-content" class="container goal-indicators goal-12 goal-by-target">
 
-<div id="main-content" class="container" role="main">
+  <!-- <h2 style="margin-top:10px; margin-left: 16px;">
+    <a href="https://dns-dialogfassung.github.io/12" style="color: black">  <small>Zu den Indikatoren von Ziel 12 in der <u>Dialogfassung</u> der Deutschen Nachhaltigkeitsstrategie </small></a>
+  </h2> -->
+
+  
+  
+<ol class="breadcrumb">
+  <li><a href="/dns-indicators/">Start</a></li>
+  
+      <li class="active">Ziel 12</li>
+      <!--
+      <li class="center">
+        <a href="https://g205sdgs.github.io/sdg-indicators/12">
+          Globale Indikatoren zu 12
+        </a>
+      </li>
+
+      
+
+      <li class="pull-right">
+        <a href="/dns-indicators/13" title="next goal">
+          Ziel 13
+        </a>
+      </li>
+      <li class="pull-right">
+        <a href="/dns-indicators/11" title="previous goal">
+          Ziel 11
+        </a>
+      </li>
+      -->
 
   
 
+</ol>
 
+  <!---#8 addNavigationButtons---start------------------------------------->
 
-  <div class="container">
-    <h2>Targets and indicators</h2>
 
-    
-    
-      
-      <div class="row no-gutters goal-target-and-indicators">
-        <h3 class="goal-target">
-          <span class="target-number"><span class="sr-only">Target</span> 12.1</span>
-        </h3>
-        <span class="target-name">Implement the 10‐Year Framework of Programmes on Sustainable Consumption and Production Patterns, all countries taking action, with developed countries taking the lead, taking into account the development and capabilities of developing countries</span>
-        
+<!---Indicator page-->
 
-          
-          
-          
+  
 
-          <div class="goal-indicator">
-            <h4>
-              <span class="indicator-number"><span class="sr-only">Indicator</span> 12.1.1</span>
-            </h4>
-            
-            <span class="indicator-name"><a href="/dns-indicators/12-1-1">Number of countries developing, adopting or implementing policy instruments aimed at supporting the shift to sustainable consumption and production</a></span>
-            <span class="sr-only">Indicator status</span>
-            
-
-
-
-<span class="status notstarted">
-    <span class="status-inner">Exploring data sources</span>
-</span>
-
-
-            
-
-
-
-
-
-            
-          </div>
-        
-      </div>
-    
-      
-      <div class="row no-gutters goal-target-and-indicators">
-        <h3 class="goal-target">
-          <span class="target-number"><span class="sr-only">Target</span> 12.2</span>
-        </h3>
-        <span class="target-name">By 2030, achieve the sustainable management and efficient use of natural resources</span>
-        
-
-          
-          
-          
-
-          <div class="goal-indicator">
-            <h4>
-              <span class="indicator-number"><span class="sr-only">Indicator</span> 12.2.1</span>
-            </h4>
-            
-            <span class="indicator-name"><a href="/dns-indicators/12-2-1">Material footprint, material footprint per capita, and material footprint per GDP</a></span>
-            <span class="sr-only">Indicator status</span>
-            
-
-
-
-<span class="status notstarted">
-    <span class="status-inner">Exploring data sources</span>
-</span>
-
-
-            
-
-
-
-
-
-            
-          </div>
-        
-
-          
-          
-          
-
-          <div class="goal-indicator">
-            <h4>
-              <span class="indicator-number"><span class="sr-only">Indicator</span> 12.2.2</span>
-            </h4>
-            
-            <span class="indicator-name"><a href="/dns-indicators/12-2-2">Domestic material consumption, domestic material consumption per capita, and domestic material consumption per GDP</a></span>
-            <span class="sr-only">Indicator status</span>
-            
-
-
-
-<span class="status notstarted">
-    <span class="status-inner">Exploring data sources</span>
-</span>
-
-
-            
-
-
-
-
-
-            
-          </div>
-        
-      </div>
-    
-      
-      <div class="row no-gutters goal-target-and-indicators">
-        <h3 class="goal-target">
-          <span class="target-number"><span class="sr-only">Target</span> 12.3</span>
-        </h3>
-        <span class="target-name">By 2030, halve per capita global food waste at the retail and consumer levels and reduce food losses along production and supply chains, including post-harvest losses</span>
-        
-
-          
-          
-          
-
-          <div class="goal-indicator">
-            <h4>
-              <span class="indicator-number"><span class="sr-only">Indicator</span> 12.3.1</span>
-            </h4>
-            
-            <span class="indicator-name"><a href="/dns-indicators/12-3-1">(a) Food loss index and (b) food waste index</a></span>
-            <span class="sr-only">Indicator status</span>
-            
-
-
-
-<span class="status notstarted">
-    <span class="status-inner">Exploring data sources</span>
-</span>
-
-
-            
-
-
-
-
-
-            
-          </div>
-        
-      </div>
-    
-      
-      <div class="row no-gutters goal-target-and-indicators">
-        <h3 class="goal-target">
-          <span class="target-number"><span class="sr-only">Target</span> 12.4</span>
-        </h3>
-        <span class="target-name">By 2020, achieve the environmentally sound management of chemicals and all wastes throughout their life cycle, in accordance with agreed international frameworks, and significantly reduce their release to air, water and soil in order to minimize their adverse impacts on human health and the environment</span>
-        
-
-          
-          
-          
-
-          <div class="goal-indicator">
-            <h4>
-              <span class="indicator-number"><span class="sr-only">Indicator</span> 12.4.1</span>
-            </h4>
-            
-            <span class="indicator-name"><a href="/dns-indicators/12-4-1">Number of parties to international multilateral environmental agreements on hazardous waste, and other chemicals that meet their commitments and obligations in transmitting information as required by each relevant agreement</a></span>
-            <span class="sr-only">Indicator status</span>
-            
-
-
-
-<span class="status notstarted">
-    <span class="status-inner">Exploring data sources</span>
-</span>
-
-
-            
-
-
-
-
-
-            
-          </div>
-        
-
-          
-          
-          
-
-          <div class="goal-indicator">
-            <h4>
-              <span class="indicator-number"><span class="sr-only">Indicator</span> 12.4.2</span>
-            </h4>
-            
-            <span class="indicator-name"><a href="/dns-indicators/12-4-2">(a) Hazardous waste generated per capita; and (b) proportion of hazardous waste treated, by type of treatment</a></span>
-            <span class="sr-only">Indicator status</span>
-            
-
-
-
-<span class="status notstarted">
-    <span class="status-inner">Exploring data sources</span>
-</span>
-
-
-            
-
-
-
-
-
-            
-          </div>
-        
-      </div>
-    
-      
-      <div class="row no-gutters goal-target-and-indicators">
-        <h3 class="goal-target">
-          <span class="target-number"><span class="sr-only">Target</span> 12.5</span>
-        </h3>
-        <span class="target-name">By 2030, substantially reduce waste generation through prevention, reduction, recycling and reuse</span>
-        
-
-          
-          
-          
-
-          <div class="goal-indicator">
-            <h4>
-              <span class="indicator-number"><span class="sr-only">Indicator</span> 12.5.1</span>
-            </h4>
-            
-            <span class="indicator-name"><a href="/dns-indicators/12-5-1">National recycling rate, tons of material recycled</a></span>
-            <span class="sr-only">Indicator status</span>
-            
-
-
-
-<span class="status notstarted">
-    <span class="status-inner">Exploring data sources</span>
-</span>
-
-
-            
-
-
-
-
-
-            
-          </div>
-        
-      </div>
-    
-      
-      <div class="row no-gutters goal-target-and-indicators">
-        <h3 class="goal-target">
-          <span class="target-number"><span class="sr-only">Target</span> 12.6</span>
-        </h3>
-        <span class="target-name">Encourage companies, especially large and transnational companies, to adopt sustainable practices and to integrate sustainability information into their reporting cycle</span>
-        
-
-          
-          
-          
-
-          <div class="goal-indicator">
-            <h4>
-              <span class="indicator-number"><span class="sr-only">Indicator</span> 12.6.1</span>
-            </h4>
-            
-            <span class="indicator-name"><a href="/dns-indicators/12-6-1">Number of companies publishing sustainability reports</a></span>
-            <span class="sr-only">Indicator status</span>
-            
-
-
-
-<span class="status notstarted">
-    <span class="status-inner">Exploring data sources</span>
-</span>
-
-
-            
-
-
-
-
-
-            
-          </div>
-        
-      </div>
-    
-      
-      <div class="row no-gutters goal-target-and-indicators">
-        <h3 class="goal-target">
-          <span class="target-number"><span class="sr-only">Target</span> 12.7</span>
-        </h3>
-        <span class="target-name">Promote public procurement practices that are sustainable, in accordance with national policies and priorities</span>
-        
-
-          
-          
-          
-
-          <div class="goal-indicator">
-            <h4>
-              <span class="indicator-number"><span class="sr-only">Indicator</span> 12.7.1</span>
-            </h4>
-            
-            <span class="indicator-name"><a href="/dns-indicators/12-7-1">Degree of sustainable public procurement policies and action plan implementation</a></span>
-            <span class="sr-only">Indicator status</span>
-            
-
-
-
-<span class="status notstarted">
-    <span class="status-inner">Exploring data sources</span>
-</span>
-
-
-            
-
-
-
-
-
-            
-          </div>
-        
-      </div>
-    
-      
-      <div class="row no-gutters goal-target-and-indicators">
-        <h3 class="goal-target">
-          <span class="target-number"><span class="sr-only">Target</span> 12.8</span>
-        </h3>
-        <span class="target-name">By 2030, ensure that people everywhere have the relevant information and awareness for sustainable development and lifestyles in harmony with nature</span>
-        
-
-          
-          
-          
-
-          <div class="goal-indicator">
-            <h4>
-              <span class="indicator-number"><span class="sr-only">Indicator</span> 12.8.1</span>
-            </h4>
-            
-            <span class="indicator-name"><a href="/dns-indicators/12-8-1">Extent to which (i) global citizenship education and (ii) education for sustainable development are mainstreamed in (a) national education policies; (b) curricula; (c) teacher education; and (d) student assessment</a></span>
-            <span class="sr-only">Indicator status</span>
-            
-
-
-
-<span class="status notstarted">
-    <span class="status-inner">Exploring data sources</span>
-</span>
-
-
-            
-
-
-
-
-
-            
-          </div>
-        
-      </div>
-    
-      
-      <div class="row no-gutters goal-target-and-indicators">
-        <h3 class="goal-target">
-          <span class="target-number"><span class="sr-only">Target</span> 12.a</span>
-        </h3>
-        <span class="target-name">Support developing countries to strengthen their scientific and technological capacity to move towards more sustainable patterns of consumption and production</span>
-        
-
-          
-          
-          
-
-          <div class="goal-indicator">
-            <h4>
-              <span class="indicator-number"><span class="sr-only">Indicator</span> 12.a.1</span>
-            </h4>
-            
-            <span class="indicator-name"><a href="/dns-indicators/12-a-1">Installed renewable energy-generating capacity in developing countries (in watts per capita)</a></span>
-            <span class="sr-only">Indicator status</span>
-            
-
-
-
-<span class="status notstarted">
-    <span class="status-inner">Exploring data sources</span>
-</span>
-
-
-            
-
-
-
-
-
-            
-          </div>
-        
-      </div>
-    
-      
-      <div class="row no-gutters goal-target-and-indicators">
-        <h3 class="goal-target">
-          <span class="target-number"><span class="sr-only">Target</span> 12.b</span>
-        </h3>
-        <span class="target-name">Develop and implement tools to monitor sustainable development impacts for sustainable tourism that creates jobs and promotes local culture and products</span>
-        
-
-          
-          
-          
-
-          <div class="goal-indicator">
-            <h4>
-              <span class="indicator-number"><span class="sr-only">Indicator</span> 12.b.1</span>
-            </h4>
-            
-            <span class="indicator-name"><a href="/dns-indicators/12-b-1">Implementation of standard accounting tools to monitor the economic and environmental aspects of tourism sustainability</a></span>
-            <span class="sr-only">Indicator status</span>
-            
-
-
-
-<span class="status notstarted">
-    <span class="status-inner">Exploring data sources</span>
-</span>
-
-
-            
-
-
-
-
-
-            
-          </div>
-        
-      </div>
-    
-      
-      <div class="row no-gutters goal-target-and-indicators">
-        <h3 class="goal-target">
-          <span class="target-number"><span class="sr-only">Target</span> 12.c</span>
-        </h3>
-        <span class="target-name">Rationalize inefficient fossil-fuel subsidies that encourage wasteful consumption by removing market distortions, in accordance with national circumstances, including by restructuring taxation and phasing out those harmful subsidies, where they exist, to reflect their environmental impacts, taking fully into account the specific needs and conditions of developing countries and minimizing the possible adverse impacts on their development in a manner that protects the poor and the affected communities</span>
-        
-
-          
-          
-          
-
-          <div class="goal-indicator">
-            <h4>
-              <span class="indicator-number"><span class="sr-only">Indicator</span> 12.c.1</span>
-            </h4>
-            
-            <span class="indicator-name"><a href="/dns-indicators/12-c-1">Amount of fossil-fuel subsidies per unit of GDP (production and consumption)</a></span>
-            <span class="sr-only">Indicator status</span>
-            
-
-
-
-<span class="status notstarted">
-    <span class="status-inner">Exploring data sources</span>
-</span>
-
-
-            
-
-
-
-
-
-            
-          </div>
-        
-      </div>
-    
+  <div class="col-xs-3 col-md-3 col-lg-4">
+    <a href="/dns-indicators/11" class="btn btn-primary btn-block G12-background" role="button">
+      <i class="fa fa-chevron-left" aria-hidden="true"></i> <b class="btn-label hidden-sm hidden-xs">Vorheriges Ziel</b>
+    </a>
   </div>
+  <div class="col-xs-6 col-md-6 col-lg-4">
+    <a href="https://sustainabledevelopment-germany.github.io//12" class="btn btn-primary btn-block G12-background" title="Hier gelangen Sie zur Seite des Ziels der SDG-Indikatoren" role="button">
+      <b class="btn-label hidden-sm hidden-xs">Globale Indikatoren zu Ziel 12</b><b class="btn-label visible-sm visible-xs">Ziel 12 - Global</b>
+    </a>
+  </div>
+  <div class="col-xs-3 col-md-3 col-lg-4">
+    <a href="/dns-indicators/13" class="btn btn-primary btn-block G12-background" role="button">
+      <b class="btn-label hidden-sm hidden-xs">Nächstes Ziel</b> <i class="fa fa-chevron-right" aria-hidden="true"></i>
+    </a>
+  </div>
+
+
+<!--#8 addNavigationButtons---stop-------------------------------------->
+
+
+  <div class="visible-md-block visible-lg-block">
+    <div class="col-md-6">
+      <h4>Indikatorenbereiche und Postulate</h4>
+    </div>
+    <div class="col-md-6">
+      <h4>Indikatoren</h4>
+    </div>
+  </div>
+
+  
+  
+    
+    
+
+    
+    
+    
+
+
+
+    
+    
+
+    
+    
+    <script>console.log(12.1-title);</script>
+    <script>console.log(12.1.1-title);</script>
+    <script>console.log(Nachhaltiger Konsum);</script>
+    <div class="indicator-cards target col-md-6">
+      <span>
+        Nachhaltiger Konsum
+      </span>
+      Konsum umwelt- und sozialverträglich gestalten
+    </div>
+    <div class="indicator-cards col-md-6 row no-gutters">
+    
+
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12 ">
+        <a href="/dns-indicators/12-1-a">
+          <span>
+            12.1.a
+          </span>
+          Marktanteil von Produkten mit staatlichen Umweltzeichen
+          
+        </a>
+      </div>
+    
+
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12 ">
+        <a href="/dns-indicators/12-1-b">
+          <span>
+            12.1.b
+          </span>
+          Globale Umweltinanspruchnahme durch den Konsum privater Haushalte
+          
+        </a>
+      </div>
+    
+    </div>
+  
+    
+    
+
+    
+    
+    
+
+
+
+    
+    
+
+    
+    
+    <script>console.log(12.2-title);</script>
+    <script>console.log(12.2.1-title);</script>
+    <script>console.log(Nachhaltige Produktion);</script>
+    <div class="indicator-cards target col-md-6">
+      <span>
+        Nachhaltige Produktion
+      </span>
+      Anteil nachhaltiger Produktion stetig erhöhen
+    </div>
+    <div class="indicator-cards col-md-6 row no-gutters">
+    
+
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12 ">
+        <a href="/dns-indicators/12-2-a">
+          <span>
+            12.2
+          </span>
+          Umweltmanagement EMAS
+          
+        </a>
+      </div>
+    
+    </div>
+  
+    
+    
+
+    
+    
+    
+
+
+
+    
+    
+
+    
+    
+    <script>console.log(12.3-title);</script>
+    <script>console.log(12.3.1-title);</script>
+    <script>console.log(Nachhaltige Beschaffung);</script>
+    <div class="indicator-cards target col-md-6">
+      <span>
+        Nachhaltige Beschaffung
+      </span>
+      Vorbildwirkung der öffentlichen Hand für nachhaltige öffentliche Beschaffung verwirklichen
+    </div>
+    <div class="indicator-cards col-md-6 row no-gutters">
+    
+
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12 ">
+        <a href="/dns-indicators/12-3-ab">
+          <span>
+            12.3.a, b
+          </span>
+          Nachhaltige Beschaffung
+          
+        </a>
+      </div>
+    
+    </div>
+  
 </div>
 
 <footer role="contentinfo">
   <div class="container">
     <div class="row">
-      <div class="col-xs-12">
-        <div id="footerLinks">
-          <ul>
-            <li><a href="https://open-sdg.org">Built using Open SDG</a></li>
-            
-              <li>
-                <a href="/dns-indicators/contact-us">Contact us</a>
-                
-                </li>
-              <li>
-                
-                  <a href="https://twitter.com/MyTwitterAccount" target="_blank">Twitter</a>
-                
-                </li>
-              <li>
-                
-                  <a href="https://facebook.com/MyFacebookAccount" target="_blank">Facebook</a>
-                
-                </li>
-              <li>
-                <a href="/dns-indicators/about/cookies-and-privacy/">Cookies</a>
-                
-                </li>
-              
-            
-            
-            <li><a href="/dns-indicators/config">Configuration</a></li>
-            </ul>
-        </div>
+      <div class="col-xs-9">
+        
+          <a href="https://open-sdg.readthedocs.io/en/latest/" target="_blank">Seite basiert auf Open SDG</a> | <a href="mailto:dns-indikatoren@destatis.de" target="_blank">Kontakt</a> | <a class="twitter-follow-button" href="https://twitter.com/destatis?lang=de" data-show-count="false"><i class="fa fa-twitter" aria-hidden="true"></i>@destatis</a>
+        
+
+      </div>
+      <div class="col-xs-3 text-right">
+        <a href="/dns-indicators/imprint/">Im­pres­s­um</a>
       </div>
     </div>
   </div>
 </footer>
 
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="//code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js" integrity="sha512-90vH1Z83AJY9DmlWa8WkjkV79yfS2n2Oxhsi2dZbIv0nC4E6m5AbH8Nh156kkM7JePmqD6tcZsfad1ueoaovww==" crossorigin="anonymous"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js"></script>
 
-
+<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet.zoomshowhide@0.1.0/dist/leaflet-zoom-show-hide.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/1.4.0/chroma.min.js"></script>
+<script src="https://cdn.rawgit.com/nezasa/iso8601-js-period/master/iso8601.min.js"></script>
+<script src="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.min.js"></script>
+<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+<script src="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
-
-
-
-
-
-
-
-<script>translations['general'] = translations['general'] || {};
-    translations['general']['hide'] = 'hide';</script>
-
-<script>translations['search'] = translations['search'] || {};
-    translations['search']['search'] = 'Search';</script>
-
-<script src='/dns-indicators/assets/js/sdg.js?v=20220307154009'></script>
-
-
-    
-    
-    <script src="/dns-indicators/assets/js/custom.js?v=20220307154009"></script><script>
+<script src='/dns-indicators/assets/js/sdg.js?v=20220309080801'></script><script src="/dns-indicators/assets/js/chartColors.js?v=20220309080801"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
+      $('.async-loading').each(function(i, obj) {
+          $(obj).append($('<img />').attr('src', $(obj).data('img')));
+      });
+      $.ajax({
+        url: opensdg.remoteDataBaseUrl + '/comb/' + domData.id + '.json',
+        success: function(res) {
+          $('.async-loading').remove();
+          $('.async-loaded').show();
+          var model = new indicatorModel({
 
-      if (domData.showdata) {
-
-        $('.async-loading').each(function(i, obj) {
-            $(obj).append($('<img />').attr('src', $(obj).data('img')).attr('alt', translations.indicator.loading));
-        });
-
-        var remoteUrl = '/comb/' + domData.id + '.json';
-        if (opensdg.remoteDataBaseUrl !== '/') {
-          remoteUrl = opensdg.remoteDataBaseUrl + remoteUrl;
+            data: res.data,
+            edgesData: res.edges,
+            geoCodeRegEx: domData.geocoderegex,
+            showMap: domData.showmap,
+            country: domData.country,
+            indicatorId: domData.indicatorid,
+            shortIndicatorId: domData.id,
+            chartTitle: domData.charttitle,
+            mapTitle: domData.maptitle,
+            measurementUnit: domData.measurementunit,
+            copyright: domData.copyright,
+            dataSource: domData.datasource,
+            geographicalArea: domData.geographicalarea,
+            showData: domData.showdata,
+            footnote: domData.footnote,
+            graphType: domData.graphtype,
+            stackedDisaggregation: domData.stackeddisaggregation,
+            startValues: domData.startvalues
+          }),
+          view  = new indicatorView(model, {
+            rootElement: '#indicatorData',
+            legendElement: '#plotLegend',
+            maxChartHeight: 420,
+            tableColumnDefs: [
+              { maxCharCount: 25 }, // nowrap
+              { maxCharCount: 35, width: 200 },
+              { maxCharCount: Infinity, width: 250 }
+            ]
+          }),
+          controller = new indicatorController(model, view);
+          controller.initialise();
         }
-
-        $.ajax({
-          url: remoteUrl,
-          success: function(res) {
-
-            $('.async-loading').remove();
-            $('.async-loaded').show();
-
-            var model = new indicatorModel({
-              data: res.data,
-              edgesData: res.edges,
-              showMap: domData.showmap,
-              country: domData.country,
-              indicatorId: domData.indicatorid,
-              shortIndicatorId: domData.id,
-              chartTitle: domData.charttitle,
-              chartTitles: domData.charttitles,
-              measurementUnit: domData.measurementunit,
-              xAxisLabel: domData.xaxislabel,
-              showData: domData.showdata,
-              graphType: domData.graphtype,
-              startValues: domData.startvalues,
-              graphLimits: domData.graphlimits,
-              stackedDisaggregation: domData.stackeddisaggregation,
-              graphAnnotations: domData.graphannotations,
-              graphTargetLines: domData.graphtargetlines,
-              graphSeriesBreaks: domData.graphseriesbreaks,
-              indicatorDownloads: domData.indicatordownloads,
-              dataSchema: domData.dataschema,
-              compositeBreakdownLabel: domData.compositebreakdownlabel,
-              precision: domData.precision,
-            }),
-            view  = new indicatorView(model, {
-              rootElement: '#indicatorData',
-              legendElement: '#plotLegend',
-              decimalSeparator: '',
-              maxChartHeight: 420,
-              tableColumnDefs: [
-                { maxCharCount: 25 }, // nowrap
-                { maxCharCount: 35, width: 200 },
-                { maxCharCount: Infinity, width: 250 }
-              ]
-            }),
-            controller = new indicatorController(model, view);
-            controller.initialise();
-          }
-        });
-      }
+      });
     }
-
     var switcher = new accessibilitySwitcher();
-
-
 });
 </script>
+
+
 
 
 </body>
