@@ -255,13 +255,13 @@ map_layers:
     # 3 serviceUrl:  https://nachhaltige-entwicklung-deutschland.github.io/open-sdg-site-starter/assets/maps/diy_lan.geojson --> ja
     # 4 serviceUrl:  https://nachhaltige-entwicklung-deutschland.github.io/open-sdg-site-starter/assets/maps/diy_lan.geojson (mit Koordinaten für HH ersetzt) --> ja
     # 5 serviceUrl:  https://nachhaltige-entwicklung-deutschland.github.io/open-sdg-site-starter/assets/maps/vg2500.geojson # --> nö
-    serviceUrl:  https://dnstestenvironment.github.io/dns-data/assets/maps/diy_lan.geojson #(mit Koordinaten für HH und ersetzt) --> ja
+    serviceUrl:  https://dnstestenvironment.github.io/dns-indicators/assets/maps/diy_lan.geojson #(mit Koordinaten für HH und ersetzt) --> ja
     nameProperty: GEN
     idProperty: AGS
     staticBorders: true
   - min_zoom: 8
     max_zoom: 11
-    serviceUrl:  https://dnstestenvironment.github.io/dns-data/assets/maps/diy_krs.geojson
+    serviceUrl:  https://dnstestenvironment.github.io/dns-indicators/assets/maps/diy_krs.geojson
     nameProperty: GEN
     idProperty: ARS
     staticBorders: true
