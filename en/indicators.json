@@ -1,7 +1,7 @@
 [{
     "goal": {
       "id": "1",
-      "title": "End poverty in all its forms everywhere",
+      "title": "",
       "indicators": [{
           "id": "1-1-ab",
           "title": "Material deprivation and severe material deprivation",
@@ -14,7 +14,7 @@
   },{
     "goal": {
       "id": "2",
-      "title": "End hunger, achieve food security and improved nutrition and promote sustainable agriculture",
+      "title": "",
       "indicators": [{
           "id": "2-1-a",
           "title": "Nitrogen surplus in agriculture",
@@ -41,7 +41,7 @@
   },{
     "goal": {
       "id": "3",
-      "title": "Ensure healthy lives and promote well-being for all at all ages",
+      "title": "",
       "indicators": [{
           "id": "3-3-a",
           "title": "Germany’s contribution to global pandemic prevention and response",
@@ -96,7 +96,7 @@
   },{
     "goal": {
       "id": "4",
-      "title": "Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all",
+      "title": "",
       "indicators": [{
           "id": "4-1-b",
           "title": "Persons with an academic or higher vocational qualification <br><br>(30 to 34-year-olds with a tertiary or post-secondary non-tertiary level of education)",
@@ -123,7 +123,7 @@
   },{
     "goal": {
       "id": "5",
-      "title": "Achieve gender equality and empower all women and girls",
+      "title": "",
       "indicators": [{
           "id": "5-1-e",
           "title": "Vocational qualification of women and girls through German development cooperation",
@@ -157,7 +157,7 @@
   },{
     "goal": {
       "id": "6",
-      "title": "Ensure availability and sustainable management of water and sanitation for all",
+      "title": "",
       "indicators": [{
           "id": "6-1-b",
           "title": "Nitrate in groundwater",
@@ -184,7 +184,7 @@
   },{
     "goal": {
       "id": "7",
-      "title": "Ensure access to affordable, reliable, sustainable and modern energy for all",
+      "title": "",
       "indicators": [{
           "id": "7-2-b",
           "title": "Share of electricity from renewable sources in gross electricity consumption",
@@ -211,7 +211,7 @@
   },{
     "goal": {
       "id": "8",
-      "title": "Promote sustained, inclusive and sustainable economic growth, full and productive employment and decent work for all",
+      "title": "",
       "indicators": [{
           "id": "8-2-ab",
           "title": "Government deficit, structural deficit",
@@ -266,7 +266,7 @@
   },{
     "goal": {
       "id": "9",
-      "title": "Build resilient infrastructure, promote inclusive and sustainable industrialization and foster innovation",
+      "title": "",
       "indicators": [{
           "id": "9-1-b",
           "title": "Rollout of broadband",
@@ -286,7 +286,7 @@
   },{
     "goal": {
       "id": "10",
-      "title": "Reduce inequality within and among countries",
+      "title": "",
       "indicators": [{
           "id": "10-2-a",
           "title": "Gini coefficient of income after social transfers",
@@ -306,7 +306,7 @@
   },{
     "goal": {
       "id": "11",
-      "title": "Make cities and human settlements inclusive, safe, resilient and sustainable",
+      "title": "",
       "indicators": [{
           "id": "11-1-c",
           "title": "Density of settlements",
@@ -368,7 +368,7 @@
   },{
     "goal": {
       "id": "12",
-      "title": "Ensure sustainable consumption and production patterns",
+      "title": "",
       "indicators": [{
           "id": "12-1-a",
           "title": "Market share of products certified by publicly managed eco-labelling schemes",
@@ -402,7 +402,7 @@
   },{
     "goal": {
       "id": "13",
-      "title": "Take urgent action to combat climate change and its impacts",
+      "title": "",
       "indicators": [{
           "id": "13-1-b",
           "title": "International climate finance for the reduction of greenhouse gases and adaptation to climate change",
@@ -422,7 +422,7 @@
   },{
     "goal": {
       "id": "14",
-      "title": "Conserve and sustainably use the oceans, seas and marine resources for sustainable development",
+      "title": "",
       "indicators": [{
           "id": "14-1-a",
           "title": "Nitrogen inputs via the inflows into the North and Baltic Seas",
@@ -442,7 +442,7 @@
   },{
     "goal": {
       "id": "15",
-      "title": "Protect, restore and promote sustainable use of terrestrial ecosystems, sustainably manage forests, combat desertification, and halt and reverse land degradation and halt biodiversity loss",
+      "title": "",
       "indicators": [{
           "id": "15-3-ab",
           "title": "Preservation or restoration of forests under REDD+ and investment in international soil protection",
@@ -469,7 +469,7 @@
   },{
     "goal": {
       "id": "16",
-      "title": "Promote peaceful and inclusive societies for sustainable development, provide access to justice for all and build effective, accountable and inclusive institutions at all levels",
+      "title": "",
       "indicators": [{
           "id": "16-3-ab",
           "title": "Corruption Perceptions Index (CPI) in Germany and in partner countries in the German development cooperation",
@@ -496,7 +496,7 @@
   },{
     "goal": {
       "id": "17",
-      "title": "Strengthen the means of implementation and revitalize the Global Partnership for Sustainable Development",
+      "title": "",
       "indicators": [{
           "id": "17-2-a",
           "title": "Number of students and researchers from developing countries and LDC per year<br><br>",
