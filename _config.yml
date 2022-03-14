@@ -34,8 +34,7 @@ jekyll_get_json:
     json: 'https://dnstestenvironment.github.io/dns-data/stats/reporting.json'
   - data: translations
     #json: 'https://open-sdg.github.io/sdg-translations/translations-0.5.2.json'
-    
-    json: 'https://dnstestenvironment.github.io/sdg-translations/translations.json'
+    json: 'https://JustusCas.github.io/sdg-translations/translations.json'
 
 analytics:
   ga_prod: ''
