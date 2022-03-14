@@ -98,13 +98,13 @@ var translations = {
             
             
 
-            Ziel 10 - 
+            Ziel 10 - Ungleichheit in und zwischen Ländern verringern
           
         </title>
         <!---#15 setCorrectTitle---stop--------------------->
 
         
-          <meta name="description" content= "" >
+          <meta name="description" content= "Übersichtlicher Stand der Indikatoren der 17 Sustainable Development Goals (SDGs) in Deutschland samt öffentlich zur Verfügung stehender Datengrundlage" >
         
 
         <meta property="og:description" content="">
@@ -142,7 +142,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/dns-indicators/assets/css/default.css?v=20220314130418">
+        <link rel="stylesheet" href="/dns-indicators/assets/css/default.css?v=20220314131235">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -150,7 +150,7 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/dns-indicators/assets/css/custom.css?v=20220314130418"><!-- ShareThis BEGIN --><!-- ShareThis END -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/dns-indicators/assets/css/custom.css?v=20220314131235"><!-- ShareThis BEGIN --><!-- ShareThis END -->
 
     </head>
 <body class="language-de layout-goal-by-target">
@@ -158,14 +158,14 @@ var translations = {
 
 
 
-<script>translations['header'] = {"alpha":"Alpha-Version","disclaimer":"Diese Seite befindet sich im Entwicklungsstadium.Wir freuen uns über Ihre Kommentare.","skip_link":" Zum Hauptinhalt springen","tag_line":""};</script>
+<script>translations['header'] = {"alpha":"Alpha-Version","disclaimer":"Diese Seite befindet sich im Entwicklungsstadium. Wir freuen uns über Ihre <a href=\"mailto:%email_address\">Kommentare</a>.","skip_link":" Zum Hauptinhalt springen","tag_line":""};</script>
 
 <a class="sr-only sr-only-focusable" id="skiplink" href="#main-content" tabindex="0"> Zum Hauptinhalt springen</a>
 <div id="disclaimer">
   <div class="container">
   <div class="alert alert-danger" role="alert">
     <strong class="phase-tag">Alpha-Version</strong>
-    Diese Seite befindet sich im Entwicklungsstadium.Wir freuen uns über Ihre Kommentare.
+    Diese Seite befindet sich im Entwicklungsstadium. Wir freuen uns über Ihre <a href="mailto:DNS-Indikatoren@destatis.de">Kommentare</a>.
   </div>
 </div>
 
@@ -175,7 +175,7 @@ var translations = {
   <div class="container">
 
     <a class="navbar-brand" href="/dns-indicators/" id="home">
-      <img src="/dns-indicators/assets/img/dns_logo.png" alt=" - " />
+      <img src="/dns-indicators/assets/img/dns_logo.png" alt="Nachhaltige Entwicklung in Deutschland - " />
     </a>
 
   <div class='hidden visible-xs float-right'>
@@ -206,45 +206,45 @@ var translations = {
       <ul class="nav navbar-nav menu-target contrast-switcher" id="menu">
               
                 <li class="nav-link ">
-                  <a href="/dns-indicators/">general.seventeen_goals</a>
+                  <a href="/dns-indicators/">17 Ziele</a>
                 </li>
               
             
               <li class="nav-link  hidden-sm hidden-md hidden-lg">
-                <a href="/dns-indicators/status_summary">Status - menu.status_summary</a>
+                <a href="/dns-indicators/status_summary">Status - Übersicht</a>
               </li>
             
               <li class="nav-link  hidden-sm hidden-md hidden-lg">
-                <a href="/dns-indicators/status">Status - menu.status</a>
+                <a href="/dns-indicators/status">Status - Methodik</a>
               </li>
             
               <li class="nav-link  hidden-sm hidden-md hidden-lg">
-                <a href="/dns-indicators/about/">menu.about_this_site</a>
+                <a href="/dns-indicators/about/">Die&nbspDNS&#8209;Online&nbspPlattform</a>
               </li>
             
               <li class="nav-link  hidden-sm hidden-md hidden-lg">
-                <a href="/dns-indicators/guidance/">Technische Hinweise</a>
+                <a href="/dns-indicators/guidance/">Technische&nbspHinweise</a>
               </li>
             
               <li class="nav-link  hidden-sm hidden-md hidden-lg">
-                <a href="/dns-indicators/facts_agenda/">menu.facts_agenda</a>
+                <a href="/dns-indicators/facts_agenda/">Agenda 2030</a>
               </li>
             
               
             <li class="nav-link visible-sm visible-md visible-lg">
           <a class="status-toggle-button" onclick="$(this).next('.status-toggle').toggle(); return false;" style="margin-right: 0px;">
             <!--<i class="fa fa-globe"></i>-->
-            <span class="status-toggle-text"></span>
+            <span class="status-toggle-text">Bewertung</span>
             <i class="status-toggle fa fa-chevron-down"></i>
             <!--<i class="status-toggle fa fa-chevron-up" style="display:none;"></i>-->
           </a>
           <ul class="status-options status-toggle">
                   <li class="nav-link ">
-                    <a href="/dns-indicators/status_summary">menu.status_summary</a>
+                    <a href="/dns-indicators/status_summary">Übersicht</a>
                   </li>
                 
                   <li class="nav-link ">
-                    <a href="/dns-indicators/status">menu.status</a>
+                    <a href="/dns-indicators/status">Methodik</a>
                   </li>
                 </ul>
         </li>
@@ -258,11 +258,11 @@ var translations = {
           </a>
           <ul class="status-options status-toggle">
                   <li class="nav-link ">
-                    <a href="/dns-indicators/about/">menu.about_this_site</a>
+                    <a href="/dns-indicators/about/">Die&nbspDNS&#8209;Online&nbspPlattform</a>
                   </li>
                 
                   <li class="nav-link ">
-                    <a href="/dns-indicators/guidance/">Technische Hinweise</a>
+                    <a href="/dns-indicators/guidance/">Technische&nbspHinweise</a>
                   </li>
                 </ul>
         </li>
@@ -270,17 +270,17 @@ var translations = {
         <li class="nav-link visible-sm visible-md visible-lg">
           <a class="status-toggle-button" onclick="$(this).next('.status-toggle').toggle(); return false;" style="margin-right: 0px;">
             <!--<i class="fa fa-globe"></i>-->
-            <span class="status-toggle-text"></span>
+            <span class="status-toggle-text">Wissenswertes</span>
             <i class="status-toggle fa fa-chevron-down"></i>
             <!--<i class="status-toggle fa fa-chevron-up" style="display:none;"></i>-->
           </a>
           <ul class="status-options status-toggle">
                   <li class="nav-link ">
-                    <a href="/dns-indicators/facts_agenda/">menu.facts_agenda</a>
+                    <a href="/dns-indicators/facts_agenda/">Agenda 2030</a>
                   </li>
                 </ul>
         </li><li class="nav-link ">
-              <a href="/dns-indicators/publications/">Veröffentlichungen</a>
+              <a href="/dns-indicators/publications/">Publikationen</a>
             </li><li>
           <a class="language-toggle-button" onclick="$(this).next('.language-toggle').toggle(); return false;">
   <i class="fa fa-globe"></i>
@@ -293,8 +293,8 @@ var translations = {
         </li><!---#17 addLinkToOtherPage---start------------>
         <li class="nav-link">
           <a href="https://sustainabledevelopment-germany.github.io//">
-            <img class="link_btn" src="https://g205sdgs.github.io/sdg-indicators/public/SDG Wheel_Transparent.png" title="" alt="Link SDG" style="width:24px;height:24px;"/>
-            <span class="hidden-sm hidden-md hidden-lg">SDG-</span>
+            <img class="link_btn" src="https://g205sdgs.github.io/sdg-indicators/public/SDG Wheel_Transparent.png" title="Zur Seite der globalen Indikatoren" alt="Link SDG" style="width:24px;height:24px;"/>
+            <span class="hidden-sm hidden-md hidden-lg">SDG-Berichtsplattform</span>
           </a>
         </li>
         <!---#17 addLinkToOtherPage---stop------------->
@@ -322,11 +322,11 @@ var translations = {
   <div class="container">
     <div class="row">
       <div class="col-xs-4 col-md-3 col-lg-2">
-        <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/dns/de/10.png" alt=" - Ziel 10" />
+        <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/dns/de/10.png" alt="Ungleichheit in und zwischen Ländern verringern - Ziel 10" />
       </div>
       <div class="col-xs-8 col-md-9 col-lg-10">
         <h1>
-          <span class="hidden-sm hidden-md hidden-lg titles goal-10">Ziel 10: </span><span class="hidden-xs titles goal-10"></span>
+          <span class="hidden-sm hidden-md hidden-lg titles goal-10">Ziel 10: Ungleichheit in und zwischen Ländern verringern</span><span class="hidden-xs titles goal-10">Ungleichheit in und zwischen Ländern verringern</span>
         </h1>
       </div>
     </div>
@@ -338,19 +338,19 @@ var translations = {
 <div id="main-content" class="container goal-indicators goal-10 goal-by-target">
 
   <!-- <h2 style="margin-top:10px; margin-left: 16px;">
-    <a href="https://dns-dialogfassung.github.io/10" style="color: black">  <small> 10  </small></a>
+    <a href="https://dns-dialogfassung.github.io/10" style="color: black">  <small>Zu den Indikatoren von Ziel 10 in der <u>Dialogfassung</u> der Deutschen Nachhaltigkeitsstrategie </small></a>
   </h2> -->
 
   
   
 <ol class="breadcrumb">
-  <li><a href="/dns-indicators/">Home</a></li>
+  <li><a href="/dns-indicators/">Start</a></li>
   
       <li class="active">Ziel 10</li>
       <!--
       <li class="center">
         <a href="https://g205sdgs.github.io/sdg-indicators/10">
-           10
+          Globale Indikatoren zu 10
         </a>
       </li>
 
@@ -381,17 +381,17 @@ var translations = {
 
   <div class="col-xs-3 col-md-3 col-lg-4">
     <a href="/dns-indicators/9" class="btn btn-primary btn-block G10-background" role="button">
-      <i class="fa fa-chevron-left" aria-hidden="true"></i> <b class="btn-label hidden-sm hidden-xs"></b>
+      <i class="fa fa-chevron-left" aria-hidden="true"></i> <b class="btn-label hidden-sm hidden-xs">Vorheriges Ziel</b>
     </a>
   </div>
   <div class="col-xs-6 col-md-6 col-lg-4">
-    <a href="https://sustainabledevelopment-germany.github.io//10" class="btn btn-primary btn-block G10-background" title="" role="button">
-      <b class="btn-label hidden-sm hidden-xs"> Ziel 10</b><b class="btn-label visible-sm visible-xs">Ziel 10 </b>
+    <a href="https://sustainabledevelopment-germany.github.io//10" class="btn btn-primary btn-block G10-background" title="Hier gelangen Sie zur Seite des Ziels der SDG-Indikatoren" role="button">
+      <b class="btn-label hidden-sm hidden-xs">Globale Indikatoren zu Ziel 10</b><b class="btn-label visible-sm visible-xs">Ziel 10 - Global</b>
     </a>
   </div>
   <div class="col-xs-3 col-md-3 col-lg-4">
     <a href="/dns-indicators/11" class="btn btn-primary btn-block G10-background" role="button">
-      <b class="btn-label hidden-sm hidden-xs"></b> <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      <b class="btn-label hidden-sm hidden-xs">Nächstes Ziel</b> <i class="fa fa-chevron-right" aria-hidden="true"></i>
     </a>
   </div>
 
@@ -401,7 +401,7 @@ var translations = {
 
   <div class="visible-md-block visible-lg-block">
     <div class="col-md-6">
-      <h4></h4>
+      <h4>Indikatorenbereiche und Postulate</h4>
     </div>
     <div class="col-md-6">
       <h4>Indikatoren</h4>
@@ -426,12 +426,12 @@ var translations = {
     
     <script>console.log(10.1-title);</script>
     <script>console.log(10.1.1-title);</script>
-    <script>console.log();</script>
+    <script>console.log(Gleiche Bildungschancen);</script>
     <div class="indicator-cards target col-md-6">
       <span>
-        
+        Gleiche Bildungschancen
       </span>
-      
+      Schulische Bildungserfolge von Ausländern in Deutschland verbessern
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
@@ -473,12 +473,12 @@ var translations = {
     
     <script>console.log(10.2-title);</script>
     <script>console.log(10.2.1-title);</script>
-    <script>console.log();</script>
+    <script>console.log(Verteilungsgerechtigkeit);</script>
     <div class="indicator-cards target col-md-6">
       <span>
-        
+        Verteilungsgerechtigkeit
       </span>
-      
+      Zu große Ungleichheit innerhalb Deutschlands verhindern
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
@@ -544,7 +544,7 @@ var translations = {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
-<script src='/dns-indicators/assets/js/sdg.js?v=20220314130418'></script><script src="/dns-indicators/assets/js/chartColors.js?v=20220314130418"></script><script>
+<script src='/dns-indicators/assets/js/sdg.js?v=20220314131235'></script><script src="/dns-indicators/assets/js/chartColors.js?v=20220314131235"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
