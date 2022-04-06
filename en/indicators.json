@@ -16,6 +16,13 @@
       "id": "2",
       "title": "End hunger, achieve food security and improved nutrition and promote sustainable agriculture",
       "indicators": [{
+          "id": "2-1-b",
+          "title": "Organic farming",
+          "description": "",
+          "keywords": "",
+          "href": "/dns-indicators/en/2-1-b",
+          "status": "complete"
+        },{
           "id": "2-1-a",
           "title": "Nitrogen surplus in agriculture",
           "description": "",
@@ -29,13 +36,6 @@
           "keywords": "",
           "href": "/dns-indicators/en/2-2-a",
           "status": "complete"
-        },{
-          "id": "2-1-b",
-          "title": "Organic farming",
-          "description": "",
-          "keywords": "",
-          "href": "/dns-indicators/en/2-1-b",
-          "status": "complete"
         }]
     }
   },{
@@ -43,11 +43,11 @@
       "id": "3",
       "title": "Ensure healthy lives and promote well-being for all at all ages",
       "indicators": [{
-          "id": "3-3-a",
-          "title": "Germany’s contribution to global pandemic prevention and response",
+          "id": "3-2-b",
+          "title": "Share of the population with excessive exposure to PM<sub>10</sub>",
           "description": "",
           "keywords": "",
-          "href": "/dns-indicators/en/3-3-a",
+          "href": "/dns-indicators/en/3-2-b",
           "status": "complete"
         },{
           "id": "3-2-a",
@@ -57,27 +57,6 @@
           "href": "/dns-indicators/en/3-2-a",
           "status": "complete"
         },{
-          "id": "3-1-e",
-          "title": "Obesity rates among children and adolescents",
-          "description": "",
-          "keywords": "",
-          "href": "/dns-indicators/en/3-1-e",
-          "status": "complete"
-        },{
-          "id": "3-2-b",
-          "title": "Share of the population with excessive exposure to PM<sub>10</sub>",
-          "description": "",
-          "keywords": "",
-          "href": "/dns-indicators/en/3-2-b",
-          "status": "complete"
-        },{
-          "id": "3-1-cd",
-          "title": "Smoking rate among young people and adults",
-          "description": "",
-          "keywords": "",
-          "href": "/dns-indicators/en/3-1-cd",
-          "status": "complete"
-        },{
           "id": "3-1-ab",
           "title": "Premature mortality",
           "description": "",
@@ -85,11 +64,32 @@
           "href": "/dns-indicators/en/3-1-ab",
           "status": "complete"
         },{
+          "id": "3-1-e",
+          "title": "Obesity rates among children and adolescents",
+          "description": "",
+          "keywords": "",
+          "href": "/dns-indicators/en/3-1-e",
+          "status": "complete"
+        },{
           "id": "3-1-f",
           "title": "Obesity rates among adults",
           "description": "",
           "keywords": "",
           "href": "/dns-indicators/en/3-1-f",
+          "status": "complete"
+        },{
+          "id": "3-3-a",
+          "title": "Germany’s contribution to global pandemic prevention and response",
+          "description": "",
+          "keywords": "",
+          "href": "/dns-indicators/en/3-3-a",
+          "status": "complete"
+        },{
+          "id": "3-1-cd",
+          "title": "Smoking rate among young people and adults",
+          "description": "",
+          "keywords": "",
+          "href": "/dns-indicators/en/3-1-cd",
           "status": "complete"
         }]
     }
@@ -105,18 +105,18 @@
           "href": "/dns-indicators/en/4-1-b",
           "status": "complete"
         },{
-          "id": "4-2-ab",
-          "title": "All-day care provision for children",
-          "description": "",
-          "keywords": "",
-          "href": "/dns-indicators/en/4-2-ab",
-          "status": "complete"
-        },{
           "id": "4-1-a",
           "title": "Early school leavers",
           "description": "",
           "keywords": "",
           "href": "/dns-indicators/en/4-1-a",
+          "status": "complete"
+        },{
+          "id": "4-2-ab",
+          "title": "All-day care provision for children",
+          "description": "",
+          "keywords": "",
+          "href": "/dns-indicators/en/4-2-ab",
           "status": "complete"
         }]
     }
@@ -125,11 +125,11 @@
       "id": "5",
       "title": "Achieve gender equality and empower all women and girls",
       "indicators": [{
-          "id": "5-1-e",
-          "title": "Vocational qualification of women and girls through German development cooperation",
+          "id": "5-1-d",
+          "title": "Proportion of fathers receiving parental allowance",
           "description": "",
           "keywords": "",
-          "href": "/dns-indicators/en/5-1-e",
+          "href": "/dns-indicators/en/5-1-d",
           "status": "complete"
         },{
           "id": "5-1-bc",
@@ -139,18 +139,18 @@
           "href": "/dns-indicators/en/5-1-bc",
           "status": "complete"
         },{
-          "id": "5-1-d",
-          "title": "Proportion of fathers receiving parental allowance",
-          "description": "",
-          "keywords": "",
-          "href": "/dns-indicators/en/5-1-d",
-          "status": "complete"
-        },{
           "id": "5-1-a",
           "title": "Gender pay gap",
           "description": "",
           "keywords": "",
           "href": "/dns-indicators/en/5-1-a",
+          "status": "complete"
+        },{
+          "id": "5-1-e",
+          "title": "Vocational qualification of women and girls through German development cooperation",
+          "description": "",
+          "keywords": "",
+          "href": "/dns-indicators/en/5-1-e",
           "status": "complete"
         }]
     }
@@ -159,6 +159,13 @@
       "id": "6",
       "title": "Ensure availability and sustainable management of water and sanitation for all",
       "indicators": [{
+          "id": "6-1-a",
+          "title": "Phosphorus in flowing waters",
+          "description": "",
+          "keywords": "",
+          "href": "/dns-indicators/en/6-1-a",
+          "status": "complete"
+        },{
           "id": "6-1-b",
           "title": "Nitrate in groundwater",
           "description": "",
@@ -172,13 +179,6 @@
           "keywords": "",
           "href": "/dns-indicators/en/6-2-ab",
           "status": "complete"
-        },{
-          "id": "6-1-a",
-          "title": "Phosphorus in flowing waters",
-          "description": "",
-          "keywords": "",
-          "href": "/dns-indicators/en/6-1-a",
-          "status": "complete"
         }]
     }
   },{
@@ -186,11 +186,11 @@
       "id": "7",
       "title": "Ensure access to affordable, reliable, sustainable and modern energy for all",
       "indicators": [{
-          "id": "7-2-b",
-          "title": "Share of electricity from renewable sources in gross electricity consumption",
+          "id": "7-2-a",
+          "title": "Share of renewable energies in gross final energy consumption",
           "description": "",
           "keywords": "",
-          "href": "/dns-indicators/en/7-2-b",
+          "href": "/dns-indicators/en/7-2-a",
           "status": "complete"
         },{
           "id": "7-1-ab",
@@ -200,11 +200,11 @@
           "href": "/dns-indicators/en/7-1-ab",
           "status": "complete"
         },{
-          "id": "7-2-a",
-          "title": "Share of renewable energies in gross final energy consumption",
+          "id": "7-2-b",
+          "title": "Share of electricity from renewable sources in gross electricity consumption",
           "description": "",
           "keywords": "",
-          "href": "/dns-indicators/en/7-2-a",
+          "href": "/dns-indicators/en/7-2-b",
           "status": "complete"
         }]
     }
@@ -213,6 +213,20 @@
       "id": "8",
       "title": "Promote sustained, inclusive and sustainable economic growth, full and productive employment and decent work for all",
       "indicators": [{
+          "id": "8-6-a",
+          "title": "Members of the Textiles Partnership",
+          "description": "",
+          "keywords": "",
+          "href": "/dns-indicators/en/8-6-a",
+          "status": "complete"
+        },{
+          "id": "8-4-a",
+          "title": "Gross domestic product per capita",
+          "description": "",
+          "keywords": "",
+          "href": "/dns-indicators/en/8-4-a",
+          "status": "complete"
+        },{
           "id": "8-2-ab",
           "title": "Government deficit, structural deficit",
           "description": "",
@@ -227,25 +241,11 @@
           "href": "/dns-indicators/en/8-5-ab",
           "status": "complete"
         },{
-          "id": "8-1-a",
-          "title": "Raw material input productivity",
-          "description": "",
-          "keywords": "",
-          "href": "/dns-indicators/en/8-1-a",
-          "status": "complete"
-        },{
           "id": "8-3-a",
           "title": "Gross fixed capital formation in relation to GDP",
           "description": "",
           "keywords": "",
           "href": "/dns-indicators/en/8-3-a",
-          "status": "complete"
-        },{
-          "id": "8-4-a",
-          "title": "Gross domestic product per capita",
-          "description": "",
-          "keywords": "",
-          "href": "/dns-indicators/en/8-4-a",
           "status": "complete"
         },{
           "id": "8-2-c",
@@ -255,11 +255,11 @@
           "href": "/dns-indicators/en/8-2-c",
           "status": "complete"
         },{
-          "id": "8-6-a",
-          "title": "Members of the Textiles Partnership",
+          "id": "8-1-a",
+          "title": "Raw material input productivity",
           "description": "",
           "keywords": "",
-          "href": "/dns-indicators/en/8-6-a",
+          "href": "/dns-indicators/en/8-1-a",
           "status": "complete"
         }]
     }
@@ -268,18 +268,18 @@
       "id": "9",
       "title": "Build resilient infrastructure, promote inclusive and sustainable industrialization and foster innovation",
       "indicators": [{
-          "id": "9-1-b",
-          "title": "Rollout of broadband",
-          "description": "",
-          "keywords": "",
-          "href": "/dns-indicators/en/9-1-b",
-          "status": "complete"
-        },{
           "id": "9-1-a",
           "title": "Private and public expenditure on research and development",
           "description": "",
           "keywords": "",
           "href": "/dns-indicators/en/9-1-a",
+          "status": "complete"
+        },{
+          "id": "9-1-b",
+          "title": "Rollout of broadband",
+          "description": "",
+          "keywords": "",
+          "href": "/dns-indicators/en/9-1-b",
           "status": "complete"
         }]
     }
@@ -308,11 +308,11 @@
       "id": "11",
       "title": "Make cities and human settlements inclusive, safe, resilient and sustainable",
       "indicators": [{
-          "id": "11-1-c",
-          "title": "Density of settlements",
+          "id": "11-1-b",
+          "title": "Loss of open space area",
           "description": "",
           "keywords": "",
-          "href": "/dns-indicators/en/11-1-c",
+          "href": "/dns-indicators/en/11-1-b",
           "status": "complete"
         },{
           "id": "11-2-c",
@@ -320,6 +320,27 @@
           "description": "",
           "keywords": "",
           "href": "/dns-indicators/en/11-2-c",
+          "status": "complete"
+        },{
+          "id": "11-4-a",
+          "title": "Number of objects in the German Digital Library",
+          "description": "",
+          "keywords": "",
+          "href": "/dns-indicators/en/11-4-a",
+          "status": "complete"
+        },{
+          "id": "11-1-c",
+          "title": "Density of settlements",
+          "description": "",
+          "keywords": "",
+          "href": "/dns-indicators/en/11-1-c",
+          "status": "complete"
+        },{
+          "id": "11-2-a",
+          "title": "Final energy consumption in goods transport",
+          "description": "",
+          "keywords": "",
+          "href": "/dns-indicators/en/11-2-a",
           "status": "complete"
         },{
           "id": "11-1-a",
@@ -342,27 +363,6 @@
           "keywords": "",
           "href": "/dns-indicators/en/11-3-a",
           "status": "complete"
-        },{
-          "id": "11-1-b",
-          "title": "Loss of open space area",
-          "description": "",
-          "keywords": "",
-          "href": "/dns-indicators/en/11-1-b",
-          "status": "complete"
-        },{
-          "id": "11-2-a",
-          "title": "Final energy consumption in goods transport",
-          "description": "",
-          "keywords": "",
-          "href": "/dns-indicators/en/11-2-a",
-          "status": "complete"
-        },{
-          "id": "11-4-a",
-          "title": "Number of objects in the German Digital Library",
-          "description": "",
-          "keywords": "",
-          "href": "/dns-indicators/en/11-4-a",
-          "status": "complete"
         }]
     }
   },{
@@ -370,6 +370,20 @@
       "id": "12",
       "title": "Ensure sustainable consumption and production patterns",
       "indicators": [{
+          "id": "12-1-b",
+          "title": "Global environmental impact by private household consumption",
+          "description": "",
+          "keywords": "",
+          "href": "/dns-indicators/en/12-1-b",
+          "status": "complete"
+        },{
+          "id": "12-3-ab",
+          "title": "Sustainable procurement",
+          "description": "",
+          "keywords": "",
+          "href": "/dns-indicators/en/12-3-ab",
+          "status": "complete"
+        },{
           "id": "12-1-a",
           "title": "Market share of products certified by publicly managed eco-labelling schemes",
           "description": "",
@@ -382,20 +396,6 @@
           "description": "",
           "keywords": "",
           "href": "/dns-indicators/en/12-2-a",
-          "status": "complete"
-        },{
-          "id": "12-3-ab",
-          "title": "Sustainable procurement",
-          "description": "",
-          "keywords": "",
-          "href": "/dns-indicators/en/12-3-ab",
-          "status": "complete"
-        },{
-          "id": "12-1-b",
-          "title": "Global environmental impact by private household consumption",
-          "description": "",
-          "keywords": "",
-          "href": "/dns-indicators/en/12-1-b",
           "status": "complete"
         }]
     }
@@ -444,13 +444,6 @@
       "id": "15",
       "title": "Protect, restore and promote sustainable use of terrestrial ecosystems, sustainably manage forests, combat desertification, and halt and reverse land degradation and halt biodiversity loss",
       "indicators": [{
-          "id": "15-3-ab",
-          "title": "Preservation or restoration of forests under REDD+ and investment in international soil protection",
-          "description": "",
-          "keywords": "",
-          "href": "/dns-indicators/en/15-3-ab",
-          "status": "complete"
-        },{
           "id": "15-1-a",
           "title": "Biodiversity and landscape quality",
           "description": "",
@@ -464,6 +457,13 @@
           "keywords": "",
           "href": "/dns-indicators/en/15-2-a",
           "status": "complete"
+        },{
+          "id": "15-3-ab",
+          "title": "Preservation or restoration of forests under REDD+ and investment in international soil protection",
+          "description": "",
+          "keywords": "",
+          "href": "/dns-indicators/en/15-3-ab",
+          "status": "complete"
         }]
     }
   },{
@@ -471,11 +471,11 @@
       "id": "16",
       "title": "Promote peaceful and inclusive societies for sustainable development, provide access to justice for all and build effective, accountable and inclusive institutions at all levels",
       "indicators": [{
-          "id": "16-3-ab",
-          "title": "Corruption Perceptions Index (CPI) in Germany and in partner countries in the German development cooperation",
+          "id": "16-1-a",
+          "title": "Criminal offences",
           "description": "",
           "keywords": "",
-          "href": "/dns-indicators/en/16-3-ab",
+          "href": "/dns-indicators/en/16-1-a",
           "status": "complete"
         },{
           "id": "16-2-a",
@@ -485,11 +485,11 @@
           "href": "/dns-indicators/en/16-2-a",
           "status": "complete"
         },{
-          "id": "16-1-a",
-          "title": "Criminal offences",
+          "id": "16-3-ab",
+          "title": "Corruption Perceptions Index (CPI) in Germany and in partner countries in the German development cooperation",
           "description": "",
           "keywords": "",
-          "href": "/dns-indicators/en/16-1-a",
+          "href": "/dns-indicators/en/16-3-ab",
           "status": "complete"
         }]
     }
@@ -498,11 +498,11 @@
       "id": "17",
       "title": "Strengthen the means of implementation and revitalize the Global Partnership for Sustainable Development",
       "indicators": [{
-          "id": "17-2-a",
-          "title": "Number of students and researchers from developing countries and LDC per year<br><br>",
+          "id": "17-3-a",
+          "title": "Imports from least developed countries",
           "description": "",
           "keywords": "",
-          "href": "/dns-indicators/en/17-2-a",
+          "href": "/dns-indicators/en/17-3-a",
           "status": "complete"
         },{
           "id": "17-1-a",
@@ -512,11 +512,11 @@
           "href": "/dns-indicators/en/17-1-a",
           "status": "complete"
         },{
-          "id": "17-3-a",
-          "title": "Imports from least developed countries",
+          "id": "17-2-a",
+          "title": "Number of students and researchers from developing countries and LDC per year<br><br>",
           "description": "",
           "keywords": "",
-          "href": "/dns-indicators/en/17-3-a",
+          "href": "/dns-indicators/en/17-2-a",
           "status": "complete"
         }]
     }
