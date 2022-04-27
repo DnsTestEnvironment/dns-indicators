@@ -59,12 +59,12 @@ GEM
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     mercenary (0.3.6)
-    nokogiri (1.13.3-x86_64-linux)
+    nokogiri (1.13.4-x86_64-linux)
       racc (~> 1.4)
     parallel (1.22.1)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
-    public_suffix (4.0.6)
+    public_suffix (4.0.7)
     racc (1.6.0)
     rainbow (3.1.1)
     rb-fsevent (0.11.1)
@@ -94,4 +94,4 @@ DEPENDENCIES
   jekyll-remote-theme
 
 BUNDLED WITH
-   2.3.11
+   2.3.12
