@@ -455,8 +455,7 @@ var indicatorView = function (model, options) {
                                   {old: 'Criminal offences (total)', new: 'AAA'},
                                   {old: 'Index insgesamt', new: 'AAA'},
                                   {old: 'Index (overall)', new: 'AAA'},
-                                  {old: 'Berechnete jährliche Werte', new: 'AAA'},
-                                  {old: 'EU', new: 'AAA'}];
+                                  {old: 'Berechnete jährliche Werte', new: 'AAA'}];
 
             var sorted = temp.sort(function(a, b) {
               var sub = a.label.substr(0,4);
@@ -511,7 +510,8 @@ var indicatorView = function (model, options) {
               var exc = 0;
               var exceptions = ['Deutschland', 'Germany',
                                 'Insgesamt', 'Total',
-                                'Index insgesamt', 'Index overall'];
+                                'Index insgesamt', 'Index overall',
+                                'EU'];
               for (var j=0; j<exceptions.length; j++){
                 if (label.indexOf(exceptions[j]) != -1){
                   exc += 1;
