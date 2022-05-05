@@ -455,7 +455,8 @@ var indicatorView = function (model, options) {
                                   {old: 'Criminal offences (total)', new: 'AAA'},
                                   {old: 'Index insgesamt', new: 'AAA'},
                                   {old: 'Index (overall)', new: 'AAA'},
-                                  {old: 'Berechnete jährliche Werte', new: 'AAA'}];
+                                  {old: 'Berechnete jährliche Werte', new: 'AAA'},
+                                  {old: 'EU', new: 'AAA'}];
 
             var sorted = temp.sort(function(a, b) {
               var sub = a.label.substr(0,4);
