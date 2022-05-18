@@ -16,11 +16,11 @@
       "id": "2",
       "title": "Den Hunger beenden, Ernährungssicherheit und eine bessere Ernährung erreichen und eine nachhaltige Landwirtschaft fördern",
       "indicators": [{
-          "id": "2-1-a",
-          "title": "Stickstoffüberschuss der Landwirtschaft",
+          "id": "2-1-b",
+          "title": "Ökologischer Landbau",
           "description": "",
           "keywords": "",
-          "href": "/dns-indicators/2-1-a",
+          "href": "/dns-indicators/2-1-b",
           "status": "complete"
         },{
           "id": "2-2-a",
@@ -30,11 +30,11 @@
           "href": "/dns-indicators/2-2-a",
           "status": "complete"
         },{
-          "id": "2-1-b",
-          "title": "Ökologischer Landbau",
+          "id": "2-1-a",
+          "title": "Stickstoffüberschuss der Landwirtschaft",
           "description": "",
           "keywords": "",
-          "href": "/dns-indicators/2-1-b",
+          "href": "/dns-indicators/2-1-a",
           "status": "complete"
         }]
     }
@@ -50,32 +50,11 @@
           "href": "/dns-indicators/3-3-a",
           "status": "complete"
         },{
-          "id": "3-1-e",
-          "title": "Adipositasquote von Kindern und Jugendlichen",
+          "id": "3-2-a",
+          "title": "Emissionen von Luftschadstoffen",
           "description": "",
           "keywords": "",
-          "href": "/dns-indicators/3-1-e",
-          "status": "complete"
-        },{
-          "id": "3-1-cd",
-          "title": "Raucherquote von Jugendlichen und Erwachsenen",
-          "description": "",
-          "keywords": "",
-          "href": "/dns-indicators/3-1-cd",
-          "status": "complete"
-        },{
-          "id": "3-1-ab",
-          "title": "Vorzeitige Sterblichkeit",
-          "description": "",
-          "keywords": "",
-          "href": "/dns-indicators/3-1-ab",
-          "status": "complete"
-        },{
-          "id": "3-1-f",
-          "title": "Adipositasquote von Erwachsenen",
-          "description": "",
-          "keywords": "",
-          "href": "/dns-indicators/3-1-f",
+          "href": "/dns-indicators/3-2-a",
           "status": "complete"
         },{
           "id": "3-2-b",
@@ -85,11 +64,32 @@
           "href": "/dns-indicators/3-2-b",
           "status": "complete"
         },{
-          "id": "3-2-a",
-          "title": "Emissionen von Luftschadstoffen",
+          "id": "3-1-f",
+          "title": "Adipositasquote von Erwachsenen",
           "description": "",
           "keywords": "",
-          "href": "/dns-indicators/3-2-a",
+          "href": "/dns-indicators/3-1-f",
+          "status": "complete"
+        },{
+          "id": "3-1-e",
+          "title": "Adipositasquote von Kindern und Jugendlichen",
+          "description": "",
+          "keywords": "",
+          "href": "/dns-indicators/3-1-e",
+          "status": "complete"
+        },{
+          "id": "3-1-ab",
+          "title": "Vorzeitige Sterblichkeit",
+          "description": "",
+          "keywords": "",
+          "href": "/dns-indicators/3-1-ab",
+          "status": "complete"
+        },{
+          "id": "3-1-cd",
+          "title": "Raucherquote von Jugendlichen und Erwachsenen",
+          "description": "",
+          "keywords": "",
+          "href": "/dns-indicators/3-1-cd",
           "status": "complete"
         }]
     }
@@ -125,20 +125,6 @@
       "id": "5",
       "title": "Geschlechtergleichstellung erreichen und alle Frauen und Mädchen zur Selbstbestimmung befähigen",
       "indicators": [{
-          "id": "5-1-a",
-          "title": "Verdienstabstand zwischen Frauen und Männern",
-          "description": "",
-          "keywords": "",
-          "href": "/dns-indicators/5-1-a",
-          "status": "complete"
-        },{
-          "id": "5-1-e",
-          "title": "Berufliche Qualifizierung von Frauen und Mädchen durch deutsche entwicklungspolitische Zusammenarbeit",
-          "description": "",
-          "keywords": "",
-          "href": "/dns-indicators/5-1-e",
-          "status": "complete"
-        },{
           "id": "5-1-bc",
           "title": "Frauen in Führungspositionen in der Wirtschaft sowie im öffentlichen Dienst des Bundes",
           "description": "",
@@ -151,6 +137,20 @@
           "description": "",
           "keywords": "",
           "href": "/dns-indicators/5-1-d",
+          "status": "complete"
+        },{
+          "id": "5-1-e",
+          "title": "Berufliche Qualifizierung von Frauen und Mädchen durch deutsche entwicklungspolitische Zusammenarbeit",
+          "description": "",
+          "keywords": "",
+          "href": "/dns-indicators/5-1-e",
+          "status": "complete"
+        },{
+          "id": "5-1-a",
+          "title": "Verdienstabstand zwischen Frauen und Männern",
+          "description": "",
+          "keywords": "",
+          "href": "/dns-indicators/5-1-a",
           "status": "complete"
         }]
     }
@@ -186,13 +186,6 @@
       "id": "7",
       "title": "Zugang zu bezahlbarer, verlässlicher, nachhaltiger und moderner Energie für alle sichern",
       "indicators": [{
-          "id": "7-1-ab",
-          "title": "Endenergieproduktivität und Primärenergieverbrauch",
-          "description": "",
-          "keywords": "",
-          "href": "/dns-indicators/7-1-ab",
-          "status": "complete"
-        },{
           "id": "7-2-b",
           "title": "Anteil des Stroms aus erneuerbaren Energiequellen am Bruttostromverbrauch",
           "description": "",
@@ -206,6 +199,13 @@
           "keywords": "",
           "href": "/dns-indicators/7-2-a",
           "status": "complete"
+        },{
+          "id": "7-1-ab",
+          "title": "Endenergieproduktivität und Primärenergieverbrauch",
+          "description": "",
+          "keywords": "",
+          "href": "/dns-indicators/7-1-ab",
+          "status": "complete"
         }]
     }
   },{
@@ -213,6 +213,13 @@
       "id": "8",
       "title": "Dauerhaftes, inklusives und nachhaltiges Wirtschaftswachstum, produktive Vollbeschäftigung und menschenwürdige Arbeit für alle fördern",
       "indicators": [{
+          "id": "8-1-a",
+          "title": "Gesamtrohstoffproduktivität",
+          "description": "",
+          "keywords": "",
+          "href": "/dns-indicators/8-1-a",
+          "status": "complete"
+        },{
           "id": "8-2-c",
           "title": "Schuldenstand",
           "description": "",
@@ -220,11 +227,11 @@
           "href": "/dns-indicators/8-2-c",
           "status": "complete"
         },{
-          "id": "8-2-ab",
-          "title": "Staatsdefizit und strukturelles Defizit",
+          "id": "8-6-a",
+          "title": "Mitglieder des Textilbündnisses",
           "description": "",
           "keywords": "",
-          "href": "/dns-indicators/8-2-ab",
+          "href": "/dns-indicators/8-6-a",
           "status": "complete"
         },{
           "id": "8-3-a",
@@ -234,18 +241,18 @@
           "href": "/dns-indicators/8-3-a",
           "status": "complete"
         },{
+          "id": "8-2-ab",
+          "title": "Staatsdefizit und strukturelles Defizit",
+          "description": "",
+          "keywords": "",
+          "href": "/dns-indicators/8-2-ab",
+          "status": "complete"
+        },{
           "id": "8-4-a",
           "title": "Bruttoinlandsprodukt je Einwohner",
           "description": "",
           "keywords": "",
           "href": "/dns-indicators/8-4-a",
-          "status": "complete"
-        },{
-          "id": "8-1-a",
-          "title": "Gesamtrohstoffproduktivität",
-          "description": "",
-          "keywords": "",
-          "href": "/dns-indicators/8-1-a",
           "status": "complete"
         },{
           "id": "8-5-ab",
@@ -254,13 +261,6 @@
           "keywords": "",
           "href": "/dns-indicators/8-5-ab",
           "status": "complete"
-        },{
-          "id": "8-6-a",
-          "title": "Mitglieder des Textilbündnisses",
-          "description": "",
-          "keywords": "",
-          "href": "/dns-indicators/8-6-a",
-          "status": "complete"
         }]
     }
   },{
@@ -268,18 +268,18 @@
       "id": "9",
       "title": "Eine widerstandsfähige Infrastruktur aufbauen, inklusive und nachhaltige Industrialisierung fördern und Innovationen unterstützen",
       "indicators": [{
-          "id": "9-1-b",
-          "title": "Breitbandausbau",
-          "description": "",
-          "keywords": "",
-          "href": "/dns-indicators/9-1-b",
-          "status": "complete"
-        },{
           "id": "9-1-a",
           "title": "Private und öffentliche Ausgaben für Forschung und Entwicklung",
           "description": "",
           "keywords": "",
           "href": "/dns-indicators/9-1-a",
+          "status": "complete"
+        },{
+          "id": "9-1-b",
+          "title": "Breitbandausbau",
+          "description": "",
+          "keywords": "",
+          "href": "/dns-indicators/9-1-b",
           "status": "complete"
         }]
     }
@@ -288,18 +288,18 @@
       "id": "10",
       "title": "Ungleichheit in und zwischen Ländern verringern",
       "indicators": [{
-          "id": "10-2-a",
-          "title": "Gini-Koeffizient des Einkommens nach Sozialtransfers",
-          "description": "",
-          "keywords": "",
-          "href": "/dns-indicators/10-2-a",
-          "status": "complete"
-        },{
           "id": "10-1-a",
           "title": "Ausländische Schulabsolventinnen und Schulabsolventen",
           "description": "",
           "keywords": "",
           "href": "/dns-indicators/10-1-a",
+          "status": "complete"
+        },{
+          "id": "10-2-a",
+          "title": "Gini-Koeffizient des Einkommens nach Sozialtransfers",
+          "description": "",
+          "keywords": "",
+          "href": "/dns-indicators/10-2-a",
           "status": "complete"
         }]
     }
@@ -308,6 +308,20 @@
       "id": "11",
       "title": "Städte und Siedlungen inklusiv, sicher, widerstandsfähig und nachhaltig gestalten",
       "indicators": [{
+          "id": "11-1-b",
+          "title": "Freiraumverlust",
+          "description": "",
+          "keywords": "",
+          "href": "/dns-indicators/11-1-b",
+          "status": "complete"
+        },{
+          "id": "11-4-a",
+          "title": "Zahl der Objekte in der Deutschen Digitalen Bibliothek",
+          "description": "",
+          "keywords": "",
+          "href": "/dns-indicators/11-4-a",
+          "status": "complete"
+        },{
           "id": "11-1-a",
           "title": "Anstieg der Siedlungs- und Verkehrsfläche",
           "description": "",
@@ -322,25 +336,11 @@
           "href": "/dns-indicators/11-2-a",
           "status": "complete"
         },{
-          "id": "11-2-c",
-          "title": "Erreichbarkeit von Mittel- und Oberzentren mit öffentlichen Verkehrsmitteln<br><br>",
-          "description": "",
-          "keywords": "",
-          "href": "/dns-indicators/11-2-c",
-          "status": "complete"
-        },{
           "id": "11-1-c",
           "title": "Siedlungsdichte",
           "description": "",
           "keywords": "",
           "href": "/dns-indicators/11-1-c",
-          "status": "complete"
-        },{
-          "id": "11-3-a",
-          "title": "Überlastung durch Wohnkosten",
-          "description": "",
-          "keywords": "",
-          "href": "/dns-indicators/11-3-a",
           "status": "complete"
         },{
           "id": "11-2-b",
@@ -350,18 +350,18 @@
           "href": "/dns-indicators/11-2-b",
           "status": "complete"
         },{
-          "id": "11-1-b",
-          "title": "Freiraumverlust",
+          "id": "11-3-a",
+          "title": "Überlastung durch Wohnkosten",
           "description": "",
           "keywords": "",
-          "href": "/dns-indicators/11-1-b",
+          "href": "/dns-indicators/11-3-a",
           "status": "complete"
         },{
-          "id": "11-4-a",
-          "title": "Zahl der Objekte in der Deutschen Digitalen Bibliothek",
+          "id": "11-2-c",
+          "title": "Erreichbarkeit von Mittel- und Oberzentren mit öffentlichen Verkehrsmitteln<br><br>",
           "description": "",
           "keywords": "",
-          "href": "/dns-indicators/11-4-a",
+          "href": "/dns-indicators/11-2-c",
           "status": "complete"
         }]
     }
@@ -370,18 +370,18 @@
       "id": "12",
       "title": "Nachhaltige Konsum- und Produktionsmuster sicherstellen",
       "indicators": [{
-          "id": "12-1-b",
-          "title": "Globale Umweltinanspruchnahme durch den Konsum privater Haushalte",
-          "description": "",
-          "keywords": "",
-          "href": "/dns-indicators/12-1-b",
-          "status": "complete"
-        },{
           "id": "12-1-a",
           "title": "Marktanteil von Produkten mit staatlichen Umweltzeichen",
           "description": "",
           "keywords": "",
           "href": "/dns-indicators/12-1-a",
+          "status": "complete"
+        },{
+          "id": "12-2-a",
+          "title": "Umweltmanagement EMAS",
+          "description": "",
+          "keywords": "",
+          "href": "/dns-indicators/12-2-a",
           "status": "complete"
         },{
           "id": "12-3-ab",
@@ -391,11 +391,11 @@
           "href": "/dns-indicators/12-3-ab",
           "status": "complete"
         },{
-          "id": "12-2-a",
-          "title": "Umweltmanagement EMAS",
+          "id": "12-1-b",
+          "title": "Globale Umweltinanspruchnahme durch den Konsum privater Haushalte",
           "description": "",
           "keywords": "",
-          "href": "/dns-indicators/12-2-a",
+          "href": "/dns-indicators/12-1-b",
           "status": "complete"
         }]
     }
@@ -444,6 +444,13 @@
       "id": "15",
       "title": "Landökosysteme schützen, wiederherstellen und ihre nachhaltige Nutzung fördern, Wälder nachhaltig bewirtschaften, Wüstenbildung bekämpfen, Bodendegradation beenden und umkehren und dem Verlust der biologischen Vielfalt ein Ende setzen",
       "indicators": [{
+          "id": "15-1-a",
+          "title": "Artenvielfalt und Landschaftsqualität",
+          "description": "",
+          "keywords": "",
+          "href": "/dns-indicators/15-1-a",
+          "status": "complete"
+        },{
           "id": "15-3-ab",
           "title": "Erhalt bzw. Wiederaufbau von Wäldern unter REDD+ sowie internationaler Bodenschutz",
           "description": "",
@@ -457,13 +464,6 @@
           "keywords": "",
           "href": "/dns-indicators/15-2-a",
           "status": "complete"
-        },{
-          "id": "15-1-a",
-          "title": "Artenvielfalt und Landschaftsqualität",
-          "description": "",
-          "keywords": "",
-          "href": "/dns-indicators/15-1-a",
-          "status": "complete"
         }]
     }
   },{
@@ -471,11 +471,11 @@
       "id": "16",
       "title": "Friedliche und inklusive Gesellschaften für eine nachhaltige Entwicklung fördern, allen Menschen Zugang zur Justiz ermöglichen und leistungsfähige, rechenschaftspflichtige und inklusive Institutionen auf allen Ebenen aufbauen",
       "indicators": [{
-          "id": "16-2-a",
-          "title": "Anzahl der in betroffenen Weltregionen durchgeführten Projekte zur Sicherung, Registrierung und Zerstörung von Kleinwaffen und leichten Waffen durch Deutschland",
+          "id": "16-1-a",
+          "title": "Straftaten",
           "description": "",
           "keywords": "",
-          "href": "/dns-indicators/16-2-a",
+          "href": "/dns-indicators/16-1-a",
           "status": "complete"
         },{
           "id": "16-3-ab",
@@ -485,11 +485,11 @@
           "href": "/dns-indicators/16-3-ab",
           "status": "complete"
         },{
-          "id": "16-1-a",
-          "title": "Straftaten",
+          "id": "16-2-a",
+          "title": "Anzahl der in betroffenen Weltregionen durchgeführten Projekte zur Sicherung, Registrierung und Zerstörung von Kleinwaffen und leichten Waffen durch Deutschland",
           "description": "",
           "keywords": "",
-          "href": "/dns-indicators/16-1-a",
+          "href": "/dns-indicators/16-2-a",
           "status": "complete"
         }]
     }
@@ -498,18 +498,18 @@
       "id": "17",
       "title": "Umsetzungsmittel stärken und die Globale Partnerschaft für nachhaltige Entwicklung mit neuem Leben erfüllen",
       "indicators": [{
-          "id": "17-1-a",
-          "title": "Anteil öffentlicher Entwicklungsausgaben am Bruttonationaleinkommen<br><br>",
-          "description": "",
-          "keywords": "",
-          "href": "/dns-indicators/17-1-a",
-          "status": "complete"
-        },{
           "id": "17-2-a",
           "title": "Anzahl der Studierenden und Forschenden aus Entwicklungsländern sowie LDCs pro Jahr<br><br>",
           "description": "",
           "keywords": "",
           "href": "/dns-indicators/17-2-a",
+          "status": "complete"
+        },{
+          "id": "17-1-a",
+          "title": "Anteil öffentlicher Entwicklungsausgaben am Bruttonationaleinkommen<br><br>",
+          "description": "",
+          "keywords": "",
+          "href": "/dns-indicators/17-1-a",
           "status": "complete"
         },{
           "id": "17-3-a",
