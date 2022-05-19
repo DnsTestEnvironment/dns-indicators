@@ -1447,7 +1447,7 @@ var indicatorDataStore = function(dataUrl) {
                     translations.t('a) time series') + ', ' + translations.t('nh3'),//3.2.a
                     translations.t('a) time series') + ', ' + translations.t('nmvoc'),//3.2.a
                     translations.t('a) time series') + ', ' + translations.t('pm2.5'),//3.2.a
-                    translations.t('b) target (max)' + ', ' + translations.t('air pollutants overall'),//3.2.a
+                    translations.t('b) target (max)') + ', ' + translations.t('air pollutants overall'),//3.2.a
                     translations.t('a) time series') + ', ' + translations.t('a) sub-index forests'),//15.1.a
                     translations.t('a) time series') + ', ' + translations.t('c) sub-index farmland'),//15.1.a
                     translations.t('a) time series') + ', ' + translations.t('b) sub-index settlements'),//15.1.a
