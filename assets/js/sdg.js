@@ -1328,7 +1328,7 @@ var indicatorDataStore = function(dataUrl) {
       },
       //---#11 setTargetPointstyle---start-----------------------------------------------------------------------------------------------
       getPointStyle = function (datasetIndex, combinationDescription) {
-        dashedLines = ['Ziel, Sanitärvers','Ziel, Trinkwasser',
+      dashedLines = ['Ziel, Sanitärvers','Ziel, Trinkwasser',
                         'Target, (a) Acces', 'Target, (b) Acces', 'Target, Access to',
                         'Ziel, Finanzierun','Ziel, Strukturell',
                         'Target, Financial','Target, Structura']
@@ -1350,17 +1350,14 @@ var indicatorDataStore = function(dataUrl) {
 
         if (String(combinationDescription).substr(0,4) == 'Ziel' || String(combinationDescription).substr(0,6) == 'Target'){
           if (data.length == 1){
-            //console.log('a',combinationDescription, datasetIndexMod)
             return true;
           }
           else{
-            //console.log('b',combinationDescription, datasetIndexMod)
             return false;
           }
           //return true;//'rgba(0, 0, 0, 0.0)';
         }
         else{
-          //console.log('c',combinationDescription, datasetIndexMod)
           return true;//'#' + getColor(datasetIndexMod);
         }
       },
@@ -1450,6 +1447,7 @@ var indicatorDataStore = function(dataUrl) {
                     translations.t('a) time series') + ', ' + translations.t('nh3'),//3.2.a
                     translations.t('a) time series') + ', ' + translations.t('nmvoc'),//3.2.a
                     translations.t('a) time series') + ', ' + translations.t('pm2.5'),//3.2.a
+                    translations.t('b) target (max)' + ', ' + translations.t('air pollutants overall'),//3.2.a
                     translations.t('a) time series') + ', ' + translations.t('a) sub-index forests'),//15.1.a
                     translations.t('a) time series') + ', ' + translations.t('c) sub-index farmland'),//15.1.a
                     translations.t('a) time series') + ', ' + translations.t('b) sub-index settlements'),//15.1.a
@@ -1819,7 +1817,6 @@ var indicatorDataStore = function(dataUrl) {
           minimumFieldSelections[fieldItem.field] = [];
           //--#21 allowMultipleStartValues---stop------------------------------
           _.each(fieldItem.values, function(fieldValue) {
-            //console.log('C',fieldValue);
             if (_.contains(valuesToLookFor, fieldValue.value)) {
               //--#21 allowMultipleStartValues---start-----------------------------
               //minimumFieldSelections[fieldItem.field] = fieldValue.value;
