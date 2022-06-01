@@ -154,7 +154,7 @@ var indicatorView = function (model, options) {
       //view_obj._mapView.initialise(args.geoData, args.geoCodeRegEx);
       //view_obj._mapView.initialise(args.geoData, args.geoCodeRegEx, goalNr);
       //---#1 GoalDependendMapColor---stop---------------------------
-      console.log("Args: ", args);
+
       view_obj._mapView.initialise(args.geoData, args.geoCodeRegEx, goalNr, args.title, args.measurementUnit, args.mapTitle); //---#2.2 footerUnitInMapLegend  , args.mapTitle
       //---#2 TimeSeriesNameDisplayedInMaps---stop------------------
 
