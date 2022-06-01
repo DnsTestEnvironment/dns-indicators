@@ -268,7 +268,7 @@ opensdg.autotrack = function(preset, category, action, label) {
     },
 
     // Build content for a tooltip.
-   getTooltipContent(feature) {
+   getTooltipContent: function(feature) {
      var tooltipContent = feature.properties.name;
      var tooltipData = this.getData(feature.properties);
      if (tooltipData) {
@@ -2067,7 +2067,7 @@ var indicatorView = function (model, options) {
       //view_obj._mapView.initialise(args.geoData, args.geoCodeRegEx);
       //view_obj._mapView.initialise(args.geoData, args.geoCodeRegEx, goalNr);
       //---#1 GoalDependendMapColor---stop---------------------------
-      console.log("Args: ", args);
+
       view_obj._mapView.initialise(args.geoData, args.geoCodeRegEx, goalNr, args.title, args.measurementUnit, args.mapTitle); //---#2.2 footerUnitInMapLegend  , args.mapTitle
       //---#2 TimeSeriesNameDisplayedInMaps---stop------------------
 
