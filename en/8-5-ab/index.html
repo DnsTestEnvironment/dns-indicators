@@ -151,7 +151,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/dns-indicators/assets/css/default.css?v=20220601134619">
+        <link rel="stylesheet" href="/dns-indicators/assets/css/default.css?v=20220609084259">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -159,7 +159,7 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/dns-indicators/assets/css/custom.css?v=20220601134619"><!-- ShareThis BEGIN --><!-- ShareThis END -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/dns-indicators/assets/css/custom.css?v=20220609084259"><!-- ShareThis BEGIN --><!-- ShareThis END -->
 
     </head>
 <body class="language-en layout-indicator">
@@ -518,8 +518,8 @@ var translations = {
   
 
   <div class="row" id="indicatorData" data-indicatorid='indicator_8-5-ab' data-id="8-5-ab" data-country="Germany"
-  data-charttitle="Employment rate" data-measurementunit="Persons in employment as a percentage of the population in the same age group" data-datasource="Eurostat, Sustainable Development Working Group, Federal Statistical Office" data-copyright="&copy; Federal Statistical Office (Destatis), 2022"
-  data-geographicalarea="Germany" data-footnote="The results from 2020 onwards are only comparable with previous years to a limited extent. Age group 20 - 64 years: Data with low reliability in 2020 and 2021 for Berlin, Bremen, Mecklenburg-Western Pomerania, Saarland, Saxony-Anhalt and Thuringia, and 2020 for Saxony. Age group 60 - 64 years: limited significance for Bremen - men 2010, women 2010 - 2012 and 2015 as well as Saarland - women 2010" data-showdata="true" data-graphtype="line"
+  data-charttitle="Employment rate" data-measurementunit="in&nbsp;%" data-datasource="Federal Statistical Office, Eurostat, Sustainable Development Working Group" data-copyright="&copy; Federal Statistical Office (Destatis), 2022"
+  data-geographicalarea="Germany" data-footnote="The results from 2020 onwards are only comparable with previous years to a limited extent. Age group 60 - 64 years: Limited significance for Bremen - men 2010, women 2010 - 2012 and 2015 as well as Saarland - women 2010.   Länder, Age group 60 - 64 years: The data is based on a special evaluation and is not publicly available." data-showdata="true" data-graphtype="line"
   data-geocoderegex="" data-showmap="true" data-startvalues="a) time series|b) target (min)|a) total|female|male|20 - 64 years|60 - 64 years|a) germany (total)" data-maptitle="">
     
     <div id="indicator-sidebar" class="col-md-3">
@@ -639,12 +639,32 @@ data-event-label="Change to Map tab"
           Employment rate
           
             <br>
-            <small>Persons in employment as a percentage of the population in the same age group</small>
+            <small>in&nbsp;%</small>
           
         </h3>
         <div id="chart" class="plot-container">
           
 <canvas></canvas>
+
+  <script>
+    opensdg.chartConfigAlter = function(config) {
+      var overrides = {
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                min: 0.0,
+                max: 100.0
+              }
+            }]
+          }
+        }
+      }
+      // Add these overrides onto the normal config, and return it.
+      $.extend(true, config, overrides);
+      return config;
+    }
+  </script>
 
 
         </div>
@@ -667,7 +687,7 @@ data-event-label="Change to Map tab"
                 <h3 class="chart-title">
                   Employment rate
                   <br>
-                  <small>Persons in employment as a percentage of the population in the same age group</small>
+                  <small>in&nbsp;%</small>
                 </h3>
               </div>
               <div id="map">
@@ -680,7 +700,7 @@ data-event-label="Change to Map tab"
                 
                 
                   
-                    <p>Sources: Eurostat, Sustainable Development Working Group, Federal Statistical Office</p>
+                    <p>Sources: Federal Statistical Office, Eurostat, Sustainable Development Working Group</p>
                   
                 
               </div>
@@ -925,8 +945,8 @@ data-event-label="Change to Sources tab"
                 
 
                 
-                  <a href="https://github.com/DnsTestEnvironment/dns-data/commit/2eccb50a491796322a637675031bba152cd98ec5" target="_blank">
-                    2022-05-05: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
+                  <a href="https://github.com/DnsTestEnvironment/dns-data/commit/495111f3c4cc221e8eb359439f812a076b96b5b7" target="_blank">
+                    2022-06-09: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
                   </a>
                 
 
@@ -969,8 +989,8 @@ data-event-label="Change to Sources tab"
                 
 
                 
-                  <a href="https://github.com/DnsTestEnvironment/dns-data/commit/2eccb50a491796322a637675031bba152cd98ec5" target="_blank">
-                    2022-05-05: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
+                  <a href="https://github.com/DnsTestEnvironment/dns-data/commit/495111f3c4cc221e8eb359439f812a076b96b5b7" target="_blank">
+                    2022-06-09: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
                   </a>
                 
 
@@ -3464,7 +3484,7 @@ data-event-label="Change to Sources tab"
 
             <td colspan="4">
               
-                <p><a href="https://ec.europa.eu/eurostat/home"><img src="https://g205sdgs.github.io/sdg-indicators/public/LogosEn/eurostat.png" alt=" Eurostat" title="Click here to visit the homepage of the organization" style="border: transparent" /></a></p>
+                <p><a href="https://www.destatis.de/EN/Home/_node.html"><img src="https://g205sdgs.github.io/sdg-indicators/public/LogosEn/destatis.png" alt=" Federal Statistical Office" title="Click here to visit the homepage of the organization" style="border: transparent" /></a></p>
 
               
             </td>
@@ -3499,7 +3519,7 @@ data-event-label="Change to Sources tab"
 
             <td colspan="4">
               
-                <p>Eurostat</p>
+                <p>Federal Statistical Office</p>
 
               
             </td>
@@ -3519,26 +3539,6 @@ data-event-label="Change to Sources tab"
       
       <tr>
         
-
-          
-
-            <th scope="row" height="" >Data source</th>
-
-            <td colspan="4">
-              
-                
-                
-                
-                
-
-                
-                  <a href="https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=lfsa_ergan&lang=en" target="_blank">
-                    Employment rates by sex, age and citizenship <span class="visuallyhidden">opens in a new window</span>
-                  </a>
-                
-
-              
-            </td>
 
           
 
@@ -3566,26 +3566,6 @@ data-event-label="Change to Sources tab"
 
           
 
-            <th scope="row" height="" ></th>
-
-            <td colspan="4">
-              
-                
-                
-                
-                
-
-                
-                  <a href="https://ec.europa.eu/eurostat/web/main/data/database" target="_blank">
-                    Eurostat database <span class="visuallyhidden">opens in a new window</span>
-                  </a>
-                
-
-              
-            </td>
-
-          
-
         
       </tr>
       
@@ -3607,26 +3587,6 @@ data-event-label="Change to Sources tab"
       
       <tr>
         
-
-          
-
-            <th scope="row" height="" ></th>
-
-            <td colspan="4">
-              
-                
-                
-                
-                
-
-                
-                  <a href="https://ec.europa.eu/eurostat/databrowser/view/lfsa_pganws/default/table?lang=en" target="_blank">
-                    Population by sex, age, citizenship and labour status <span class="visuallyhidden">opens in a new window</span>
-                  </a>
-                
-
-              
-            </td>
 
           
 
@@ -4123,7 +4083,7 @@ data-event-label="Change to Sources tab"
 
             <td colspan="4">
               
-                <p><a href="https://www.statistikportal.de/de/nachhaltigkeit"><img src="https://g205sdgs.github.io/sdg-indicators/public/LogosEn/vwgdl.png" alt=" Sustainable Development Working Group" title="Click here to visit the homepage of the organization" style="border: transparent" /></a></p>
+                <p><a href="https://ec.europa.eu/eurostat/home"><img src="https://g205sdgs.github.io/sdg-indicators/public/LogosEn/eurostat.png" alt=" Eurostat" title="Click here to visit the homepage of the organization" style="border: transparent" /></a></p>
 
               
             </td>
@@ -4158,7 +4118,7 @@ data-event-label="Change to Sources tab"
 
             <td colspan="4">
               
-                <p>Sustainable Development Working Group</p>
+                <p>Eurostat</p>
 
               
             </td>
@@ -4191,8 +4151,8 @@ data-event-label="Change to Sources tab"
                 
 
                 
-                  <a href="https://www.statistikportal.de/de/nachhaltigkeit" target="_blank">
-                    Sustainable development (only available in German) <span class="visuallyhidden">opens in a new window</span>
+                  <a href="https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=lfsa_ergan&lang=en" target="_blank">
+                    Employment rates by sex, age and citizenship <span class="visuallyhidden">opens in a new window</span>
                   </a>
                 
 
@@ -4742,7 +4702,7 @@ data-event-label="Change to Sources tab"
 
             <td colspan="4">
               
-                <p><a href="https://www.destatis.de/EN/Home/_node.html"><img src="https://g205sdgs.github.io/sdg-indicators/public/LogosEn/destatis.png" alt=" Federal Statistical Office" title="Click here to visit the homepage of the organization" style="border: transparent" /></a></p>
+                <p><a href="https://www.statistikportal.de/de/nachhaltigkeit"><img src="https://g205sdgs.github.io/sdg-indicators/public/LogosEn/vwgdl.png" alt=" Sustainable Development Working Group" title="Click here to visit the homepage of the organization" style="border: transparent" /></a></p>
 
               
             </td>
@@ -4777,7 +4737,7 @@ data-event-label="Change to Sources tab"
 
             <td colspan="4">
               
-                <p>Federal Statistical Office</p>
+                <p>Sustainable Development Working Group</p>
 
               
             </td>
@@ -5014,7 +4974,7 @@ data-event-label="Change to Sources tab"
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
-<script src='/dns-indicators/assets/js/sdg.js?v=20220601134619'></script><script src="/dns-indicators/assets/js/chartColors.js?v=20220601134619"></script><script>
+<script src='/dns-indicators/assets/js/sdg.js?v=20220609084259'></script><script src="/dns-indicators/assets/js/chartColors.js?v=20220609084259"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
