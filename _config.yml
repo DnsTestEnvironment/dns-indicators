@@ -133,7 +133,6 @@ defaults:
 # the base below, completed with: /[language]/[number].png (eg, /fr/6.png).
 goal_image_base: https://g205sdgs.github.io/sdg-indicators/assets/img/goals/dns
 
-
 # Tell Jekyll to use the Remote Theme plugin.
 plugins:
   - jekyll-remote-theme
