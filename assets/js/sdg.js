@@ -1340,7 +1340,7 @@ var indicatorDataStore = function(dataUrl) {
         }
       },
       getRadius = function(datasetIndex, combinationDescription){
-        return getPointStyle(datasetIndex, combinationDescription) == 'circle' ? 5 : getPointStyle(datasetIndex, combinationDescription) == 'rect' ? 10 : 0
+        return getPointStyle(datasetIndex, combinationDescription) == 'circle' ? 5 : getPointStyle(datasetIndex, combinationDescription) == 'rect' ? 8 : 0
       },
       //---#11 setTargetPointstyle---stop-----------------------------------------------------------------------------------------------
 
