@@ -1,27 +1,349 @@
-//
-opensdg.dataRounding = function(value) {
-  if (value == null) {
-    return value
+//---status summary---start------------------------
+.layout-status_summary {
+    .reporting-status-description {
+        margin-bottom: 25px;
+    }
+
+    #main-content {
+        .statuses {
+            strong {
+                font-weight: normal;
+            }
+            > div {
+                display: inline-block;
+                margin-bottom: 5px;
+                margin-right: 10px;
+
+                .status {
+                    @include status;
+                    display: inline-block;
+                    margin-right: 3px;
+                    padding: 2px 5px;
+                    border-radius: 4px;
+
+                    width: 40px;
+                    text-align: center;
+                    font-size: $fontSize;
+
+                    .status-inner {
+                        padding: 0 2px;
+                        border-radius: 5px;
+                    }
+                }
+            }
+        }
+        .value {
+            color: $text-color;
+            font-weight: bold;
+            margin-left: 3px;
+        }
+        .goal-stats {
+            @include preserveOriginalColors;
+            border: 1px solid $color-dark;
+            font-size: 0;
+            margin-top: 10px;
+            & span {
+                display: inline-block;
+                height: 10px;
+                font-weight: bold;
+            }
+        }
+        .divider {
+            height: 15px;
+        }
+        .goal {
+            clear: left;
+            margin-bottom: 4px;
+            padding-bottom: 4px;
+            border-bottom: 10px solid $horizontalRule-color;
+            .total {
+                line-height: 1.2;
+                font-size: $fontSize;
+                width: auto;
+                padding-left: 4px;
+                padding-right: 4px;
+                text-align: center;
+                display: inline-block;
+                margin-bottom: 10px;
+                border-radius: 4px;
+                border: 1px solid $horizontalRule-color;
+                @media screen and (min-width: 520px) {
+                    margin-left: 10px;
+                }
+            }
+        }
+        .frame {
+            width: 115px;
+            float: left;
+            min-height: 1px;
+            > a:focus {
+                outline: 6px $focusOutlineColor solid !important;
+            }
+        }
+        .details {
+            width: calc(100% - 125px);
+            float: left;
+            h2 {
+                margin-top: 0;
+                @media screen and (min-width: 520px) {
+                    display: inline-block;
+                }
+            }
+            h3 {
+                margin-top: 10px;
+                @media screen and (min-width: 520px) {
+                    display: inline-block;
+                }
+                @media only screen and (max-width: 720px) {
+                    margin-top: 3px;
+                }
+                @media only screen and (max-width: 520px) {
+                    margin-bottom: 3px;
+                }
+                line-height: 1.2;
+            }
+        }
+        [data-extra-field] {
+            .details {
+                width: 100%;
+            }
+        }
+        .goal-overall {
+            margin-bottom: 20px;
+
+            .details {
+                width: 100%;
+            }
+        }
+    }
+
+    #main-content .reporting-status-item {
+        margin-bottom: 20px;
+    }
+
+    &.contrast-high {
+        #main-content {
+            .goal-tiles {
+                img {
+                    background-color: black !important;
+                }
+            }
+
+            .goal-stats {
+                border: 1px solid $color-light-highContrast !important;
+            }
+
+            .statuses {
+                strong {
+                    color: $color-light-highContrast;
+                }
+                .value {
+                    color: $color-light-highContrast !important;
+                }
+                .status {
+                    @include statusHighContrast;
+                    border: none !important;
+                    &.notstarted {
+                        border: $status-border-notstarted-highContrast !important;
+                    }
+                }
+            }
+        }
+    }
+}
+//---status summary---stop------------------------
+
+// for goal-by-target layout
+.indicator-card-number {
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  font-weight: bold;
+  padding-bottom: 0px;
+  padding-left: 0px;
+}
+.heading-goal-page {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.range-and-postulate {
+  margin-bottom: 25px;
+  padding-right: 15px;
+}
+
+.postulate {
+  padding-left: 0px;
+  //font-style: italic;
+}
+.indicator-link-goal-page {
+  padding-left: 0px;
+}
+
+// to center the chart-title
+.chart-title {
+  //margin-left: 20px;
+ text-align: center;
+ margin-bottom: 1.0rem;
+}
+
+.chart-subtitle {
+ margin-left: 20px;
+ text-align: center;
+ color: #777
+}
+
+// ---head banner --- start ---
+$goal-colors : #E52B3D #DDA63A #4C9F38 #C42130 #FF3E24 #28BCE1 #FCC30B #A21942 #FD6925 #DD1367 #FD9C27 #BF8B2E #417D46 #0A96D8 #57BE2F #00689C #1F4A6A;
+@for $i from 1 through length($goal-colors) {
+  $c: nth($goal-colors, $i);
+  $dark-c: darken($c, 10%);
+  .goal-#{$i} {
+    &.heading {
+      background-color: white;//$c;
+      border-bottom: 15px solid $c;
+      border-top: 15px solid $c;//$dark-c;
+      padding-top: 0px;
+      padding-bottom: 0px;
+    }
+    &.underline{
+      height: 5px;
+      border-top: 5px solid $dark-c;
+    }
+    &.titles{
+      color: $dark-c;
+      padding-top: 0px;
+      padding-bottom: 0px;
+    }
+    &.goal-indicators {
+      div {
+        span {
+          border-color: $dark-c;
+          color: $dark-c;
+        }
+      }
+    }
   }
-  else {
-    //5 555 --> 5 560; 34,56 --> 34,6; 3,4 --> 3,40; 1 --> 1,00
-    //return value.toPrecision(3)
-
-    ////5 555 --> 5 555,00; 34,56 --> 34,65; 3,4 --> 3,40; 1 --> 1,00
-    //return value.toFixed(2)
-
-    return value
+  .goal-tiles #goal-#{$i} {
+    &:hover {
+      background-color: $c;
+    }
   }
-};
+}
 
-
-opensdg.dataRoundingDp = function(value, dcmplc) {
-  if (value == null) {
-    return value
+body.contrast-high {
+  .goal-banner {
+    background: black;
+    color: white;
+    a {
+      color: yellow;
+    };
+    img {
+        background-color: black !important;
+    }
   }
-  else {
-    return value.toFixed(dcmplc)
-  }
-};
+}
+// ---head banner --- stop ---
 
-//------------------------------------------------
+//---get rid of that colored bar on top-level
+body{
+  background: $backgroundColor;
+  padding-top: 0;
+}
+//---------------------------------------------
+
+
+// --- navigation btns --- start ---------------------------------------------
+@for $i from 1 through length($goal-banner-backgroundColors) {
+ $background-c: nth($goal-banner-backgroundColors, $i);
+ .goal-#{$i} {
+   &.goal-banner {
+     background-color: white;//$background-c;
+     &.goal-banner.contrast-high {
+         background: black;
+         color: yellow;
+         a {
+           color: yellow;
+         }
+     }
+   }
+   &.sup-goal-banner {
+     height: 5px;
+     background-color: lighten($background-c,10%);
+     padding-top: 0px;
+     padding-bottom: 0px;
+   }
+   &.sub-goal-banner {
+     height: 5px;
+     background-color: darken($background-c,10%);
+     padding-top: 0px;
+     padding-bottom: 0px;
+   }
+   &.navigation-btn {
+     background-color: $background-c;
+     color: white;
+     height: 36px;
+     border-color: transparent;
+     margin-bottom: 10px;
+     margin-top: 10px;
+     padding-top: 6px;
+     padding-bottom: 6px;
+   }
+   &.navigation-btn:hover {
+     background-color: darken($background-c,10%);
+   }
+ }
+}
+// --- navigation btns --- stop -------------------------------
+.smaller {
+  font-size: 10px;
+}
+
+// --- making table in status overview responsiveText@media screen and (max-width: 1225px) and (min-width: 1045px) {
+@media screen and (max-width: 1225px) and (min-width: 1045px) {
+  .prio-g{
+		display:none;
+	}
+}
+
+@media screen and (max-width: 1045px) and (min-width: 565px) {
+	.prio-g{
+		display:none;
+	}
+	.prio-f{
+		display:none;
+	}
+}
+
+@media screen and (max-width: 565px) and (min-width: 300px) {
+	.prio-g{
+		display:none;
+	}
+	.prio-f{
+		display:none;
+	}
+	.prio-e{
+		display:none;
+	}
+}
+
+@media screen and (max-width: 300px) {
+	.prio-g{
+		display:none;
+	}
+	.prio-f{
+		display:none;
+	}
+	.prio-e{
+		display:none;
+	}
+	.prio-d{
+		display:none;
+	}
+
+}
+
+// abbreviation on touch screens
+abbr[title]:hover::after,
+abbr[title]:focus::after {
+  content: ': ' attr(title);
+}

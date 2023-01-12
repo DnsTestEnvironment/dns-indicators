@@ -13,9 +13,9 @@ data_dir: data
 environment: staging
 remote_data_prefix: "https://DnsTestEnvironment.github.io/dns-data"
 # URL for the "Edit Data" button on indicators.
-data_edit_url: http://prose.io/#Nachhaltige-Entwicklung-Deutschland/open-sdg-data-starter/edit/develop/data/indicator_[id].csv
+data_edit_url: http://prose.io/#DnsTestEnvironment/dns-data/edit/develop/data/indicator_[id].csv
 # URL for the "Edit Metadata" button on indicators.
-metadata_edit_url: http://prose.io/#Nachhaltige-Entwicklung-Deutschland/open-sdg-data-starter/edit/develop/meta/[id].md
+metadata_edit_url: http://prose.io/#DnsTestEnvironment/dns-data/edit/develop/meta/[id].md
 # permalink: /news/:year/:month/:day/:title.html
 
 # Automatically create indicator pages, goal pages,
@@ -290,7 +290,7 @@ map_options:
     dashArray: 5,5
 
 map_layers:
-  - serviceUrl:  https://DnsTestEnvironment.github.io/dns-indcators/assets/maps/boundaries.geojson
+  - serviceUrl:  https://DnsTestEnvironment.github.io/dns-indicators/assets/maps/boundaries.geojson
     min_zoom: 4.5
     max_zoom: 6.5
     staticBorders: true
