@@ -1,0 +1,195 @@
+<table class="table">
+  {% for indicator_metadata in site.data.schema %}
+    {%- assign metadata_label = indicator_metadata.name | translate_metadata_field -%}
+    {% if indicator_metadata.field.scope == include.scope %}
+      {% if site.hide_empty_metadata %}
+        {% unless (page.indicator[indicator_metadata.name] and page.indicator[indicator_metadata.name] != '') or indicator_metadata.name contains '_item_a' %}
+          {% continue %}
+        {% endunless %}
+      {% endif %}
+
+      {% assign var = 'doShow' %}
+      {% if indicator_metadata.name contains "source_organisation_" or indicator_metadata.name contains "weather" or indicator_metadata.name == "national_indicator_available" or indicator_metadata.name == "national_geographical_coverage" %}
+        {% assign var = 'dontShow' %}
+        {% if indicator_metadata.name contains "short" or indicator_metadata.name contains "_logo" %}
+          {% assign var = 'doShow' %}
+        {% endif %}
+      {% endif %}
+
+
+      {% unless var == 'dontShow' or indicator_metadata.name contains "_url_text" or indicator_metadata.name contains "_link_text" %}
+        {% if indicator_metadata.field.scope != 'content' %}
+          <tr id="everythingElse">
+            <th scope="row" style="text-align: left">{{ metadata_label }} </th>
+            <td>
+              {% if indicator_metadata.name contains "_url" or indicator_metadata.name contains "_link" %}
+                {% assign url_text_name = indicator_metadata.name | replace_first:'_url','_url_text'  %}
+                {% assign url_text_name = url_text_name | replace_first:'_link','_link_text'  %}
+                {% assign url_text = page.indicator[url_text_name] %}
+                {% unless url_text %}
+                  {% assign url_text = 'Link' %}
+                {% endunless %}
+
+                {% if page.indicator[indicator_metadata.name] contains "http" or page.indicator[indicator_metadata.name] contains "mailto" %}
+                  <a href="{{ page.indicator[indicator_metadata.name] }}" target="_blank">
+                    {{ url_text }} <span class="visuallyhidden">{{ page.t.general.opens_new_window }}</span>
+                  </a>
+                {% endif %}
+
+              {% elsif indicator_metadata.field.element == 'multiselect' %}
+                {% for item in page.indicator[indicator_metadata.name] %}
+                  {{ item | t }}{% unless forloop.last %}, {% endunless %}
+                {% endfor %}
+              {% else %}
+                {{ page.indicator[indicator_metadata.name] | markdownify }}
+              {% endif %}
+            </td>
+          </tr>
+        {% else %} <!-- case: content -->
+          <p> {{ page.indicator[indicator_metadata.name] | markdownify }} </p>
+        {% endif %}
+      {% endunless %}
+
+      <!-- weather -->
+      {% if indicator_metadata.name contains "weather_indicator" %}
+        {% unless indicator_metadata.name contains "_year" %}
+          {% unless indicator_metadata.name contains '_target_' %} <!-- leaves only weather_indicator_1_target-->
+            <tr id="indAndtarg">
+              <th scope="row" style="padding-right: 10px; text-align: left"">{{ page.t.metadata_fields[indicator_metadata.name] }} </th>
+              <td colspan="9">
+                {{ page.indicator[indicator_metadata.name] | markdownify }}
+              </td>
+            </tr>
+          {% endunless %}
+        {% endunless %}
+      {% endif %}
+
+      {% if indicator_metadata.name contains "year_a" %}
+        {% assign valid_a = false %}
+        {% assign valid_b = false %}
+        {% assign valid_c = false %}
+        {% assign valid_d = false %}
+        {% for multi_target in (1..8) %}
+          {% assign category_key = indicator_metadata.name | replace: 'year_a', 'target_' | append: multi_target | append: '_category' %}
+          {% assign valdUntil_key = category_key | replace: '_category', '_validUntil' %}
+          {% unless page.indicator[category_key] == 'old' or page.indicator[valdUntil_key] %}
+            {% assign valid_a_key = category_key | replace: '_category', '_item_a_valid' %}
+            {% if page.indicator[valid_a_key] %}
+              {% assign valid_a = page.indicator[valid_a_key] %}
+            {% endif %}
+            {% assign valid_b_key = category_key | replace: '_category', '_item_b_valid' %}
+            {% if page.indicator[valid_b_key] %}
+              {% assign valid_b = page.indicator[valid_b_key] %}
+            {% endif %}
+            {% assign valid_c_key = category_key | replace: '_category', '_item_c_valid' %}
+            {% if page.indicator[valid_c_key] %}
+              {% assign valid_c = page.indicator[valid_c_key] %}
+            {% endif %}
+            {% assign valid_d_key = category_key | replace: '_category', '_item_d_valid' %}
+            {% if page.indicator[valid_d_key] %}
+              {% assign valid_d = page.indicator[valid_d_key] %}
+            {% endif %}
+          {% endunless %}
+        {% endfor %}
+
+        {% assign year_b = indicator_metadata.name | replace: '_a', '_b' %}
+        {% assign year_c = indicator_metadata.name | replace: '_a', '_c' %}
+        {% assign year_d = indicator_metadata.name | replace: '_a', '_d' %}
+        <tr id="years">
+          <th scope="row" style="padding-right: 10px; text-align: left"">{{ page.t.metadata_fields[indicator_metadata.name] }} </th>
+          {% if page.indicator[year_d] and valid_d %}
+            <td align="left" style="margin-bottom: 15px;">
+              <p>{{ page.indicator[year_d] | markdownify }}</p>
+            </td>
+          {% endif %}
+          {% if page.indicator[year_c] and valid_c %}
+            <td align="left" style="margin-bottom: 15px;">
+              <p>{{ page.indicator[year_c] | markdownify }}</p>
+            </td>
+          {% endif %}
+          {% if page.indicator[year_b] and valid_b %}
+            <td align="left" style="margin-bottom: 15px;">
+              <p>{{ page.indicator[year_b] | markdownify }}</p>
+            </td>
+          {% endif %}
+          {% if valid_a %}
+            <td align="left" style="margin-bottom: 15px;">
+              <p>{{ page.indicator[indicator_metadata.name] | markdownify }}</p>
+            </td>
+          {% endif %}
+        </tr>
+      {% elsif indicator_metadata.name contains "_target_1_item_a" %} <!--weather_indicator_1_target_1_item_a-->
+        {% unless indicator_metadata.name contains "item_a_" %}
+          {% assign item_a = '' %}
+          {% assign item_b = '' %}
+          {% assign item_c = '' %}
+          {% assign item_d = '' %}
+
+          {% for target in (1..8) %}
+            {% assign target_valid_key = indicator_metadata.name | replace: '1_item_a', '' | append: target | append: '_category' %} <!--weather_indicator_(1...3)_target_(1...4)_category-->
+            {% assign valdUntil_key = target_valid_key | replace: '_category', '_validUntil' %}
+            {% unless page.indicator[target_valid_key] == 'old' or page.indicator[valdUntil_key] %}
+
+              {% assign target_item_a_key = indicator_metadata.name | replace: '1_item_a', '' | append: target | append: '_item_a' %} <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+              {% assign target_item_a_valid_key = target_item_a_key | append: '_valid' %} <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+              {% assign target_item_a_title_key = target_item_a_key | append: '_title' %} <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              {% if page.indicator[target_item_a_key] != '' and page.indicator[target_item_a_valid_key] %}
+                {% assign item_a = page.indicator[target_item_a_key] %}
+                {% assign title_a =  page.indicator[target_item_a_title_key] %}
+              {% endif %}
+
+              {% assign target_item_b_key = indicator_metadata.name | replace: '1_item_a', '' | append: target | append: '_item_b' %} <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+              {% assign target_item_b_valid_key = target_item_b_key | append: '_valid' %} <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+              {% assign target_item_b_title_key = target_item_b_key | append: '_title' %} <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              {% if page.indicator[target_item_b_key] != '' and page.indicator[target_item_b_valid_key] %}
+                {% assign item_b = page.indicator[target_item_b_key] %}
+                {% assign title_b =  page.indicator[target_item_b_title_key] %}
+              {% endif %}
+
+              {% assign target_item_c_key = indicator_metadata.name | replace: '1_item_a', '' | append: target | append: '_item_c' %} <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+              {% assign target_item_c_valid_key = target_item_c_key | append: '_valid' %} <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+              {% assign target_item_c_title_key = target_item_c_key | append: '_title' %} <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              {% if page.indicator[target_item_c_key] != '' and page.indicator[target_item_c_valid_key] %}
+                {% assign item_c = page.indicator[target_item_c_key] %}
+                {% assign title_c =  page.indicator[target_item_c_title_key] %}
+              {% endif %}
+
+              {% assign target_item_d_key = indicator_metadata.name | replace: '1_item_a', '' | append: target | append: '_item_d' %} <!--weather_indicator_(1...3)_target_(1...4)_item_a-->
+              {% assign target_item_d_valid_key = target_item_d_key | append: '_valid' %} <!--weather_indicator_(1...3)_target_(1...4)_item_a_valid-->
+              {% assign target_item_d_title_key = target_item_d_key | append: '_title' %} <!--weather_indicator_(1...3)_target_(1...4)_item_a_title-->
+              {% if page.indicator[target_item_d_key] != '' and page.indicator[target_item_d_valid_key] %}
+                {% assign item_d = page.indicator[target_item_d_key] %}
+                {% assign title_d =  page.indicator[target_item_d_title_key] %}
+              {% endif %}
+            {% endunless %}
+          {% endfor %}
+          <tr id="items">
+            <th scope="row" style="padding-right: 10px; text-align: left"">{{ page.t.metadata_fields[indicator_metadata.name] }} </th>
+            {% unless item_d == '' %}
+              <td align="left" style="padding-left: 0px;padding-right: 0px;">
+                <a href=" {{ site.baseurl }}{{ baseurl_folder }}/status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/{{ item_d }}.png" title="{{ title_d }}" alt="{{  item_d | markdownify }}" class="responsiveWeather" style="border: transparent"/></a>
+              </td>
+            {% endunless %}
+            {% unless item_c == '' %}
+              <td align="left" style="padding-left: 0px;padding-right: 0px;">
+                <a href=" {{ site.baseurl }}{{ baseurl_folder }}/status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/{{ item_c }}.png" title="{{ title_c }}" alt="{{  item_c | markdownify }}" class="responsiveWeather"  style="border: transparent"/></a>
+              </td>
+            {% endunless %}
+            {% unless item_b == '' %}
+              <td align="left" style="padding-left: 0px;padding-right: 0px;">
+                <a href=" {{ site.baseurl }}{{ baseurl_folder }}/status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/{{ item_b }}.png" title="{{ title_b }}" alt="{{  item_b | markdownify }}" class="responsiveWeather"  style="border: transparent"/></a>
+              </td>
+            {% endunless %}
+            <td align="left" style="padding-left: 0px;padding-right: 0px;">
+              {% if item_a != '' %}
+                <a href=" {{ site.baseurl }}{{ baseurl_folder }}/status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/{{ item_a }}.png" title="{{ title_a }}" alt="{{ item_a | markdownify }}" class="responsiveWeather"  style="border: transparent"/></a>
+              {% else %}
+                <p> {{ page.t.status.no_evaluation_possible }} </p>
+              {% endif %}
+            </td>
+          </tr>
+        {% endunless %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+</table>

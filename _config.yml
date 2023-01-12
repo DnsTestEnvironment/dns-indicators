@@ -1,78 +1,68 @@
-# Jekyll configuration for Open SDG platform
+DnsTestEnvironment.# Welcome to Jekyll!
 #
-# You will need to change all of the capitalized variables below according
-# to your Github setup. For example, if your site and data repositories are:
-# -- https://github.com/my-awesome-github-org/my-awesome-site-repo
-# -- https://github.com/my-awesome-github-org/my-awesome-data-repo
-# Then you would want to make these replacements throughout this file:
-# -- replace "my-github-org" with "my-awesome-github-org"
-# -- replace "open-sdg-site-starter" with "my-awesome-site-repo"
-# -- replace "open-sdg-data-starter" with "my-awesome-data-repo"
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
 
-# Replace this title as needed.
-title: Indikatoren der deutschen Nachhaltigkeitsstrategie
-# Replace the baseurl with the name of this repository.
-baseurl: "/open-sdg-site-starter"
+# Site settings
+title: frontpage.heading
+description: Data Platform Prototype
 url: ""
 data_dir: data
 environment: staging
-# Replace my-github-org and open-sdg-data-starter as needed.
-remotedatabaseurl: "https://dnstestenvironment.github.io/dns-data"
+remote_data_prefix: "https://DnsTestEnvironment.github.io/dns-data"
+# URL for the "Edit Data" button on indicators.
+data_edit_url: http://prose.io/#Nachhaltige-Entwicklung-Deutschland/open-sdg-data-starter/edit/develop/data/indicator_[id].csv
+# URL for the "Edit Metadata" button on indicators.
+metadata_edit_url: http://prose.io/#Nachhaltige-Entwicklung-Deutschland/open-sdg-data-starter/edit/develop/meta/[id].md
+# permalink: /news/:year/:month/:day/:title.html
 
-jekyll_get_json:
-  - data: meta
-    # Replace my-github-org and open-sdg-data-starter as needed.
-    json: 'https://dnstestenvironment.github.io/dns-data/meta/all.json'
-  - data: headlines
-    # Replace my-github-org and open-sdg-data-starter as needed.
-    json: 'https://dnstestenvironment.github.io/dns-data/headline/all.json'
-  - data: schema
-    # Replace my-github-org and open-sdg-data-starter as needed.
-    json: 'https://dnstestenvironment.github.io/dns-data/meta/schema.json'
-  - data: reporting
-    # Replace my-github-org and open-sdg-data-starter as needed.
-    json: 'https://dnstestenvironment.github.io/dns-data/stats/reporting.json'
-  - data: translations
-    #json: 'https://open-sdg.github.io/sdg-translations/translations-0.5.2.json'
-    json: 'https://JustusCas.github.io/sdg-translations/translations.json'
+# Automatically create indicator pages, goal pages,
+# and some other required pages.
+create_indicators:
+  layout: indicator
+create_goals:
+  layout: goal-by-target
+  previous_next_links: false
+
+create_pages: true
+
+frontpage_goals_grid:
+    title: frontpage.heading
+    description: frontpage.instructions
+
 
 analytics:
   ga_prod: ''
 
-# Social media accounts.
-twitter: 'MyTwitterAccount'
-
-# Sticky share buttons (facebook, twitter and email)
-#sharethis_property: '5d279253faeee40012f195e1'
-
-# Replace the email addresses below.
+###################################################################################################
 email_contacts:
-  questions: DNS-Indikatoren@destatis.de
-  suggestions: DNS-Indikatoren@destatis.de
-  functional: DNS-Indikatoren@destatis.de
+  questions: dns-indikatoren@destatis.de
+  suggestions: dns-indikatoren@destatis.de
+  functional: dns-indikatoren@destatis.de
+###################################################################################################
 
-# Github Repo for Data
-# Replace this value as needed.
-repo_name: open-sdg-data-starter
-branch: develop
-# Replace this value as needed.
-org_name: sustainabledevelopment-deutschland
 
 # Build settings
 markdown: kramdown
 
-# Travis Support
-exclude: [vendor, scripts, remotedata]
+exclude:
+  - vendor
+  - scripts
+  - remotedata
+  - Gemfile
+  - Gemfile.lock
+  - README
+  - README.md
+  - LICENSE
+
 
 # International Support
-# Eg name: Australia and adjective: Australian
+# Eg name: Australia and adjective: Australian.
 country:
   name: Germany
   adjective: German
-
-# Optionally uncomment and update the settings below to control the frontpage heading and instructions.
-#frontpage_heading: Australian data for Sustainable Development Goal indicators
-#frontpage_instructions: Click on each goal, or <span id="jump-to-search"><a>search</a></span>, for Australian statistics for Sustainable Development Goal global indicators.
 
 # Pages
 collections:
@@ -87,183 +77,228 @@ collections:
   goals:
     output: true
 
+# The list of languages that are translated. The first one is the default.
+languages:
+  - de
+  - en
+
+logos:
+  - src: assets/img/de/DNS_logo.png
+    alt: DESTATIS - Deutsche Nachhaltikeitsstrategie
+  - language: en
+    src: assets/img/en/DNS_logo.png
+    alt: DESTATIS - German Strategy for Sustainable Development
+
+date_formats:
+  - type: standard
+    language: de
+    format: "%d.%m.%Y"
+  - type: standard
+    language: en
+    format: "%b %d, %Y"
+
+
 # Menu
 menu:
-  # Use these to customise the main navigation.
   - path: /
     translation_key: general.seventeen_goals
-  - path: /status_summary
-    translation_key: menu.status_summary
-  - path: /status
-    translation_key: menu.status
-  - path: /about/
-    translation_key: menu.about_this_site
-  #- path: /navigation/
-    #translation_key: menu.navigation
-  - path: /guidance/
-    translation_key: menu.guidance
-  - path: /facts_agenda/
-    translation_key: menu.facts_agenda
-  #- path: /facts_dns/
-    #translation_key: menu.facts_dns
-  #- path: /facts_sdg/
-  #  translation_key: menu.facts_sdg
-  - path: /publications/
+  - translation_key: menu.status_title
+    dropdown:
+      - path: /status_summary/
+        translation_key: menu.status_summary
+      - path: /status/
+        translation_key: menu.status
+  - translation_key: menu.about
+    dropdown:
+      - path: /about_platform/
+        translation_key: menu.about_this_site
+      - path: /about_guidance/
+        translation_key: menu.guidance
+  - translation_key: menu.facts
+    dropdown:
+      - path: /facts_agenda/
+        translation_key: menu.facts_agenda
+  - path: /facts_publications/
     translation_key: menu.publications
+  - path: menu.pathtosdg
+    translation_key: menu.sdglogo
 
+frontpage_cards:
+    -
+      # This controls the color of the line at the top of the card.
+      rule_color: orange
+      # This sets the title of the card.
+      title: frontpage.download_all
+      # This sets the content of the card. Markdown is supported. Note that all
+      # internal links should be relative to the frontpage. For example, instead
+      # of [link](/path) you should use [link](path).
+      #content: |
+      #  * List item
+      #  * List item with [link](https://example.com)
+      # This displays any file in the `_includes` folder.
+      include: components/download-all-data.html
+      # This controls the text for a call-to-action button.
+      #button_label: My button text
+      # This controls the URL the button links to.
+      #button_link: https://example.com
 
+contrast_type: single
+
+header_language_toggle: links
+header:
+    include: header-default.html
+
+footer_menu:
+  - path: 'mailto:dns-indikatoren@destatis.de' #menu.contactPath
+    translation_key: menu.contact_us
+  - path: menu.twitterPath #https://twitter.com/destatis?lang=de
+    translation_key:  general.twitter
+  # - path: /faq/
+  #   translation_key: menu.faq
+  - path: /imprint/
+    translation_key: menu.imprint
+
+metadata_tabs:
+  - scope: national
+    title: indicator.details
+    description: indicator.dns_metadata_blurb
+  - scope: content
+    title: indicator.contentAndProgress
+    description: ''
+  - scope: history_1
+    title: indicator.history
+    description: indicator.history_blurb
+  - scope: sources
+    title: indicator.sources
+    description: ''
 # Configure the text (or "translation key") to be used on the
 # non-global metadata tab.
 non_global_metadata: indicator.national_metadata
 
-# The list of languages that are translated. The first one is the default.
-languages:
-    - de
-    - en
+search_index_extra_fields:
+  #- indicator_number
+  - national_indicator_available
+  - indicator_name
+  - target_name
+  - target_id
+  - data_keywords
+  - graph_title
 
-# This makes sure that all pages have a language.
-defaults:
-  -
-    scope:
-      path: ""
-    values:
-      language: "de"
+footer_fields:
+  - unit: '%'
+    label: metadata_fields.computation_units
+    value: data.%
+  - unit: number
+    label: metadata_fields.computation_units
+    value: data.number
 
-# Set a base for all goal image URLs. Note that the full goal image path will be
-# the base below, completed with: /[language]/[number].png (eg, /fr/6.png).
-goal_image_base: https://g205sdgs.github.io/sdg-indicators/assets/img/goals/dns
 
-# Tell Jekyll to use the Remote Theme plugin.
+series_toggle: true
+graph_title_from_series: false
+decimal_separator: ','
+thousands_separator: ' '
+#graph_color_headline: '#b8b8b8' #
+graph_color_headline: ['#e5243b', '#dda63a', '#4c9f38', '#c5192d', '#ff3a21', '#26bde2', '#fcc30b', '#a21942', '#fd6925', '#dd1367', '#fd9d24', '#bf8b2e', '#3f7e44', '#0a97d9', '#56c02b', '#00689d', '#19486a']
+useHeadlineColor: false
+no_value_character: ' '
+
+
+hide_empty_metadata: true
+hide_single_unit: true
+
 plugins:
   - jekyll-remote-theme
-  - jekyll-get-json
   - jekyll-open-sdg-plugins
 
-# Tell the Remote Theme plugin to use the Open SDG platform (Jekyll theme).
-remote_theme: open-sdg/open-sdg@0.9.1
 
-# Apply any custom CSS.
-custom_css:
-  - /assets/css/custom.css
+# Use a remote Jekyll theme.
+#remote_theme: brockfanning/open-sdg@alter-data-display-decimal-fix
+remote_theme: open-sdg/open-sdg@2.1.0
+
+goal_image_base: https://g205sdgs.github.io/sdg-indicators/assets/img/goals/dns
+
+accessible_tabs: true
+accessible_charts: true
 
 custom_js:
-  - /assets/js/chartColors.js
+  - /assets/js/custom.js
 
-create_goals:
-  layout: goal-by-target
-
-create_indicators:
-  layout: indicator
-
-# choose the set of colors you want to use in the charts. Set graph_color_set to
-# - 'default' to use the default colors
-# - 'sdg' to use the 17 SDG colors in all charts
-# - 'goal' to use shades of the color of the indicator`s goal
-# - 'custom' to use a set of customised colors. In this case, write the hex-codes of the colors you want to use to the list in 'graph_color_list'. E.g. ['330b06','ca541d',...]
 graph_color_set: 'goal'
-graph_color_list:
-# choose the number of different colors you want to use in the charts
-# - for 'default' the maximal number of colors is 6
-# - for 'sdg' the maximal number of colors is 17
-# - for 'goal' the maximal number of colors is 9
-graph_color_number:
+graph_color_number: 9
 
+disclaimer:
+  phase: beta
 
 # Mapping
 map_options:
+  disaggregation_controls: true
 
-  #tileURL: https://api.mapbox.com/styles/v1/mobosse/cjzmrn62k0ek11cmgea7a1i1h/tiles/256/{z}/{x}/{y}?&access_token={accessToken}
+  # Control the limits on zooming in/out in the map:
+  minZoom: 5
+  maxZoom: 10
+  # If you would like to use tile (background) imagery, use these:
   tileURL: https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png
-  #tileURL: https://c.tile.openstreetmap.de/{z}/{x}/{y}.png
-  #tileURL: http://a.tile.stamen.com/toner/{z}/{x}/{y}.png
-  #tileURL: https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png
-  #tileURL: https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png
-  #tileURL: https://tiles.wmflabs.org/bw-mapnik/${z}/${x}/${y}.png
-  #tileURL: https://{a|b|c}.tile.opentopomap.org/{z}/{x}/{y}.png
-
   tileOptions:
-    id: #mapbox.light
-    #accessToken: pk.eyJ1IjoibW9ib3NzZSIsImEiOiJjanplNTNhMmQwMTFjM21wNHEzazRlejhwIn0.ecHE5G83cklfW5AXYjI_0A
-    accessToken: pk.eyJ1IjoibW9ib3NzZSIsImEiOiJjazU1MGR4b3gwNWNzM2dzeGlkeWdkNmF5In0.7NmEzTzFKQVhdvc0Vvqv5w
-    attribution: <a href="https://www.openstreetmap.org/copyright">&copy; OpenStreetMap</a> contributors |<br class="visible-xs"> <a href="https://www.bkg.bund.de">&copy; GeoBasis-De / BKG 2021</a> |<br class="hidden-lg"> <a href="https://www.destatis.de/DE/Home/_inhalt.html">&copy; Statistisches Bundesamt (Destatis), 2021</a>
-    #opacity: 0.5
-
+    id: mapbox.light
+    accessToken: pk.eyJ1IjoibW9ib3NzZSIsImEiOiJjazU1M2trazQwYnFwM2trYmdwNm9rOWxkIn0.u36w-RJPqoTGmivl_zED1w
+    attribution: <a href="https://www.openstreetmap.org/copyright">&copy; OpenStreetMap</a> contributors |<br class="visible-xs"> <a href="https://www.bkg.bund.de">&copy; GeoBasis-De / BKG 2023</a> |<br class="hidden-lg"> <a href="https://www.destatis.de/DE/Home/_inhalt.html">&copy; Statistisches Bundesamt (Destatis), 2023</a>
   # Control the choropleth color range. See https://gka.github.io/chroma.js/#chroma-brewer
-
+  # 1 map color depending on goal --- start ---
+  #colorRange: ["#F6E8EC", "#E3BAC6", "#D18CA1", "#BE5E7B", "#AB3055", "#A21942", "#821435", "#610F28", "#410A1A", "#20050D"]
   colorRange: [["#FCE9EB", "#F7BDC4", "#F2929D", "#ED6676", "#E83A4F", "#E5243B", "#B71D2F", "#891623", "#5C0E18", "#2E070C"],
-               ["#FCF8EB", "#F7E9C2", "#F2DB9A", "#EDCD72", "#E8BE49", "#E5B735", "#CEA530", "#A08025", "#735C1B", "#453710"],
-               ["#EDF5EB", "#C9E2C3", "#A6CF9C", "#82BC74", "#5EA94C", "#4C9F38", "#3D7F2D", "#2E5F22", "#1E4016", "#0F200B"],
-               ["#F9E8EA", "#EEBAC0", "#E28C96", "#D65E6C", "#CB3042", "#C5192D", "#9E1424", "#760F1B", "#4F0A12", "#270509"],
-               ["#FFEBE9", "#FFC4BC", "#FF9D90", "#FF7564", "#FF4E37", "#FF3A21", "#CC2E1A", "#992314", "#66170D", "#330C07"],
-               ["#E9F8FB", "#BEEBF6", "#93DEF0", "#67D1EA", "#3CC4E5", "#26BDE2", "#1E97B5", "#177188", "#0F4C5A", "#08262D"],
-               ["#FFF9E7", "#FEEDB6", "#FEE185", "#FDD554", "#FCC923", "#FCC30B", "#CA9C09", "#977507", "#654E04", "#322702"],
-               ["#F6E8EC", "#E3BAC6", "#D18CA1", "#BE5E7B", "#AB3055", "#A21942", "#821435", "#610F28", "#410A1A", "#20050D"],
-               ["#FFF0E9", "#FED2BE", "#FEB492", "#FE9666", "#FD783B", "#FD6925", "#CA541E", "#983F16", "#652A0F", "#331507"],
-               ["#FCE7F0", "#F5B8D1", "#EE89B3", "#E75A95", "#E02B76", "#DD1367", "#B10F52", "#850B3E", "#580829", "#2C0415"],
-               ["#FFF5E6", "#FEE2B3", "#FECE80", "#FEBA4D", "#FDA71A", "#FD9D00", "#CA7E00", "#985E00", "#653F00", "#331F00"],
-               ["#FAF5EA", "#EFE0C0", "#E4CC96", "#D9B86C", "#CEA342", "#C9992D", "#A17A24", "#795C1B", "#503D12", "#281F09"],
-               ["#ECF2EC", "#C5D8C7", "#9FBFA2", "#79A57C", "#528B57", "#3F7E44", "#326536", "#264C29", "#19321B", "#0D190E"],
-               ["#E7F5FB", "#B6E0F4", "#85CBEC", "#54B6E4", "#23A1DD", "#0A97D9", "#0879AE", "#065B82", "#043C57", "#021E2B"],
-               ["#EEF9EA", "#CCECBF", "#ABE095", "#89D36B", "#67C640", "#56C02B", "#459A22", "#34731A", "#224D11", "#112609"],
-               ["#E6F0F5", "#B3D2E2", "#80B4CE", "#4D95BA", "#1A77A7", "#00689D", "#00537E", "#003E5E", "#002A3F", "#00151F"],
-               ["#E8EDF0", "#BAC8D2", "#8CA4B5", "#5E7F97", "#305A79", "#19486A", "#143A55", "#0F2B40", "#0A1D2A", "#050E15"]]
+              ["#FCF8EB", "#F7E9C2", "#F2DB9A", "#EDCD72", "#E8BE49", "#E5B735", "#CEA530", "#A08025", "#735C1B", "#453710"],
+              ["#EDF5EB", "#C9E2C3", "#A6CF9C", "#82BC74", "#5EA94C", "#4C9F38", "#3D7F2D", "#2E5F22", "#1E4016", "#0F200B"],
+              ["#F9E8EA", "#EEBAC0", "#E28C96", "#D65E6C", "#CB3042", "#C5192D", "#9E1424", "#760F1B", "#4F0A12", "#270509"],
+              ["#FFEBE9", "#FFC4BC", "#FF9D90", "#FF7564", "#FF4E37", "#FF3A21", "#CC2E1A", "#992314", "#66170D", "#330C07"],
+              ["#E9F8FB", "#BEEBF6", "#93DEF0", "#67D1EA", "#3CC4E5", "#26BDE2", "#1E97B5", "#177188", "#0F4C5A", "#08262D"],
+              ["#FFF9E7", "#FEEDB6", "#FEE185", "#FDD554", "#FCC923", "#FCC30B", "#CA9C09", "#977507", "#654E04", "#322702"],
+              ["#F6E8EC", "#E3BAC6", "#D18CA1", "#BE5E7B", "#AB3055", "#A21942", "#821435", "#610F28", "#410A1A", "#20050D"],
+              ["#FFF0E9", "#FED2BE", "#FEB492", "#FE9666", "#FD783B", "#FD6925", "#CA541E", "#983F16", "#652A0F", "#331507"],
+              ["#FCE7F0", "#F5B8D1", "#EE89B3", "#E75A95", "#E02B76", "#DD1367", "#B10F52", "#850B3E", "#580829", "#2C0415"],
+              ["#FFF5E6", "#FEE2B3", "#FECE80", "#FEBA4D", "#FDA71A", "#FD9D00", "#CA7E00", "#985E00", "#653F00", "#331F00"],
+              ["#FAF5EA", "#EFE0C0", "#E4CC96", "#D9B86C", "#CEA342", "#C9992D", "#A17A24", "#795C1B", "#503D12", "#281F09"],
+              ["#ECF2EC", "#C5D8C7", "#9FBFA2", "#79A57C", "#528B57", "#3F7E44", "#326536", "#264C29", "#19321B", "#0D190E"],
+              ["#E7F5FB", "#B6E0F4", "#85CBEC", "#54B6E4", "#23A1DD", "#0A97D9", "#0879AE", "#065B82", "#043C57", "#021E2B"],
+              ["#EEF9EA", "#CCECBF", "#ABE095", "#89D36B", "#67C640", "#56C02B", "#459A22", "#34731A", "#224D11", "#112609"],
+              ["#E6F0F5", "#B3D2E2", "#80B4CE", "#4D95BA", "#1A77A7", "#00689D", "#00537E", "#003E5E", "#002A3F", "#00151F"],
+              ["#E8EDF0", "#BAC8D2", "#8CA4B5", "#5E7F97", "#305A79", "#19486A", "#143A55", "#0F2B40", "#0A1D2A", "#050E15"]]
+  # --- stop ---
 
   # Set the color for boundaries that have no data.
-  noValueColor:  '#f0f0f0'
+  noValueColor: 'rgba(255,255,255,0.2)'
   # For documentation on the style options below, see here:
   # https://leafletjs.com/reference-1.4.0.html#path-option
   # Set the default style for boundaries in the map:
-  #styleNormal:
-    #weight: 1
-    #opacity: 1
-    #color: #888
-    #fillOpacity: 0.7
+  styleNormal:
+    weight: 1
+    opacity: 1
+    color: '#888'
+    fillOpacity: 0.7
   # Set the style for boundaries that have been selected/highlighted:
-  #styleHighlighted:
-    #weight: 1
-    #opacity: 1
-    #color: #111
-    #fillOpacity: 0.7
+  styleHighlighted:
+    weight: 1
+    opacity: 1
+    color: '#111'
+    fillOpacity: 0.7
   # Set the style for top-level boundaries that are displaying in other layers.
   # Note: This is only applicable when using the "nested zoom" feature (see below).
-  #styleStatic:
-    #weight: 2
-    #opacity: 1
-    #fillOpacity: 0
-    #color: #172d44
-    #dashArray: 5,5
+  styleStatic:
+    weight: 2
+    opacity: 1
+    fillOpacity: 0
+    color: '#172d44'
+    dashArray: 5,5
+
 map_layers:
- #Country
-  #- min_zoom: 0
-    #max_zoom: 5
-
-    #serviceUrl: https://g205sdgs.github.io/sdg-indicators/assets/maps/NUTS_RG_01M_2016_4326_LEVL_0.geojson
-    #nameProperty: NUTS_NAME
-    #idProperty: CNTR_CODE
-    #staticBorders: true
-  #Bundesland
-  - min_zoom: 4.5
-    max_zoom: 7.5
-    #serviceUrl: https://g205sdgs.github.io/sdg-indicators/assets/maps/NUTS_RG_01M_2016_4326_LEVL_1.geojson
-    #nameProperty: NUTS_NAME
-    #idProperty: NUTS_ID
-    #staticBorders: false
-    # 0 serviceUrl: https://g205sdgs.github.io/sdg-indicators/assets/maps/Ländergrenzen_ohne_Seegrenzen.geojson -->ja
-    # 1 serviceUrl: https://g205sdgs.github.io/sdg-indicators/assets/maps/diy_lan.geojson -->ja (genaue Kopie)
-    # 2 serviceUrl:  https://nachhaltige-entwicklung-deutschland.github.io/open-sdg-site-starter/assets/maps/Ländergrenzen_ohne_Seegrenzen.geojson  --> ja
-    # 3 serviceUrl:  https://nachhaltige-entwicklung-deutschland.github.io/open-sdg-site-starter/assets/maps/diy_lan.geojson --> ja
-    # 4 serviceUrl:  https://nachhaltige-entwicklung-deutschland.github.io/open-sdg-site-starter/assets/maps/diy_lan.geojson (mit Koordinaten für HH ersetzt) --> ja
-    # 5 serviceUrl:  https://nachhaltige-entwicklung-deutschland.github.io/open-sdg-site-starter/assets/maps/vg2500.geojson # --> nö
-    serviceUrl:  https://dnstestenvironment.github.io/dns-indicators/assets/maps/diy_lan.geojson #(mit Koordinaten für HH und ersetzt) --> ja
-    nameProperty: GEN
-    idProperty: AGS
+  - serviceUrl:  https://DnsTestEnvironment.github.io/dns-indcators/assets/maps/boundaries.geojson
+    min_zoom: 4.5
+    max_zoom: 6.5
     staticBorders: true
-  - min_zoom: 8
+    subfolder: laender
+    label: indicator.laender
+  - serviceUrl:  https://DnsTestEnvironment.github.io/dns-indicators/assets/maps/boundariesKrs.geojson
+    min_zoom: 7
     max_zoom: 11
-    serviceUrl:  https://dnstestenvironment.github.io/dns-indicators/assets/maps/diy_krs.geojson
-    nameProperty: GEN
-    idProperty: ARS
-    staticBorders: true
-
-
-# link: https://hub.arcgis.com/datasets/b7507e654334481e8e0787f42c9028c1_3
+    staticBorders: false
+    subfolder: kreise
+    label: indicator.counties

@@ -1,6 +1,9 @@
 ---
 title: Welcome
 permalink: /en/
-layout: frontpage
 language: en
+layout: frontpage
 ---
+
+Coming Soon.
+-------------------

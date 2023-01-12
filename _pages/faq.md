@@ -4,31 +4,27 @@ permalink: /faq/
 layout: page
 ---
 
-## How do I suggest new or different data sources?
-If you have feedback on the data sources we have used or have suggestions for new data sources then please email us at <a href="mailto:{{site.email_contacts.questions}}">{{site.email_contacts.questions}}</a>.
+## Wie kann ich neue oder andere Datenquellen vorschlagen?
+Für Feedback zu den von uns verwendeten Datenquellen oder für Vorschläge zu neuen Datenquellen, kontaktieren Sie uns bitte hier: <a href="mailto:{{site.email_contacts.questions}}">{{site.email_contacts.questions}}</a>.
 
-## What does the reporting status mean?
-We have used three different types of reporting status for an indicator, which are also colour coded:
+## Was bedeutet der Berichtsstatus?
+Für jeden Indikator gibt es drei verschiedene Kennzeichnungen zu dessen Berichtsstatus. Diese unterscheiden sich farblich folgendermaßen:
 
-* Reported online (green) – as a minimum the headline national data for this indicator is available on this website but the data might not be fully disaggregated yet. We are continuing to source additional disaggregations.
-* Statistics in progress (amber) – we have found a suitable source of data for this indicator or relevant proxy at national level. We are currently quality assuring the data and preparing it for publication.
-* Exploring data sources (red) – we are still looking for a suitable data source for this indicator.
+* Grün: Daten verfügbar - die wichtigsten nationalen Daten für diesen Indikator sind auf dieser Website verfügbar. Möglicherweise stehen für die Daten noch nicht nach allen gewünschten Auswahlmöglichkeiten vollständig zur Verfügung. Wir versuchen, diese Datenlücke zu schließen.
+* Rot: Datenquellenanalyse - für diesen Indikator wird noch nach einer geeigneten Datenquelle gesucht.
+* Grau: Nicht zutreffend - dieser international relevante Indikator lässt sich nicht sinnvoll für Deutschland berechnen oder ist nur im globalen Kontext zu beantworten.
 
-Where there is additional information about the status of indicator data collection and reporting, this will be displayed at the top of the indicator page.
+Zusätzliche Informationen über den Status der Erhebung und die Berichterstattung eines Indikators finden Sie im oberen Abschnitt auf der Indikatorseite.
 
-## How often will new data be added to this site?
-We will add data as soon as it has been sourced and checked. This includes new data as well as updates to data we have already published. We will continue to collect data from existing sources where possible, in cooperation with topic experts.
+## Was ist Disaggregation?
+Eine Disaggregation dient dazu, einen bestehenden Indikator zur genaueren Betrachtung in weitere Unterkategorien aufzuteilen. Die bekanntesten sind Alter oder Geschlecht. Für jeden Indikator gelten jedoch gesonderte Disaggregationen, die im Indikatornamen oder durch die für den Indikator zuständige internationale Organisation festgelegt sind.
 
-## What are you doing to fill data gaps?
-For some indicators, although we may have data at the national level, our existing data sources don’t always allow us to disaggregate by all main groups.
+## Wie werden Datenlücken geschlossen?
+Sollten für einen Indikator keine Daten vorliegen, werden mögliche Datenquellen gesucht und auf ihre Qualität hin geprüft. Genügt die Qualität unseren Ansprüchen werden die Daten in die SDG-Online Plattform aufgenommen.
 
-This means we need to look for new data sources, link existing ones, or model data.
+Bei einigen Indikatoren liegen zwar Daten auf nationaler Ebene vor, aber die zugrundeliegenden Datenquellen lassen keine Auswahl nach allen geforderten Kategorien zu.
 
-## How accessible is this website?
-Our aim is to make this website as accessible and usable as possible for every user. We are working towards meeting AA level of the [Web Content Accessibility Guidelines (WCAG 2.0)](https://www.gov.uk/service-manual/helping-people-to-use-your-service/understanding-wcag-20).
+In diesen Fällen wird nach neuen Datenquellen gesucht oder es müssen die bestehenden Quellen verknüpft oder auch Daten modelliert werden. Hierzu tragen die jeweils betroffenen Fachbereiche im Statistischen Bundesamt (Destatis) kontinuierlich bei.
 
-## What browsers can I use to view this website?
-Our website works with most of the latest versions of the commonly used browsers. There are some issues with using the site on older versions of browsers eg IE8 and we are working to fix these.
-
-## Can other countries copy this website?
-Yes. This site is built and hosted using 100% free software and services, so other countries and localities can freely and easily reuse our code. Technical guidance on implementing this platform is available [here](https://open-sdg.readthedocs.io). Countries and localities exploring how to report their own SDGs data can also get support from the [Center for Open Data Enterprise (CODE)](http://www.opendataenterprise.org/) through their [SDG National Reporting Initiative](https://www.sdgreporting.org/).
+## Können andere Länder diese Website kopieren?
+Die Website kann von anderen Staaten frei verwendet werden, um eine eigene Online Plattform zu erstellen. Es gelten die Bedingungen für die Nutzung von [GitHub](https://github.com/). Weitere Informationen finden Sie unter [Technische Hinweise](https://g205sdgs.github.io/sdg-indicators/guidance/).

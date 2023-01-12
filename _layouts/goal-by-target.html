@@ -1,115 +1,113 @@
-{%- include multilingual.html -%}
 {% include head.html %}
 {% include header.html %}
-{% assign goal_number = page.sdg_goal %}
-{% assign goal_title_key = goal_number | append: '-title' %}
-{% assign goal_short_key = goal_number | append: '-short' %}
-{% assign goal_title = t.global_goals[goal_title_key] %}
-{% assign goal_short = t.dns_goals[goal_title_key] %}
 
-<div class="heading goal-{{page.sdg_goal}}">
+{% include components/goal/header.html %}
+
+<div class="container">
+  {% include components/goal/breadcrumbs.html %}
+  {% if site.create_goals.previous_next_links %}
+    {% include components/previous-next-links.html previous_label=page.t.goal.previous next_label=page.t.goal.next %}
+  {% endif %}
+</div>
+
+<div id="main-content" class="container goal-indicators goal-{{ page.goal.number }} goal-by-target" role="main">
+
+  {% include components/goal/goal-content.html content=content %}
+
+  {% if page.sdg_goal == '1' %}
+    {% assign next_goal = '2' %}
+    {% assign previous_goal = '17' %}
+  {% elsif page.sdg_goal == '17' %}
+    {% assign next_goal = '1' %}
+    {% assign previous_goal = '16' %}
+  {% else %}
+    {% assign previous_goal = page.sdg_goal | minus: 1 %}
+    {% assign next_goal = page.sdg_goal | plus: 1 %}
+  {% endif %}
+
   <div class="container">
-    <div class="row">
-      <div class="col-xs-4 col-md-3 col-lg-2">
-        <img src="{{ site.goal_image_base }}/{{ current_language }}/{{ goal_number }}.png" alt="{{ goal_short }} - {{ t.general.goal }} {{ goal_number }}" />
-      </div>
-      <div class="col-xs-8 col-md-9 col-lg-10">
-        <h1>
-          <span class="hidden-sm hidden-md hidden-lg titles goal-{{page.sdg_goal}}">{{ t.general.goal }} {{ goal_number }}: {{ goal_short }}</span><span class="hidden-xs titles goal-{{page.sdg_goal}}">{{ goal_title }}</span>
-        </h1>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="underline goal-{{page.sdg_goal}}">
-</div>
-
-<div id="main-content" class="container goal-indicators goal-{{page.sdg_goal}} goal-by-target">
-
-  <!-- <h2 style="margin-top:10px; margin-left: 16px;">
-    <a href="https://dns-dialogfassung.github.io/{{ goal_number }}" style="color: black">  <small>{{ t.general.dialog_target_link_1 }} {{ goal_number}} {{ t.general.dialog_target_link_2}} </small></a>
-  </h2> -->
-
-  {{ content }}
-  {% include components/breadcrumb.html %}
-  {% include components/navigation.html %}
-
-  <div class="visible-md-block visible-lg-block">
-    <div class="col-md-6">
-      <h4>{{ t.general.dns_target }}</h4>
-    </div>
-    <div class="col-md-6">
-      <h4>{{ t.general.indicators }}</h4>
-    </div>
-  </div>
-
-  {% assign goal_indicators = site.data.meta | where: 'sdg_goal', goal_number | sort: 'indicator_sort_order' | group_by: 'target_id' %}
-  {% for group in goal_indicators %}
-    {% assign target_id = group.name %}
-    {% assign target_id_dashes = target_id | replace: ".", "-" %}
-
-    {% assign target_title_key = target_id | append: '-title' %}
-    {% assign target_title_key_dashes = target_id_dashes | append: '-title' %}
-    {% assign target_title = t.dns_targets[target_title_key_dashes] | default: t.dns_targets[target_title_key] %}
-
-
-
-    {% assign size = target_id | size | minus: 2 %}
-    {% assign range_id = target_id | slice: 0, size | replace: "-", "." %}
-
-    {% assign range_title_key = range_id  | append: '-title' %}
-    {% assign target_range = t.dns_ranges[range_title_key] %}
-    <script>console.log({{range_title_key|json}});</script>
-    <script>console.log({{target_title_key|json}});</script>
-    <script>console.log({{target_range|json}});</script>
-    <div class="indicator-cards target col-md-6">
-      <span>
-        {{ target_range }}
-      </span>
-      {{ target_title }}
-    </div>
-    <div class="indicator-cards col-md-6 row no-gutters">
-    {% for indicator in group.items %}
-
-      {% assign status_css = indicator.reporting_status | slugify %}
-      {% if indicator.reporting_status == 'notapplicable' %}
-        {% assign status_desc = t.status.not_applicable %}
-      {% endif %}
-      {% if indicator.reporting_status == 'notstarted' %}
-        {% assign status_desc = t.status.exploring_data_sources %}
-      {% endif %}
-      {% if indicator.reporting_status == 'inprogress' %}
-        {% assign status_desc = t.status.statistics_in_progress %}
-      {% endif %}
-      {% if indicator.reporting_status == 'complete' %}
-        {% assign status_desc = t.status.reported_online %}
-      {% endif %}
-      {% assign tag_classes = "" | split: "," %}
-      {% if indicator.tags %}
-        {% for tag in indicator.tags %}
-          {% assign tag_slug = "indicator-" | append: tag | slugify %}
-          {% assign tag_classes = tag_classes | push: tag_slug %}
-        {% endfor %}
-      {% endif %}
-      {% assign tag_classes = tag_classes | join: " " %}
-
-      <div class="col-md-12 {{ tag_classes }}">
-        <a href="{{ site.baseurl }}{{ baseurl_folder }}/{{ indicator.indicator | slugify }}">
-          <span>
-            {{ indicator.indicator_display }}
-          </span>
-          {{ indicator.indicator | get_indicator_name }}
-          {% if indicator.tags %}
-            <ul class="tags">
-            {% for tag in indicator.tags %}
-              {% assign tag_class = tag | slugify %}
-              <li class="tag-{{ tag_class }} warning">{{ tag | t }}</li>
-            {% endfor %}
-            </ul>
-          {% endif %}
+    <div class="row justify-content-md-center">
+      <div class="col d-grid gap-2">
+        <a href="{{ site.baseurl }}/{{ language }}/{{ previous_goal }}" class="btn btn-primary btn-block goal-{{ page.sdg_goal }} navigation-btn text-nowrap" role="button">
+          <b><i class="fa fa-chevron-left" aria-hidden="true"></i> {{ page.t.general.prev_goal }}</b>
         </a>
       </div>
-    {% endfor %}
+
+      <div class="col-md-auto">
+        <a href="https://sustainabledevelopment-deutschland.github.io/{{ language }}/{{ page.sdg_goal }}" class="btn btn-primary btn-block goal-{{ page.sdg_goal }} navigation-btn" title="{{ t.general.link_sdg_goal }}" role="button">
+          <b class="btn-label d-none d-md-block">{{ page.t.general.link_sdg_goal }} {{ page.t.general.goal }} {{ page.sdg_goal }} </b><b class="btn-label d-block d-md-none">{{ page.t.general.goal }} {{ page.sdg_goal }} {{ page.t.general.national }}</b>
+        </a>
+      </div>
+
+      <div class="col d-grid gap-2">
+        <a href="{{ site.baseurl }}/{{ language }}/{{ next_goal }}" class="btn btn-primary btn-block goal-{{ page.sdg_goal }} navigation-btn text-nowrap" role="button">
+          <b>{{ page.t.general.next_goal }} <i class="fa fa-chevron-right" aria-hidden="true"></i></b>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container g-0">
+    <div class="row">
+      <div class="col" style="padding-right: 0px;">
+        <h2>{{ page.t.general.dns_target }}</h2>
+      </div>
+      <div class="col" style="paddig-left: 0px;">
+        <h2>{{ page.t.general.indicators }}</h2>
+      </div>
+    </div>
+
+    {% assign goal_indicators = page.indicators | where: 'goal_number', page.goal.number | group_by: 'target_id' %}
+    {% for group in goal_indicators %}
+      {% assign target = group.name %}
+      {%- assign target_id_dashes = target | replace: ".", "-" -%}
+
+      {%- assign target_title_key = target | append: '-title' -%}
+      {%- assign target_title_key_dashes = target_id_dashes | append: '-title' -%}
+      {%- assign target_title = page.t.dns_targets[target_title_key_dashes] | default: t.dns_targets[target_title_key] -%}
+
+      {%- assign size = target | size | minus: 2 -%}
+      {%- assign range_id = target | slice: 0, size | replace: "-", "." -%}
+
+      {%- assign range_title_key = range_id  | append: '-title' -%}
+      {%- assign target_range = page.t.dns_ranges[ range_title_key ] -%}
+      {%- assign target = page.t.dns_targets[ target_title_key ] -%}
+      <div class="indicator-cards target goal-target col-md-6">
+        <span class="indicator-card-number">
+          <label class="hidden-md hidden-lg"></label>
+          {{ target_range }}
+        </span>
+        {{ target }}
+      </div>
+      <div class="indicator-cards col-md-6 row no-gutters">
+      {% for indicator in group.items %}
+
+        {% assign tag_classes = "" | split: "," %}
+        {% if indicator.tags %}
+          {% for tag in indicator.tags %}
+            {% assign tag_slug = "indicator-" | append: tag | slugify %}
+            {% assign tag_classes = tag_classes | push: tag_slug %}
+          {% endfor %}
+        {% endif %}
+        {% assign tag_classes = tag_classes | join: " " %}
+
+        <div class="col-md-12 {{ tag_classes }} goal-indicator">
+          {% if indicator.placeholder and indicator.placeholder != '' %}
+          <span class="indicator-card-number">
+            {{ indicator.indicator_display }}
+          </span>
+          {{ indicator.placeholder }}
+          {% else %}
+          <span class="indicator-card-number">
+            {{ indicator.indicator_display }}
+          </span>
+          <a href="{{ indicator.url }}">
+            {{ indicator.name }}
+          </a>
+          {% include components/indicator/tags.html tags=indicator.tags %}
+          {% endif %}
+        </div>
+      {% endfor %}
     </div>
   {% endfor %}
 </div>

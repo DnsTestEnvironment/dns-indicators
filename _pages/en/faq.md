@@ -1,35 +1,31 @@
 ---
-title: Frequently Asked Questions (FAQ)
+title: Frequently Asked Questions (FAQs)
 permalink: /en/faq/
-layout: page
 language: en
+layout: page
 ---
 
 ## How do I suggest new or different data sources?
-If you have feedback on the data sources we have used or have suggestions for new data sources then please email us at <a href="mailto:{{site.email_contacts.questions}}">{{site.email_contacts.questions}}</a>.
+If you have feedback on the data sources we have used or have suggestions for new data sources then please contact us at: <a href="mailto:{{site.email_contacts.questions}}">{{site.email_contacts.questions}}</a>.
 
 ## What does the reporting status mean?
-We have used three different types of reporting status for an indicator, which are also colour coded:
+There are three differently colour-coded reporting statuses for each indicator:
 
-* Reported online (green) – as a minimum the headline national data for this indicator is available on this website but the data might not be fully disaggregated yet. We are continuing to source additional disaggregations.
-* Statistics in progress (amber) – we have found a suitable source of data for this indicator or relevant proxy at national level. We are currently quality assuring the data and preparing it for publication.
-* Exploring data sources (red) – we are still looking for a suitable data source for this indicator.
+* Reported online (green) – As a minimum the headline national data are available for this indicator on this website, but the data might not be fully disaggregated yet. We are seeking to fill this data gap.
+* Exploring data sources (red) – We are still looking for a suitable data source for this indicator of this.
+* Not applicable (grey) – The calculation of this internationally relevant indicator for Germany alone makes little sense or the indicators can only be compiled in a global context.
 
 Where there is additional information about the status of indicator data collection and reporting, this will be displayed at the top of the indicator page.
 
-## How often will new data be added to this site?
-We will add data as soon as it has been sourced and checked. This includes new data as well as updates to data we have already published. We will continue to collect data from existing sources where possible, in cooperation with topic experts.
+## What does disaggregation mean?
+Disaggregation is used to break an existing indicator down into subcategories for closer examination. The best known are age or sex. However, the disaggregations used differ from indicator to indicator and are referenced in the indicator name or defined by the international organisation responsible for the indicator.
 
 ## What are you doing to fill data gaps?
-For some indicators, although we may have data at the national level, our existing data sources don’t always allow us to disaggregate by all main groups.
+If no data are available for an indicator, we need to look for possible data sources and check them for quality. If the quality meets our requirements, the data will be included in the SDG online platform.
 
-This means we need to look for new data sources, link existing ones, or model data.
+For some indicators data are available at the national level, but the underlying data sources do not allow disaggregation by all required categories.
 
-## How accessible is this website?
-Our aim is to make this website as accessible and usable as possible for every user. We are working towards meeting AA level of the [Web Content Accessibility Guidelines (WCAG 2.0)](https://www.gov.uk/service-manual/helping-people-to-use-your-service/understanding-wcag-20).
-
-## What browsers can I use to view this website?
-Our website works with most of the latest versions of the commonly used browsers. There are some issues with using the site on older versions of browsers eg IE8 and we are working to fix these.
+This makes it necessary to look for new data sources, link existing sources or model data. The relevant units at the Federal Statistical Office (Destatis) are continuously involved in this process.
 
 ## Can other countries copy this website?
-Yes. This site is built and hosted using 100% free software and services, so other countries and localities can freely and easily reuse our code. Technical guidance on implementing this platform is available [here](https://open-sdg.readthedocs.io). Countries and localities exploring how to report their own SDGs data can also get support from the [Center for Open Data Enterprise (CODE)](http://www.opendataenterprise.org/) through their [SDG National Reporting Initiative](https://www.sdgreporting.org/).
+Yes. The website can be freely used by other countries to create their own online platform. The terms and conditions for using GitHub apply. For more information, please see [Technical instructions](https://g205sdgs.github.io/sdg-indicators/en/guidance/).

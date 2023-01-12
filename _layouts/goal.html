@@ -1,83 +1,138 @@
-{%- include multilingual.html -%}
 {% include head.html %}
 {% include header.html %}
-{% assign goal_number = page.sdg_goal %}
-{% assign goal_title_key = goal_number | append: '-title' %}
-{% assign goal_short_key = goal_number | append: '-short' %}
-{% assign goal_title = t.global_goals[goal_title_key] %}
-{% assign goal_short = t.global_goals[goal_short_key] %}
 
-<div class="heading goal-{{page.sdg_goal}}">
+{% include components/goal/header.html %}
+
+{% if page.language == 'de' %}
+  {% assign language = '' %}
+{% else %}
+  {% assign language = page.language | append: '/' %}
+{% endif %}
+
+{% if site.environment == 'staging' %}
+  {% assign baseurl = 'https://nachhaltige-entwicklung-deutschland.github.io/open-sdg-site-starter' %}
+{% else %}
+  {% assign baseurl = 'https://dns-indikatoren.de' %}
+{% endif %}
+
+
+<div class="container">
+  {% include components/goal/breadcrumbs.html %}
+  {% if site.create_goals.previous_next_links %}
+    {% include components/previous-next-links.html previous_label=page.t.goal.previous next_label=page.t.goal.next %}
+  {% endif %}
+</div>
+
+<div id="main-content" class="container goal-indicators goal-{{ page.goal.number }} goal-by-target" role="main">
+
+  {% include components/goal/goal-content.html content=content %}
+
+  {% if page.goal_number == '1' %}
+    {% assign next_goal = '2' %}
+    {% assign previous_goal = '17' %}
+  {% elsif page.goal_number == '17' %}
+    {% assign next_goal = '1' %}
+    {% assign previous_goal = '16' %}
+  {% else %}
+    {% assign previous_goal = page.goal_number | minus: 1 %}
+    {% assign next_goal = page.goal_number | plus: 1 %}
+  {% endif %}
+
   <div class="container">
-    <div class="row">
-      <div class="col-xs-4 col-md-3 col-lg-2">
-        <img src="{{ site.goal_image_base }}/{{ current_language }}/{{ goal_number }}.png" alt="{{ goal_short }} - {{ t.general.goal }} {{ goal_number }}" />
+    <!--<div class="row justify-content-md-center">-->
+    <div class="row justify-content-around">
+      <div class="col-sm-3 d-grid gap-2">
+        <a href="{{ baseurl }}/{{ language }}{{ previous_goal }}" class="btn btn-primary btn-block goal-{{ page.goal_number }} navigation-btn text-nowrap" role="button">
+          <b class="d-sm-none d-lg-block"><i class="fa fa-chevron-left" aria-hidden="true"></i> {{ page.t.general.prev_goal }}</b><b class="d-none d-sm-block d-lg-none"><i class="fa fa-chevron-left" aria-hidden="true"></i></b>
+        </a>
       </div>
-      <div class="col-xs-8 col-md-9 col-lg-10">
-        <h1>
-          <span class="hidden-sm hidden-md hidden-lg">{{ t.general.goal }} {{ goal_number }}: </span>{{ goal_title }}
-        </h1>
+
+      <div class="col-sm-6 d-grid gap-2">
+        <a href="https://sustainabledevelopment-germany.github.io/{{ language }}/{{ page.goal_number }}" class="btn btn-primary btn-block goal-{{ page.goal_number }} navigation-btn" title="{{ t.general.link_sdg_goal }}" role="button">
+          <b class="btn-label d-sm-none d-lg-block">{{ page.t.general.link_sdg_goal }} {{ page.goal_number }} </b><b class="btn-label d-none d-sm-block d-lg-none">{{ page.t.general.goal }} {{ page.goal_number }} {{ page.t.general.global }}</b>
+        </a>
+      </div>
+
+      <div class="col-sm-3 d-grid gap-2">
+        <a href="{{ baseurl }}/{{ language }}{{ next_goal }}" class="btn btn-primary btn-block goal-{{ page.goal_number }} navigation-btn text-nowrap" role="button">
+          <b class="btn-label d-sm-none d-lg-block">{{ page.t.general.next_goal }} <i class="fa fa-chevron-right" aria-hidden="true"></i></b><b class="d-none d-sm-block d-lg-none"><i class="fa fa-chevron-right" aria-hidden="true"></i></b>
+        </a>
       </div>
     </div>
   </div>
-</div>
 
-<div id="main-content" class="container goal-indicators goal-{{page.sdg_goal}}">
+  <div class="container">
+    <div class="row">
+      <div class="col heading-goal-page">
+        <h2>{{ page.t.general.dns_target }}</h2>
+      </div>
+      <div class="col heading-goal-page" >
+        <h2>{{ page.t.general.indicators }}</h2>
+      </div>
+    </div>
 
-  {{ content }}
-  {% include components/breadcrumb.html %}
+    {% assign goal_indicators = page.indicators | where: 'goal_number', page.goal.number | group_by: 'target_id' %}
+    {% for group in goal_indicators %}
+      {% assign target = group.name %}
+      {%- assign target_id_dashes = target | replace: ".", "-" -%}
 
-  {% assign goal_indicators = site.data.meta | where: 'sdg_goal', page.sdg_goal | sort: 'indicator_sort_order' %}
-  {% for indicator in goal_indicators %}
+      {%- assign target_title_key = target | append: '-title' -%}
+      {%- assign target_title_key_dashes = target_id_dashes | append: '-title' -%}
+      {%- assign target_title = page.t.dns_targets[target_title_key_dashes] | default: t.dns_targets[target_title_key] -%}
 
-    {% assign status_css = indicator.reporting_status | slugify %}
-      {% if indicator.reporting_status == 'notapplicable' %}
-        {% assign status_desc = t.status.not_applicable %}
-      {% endif %}
-      {% if indicator.reporting_status == 'notstarted' %}
-        {% assign status_desc = t.status.exploring_data_sources %}
-      {% endif %}
-      {% if indicator.reporting_status == 'inprogress' %}
-        {% assign status_desc = t.status.statistics_in_progress %}
-      {% endif %}
-      {% if indicator.reporting_status == 'complete' %}
-        {% assign status_desc = t.status.reported_online %}
-      {% endif %}
-    {% assign tag_classes = "" | split: "," %}
-    {% if indicator.tags %}
-      {% for tag in indicator.tags %}
-        {% assign tag_slug = "indicator-" | append: tag | slugify %}
-        {% assign tag_classes = tag_classes | push: tag_slug %}
-      {% endfor %}
-    {% endif %}
-    {% assign tag_classes = tag_classes | join: " " %}
+      {%- assign size = target | size | minus: 2 -%}
+      {%- assign range_id = target | slice: 0, size | replace: "-", "." -%}
 
-    {% cycle 'add row' : '<div class="indicator-cards row no-gutters">', '', '', '' %}
-        <div class="col-md-6 col-lg-3 {{ tag_classes }}">
-          <a href="{{ site.baseurl }}{{ baseurl_folder }}/{{ indicator.indicator | slugify }}">
-            <span>
-              {{ indicator.indicator }}
-              <span class="status {{ status_css }}">
-                {{ status_desc }}
-              </span>
+      {%- assign range_title_key = range_id  | append: '-title' -%}
+      {%- assign target_range = page.t.dns_ranges[ range_title_key ] -%}
+      {%- assign target = page.t.dns_targets[ target_title_key ] -%}
+      <div class="row">
+        <div class="col indicator-cards target goal-target no-gutters">
+          <div class="row range-and-postulate">
+            <span class="indicator-card-number">
+              {{ target_range }}
             </span>
-            {{ indicator.indicator | get_indicator_name }}
-            {% if indicator.tags %}
-              <ul class="tags">
-              {% for tag in indicator.tags %}
-                {% assign tag_class = tag | slugify %}
-                <li class="tag-{{ tag_class }} warning">{{ tag | t }}</li>
-              {% endfor %}
-              </ul>
-            {% endif %}
-          </a>
+            <p class="postulate">
+              {{ target }}
+            </p>
+          </div>
         </div>
-    {% cycle 'end row' : '', '', '', '</div>' %}
-    {% endfor %}
-	 	{% assign last_row = goal_indicators.size | modulo:4 %}
-		{% if last_row != 0 %}
-			</div>
-		{% endif %}
-</div>
 
+        <div class="col indicator-cards no-gutters">
+
+          {% for indicator in group.items %}
+
+            {% assign tag_classes = "" | split: "," %}
+            {% if indicator.tags %}
+              {% for tag in indicator.tags %}
+                {% assign tag_slug = "indicator-" | append: tag | slugify %}
+                {% assign tag_classes = tag_classes | push: tag_slug %}
+              {% endfor %}
+            {% endif %}
+            {% assign tag_classes = tag_classes | join: " " %}
+            {% if indicator.progress_status and indicator.progress_status != '' %}
+              {% assign indicator_has_progress = true %}
+            {% endif %}
+
+            <div class="row" style="margin-bottom: 25px;">
+              {% if indicator.placeholder and indicator.placeholder != '' %}
+              <span class="indicator-card-number">
+                {{ indicator.indicator_display }}
+              </span>
+              {{ indicator.placeholder }}
+              {% else %}
+              <span class="indicator-card-number" >
+                {{ indicator.indicator_display }}
+              </span>
+              <a class="indicator-link-goal-page" href="{{ indicator.url }}" >
+                {{ indicator.name }}
+              </a>
+              {% endif %}
+            </div>
+          {% endfor %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
 {% include footer.html %}
