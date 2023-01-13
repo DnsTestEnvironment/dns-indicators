@@ -426,7 +426,7 @@ function getCombinationType(combination, fallback, mixedTypes) {
     return 'line';
   }
   else {
-    console.log("MT",mixedTypes);
+    console.log("MT", typeof mixedTypes);
     return 'bar';//mixedTypes.find(item => item.combination === combi).chartType;
   }
 }
