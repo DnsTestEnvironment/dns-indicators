@@ -423,10 +423,10 @@ function getBaseDataset() {
 function getCombinationType(combination, fallback, mixedTypes) {
   var combi = getCombinationDescription(combination, fallback);
   if (mixedTypes.length === 0) {
-    return '?';
+    return 'line';
   }
   else {
-    return typeof mixedTypes;//mixedTypes.find(item => item.combination === combi).chartType;
+    return 'bar';//mixedTypes.find(item => item.combination === combi).chartType;
   }
 }
 
