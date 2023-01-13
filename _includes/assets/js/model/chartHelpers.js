@@ -193,7 +193,7 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
   }, this);
 
   if (headline.length > 0) {
-    dataset = makeHeadlineDataset(years, headline, defaultLabel, showLine, spanGaps);
+    dataset = makeHeadlineDataset(years, headline, defaultLabel, showLine, spanGaps, mixedTypes);
     datasets.unshift(dataset);
   }
   return datasets;
@@ -423,7 +423,7 @@ function getBaseDataset() {
 function getCombinationType(combination, fallback, mixedTypes) {
   var combi = getCombinationDescription(combination, fallback);
   if (mixedTypes.length === 0) {
-    return mixedTypes;
+    return '?';
   }
   else {
     return mixedTypes.find(item => item.combination === combi).chartType;
@@ -474,7 +474,7 @@ function getHeadlineColor() {
  * @param {string} label
  * @return {Object} Dataset object for Chart.js
  */
-function makeHeadlineDataset(years, rows, label, showLine, spanGaps, colors) {
+function makeHeadlineDataset(years, rows, label, showLine, spanGaps, mixedTypes, colors) {
   var dataset = getBaseDataset();
   return Object.assign(dataset, {
     label: label,
@@ -489,7 +489,7 @@ function makeHeadlineDataset(years, rows, label, showLine, spanGaps, colors) {
     data: prepareDataForDataset(years, rows),
     showLine: showLine,
     spanGaps: spanGaps,
-    type: 'x',
+    type: getCombinationType([], '', mixedTypes),
   });
 }
 
