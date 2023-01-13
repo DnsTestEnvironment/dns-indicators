@@ -422,13 +422,12 @@ function getBaseDataset() {
  */
 function getCombinationType(combination, fallback, mixedTypes) {
   var combi = getCombinationDescription(combination, fallback);
-  if (mixedTypes.length === 0 || Object.keys(mixedTypes).indexOf(combi) == -1) {
+  if (mixedTypes.length === 0) {
     return mixedTypes;
   }
   else {
-    return mixedTypes[combi];
+    return mixedTypes.find(item => item.combination === combi).chartType;
   }
-
 }
 
 /**
