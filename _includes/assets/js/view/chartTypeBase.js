@@ -4,7 +4,7 @@ opensdg.chartTypes.base = function(info) {
 
     var gridColor = getGridColor();
     var tickColor = getTickColor();
-
+    console.log("info.datasets:", info.datasets);
     var config = {
         type: null,
         data: {
