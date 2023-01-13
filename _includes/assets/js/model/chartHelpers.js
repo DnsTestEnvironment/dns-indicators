@@ -410,6 +410,7 @@ function getBaseDataset() {
     spanGaps: true,
     showLine: true,
     maxBarThickness: 150,
+    type: 'x',
   });
 }
 
@@ -489,6 +490,7 @@ function makeHeadlineDataset(years, rows, label, showLine, spanGaps, colors) {
     data: prepareDataForDataset(years, rows),
     showLine: showLine,
     spanGaps: spanGaps,
+    type: 'x',
   });
 }
 
