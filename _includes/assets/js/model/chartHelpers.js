@@ -380,6 +380,7 @@ function makeDataset(years, rows, combination, labelFallback, color, background,
   var dataset = getBaseDataset();
   return Object.assign(dataset, {
     label: getCombinationDescription(combination, labelFallback),
+    combination: combination,
     disaggregation: combination,
     borderColor: color,
     backgroundColor: background,
