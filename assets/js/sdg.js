@@ -2516,7 +2516,7 @@ function getCombinationType(combination, fallback, mixedTypes) {
     return '?';
   }
   else {
-    return 'sofarsogood';//mixedTypes.find(item => item.combination === combi).chartType;
+    return typeof mixedTypes;//mixedTypes.find(item => item.combination === combi).chartType;
   }
 }
 
