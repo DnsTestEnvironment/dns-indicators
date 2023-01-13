@@ -2510,7 +2510,7 @@ function getBaseDataset() {
  * @return {string} type of chart for the given combination
  */
 function getCombinationType(combination, fallback, mixedTypes) {
-  var combi = getCombinationDescription(combination, fallback)
+  var combi = getCombinationDescription(combination, fallback);
   if (mixedTypes.length === 0 || Object.keys(mixedTypes).indexOf(combi) == -1) {
     return '';
   }
