@@ -1,11 +1,10 @@
 {% include components/charts/annotation_presets.js %}
 opensdg.chartTypes = opensdg.chartTypes || {};
-console.log("info.datasets:", info.datasets);
 opensdg.chartTypes.base = function(info) {
 
     var gridColor = getGridColor();
     var tickColor = getTickColor();
-
+    console.log("info.datasets:", info.datasets);
     var config = {
         type: null,
         data: {
