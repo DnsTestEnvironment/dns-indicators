@@ -2513,11 +2513,10 @@ function getBaseDataset() {
 function getCombinationType(combination, fallback, mixedTypes) {
   var combi = getCombinationDescription(combination, fallback);
   if (mixedTypes.length === 0) {
-    return 'line';
+    return '?';
   }
   else {
-    console.log("MT", typeof mixedTypes);
-    return 'bar';//mixedTypes.find(item => item.combination === combi).chartType;
+    return mixedTypes.find(item => item.combination === combi).chartType;
   }
 }
 
