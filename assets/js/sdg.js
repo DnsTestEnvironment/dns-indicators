@@ -2500,7 +2500,7 @@ function getBaseDataset() {
     spanGaps: true,
     showLine: true,
     maxBarThickness: 150,
-    type: 'x',
+    //type: 'x',
   });
 }
 
