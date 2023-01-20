@@ -41,7 +41,7 @@ var indicatorInit = function () {
                         stackedDisaggregation: domData.stackeddisaggregation,
                         showLine: domData.showline,
                         spanGaps: domData.spangaps,
-                        mixedTypes: domData.mixedtypes,
+                        //mixedTypes: domData.mixedtypes,
                         graphAnnotations: domData.graphannotations,
                         graphTargetLines: domData.graphtargetlines,
                         graphSeriesBreaks: domData.graphseriesbreaks,
