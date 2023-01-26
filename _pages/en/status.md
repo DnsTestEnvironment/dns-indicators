@@ -4,7 +4,6 @@ permalink: /en/status/
 language: en
 layout: page
 ---
-<h5>Assessment for Germany from previous years</h5>
 
 As means of providing at-a-glance information on the status of the sustainability indicators, every indicator is assigned, if calculable, one of four “weather symbols” in the report. This symbol is neither a political appraisal nor a forecast. Instead, the symbols provide a first impression of developments but do not replace a study of the explanatory texts, further analyses and background information. The manner in which the symbols are assigned to the individual indicators depends on the formulation of the respective target.
 

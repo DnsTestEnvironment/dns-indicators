@@ -3,7 +3,6 @@ title: Status der Indikatoren
 permalink: /status/
 layout: page
 ---
-<h5>Bewertung für Deutschland aus den Vorjahren</h5>
 
 Um sich einen schnellen Überblick zum Status der einzelnen Indikatoren zu verschaffen, wird im Bericht bei jedem Indikator, sofern berechenbar, eines von vier möglichen Wettersymbolen abgebildet. Diese Kennzeichnung ist keine politische Bewertung und auch keine Prognose. Stattdessen bieten die Symbole eine erste Einschätzung der Entwicklung, ersetzen aber nicht die erläuternden Texte sowie weitere Analysen und Hintergrundinformationen. Die Art und Weise, wie die Symbole den einzelnen Indikatoren zugeordnet werden, hängt von der Formulierung des jeweiligen Ziels ab.
 
