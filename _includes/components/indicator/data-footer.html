@@ -9,7 +9,7 @@
 {% endfor %}
 {% assign uniqSources = sources_list | uniq | join: ", " %}
 
-{% if page.indexicator.specia_evaluation == true %}
+{% if page.indicator.specia_evaluation == true %}
   {% assign special_eval_note = page.t.indicator.special_eval %}
 {% else %}
   {% assign special_eval_note = '' %}
