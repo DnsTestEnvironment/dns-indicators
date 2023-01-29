@@ -171,13 +171,18 @@
 
                     {% if indicator[target_note_key] %}
                       <tr>
-                        <th>
-                          <div class=responsiveText>{{ page.t.weather.note }}
-                          </div>
-                        </th>
+
                         {% if target_trans_key contains 'old' %}
+                          <th>
+                            <div class=responsiveText style="opacity: 0.5">{{ page.t.weather.note }}
+                            </div>
+                          </th>
                           <td colspan="7" style="padding-left: 4%; opacity: 0.5"> <div class=responsiveText>{{ indicator[target_note_key] }}</div> </td>
                         {% else %}
+                          <th>
+                            <div class=responsiveText>{{ page.t.weather.note }}
+                            </div>
+                          </th>
                           <td colspan="7" style="padding-left: 4%"> <div class=responsiveText>{{ indicator[target_note_key] }}</div> </td>
                         {% endif %}
 
