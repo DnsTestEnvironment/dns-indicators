@@ -84,6 +84,14 @@
                   {% assign validUntil_key = target_key | append: '_validUntil' %}  <!--weather_indicator_2_target_1_targetYear-->
 
                   {% if indicator[target_key] %}
+                  {% if multi_target != 1 %}
+                    <tr>
+                      <th>
+                      </th>
+                      <td colspan="7" style="padding-left: 4%"> <div class=responsiveText>---</div> </td>
+                    </tr>
+                  {% endif %}
+                  
                     <tr>
                       <th>
                         {% if target_trans_key contains 'old' %}
