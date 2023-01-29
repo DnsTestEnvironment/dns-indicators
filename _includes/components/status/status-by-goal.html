@@ -88,10 +88,10 @@
                     <tr>
                       <th>
                       </th>
-                      <td colspan="7" style="padding-left: 4%"> <div class=responsiveText>---</div> </td>
+                      <td colspan="7" style="padding-left: 4%"> <div class=responsiveText></div> </td>
                     </tr>
                   {% endif %}
-                  
+
                     <tr>
                       <th>
                         {% if target_trans_key contains 'old' %}
@@ -175,7 +175,12 @@
                           <div class=responsiveText>{{ page.t.weather.note }}
                           </div>
                         </th>
-                        <td colspan="7" style="padding-left: 4%"> <div class=responsiveText>{{ indicator[target_note_key] }}</div> </td>
+                        {% if target_trans_key contains 'old' %}
+                          <td colspan="7" style="padding-left: 4%; opacity: 0.5"> <div class=responsiveText>{{ indicator[target_note_key] }}</div> </td>
+                        {% else %}
+                          <td colspan="7" style="padding-left: 4%"> <div class=responsiveText>{{ indicator[target_note_key] }}</div> </td>
+                        {% endif %}
+
                       </tr>
                     {% endif %}
 
