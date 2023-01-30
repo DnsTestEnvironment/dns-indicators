@@ -9,7 +9,7 @@ As means of providing at-a-glance information on the status of the sustainabilit
 
 <b>Indicators with absolute or relative target values</b>
 
-In most of the cases an indicator is supposed to reach a concrete absolute or relative target value by a target year (for example [indicator3.1.a](https://dns-indikatoren.de/en/3-1-ab/)). In the case of such a target formulation, first the average annual change over the last five years is calculated by means of the last six data points. This value is imputed for all years up to the target year. Building on this development, a hypothetical target value is calculated and compared to the predefined target value of the indicator. Based on the resulting difference between these two values, the indicators are assigned one of the following symbols:
+In most of the cases an indicator is supposed to reach a concrete absolute or relative target value by a target year (for example [indicator 3.1.a](https://dns-indikatoren.de/en/3-1-ab/)). In the case of such a target formulation, first the average annual change over the last five years is calculated by means of the last six data points. This value is imputed for all years up to the target year. Building on this development, a hypothetical target value is calculated and compared to the predefined target value of the indicator. Based on the resulting difference between these two values, the indicators are assigned one of the following symbols:
 
 <img src="http://sdg-indikatoren.de/public/Wettersymbole/Sonne.png" alt="Sun" /> &nbsp; If the trend continues, the target value will be met or the difference between the target value and the current value will be less than 5 %.
 
@@ -27,7 +27,7 @@ If the target is not an exact value but a specific interval (for example [indica
 
 <b>Indicators with a constant target for each year</b>
 
-If a target value or a threshold is not to be reached at some time in the future but to be maintained in every single year (for example [indicator 6.2.a ,b](https://dns-indikatoren.de/en/6-2-ab/)), two pieces of information are combined for evaluation: primarily, the value last achieved and, subordinately, the average change over the last five years.
+If a target value or a threshold is not to be reached at some time in the future but to be maintained in every single year (for example [indicator 6.2.a, b](https://dns-indikatoren.de/en/6-2-ab/)), two pieces of information are combined for evaluation: primarily, the value last achieved and, subordinately, the average change over the last five years.
 
 * If the target value or an even better value was reached in the last year and the average trend does not indicate that there may be a setback, a sun is shown.
 * If the target value or an even better value was reached in the last year but the average trend indicates that there may be a setback, a sun is shown which is, however, partially hidden by a cloud.
