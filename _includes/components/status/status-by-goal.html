@@ -156,13 +156,13 @@
                           <td colspan="7" style="padding-left: 4%"> <div class=responsiveText>{{ page.t.weather.no_assessment }}</div> </td>
                           {% assign no_additional_cells = true %}
                         {% elsif indicator[item_key] == 'Keine' %}
-                          <td colspan="7" style="padding-left: 4%"> <div class=responsiveText>{{ page.t.weather.no_assessment }}</div> </td>
+                          <td width="10%" align="center" class="prio-{{ letter }}"> <div class=responsiveText>{{ page.t.weather.no_assessment }}</div> </td>
                           {% assign no_additional_cells = true %}
                         {% elsif indicator[item_key] == 'Bewertung ausgesetzt' %}
                           <td colspan="7" align="center" class="prio-{{ letter }}"> <div class=responsiveText>{{ page.t.weather.assessment_stoped }}</div> </td>
                           {% assign no_additional_cells = true %}
                         {% elsif indicator[item_key] == 'Später' %}
-                          <td colspan="7" align="center" class="prio-{{ letter }}"> <div class=responsiveText>x{{ page.t.weather.assessment_later }}</div> </td>
+                          <td colspan="7" align="center" class="prio-{{ letter }}"> <div class=responsiveText>{{ page.t.weather.assessment_later }}</div> </td>
                           {% assign no_additional_cells = true %}
                         {% elsif indicator[year_key] %}
 
