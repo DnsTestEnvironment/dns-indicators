@@ -306,6 +306,7 @@
                 that.plugin.selectionLegend.update();
                 that.plugin.updateTitle();
                 that.plugin.updateFooterFields();
+                that.plugin.replaceYearSlider();
                 that.updateList();
                 $('.disaggregation-form-outer').toggle();
             });
