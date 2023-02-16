@@ -139,7 +139,7 @@
                           {% assign opacity = ' style="opacity: 0.2"' %}
                         {% endif %}
 
-                        {% if indicator[item_key] and indicator[item_key] != '' and indicator[item_key] != 'Bewertung ausgesetzt' and indicator[item_key] != 'Später' and indicator[item_key] != 'Keine' %}
+                        {% if indicator[item_key] and indicator[item_key] != '' and indicator[item_key] != 'Bewertung ausgesetzt' and indicator[item_key] != 'Später' and indicator[item_key] != 'Keine' and indicator[item_key] != 'Ende' %}
                           {% if indicator[item_key] == 'Sonne' %}
                             {% assign status = page.t.weather['sonne'] %}
                           {% elsif indicator[item_key] == 'Leicht bewölkt' %}
