@@ -40,7 +40,7 @@ Nachhaltige Entwicklung in Deutschland - Indikatorenbericht 2022 - Bericht zum D
 <br><br>
 [Nachhaltige Entwicklung in Deutschland - Daten zum Indikatorenbericht 2008](https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00010568)
 <br><br>
-###Nachhaltigkeitspolitik
+### Nachhaltigkeitspolitik
 <br>
 [Berichte der Bundesregierung](https://www.bundesregierung.de/breg-de/themen/nachhaltigkeitspolitik/berichte-und-reden-nachhaltigkeit/berichte-der-bundesregierung-418550)
 <br><br>
