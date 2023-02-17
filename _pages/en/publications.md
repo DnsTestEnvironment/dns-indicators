@@ -7,6 +7,8 @@ layout: page
 
 ### Indicator reports
 <br>
+Sustainable Development in Germany - Indicator report  2022 - Downloadable report will follow soon.
+<br><br>
 [Sustainable Development in Germany - Indicator report  2021](https://dns-indikatoren.de/assets/publications/reports/en/2021.pdf)
 <br><br>
 [Sustainable Development in Germany - Indicator report  2018](https://dns-indikatoren.de/assets/publications/reports/en/2018.pdf)

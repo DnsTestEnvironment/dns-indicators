@@ -6,7 +6,9 @@ layout: page
 
 ### Indikatorenberichte
 <br>
-[Nachhaltige Entwicklung in Deutschland - Indikatorenbericht 2021](https://sustainabledevelopment-deutschland.github.io/assets/publications/reports/de/2021.pdf)
+Nachhaltige Entwicklung in Deutschland - Indikatorenbericht 2022 - Bericht zum Download folgt in Kürze.
+<br><br>
+[Nachhaltige Entwicklung in Deutschland - Indikatorenbericht 2021](https://dns-indikatoren.de/assets/publications/reports/de/2021.pdf)
 <br><br>
 [Nachhaltige Entwicklung in Deutschland - Indikatorenbericht 2018](https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00089372)
 <br><br>
@@ -24,7 +26,7 @@ layout: page
 <br><br>
 ### Daten zum Indikatorenbericht
 <br>
-[Nachhaltige Entwicklung in Deutschland - Daten zum Indikatorenbericht 2021](https://sustainabledevelopment-deutschland.github.io/assets/publications/reports/de/daten2021.pdf)
+[Nachhaltige Entwicklung in Deutschland - Daten zum Indikatorenbericht 2021](https://dns-indikatoren.de/assets/publications/reports/de/daten2021.pdf)
 <br><br>
 [Nachhaltige Entwicklung in Deutschland - Daten zum Indikatorenbericht 2018](https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00132993)
 <br><br>
@@ -44,12 +46,12 @@ layout: page
 <br><br>
 ### Auszug aus der Publikation "WISTA - Wirtschaft und Statistik", 1/2017
 <br>
-[Neuauflage der deutschen Nachhaltigkeitsstrategie](https://nachhaltige-entwicklung-deutschland.github.io/open-sdg-site-starter/assets/publications/wista2017_01.pdf)
+[Neuauflage der deutschen Nachhaltigkeitsstrategie](https://dns-indikatoren.de/assets/publications/wista2017_01.pdf)
 <br><br>
 ### Machbarkeitsstudie zur Darstellung der Indikatoren
 <br>
-[Machbarkeitsstudie zur Darstellung der Indikatorender Deutschen Nachhaltigkeitsstrategie nach Bundesländern](https://nachhaltige-entwicklung-deutschland.github.io/open-sdg-site-starter/assets/publications/machbarkeitsstudie.pdf)
+[Machbarkeitsstudie zur Darstellung der Indikatorender Deutschen Nachhaltigkeitsstrategie nach Bundesländern](https://dns-indikatoren.de/assets/publications/machbarkeitsstudie.pdf)
 <br><br>
 ### Sonderauswertung für ausgewählte Indikatoren nach Gebietsstand
 <br>
-[Sonderauswertung für ausgewählte Indikatoren nach Gebietsstand](https://nachhaltige-entwicklung-deutschland.github.io/open-sdg-site-starter/assets/publications/DNS_Sonderauswertung_2021.pdf)
+[Sonderauswertung für ausgewählte Indikatoren nach Gebietsstand](https://dns-indikatoren.de/assets/publications/DNS_Sonderauswertung_2021.pdf)

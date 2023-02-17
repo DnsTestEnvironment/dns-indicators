@@ -118,7 +118,7 @@ menu:
     dropdown:
       - path: /facts_agenda/
         translation_key: menu.facts_agenda
-  - path: /facts_publications/
+  - path: /publications/
     translation_key: menu.publications
   - path: menu.pathtosdg
     translation_key: menu.sdglogo
@@ -213,7 +213,7 @@ plugins:
 
 # Use a remote Jekyll theme.
 #remote_theme: brockfanning/open-sdg@alter-data-display-decimal-fix
-remote_theme: open-sdg/open-sdg@2.1.0
+remote_theme: open-sdg/open-sdg@2.2.0-dev
 
 goal_image_base: https://g205sdgs.github.io/sdg-indicators/assets/img/goals/dns
 
