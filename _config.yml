@@ -124,12 +124,22 @@ menu:
     dropdown:
       - translation_key: menu.reports
         dropdown:
-          - path: https://dns-indikatoren.de/assets/publications/reports/de/2021.pdf
+          - path: menu.report21path
             translation_key: menu.report21
-          - path: https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00089372
+          - path: menu.report18path
             translation_key: menu.report18
-          - path: https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00066907
-            translation_key: Nachhaltige Entwicklung in Deutschland - Indikatorenbericht 2016
+          - path: menu.report16path
+            translation_key: menu.report16
+          - path: menu.report14path
+            translation_key: menu.report14
+          - path: menu.report12path
+            translation_key: menu.report12
+          - path: menu.report10path
+            translation_key: menu.report10
+          - path: menu.report08path
+            translation_key: menu.report08
+          - path: menu.report06path
+            translation_key: menu.report06
       - translation_key: Daten zum Indikatorenbericht
         dropdown:
           - path: https://dns-indikatoren.de/assets/publications/reports/de/daten2021.pdf
