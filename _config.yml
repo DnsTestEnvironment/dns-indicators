@@ -118,8 +118,26 @@ menu:
     dropdown:
       - path: /facts_agenda/
         translation_key: menu.facts_agenda
-  - path: /publications/
-    translation_key: menu.publications
+  # - path: /publications/
+  #   translation_key: menu.publications
+  - translation_key: menu.publications
+    dropdown:
+      - translation_key: Indikatorenberichte
+        dropdown:
+          - path: https://dns-indikatoren.de/assets/publications/reports/de/2021.pdf
+            translation_key: Nachhaltige Entwicklung in Deutschland - Indikatorenbericht 2021
+          - path: https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00089372
+            translation_key: Nachhaltige Entwicklung in Deutschland - Indikatorenbericht 2018
+          - path: https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00066907
+            translation_key: Nachhaltige Entwicklung in Deutschland - Indikatorenbericht 2016
+      - translation_key: Daten zum Indikatorenbericht
+        dropdown:
+          - path: https://dns-indikatoren.de/assets/publications/reports/de/daten2021.pdf
+            translation_key: Nachhaltige Entwicklung in Deutschland - Daten zum Indikatorenbericht 2021
+          - path: https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00132993
+            translation_key: Nachhaltige Entwicklung in Deutschland - Daten zum Indikatorenbericht 2018
+      - path: https://www.bundesregierung.de/breg-de/themen/nachhaltigkeitspolitik/berichte-und-reden-nachhaltigkeit/berichte-der-bundesregierung-418550
+        translation_key: Berichte der Bundesregierung
   - path: menu.pathtosdg
     translation_key: menu.sdglogo
 
