@@ -126,45 +126,53 @@ menu:
         dropdown:
           - path: menu.report21path
             translation_key: menu.report21
-          - path: menu.report18path
-            translation_key: menu.report18
-          - path: menu.report16path
-            translation_key: menu.report16
-          - path: menu.report14path
-            translation_key: menu.report14
-          - path: menu.report12path
-            translation_key: menu.report12
-          - path: menu.report10path
-            translation_key: menu.report10
-          - path: menu.report08path
-            translation_key: menu.report08
-          - path: menu.report06path
-            translation_key: menu.report06
-      - translation_key: Daten zum Indikatorenbericht
-        dropdown:
           - path: menu.report_data21path
             translation_key: menu.report_data21
+          - path: menu.report18path
+            translation_key: menu.report18
           - path: menu.report_data18path
             translation_key: menu.report_data18
+          - path: menu.report16path
+            translation_key: menu.report16
           - path: menu.report_data16path
             translation_key: menu.report_data16
+          - path: menu.report14path
+            translation_key: menu.report14
           - path: menu.report_data14path
             translation_key: menu.report_data14
+          - path: menu.report12path
+            translation_key: menu.report12
           - path: menu.report_data12path
             translation_key: menu.report_data12
+          - path: menu.report10path
+            translation_key: menu.report10
           - path: menu.report_data10path
             translation_key: menu.report_data10
+          - path: menu.report08path
+            translation_key: menu.report08
           - path: menu.report_data08path
             translation_key: menu.report_data08
-      - path: https://www.bundesregierung.de/breg-de/themen/nachhaltigkeitspolitik/berichte-und-reden-nachhaltigkeit/berichte-der-bundesregierung-418550
-        translation_key: Berichte der Bundesregierung
+          - path: menu.report06path
+            translation_key: menu.report06
+      - translation_key: menu.sustainable_development_strategy
+        dropdown:
+          - path: menu.government_reports_path
+            translation_key: menu.government_reports
+      - translation_key: menu.other_publications
+        dropdown:
+          - path: menu.wista_path
+            translation_key: menu.wista
+          - path: menu.feasibility_study_path
+            translation_key: menu.feasibility_study
+          - path: menu.special_evel_path
+            translation_key: menu.special_evel
   - path: menu.pathtosdg
     translation_key: menu.sdglogo
 
 frontpage_cards:
     -
       # This controls the color of the line at the top of the card.
-      rule_color: orange
+      rule_color: grey
       # This sets the title of the card.
       title: frontpage.download_all
       # This sets the content of the card. Markdown is supported. Note that all
