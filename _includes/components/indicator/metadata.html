@@ -165,23 +165,23 @@
           {% endfor %}
           <tr id="items">
             <th scope="row" style="padding-right: 10px; text-align: left"">{{ page.t.metadata_fields[indicator_metadata.name] }} </th>
-            {% unless item_d == '' %}
+            {% unless item_d == '' or item_d == 'Bewertung ausgesetzt' %}
               <td align="left" style="padding-left: 0px;padding-right: 0px;">
                 <a href=" {{ site.baseurl }}{{ baseurl_folder }}/status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/{{ item_d }}.png" title="{{ title_d }}" alt="{{  item_d | markdownify }}" class="responsiveWeather" style="border: transparent"/></a>
               </td>
             {% endunless %}
-            {% unless item_c == '' %}
+            {% unless item_c == '' or item_c == 'Bewertung ausgesetzt' %}
               <td align="left" style="padding-left: 0px;padding-right: 0px;">
                 <a href=" {{ site.baseurl }}{{ baseurl_folder }}/status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/{{ item_c }}.png" title="{{ title_c }}" alt="{{  item_c | markdownify }}" class="responsiveWeather"  style="border: transparent"/></a>
               </td>
             {% endunless %}
-            {% unless item_b == '' %}
+            {% unless item_b == '' or item_b == 'Bewertung ausgesetzt' %}
               <td align="left" style="padding-left: 0px;padding-right: 0px;">
                 <a href=" {{ site.baseurl }}{{ baseurl_folder }}/status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/{{ item_b }}.png" title="{{ title_b }}" alt="{{  item_b | markdownify }}" class="responsiveWeather"  style="border: transparent"/></a>
               </td>
             {% endunless %}
             <td align="left" style="padding-left: 0px;padding-right: 0px;">
-              {% if item_a != '' %}
+              {% if item_a != ''  and item_d != 'Bewertung ausgesetzt' %}
                 <a href=" {{ site.baseurl }}{{ baseurl_folder }}/status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/{{ item_a }}.png" title="{{ title_a }}" alt="{{ item_a | markdownify }}" class="responsiveWeather"  style="border: transparent"/></a>
               {% else %}
                 <p> {{ page.t.status.no_evaluation_possible }} </p>
