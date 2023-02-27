@@ -11,36 +11,43 @@ Dieser Aufagbe kommt das Statistische Bundesamt set 2006 mit der Veröffentlichu
 
 Die seit 2008 parallel erscheinenden Datenkompendien liefern darüber hinaus weiterführenden Informationen im thematischen Zusammenhang zu den eigentlichen Indikatoren. Diese sollen helfen, den Verlauf eines Indikators in einem Kontext einordnen und seine Etwicklung analysieren zu können.
 
-
-<br>
-Nachhaltige Entwicklung in Deutschland - Indikatorenbericht 2022 - Bericht zum Download folgt in Kürze.
+### 2022
+Indikatorenbericht 2022 - Bericht zum Download folgt in Kürze.
 <br><br>
-[Nachhaltige Entwicklung in Deutschland - Indikatorenbericht 2021](https://dns-indikatoren.de/assets/publications/reports/de/2021.pdf)
+### 2021
+[Indikatorenbericht 2021](https://dns-indikatoren.de/assets/publications/reports/de/2021.pdf)
 <br>
-[Nachhaltige Entwicklung in Deutschland - Daten zum Indikatorenbericht 2021](https://dns-indikatoren.de/assets/publications/reports/de/daten2021.pdf)
+[Daten zum Indikatorenbericht 2021](https://dns-indikatoren.de/assets/publications/reports/de/daten2021.pdf)
 <br><br>
-[Nachhaltige Entwicklung in Deutschland - Indikatorenbericht 2018](https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00089372)
+### 2018
+[Indikatorenbericht 2018](https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00089372)
 <br>
-[Nachhaltige Entwicklung in Deutschland - Daten zum Indikatorenbericht 2018](https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00132993)
+[Daten zum Indikatorenbericht 2018](https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00132993)
 <br><br>
-[Nachhaltige Entwicklung in Deutschland - Indikatorenbericht 2016](https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00066907)
+### 2016
+[Indikatorenbericht 2016](https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00066907)
 <br>
-[Nachhaltige Entwicklung in Deutschland - Daten zum Indikatorenbericht 2016](https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00132992)
+[Daten zum Indikatorenbericht 2016](https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00132992)
 <br><br>
-[Nachhaltige Entwicklung in Deutschland - Indikatorenbericht 2014](https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00023410)
+### 2014
+[Indikatorenbericht 2014](https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00023410)
 <br>
-[Nachhaltige Entwicklung in Deutschland - Daten zum Indikatorenbericht 2014](https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00067001)
+[Daten zum Indikatorenbericht 2014](https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00067001)
 <br><br>
-[Nachhaltige Entwicklung in Deutschland - Indikatorenbericht 2012](https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00010546)
+### 2012
+[Indikatorenbericht 2012](https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00010546)
 <br>
-[Nachhaltige Entwicklung in Deutschland - Daten zum Indikatorenbericht 2012](https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00010558)
-<br>
-[Nachhaltige Entwicklung in Deutschland - Indikatorenbericht 2010](https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00010549)
-<br>
-[Nachhaltige Entwicklung in Deutschland - Indikatorenbericht 2008](https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00010552)
-<br>
-[Nachhaltige Entwicklung in Deutschland - Daten zum Indikatorenbericht 2010](https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00010572)
-<br>
-[Nachhaltige Entwicklung in Deutschland - Daten zum Indikatorenbericht 2008](https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00010568)
+[Daten zum Indikatorenbericht 2012](https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00010558)
 <br><br>
-[Nachhaltige Entwicklung in Deutschland - Indikatorenbericht 2006](https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00010555)
+### 2010
+[Indikatorenbericht 2010](https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00010549)
+<br>
+[Daten zum Indikatorenbericht 2010](https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00010572)
+<br><br>
+### 2008
+[Indikatorenbericht 2008](https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00010552)
+<br>
+[Daten zum Indikatorenbericht 2008](https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00010568)
+<br><br>
+### 2006
+[Indikatorenbericht 2006](https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00010555)
