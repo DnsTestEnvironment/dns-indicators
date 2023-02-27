@@ -15,41 +15,41 @@ The "Data on the Indicator report", which have been published in parallel since 
 ### 2022
 <br>
 Sustainable Development in Germany - Indicator report  2022 - Downloadable report will follow soon.
-<br><br>
+<br>
 ### 2021
 [Sustainable Development in Germany - Indicator report  2021](https://dns-indikatoren.de/assets/publications/reports/en/2021.pdf)
 <br>
 [Sustainable Development in Germany - Data on the Indicator report 2021](https://dns-indikatoren.de/assets/publications/reports/en/daten2021.pdf)
-<br><br>
+<br>
 ### 2018
 [Sustainable Development in Germany - Indicator report  2018](https://dns-indikatoren.de/assets/publications/reports/en/2018.pdf)
 <br>
 [Sustainable Development in Germany - Data on the Indicator report 2018](https://dns-indikatoren.de/assets/publications/reports/en/daten2018.pdf)
-<br><br>
+<br>
 ### 2016
 [Sustainable Development in Germany - Indicator report  2016](https://dns-indikatoren.de/assets/publications/reports/en/2016.pdf)
 <br>
 [Sustainable Development in Germany - Data on the Indicator report 2016](https://dns-indikatoren.de/assets/publications/reports/en/daten2016.pdf)
-<br><br>
+<br>
 ### 2014
 [Sustainable Development in Germany - Indicator report  2014](https://dns-indikatoren.de/assets/publications/reports/en/2014.pdf)
 <br>
 [Sustainable Development in Germany - Data on the Indicator report 2014](https://dns-indikatoren.de/assets/publications/reports/en/daten2014.pdf)
-<br><br>
+<br>
 ### 2012
 [Sustainable Development in Germany - Indicator report  2012](https://dns-indikatoren.de/assets/publications/reports/en/2012.pdf)
 <br>
 [Sustainable Development in Germany - Data on the Indicator report 2012](https://dns-indikatoren.de/assets/publications/reports/en/daten2012.pdf)
-<br><br>
+<br>
 ### 2010
 [Sustainable Development in Germany - Indicator report  2010](https://dns-indikatoren.de/assets/publications/reports/en/2010.pdf)
 <br>
 [Sustainable Development in Germany - Data on the Indicator report 2010](https://dns-indikatoren.de/assets/publications/reports/en/daten2010.pdf)
-<br><br>
+<br>
 ### 2008
 [Sustainable Development in Germany - Indicator report  2008](https://dns-indikatoren.de/assets/publications/reports/en/2008.pdf)
 <br>
 [Sustainable Development in Germany - Data on the Indicator report 2008](https://dns-indikatoren.de/assets/publications/reports/en/daten2008.pdf)
-<br><br>
+<br>
 ### 2006
 [Sustainable Development in Germany - Indicator report  2006](https://dns-indikatoren.de/assets/publications/reports/en/2006.pdf)
