@@ -114,10 +114,10 @@ menu:
         translation_key: menu.about_this_site
       - path: /about_guidance/
         translation_key: menu.guidance
-  - translation_key: menu.facts
-    dropdown:
-      - path: /facts_agenda/
-        translation_key: menu.facts_agenda
+  # - translation_key: menu.facts
+  #   dropdown:
+  #     - path: /facts_agenda/
+  #       translation_key: menu.facts_agenda
   - translation_key: menu.publications
     dropdown:
       - path: /publications_reports/
