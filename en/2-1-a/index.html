@@ -145,7 +145,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20230301092134">
+        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20230301093109">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -494,7 +494,7 @@ data-event-label="high"
   data-id="2-1-a"
   data-country="Germany"
   data-charttitle="Stickstoffüberschuss der Landwirtschaft"
-  data-charttitles="[{&quot;series&quot;:&quot;Moving five-year average shown for each middle year&quot;,&quot;title&quot;:&quot;Nitrogen surplus in agriculture&quot;},{&quot;series&quot;:&quot;Calculated annual values&quot;,&quot;title&quot;:&quot;Nitrogen surplus in agriculture&quot;}]"
+  data-charttitles="[{&quot;series&quot;:&quot;Calculated annual values&quot;,&quot;title&quot;:&quot;Nitrogen surplus in agriculture&quot;},{&quot;series&quot;:&quot;Moving five-year average shown for each middle year&quot;,&quot;title&quot;:&quot;Nitrogen surplus in agriculture&quot;}]"
   data-chartsubtitle=""
   data-chartsubtitles="[{&quot;series&quot;:&quot;Calculated annual values&quot;,&quot;title&quot;:&quot;Calculated annual values&quot;},{&quot;series&quot;:&quot;Moving five-year average shown for each middle year&quot;,&quot;title&quot;:&quot;Moving five-year average&quot;}]"
   data-measurementunit=""
@@ -1942,6 +1942,32 @@ data-event-label="Change to Table tab"
     <span class="hidden-xs" style="color:black">Table</span></button>
   </li>
   
+  <li role="presentation"
+    class="
+      nav-item
+      
+      embedded-map
+    ">
+    <button
+      class="nav-link "
+      data-bs-toggle="tab"
+      role="tab"
+      type="button"
+      
+        id="tab-embeddedmapview"
+        data-bs-target="#embeddedmapview"
+        aria-controls="embeddedmapview"
+        data-no-disagg="true"
+        data-on="click"
+data-event-category="Tab change"
+data-event-action="Change data view"
+data-event-label="Change to embedded item tab"
+
+        ><i class="fa fa-plus-square" aria-hidden="true"></i>
+      
+    <span class="hidden-xs" style="color:black">Embed</span></button>
+  </li>
+  
 </ul>
 
     <div class="tab-content data-view">
@@ -2154,6 +2180,24 @@ data-event-label="Change to Table tab"
 </div>
 
 <div id="tableSelectionDownload" class="clearfix"></div>
+
+        </div>
+      
+    
+      
+        <div role="tabpanel" class="tab-pane " id="embeddedmapview" class="embedded-map">
+          <div class="row">
+  <div class="col-xs-12">
+    
+    
+    
+      <div class="embedded-map" id="embeddedmapframe">
+         <iframe width="100%" height="1200" src="https://dns-testenvironment.github.io/dns-indicators/public/AddInfos/de/2_1_a.pdf" frameborder="0" allowFullScreen="true"></iframe>
+      </div>
+    
+    
+  </div>
+</div>
 
         </div>
       
@@ -4185,6 +4229,18 @@ data-event-label="Change to indicator.sources tab"
           <th scope="row" style="padding-right: 10px; text-align: left"">Year </th>
           
             <td align="left" style="margin-bottom: 15px;">
+              <p><p>2015</p>
+</p>
+            </td>
+          
+          
+            <td align="left" style="margin-bottom: 15px;">
+              <p><p>2016</p>
+</p>
+            </td>
+          
+          
+            <td align="left" style="margin-bottom: 15px;">
               <p><p>2017</p>
 </p>
             </td>
@@ -4192,18 +4248,6 @@ data-event-label="Change to indicator.sources tab"
           
             <td align="left" style="margin-bottom: 15px;">
               <p><p>2018</p>
-</p>
-            </td>
-          
-          
-            <td align="left" style="margin-bottom: 15px;">
-              <p><p>2019</p>
-</p>
-            </td>
-          
-          
-            <td align="left" style="margin-bottom: 15px;">
-              <p><p>2020</p>
 </p>
             </td>
           
@@ -4342,22 +4386,7 @@ data-event-label="Change to indicator.sources tab"
           
       
         
-      
-
-      
-      
-
-
-      
-
-      <!-- weather -->
-      
-        
-      
-
-      
-    
-  
+          
       
         
           
@@ -4667,25 +4696,26 @@ data-event-label="Change to indicator.sources tab"
             <th scope="row" style="padding-right: 10px; text-align: left"">Evaluation </th>
             
               <td align="left" style="padding-left: 0px;padding-right: 0px;">
-                <a href=" /dns-indicators/status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Wolke.png" title="Although the indicator has in 2017 been moving in the desired direction toward the target, if the trend had to continued, the target would have been missed in the target year by more than 20% of the difference between the target value and the value at that time." alt="<p>Wolke</p>
+                <a href=" /dns-indicators/status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Wolke.png" title="Although the indicator has in 2015 been moving in the desired direction toward the target, if the trend had to continued, the target would have been missed in the target year by more than 20% of the difference between the target value and the value at that time." alt="<p>Wolke</p>
 " class="responsiveWeather" style="border: transparent"/></a>
               </td>
             
             
               <td align="left" style="padding-left: 0px;padding-right: 0px;">
-                <a href=" /dns-indicators/status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Sonne.png" title="If the trend from 2018 had continued, the target value would have been reached or missed by less than 5% of the difference between the target value and the value at that time." alt="<p>Sonne</p>
+                <a href=" /dns-indicators/status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Wolke.png" title="Although the indicator has in 2016 been moving in the desired direction toward the target, if the trend had to continued, the target would have been missed in the target year by more than 20% of the difference between the target value and the value at that time." alt="<p>Wolke</p>
 " class="responsiveWeather"  style="border: transparent"/></a>
               </td>
             
             
               <td align="left" style="padding-left: 0px;padding-right: 0px;">
-                <a href=" /dns-indicators/status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Später.png" title="The assessment will be carried out later." alt="<p>Später</p>
+                <a href=" /dns-indicators/status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Wolke.png" title="Although the indicator has in 2017 been moving in the desired direction toward the target, if the trend had to continued, the target would have been missed in the target year by more than 20% of the difference between the target value and the value at that time." alt="<p>Wolke</p>
 " class="responsiveWeather"  style="border: transparent"/></a>
               </td>
             
             <td align="left" style="padding-left: 0px;padding-right: 0px;">
               
-                <p> No evaluation possible </p>
+                <a href=" /dns-indicators/status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Sonne.png" title="If the trend from 2018 had continued, the target value would have been reached or missed by less than 5% of the difference between the target value and the value at that time." alt="<p>Sonne</p>
+" class="responsiveWeather"  style="border: transparent"/></a>
               
             </td>
           </tr>
@@ -4815,24 +4845,7 @@ data-event-label="Change to indicator.sources tab"
   
       
         
-      
-
-      
-      
-
-
-      
-
-      <!-- weather -->
-      
-        
           
-        
-      
-
-      
-    
-  
       
         
           
@@ -8669,12 +8682,12 @@ data-event-label="Change to indicator.sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/dns-indicators/assets/js/sdg.js?v=20230301092134'></script>
+<script src='/dns-indicators/assets/js/sdg.js?v=20230301093109'></script>
 
 
     
     
-    <script src="/dns-indicators/assets/js/custom.js?v=20230301092134"></script><script>
+    <script src="/dns-indicators/assets/js/custom.js?v=20230301093109"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
