@@ -267,7 +267,7 @@ plugins:
 
 # Use a remote Jekyll theme.
 #remote_theme: brockfanning/open-sdg@alter-data-display-decimal-fix
-remote_theme: open-sdg/open-sdg@2.2.0-dev
+remote_theme: open-sdg/open-sdg@2.1.0
 
 goal_image_base: https://g205sdgs.github.io/sdg-indicators/assets/img/goals/dns
 
