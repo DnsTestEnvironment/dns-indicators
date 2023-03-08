@@ -1,6 +1,6 @@
 ---
 title: Sonstige Publikationen
-permalink: /publications_others/
+permalink: /publications_other/
 layout: page
 ---
 
