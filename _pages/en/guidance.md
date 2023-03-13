@@ -1,50 +1,34 @@
 ---
-title: Guide NRP
 permalink: /en/guidance/
+title: Technical instructions
 language: en
 layout: page
 ---
 
-## National reporting platform - SDG
+## Open source project on GitHub
 
-The national reporting platform - SDG (SDG - NRP) is a publicly available tool serving the dissemination and presentation of data for Germany on  the Sustainable Development Goals (SDGs) of the 2030 Agenda by the United Nations (UN).
+The DNS online platform is a publicly accessible tool for the dissemination and presentation of German data for the indicators of the German Sustainable Development Strategy.
 
-### Our approach to NRP
+## Sources
 
-In order to conform with the UN’s Fundamental Principles of Official Statistics, the minimum characteristics an SDG NRP should have are that it should: <br>
-- be managed by national statistical offices;
-- features official statistics and metadata according to established standard methodology;
-- be publicly accessible;
-- allows for feedback from data users;
-- features open source (free) technology.
+The Federal Statistical Office (Destatis) actively supports the development of national online platforms, in particular as open source solutions for the presentation of DNS indicators. Pioneers in this area are the USA and Great Britain. The current version of the German online platform was developed on the basis of an earlier version of the British online platform and adapted to the needs of German statistics. The project code for the DNS online platform is publicly available in the [Github repository](https://github.com/sustainabledevelopment-deutschland/sustainabledevelopment-deutschland.github.io).
 
-In addition, the German SDG-NRP has been developed in accordance with recognized international guidelines, especially with regard to open data and software.
+A universal version of the codes for an online platform developed by the United States, Great Britain and the Center for Open Data Enterprise is available. The SDG online platform is based on this. If you are interested, we recommend that you familiarise yourself with the SDG online platforms of the United States and Great Britain and the relevant [Open SDG project documentation](https://open-sdg.readthedocs.io/en/latest/). This contains technical instructions on how to make a copy of the Open SDG online platform.
 
-## NRP - sources
 
-The Federal Statistical Office (Destatis) actively supports the development of national reporting platforms, in particular as an open source solution for the presentation of SDG indicators. Precursors in this field are the USA and Great Britain. The current version of the German reporting platform has been developed based on an earlier version of the UK NRP, and adapted to the needs of German statistics. The project code is publicly available in a [Github repository](https://github.com/G205SDGs/sdg-indicators).
+- [SDG online platform of the United States](https://sdg.data.gov/)
 
-The new universal version of the open-SDG platform developed by the US, UK and Center for Open Data Enterprise is available. We encourage you to familiarize yourself with the national US and UK platforms for SDGs and the [Open SDG project documentation](https://open-sdg.readthedocs.io/en/latest/), which includes technical instructions on the quickest way to get a copy of the Open SDG platform up and running.
+- [SDG online platform of Great Britain](https://sustainabledevelopment-uk.github.io)
 
-- [US NPR SDG](https://sdg.data.gov/)
+If you have comments or feedback on the Open SDG project or would like to participate in the Open SDG community, please contact [Open SDG GitHub](https://github.com/open-sdg/open-sdg/issues).
 
-- [UK NPR SDG](https://sustainabledevelopment-uk.github.io)
-
-If you have any comments or feedback on the Open SDG project, or want to get involved with the Open SDG community, please get in touch by raising an issue on the [Open SDG GitHub](https://github.com/open-sdg/open-sdg/issues).
-
-## NRP - applied technology
+## Applied technology
 
 ### Back-end IT requirements:
-- GitHub: hosting website designed for programming projects using the Git version control system.
+- GitHub: hosting website designed for programming projects using the Git version control system
 - Jekyll: generator of static pages written in Ruby
 
 ### Front-end IT requirements:
 - XHTML, CSS, JavaScript
 - Chartist: JavaScript library that offers customizable and responsive charts
 - Bootstrap: framework CSS
-
-## Current display
-
-Due to technical difficulties, the current version of the German NRP contains some faulty illustrations, which are referred to here:<br>
-- Integers are displayed without decimal places (even in time series in which other numerical values with decimal places exist).
-- Very long names of time series are not broken up into several lines in the axis labels of the graphics and hence are partly cut off.

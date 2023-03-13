@@ -112,7 +112,7 @@ menu:
     dropdown:
       - path: /about_platform/
         translation_key: menu.about_this_site
-      - path: /about_guidance/
+      - path: /guidance/
         translation_key: menu.guidance
   # - translation_key: menu.facts
   #   dropdown:
