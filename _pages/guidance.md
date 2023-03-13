@@ -31,6 +31,13 @@ Eine universelle Version der von den USA, Großbritannien und dem Center for Ope
 
 Wenn Sie Kommentare oder Feedback zum Open SDG-Projekt haben oder an der Open SDG-Community teilnehmen möchten, wenden Sie sich an [Open SDG GitHub](https://github.com/open-sdg/open-sdg/issues).
 
+### Anleitungen
+#### Öffnen von CSV-Dateien:
+Wenn Sie bei Ihrer Recherche auf interessante Daten gestoßen sind, können Sie diese zur weiteren Verwendung auf Ihren PC als speicherbare Version im CSV-Format herunterladen. Eine Anleitung wie Sie die CSV-Dateien in MS-Excel öffnen und bearbeiten können, finden Sie [hier](https://g205sdgs.github.io/sdg-indicators/public/HowToCsvDownload.pdf).
+
+#### Öffnen von PDF-Dateien
+PDF-Dokumente können Sie sich (je nach Browsereinstellung) direkt in Ihrem Browser anzeigen lassen oder Sie laden das PDF-Dokument herunter und öffnen es mit einem PDF-Reader Ihrer Wahl. Eine Anleitung wie Sie für ausgewählte Browser die entsprechende Einstellung ändern können, finden Sie [hier](https://g205sdgs.github.io/sdg-indicators/public/HowToPdfDownload.pdf) eine Anleitung.
+
 ### Genutzte Software
 
 #### Back-end IT-Anforderungen:
