@@ -4,14 +4,12 @@ permalink: /publications_reports/
 layout: page
 ---
 
-Nachhaltiges Handeln – also das gleichwertige Einbeziehen sozialer, wirtschaftlicher und ökologischer Aspekte in alle Entscheidungen – ist wichtiger denn je. Gerade Zeiten des Umbruchs eröffnen die Chance zur aktiven Gestaltung und damit zu dauerhafter Veränderung. Diese Prozesse so zu gestalten, dass sie langfristig unsere Zukunftsfähigkeit sichern, ist für die Bundesregierung nur dann möglich, wenn sie valide Informationen darüber hat, wo wir auf dem Weg zu einer nachhaltigen Gesellschaft stehen und in welche Richtung wir uns bewegen.
-
-Dieser Aufgabe kommt das Statistische Bundesamt seit 2006 mit der Veröffentlichung der Indikatorenberichte nach. Die alle zwei Jahre erscheinenden Berichte umfassen die Indikatoren zur Messung der Zielerreichung der Deutschen Nachhaltigkeitsstrategie.
-
-Die seit 2008 parallel erscheinenden Datenkompendien liefern darüber hinaus weiterführenden Informationen im thematischen Zusammenhang zu den eigentlichen Indikatoren. Diese sollen helfen, den Verlauf eines Indikators in einem Kontext einordnen und seine Entwicklung analysieren zu können.
+Die Indikatorenberichte des Statistischen Bundesamtes informieren über das Monitoring der Indikatoren der Deutschen Nachhaltigkeitsstrategie. Ergänzend werden zusätzliche Datenreihen zu den jeweiligen Indikatoren in den Daten zum Indikatorenbericht veröffentlicht.
 
 ### 2022
 <figure style="width: 20%; margin-left: 10px; float: right; border: 1px solid #ddd; border-radius: 4px;"><img src="https://dnstestenvironment.github.io/dns-indicators//assets/img/report/cover.PNG" alt="Indikatorenbericht 2021" style="width: 100%; padding-left: 20px; padding-right:20px; padding-bottom:10px; padding-top:10px;"><figcaption style="margin-bottom:20px; text-align: center"><small>Abb. 1: Indikatorenbericht 2021</small></figcaption></figure> Indikatorenbericht 2022 - Bericht zum Download folgt in Kürze.
+<br>
+Daten zum Indikatorenbericht 2022 – Die Publikation wurde eingestellt. Die Informationen sind nun direkt bei jedem Indikator unter dem Reiter „Weitere Informationen“ verfügbar.
 <br>
 ### 2021
 [Indikatorenbericht 2021](https://dns-indikatoren.de/assets/publications/reports/de/2021.pdf)
