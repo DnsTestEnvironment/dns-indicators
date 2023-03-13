@@ -7,12 +7,12 @@ layout: page
 Die Indikatorenberichte des Statistischen Bundesamtes informieren über das Monitoring der Indikatoren der Deutschen Nachhaltigkeitsstrategie. Ergänzend werden zusätzliche Datenreihen zu den jeweiligen Indikatoren in den Daten zum Indikatorenbericht veröffentlicht.
 
 ### 2022
-<figure style="width: 20%; margin-left: 10px; float: right; border: 1px solid #ddd; border-radius: 4px;"><img src="https://dnstestenvironment.github.io/dns-indicators//assets/img/report/cover.PNG" alt="Indikatorenbericht 2021" style="width: 100%; padding-left: 20px; padding-right:20px; padding-bottom:10px; padding-top:10px;"><figcaption style="margin-bottom:20px; text-align: center"><small>Abb. 1: Indikatorenbericht 2021</small></figcaption></figure> Indikatorenbericht 2022 - Bericht zum Download folgt in Kürze.
+Indikatorenbericht 2022 - Bericht zum Download folgt in Kürze.
 <br>
 Daten zum Indikatorenbericht 2022 – Die Publikation wurde eingestellt. Die Informationen sind nun direkt bei jedem Indikator unter dem Reiter „Weitere Informationen“ verfügbar.
 <br>
 ### 2021
-[Indikatorenbericht 2021](https://dns-indikatoren.de/assets/publications/reports/de/2021.pdf)
+<figure style="width: 20%; margin-left: 10px; float: right; border: 1px solid #ddd; border-radius: 4px;"><img src="https://dnstestenvironment.github.io/dns-indicators//assets/img/report/cover.PNG" alt="Indikatorenbericht 2021" style="width: 100%; padding-left: 20px; padding-right:20px; padding-bottom:10px; padding-top:10px;"><figcaption style="margin-bottom:20px; text-align: center"><small>Abb. 1: Indikatorenbericht 2021</small></figcaption></figure>[Indikatorenbericht 2021](https://dns-indikatoren.de/assets/publications/reports/de/2021.pdf)
 <br>
 [Daten zum Indikatorenbericht 2021](https://dns-indikatoren.de/assets/publications/reports/de/daten2021.pdf)
 <br>
