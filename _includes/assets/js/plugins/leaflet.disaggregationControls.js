@@ -1,3 +1,9 @@
+/*
+ * Leaflet disaggregation controls.
+ *
+ * This is a Leaflet control designed replicate the disaggregation
+ * controls that are in the sidebar for tables and charts.
+ */
 (function () {
     "use strict";
 
@@ -306,7 +312,6 @@
                 that.plugin.selectionLegend.update();
                 that.plugin.updateTitle();
                 that.plugin.updateFooterFields();
-                that.plugin.replaceYearSlider();
                 that.updateList();
                 $('.disaggregation-form-outer').toggle();
             });

@@ -300,7 +300,7 @@
       if (props.values && props.values.length && this.currentDisaggregation < props.values.length) {
         var value = props.values[this.currentDisaggregation][this.currentYear];
         if (typeof value === 'number') {
-          ret = opensdg.dataRounding(value);
+          ret = opensdg.dataRounding(value, { indicatorId: this.indicatorId });
         }
       }
       return ret;
@@ -464,10 +464,6 @@
                 var validValues = validEntries.map(function(entry) {
                   return entry[1];
                 });
-                if (availableYears.length <= valueIndex) {
-                  availableYears.push([]);
-                }
-                availableYears[valueIndex] = availableYears[valueIndex].concat(validKeys);
                 availableYears = availableYears.concat(validKeys);
                 if (minimumValues.length <= valueIndex) {
                   minimumValues.push([]);
@@ -493,11 +489,8 @@
         }
         plugin.setColorScale();
 
-        plugin.years = availableYears.map(function(yearsForIndex) {
-          return _.uniq(yearsForIndex).sort();
-        });
+        plugin.years = _.uniq(availableYears).sort();
         //Start the map with the most recent year
-        plugin.currentYear = plugin.years[plugin.currentDisaggregation].slice(-1)[0];
         plugin.currentYear = plugin.years.slice(-1)[0];
 
         // And we can now update the colors.
@@ -520,7 +513,15 @@
         }));
 
         // Add the year slider.
-        plugin.yearSlider = plugin.getYearSlider()
+        plugin.yearSlider = L.Control.yearSlider({
+          years: plugin.years,
+          yearChangeCallback: function(e) {
+            plugin.currentYear = plugin.years[e.target._currentTimeIndex];
+            plugin.updateColors();
+            plugin.updateTooltips();
+            plugin.selectionLegend.update();
+          }
+        });
         plugin.map.addControl(plugin.yearSlider);
 
         // Add the selection legend.
