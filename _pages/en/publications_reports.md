@@ -14,7 +14,7 @@ Sustainable Development in Germany - Indicator report  2022 - Downloadable repor
 Data on the 2022 indicator report - The publication has been discontinued. The information is now available directly for each indicator under the "Further information" tab.
 <br>
 ### 2021
-<figure style="width: 20%; margin-left: 10px; float: right; border: 1px solid #ddd; border-radius: 4px;"><img src="https://dnstestenvironment.github.io/dns-indicators//assets/img/report/cover.PNG" alt="Indicator report 2021" style="width: 100%; padding-left: 20px; padding-right:20px; padding-bottom:10px; padding-top:10px;"><figcaption style="margin-bottom:20px; text-align: center"><small>Fig. 1: Indicator report 2021</small></figcaption></figure>[Sustainable Development in Germany - Indicator report  2021](https://dns-indikatoren.de/assets/publications/reports/en/2021.pdf)
+<figure style="width: 20%; margin-left: 10px; float: right; border: 1px solid #ddd; border-radius: 4px;"><img src="https://dnstestenvironment.github.io/dns-indicators//assets/img/report/cover_en.PNG" alt="Indicator report 2021" style="width: 100%; padding-left: 20px; padding-right:20px; padding-bottom:10px; padding-top:10px;"><figcaption style="margin-bottom:20px; text-align: center"><small>Fig. 1: Indicator report 2021</small></figcaption></figure>[Sustainable Development in Germany - Indicator report  2021](https://dns-indikatoren.de/assets/publications/reports/en/2021.pdf)
 <br>
 [Sustainable Development in Germany - Data on the Indicator report 2021](https://dns-indikatoren.de/assets/publications/reports/en/daten2021.pdf)
 <br>
