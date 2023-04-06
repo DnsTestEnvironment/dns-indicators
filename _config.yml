@@ -347,7 +347,7 @@ map_layers:
   - serviceUrl:  https://DnsTestEnvironment.github.io/dns-indicators/assets/maps/boundaries.geojson
     min_zoom: 0
     max_zoom: 6
-    staticBorders: true
+    staticBorders: false
     subfolder: laender
     label: indicator.laender
   - serviceUrl:  https://DnsTestEnvironment.github.io/dns-indicators/assets/maps/boundariesKrs.geojson
