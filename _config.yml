@@ -347,6 +347,7 @@ map_layers:
   - serviceUrl:  https://DnsTestEnvironment.github.io/dns-indicators/assets/maps/boundariesKrs.geojson
     min_zoom: 7
     max_zoom: 11
+    staticBorders: false
     subfolder: kreise
     label: indicator.counties
   - serviceUrl:  https://DnsTestEnvironment.github.io/dns-indicators/assets/maps/boundaries.geojson
