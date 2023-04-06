@@ -345,14 +345,14 @@ map_options:
 
 map_layers:
   - serviceUrl:  https://DnsTestEnvironment.github.io/dns-indicators/assets/maps/boundariesKrs.geojson
-    min_zoom: 7
+    min_zoom: 8
     max_zoom: 11
     staticBorders: false
     subfolder: kreise
     label: indicator.counties
   - serviceUrl:  https://DnsTestEnvironment.github.io/dns-indicators/assets/maps/boundaries.geojson
     min_zoom: 0
-    max_zoom: 6
+    max_zoom: 7
     staticBorders: false
     subfolder: laender
     label: indicator.laender
