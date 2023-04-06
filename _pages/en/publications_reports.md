@@ -11,7 +11,7 @@ The indicator reports of the Federal Statistical Office provide information on t
 <br>
 Sustainable Development in Germany - Indicator report  2022 - Downloadable report will follow soon.
 <br>
-Data on the 2022 indicator report - The publication has been discontinued. The information is now available directly for each indicator under the "Further information" tab.
+Data on the 2022 indicator report - The publication has been discontinued. The information is now available online on this platform under the "Further Information" tab on the indicators pages.
 <br>
 ### 2021
 <figure style="width: 20%; margin-left: 10px; float: right; border: 1px solid #ddd; border-radius: 4px;"><img src="https://dnstestenvironment.github.io/dns-indicators//assets/img/report/cover_en.PNG" alt="Indicator report 2021" style="width: 100%; padding-left: 20px; padding-right:20px; padding-bottom:10px; padding-top:10px;"><figcaption style="margin-bottom:20px; text-align: center"><small>Fig. 1: Indicator report 2021</small></figcaption></figure>[Sustainable Development in Germany - Indicator report  2021](https://dns-indikatoren.de/assets/publications/reports/en/2021.pdf)

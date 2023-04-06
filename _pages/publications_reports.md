@@ -11,7 +11,7 @@ Die Indikatorenberichte des Statistischen Bundesamtes informieren über das Moni
 [Indikatorenbericht 2022](https://dns-indikatoren.de/assets/Publikationen/Indikatorenberichte/2022.pdf)
 <br>
 <p style="width:70%">
-Daten zum Indikatorenbericht 2022 – Die Publikation wurde eingestellt. Die Informationen sind nun direkt bei jedem Indikator unter dem Reiter „Weitere Informationen“ verfügbar.
+Daten zum Indikatorenbericht 2022 – Die Publikation wurde eingestellt. Die Informationen sind nun online auf dieser Plattform bei den Indikatoren unter dem Reiter „Weitere Informationen“ verfügbar.
 <br></p>
 ### 2021
 [Indikatorenbericht 2021](https://dns-indikatoren.de/assets/Publikationen/Indikatorenberichte/2021.pdf)
