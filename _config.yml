@@ -347,12 +347,12 @@ map_layers:
   - serviceUrl:  https://DnsTestEnvironment.github.io/dns-indicators/assets/maps/boundariesKrs.geojson
     min_zoom: 8
     max_zoom: 11
-    staticBorders: false
+    staticBorders: true
     subfolder: kreise
     label: indicator.counties
   - serviceUrl:  https://DnsTestEnvironment.github.io/dns-indicators/assets/maps/boundaries.geojson
     min_zoom: 0
     max_zoom: 7
-    staticBorders: false
+    staticBorders: true
     subfolder: laender
     label: indicator.laender
