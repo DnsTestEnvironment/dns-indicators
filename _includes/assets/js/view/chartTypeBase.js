@@ -4,7 +4,7 @@ opensdg.chartTypes.base = function(info) {
 
     var gridColor = getGridColor();
     var tickColor = getTickColor();
-    console.log("info.datasets:", info.datasets);
+
     var config = {
         type: null,
         data: {
@@ -54,9 +54,9 @@ opensdg.chartTypes.base = function(info) {
                     suggestedMin: 0,
                     ticks: {
                         color: tickColor,
-                         callback: function (value) {
-                             return alterDataDisplay(value, undefined, 'chart y-axis tick');
-                         },
+                        callback: function (value) {
+                            return alterDataDisplay(value, undefined, 'chart y-axis tick');
+                        },
                     },
                     title: {
                         display: MODEL.selectedUnit ? translations.t(MODEL.selectedUnit) : MODEL.measurementUnit,
