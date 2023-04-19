@@ -8,7 +8,7 @@ Die Online Plattform gliedert sich in das Indikatorenset der [Deutschen Nachhalt
 
 Die Zeitreihen zu den Indikatoren beider Online Plattformen stehen Ihnen zum Download zur Verfügung.
 
-Einen Direktlink zur Startseite der SDG-Online Plattform finden Sie oben rechts auf dieser Seite neben dem Suchfeld: [<img src="https://dns-testenvironment.github.io/dns-indicators/assets/img/about/wheel.png" alt="Wheel">](https://www.sdg-indikatoren.de)
+Einen Direktlink zur Startseite der SDG-Online Plattform finden Sie oben rechts auf dieser Seite neben dem Suchfeld: [<img src="https://Nachhaltige-Entwicklung-Deutschland.github.io/open-sdg-site-starter/assets/img/about/wheel.png" alt="Wheel">](https://www.sdg-indikatoren.de)
 
 Beide Indikatorensets sind nach den 17 Zielen der Agenda 2030 der Vereinten Nationen gegliedert. Entsprechend stammen die Symbole und die Farbwahl der 17 Ziele (Abb. 1 und Abb. 2), die hier und auf der SDG-Online Plattform verwendet werden, von den Vereinten Nationen. Die Symbole sind urheberrechtlich geschützt.
 
