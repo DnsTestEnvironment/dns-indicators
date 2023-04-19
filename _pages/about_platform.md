@@ -8,14 +8,14 @@ Die Online Plattform gliedert sich in das Indikatorenset der [Deutschen Nachhalt
 
 Die Zeitreihen zu den Indikatoren beider Online Plattformen stehen Ihnen zum Download zur Verfügung.
 
-Einen Direktlink zur Startseite der SDG-Online Plattform finden Sie oben rechts auf dieser Seite neben dem Suchfeld: [<img src="https://Nachhaltige-Entwicklung-Deutschland.github.io/open-sdg-site-starter/assets/img/about/wheel.png" alt="Wheel">](https://www.sdg-indikatoren.de)
+Einen Direktlink zur Startseite der SDG-Online Plattform finden Sie oben rechts auf dieser Seite neben dem Suchfeld: [<img src="https://dns-testenvironment.github.io/dns-indicators/assets/img/about/wheel.png" alt="Wheel">](https://www.sdg-indikatoren.de)
 
 Beide Indikatorensets sind nach den 17 Zielen der Agenda 2030 der Vereinten Nationen gegliedert. Entsprechend stammen die Symbole und die Farbwahl der 17 Ziele (Abb. 1 und Abb. 2), die hier und auf der SDG-Online Plattform verwendet werden, von den Vereinten Nationen. Die Symbole sind urheberrechtlich geschützt.
 
 <div class="container" style="padding-left: 0px;">
 <div class="row">
 <div class="col-xs-12 col-md-6 col-lg-6" style="padding-left: 100px; padding-right: 100px;">
-<img src="https://nachhaltige-entwicklung-deutschland.github.io/open-sdg-site-starter//assets/img/about/sdgIconsInvert.PNG" alt="Abbildung 1: SDG Icons inverted" class="responsiveImg" style="width: 100%;">
+<img src="https://nachhaltige-entwicklung-deutschland.github.io/open-sdg-site-starter//assets/img/about/sdgIconsInvert.PNG" alt="SDG Icons inverted" class="responsiveImg" style="width: 100%;">
 <small> Abb. 1: 17 invertierte SDG-Symbole der Vereinten Nationen und das N im Kreis aus der Deutschen Nachhaltigkeitsstrategie, eingesetzt auf der <b>DNS-Online Plattform</b></small>
 </div>
 
