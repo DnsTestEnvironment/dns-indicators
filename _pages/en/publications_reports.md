@@ -11,7 +11,7 @@ The Indicator Reports of the Federal Statistical Office provide information on t
 <br>
 [Indicator Report 2022](https://dns-indikatoren.de/assets/Publikationen/Indikatorenberichte/2022.pdf) - Only available in German.
 <br>
-Data to the Indicator Report - The publication has been discontinued. The information is now available online on this platform at the respective indicators under the tab "Additional information".
+Data to the Indicator Report 2022 - The publication has been discontinued. The information is now available online on this platform at the respective indicators under the tab "Additional information".
 <br>
 ### 2021
 <figure style="width: 20%; margin-left: 10px; float: right; border: 1px solid #ddd; border-radius: 4px;"><img src="https://dns-indikatoren.de//assets/img/report/cover_en.PNG" alt="Indicator Report 2021" style="width: 100%; padding-left: 20px; padding-right:20px; padding-bottom:10px; padding-top:10px;"><figcaption style="margin-bottom:20px; text-align: center"><small>Fig. 1: Indicator Report 2021</small></figcaption></figure>[Indicator Report 2021](https://dns-indikatoren.de/assets/publications/reports/en/2021.pdf)

@@ -46,7 +46,7 @@ The platform is organised in goals, indicator fields and postulates, and their r
 </p>
 <br>
 
-Each indicator of the DNS is presented individually or together with a closely related indicator on an own page. A chart visualizes the development of the indicator as well as - if possible - the goal to be reached. The definitions and intentions as well as the development of the indicators are explained. The information stem from the biennial published [indicator report](https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Nachhaltigkeitsindikatoren/Publikationen/Downloads-Nachhaltigkeit/indicator-report-0230002189004.pdf?__blob=publicationFile) of the Federal Statistical Office.
+Each indicator of the DNS is presented individually or together with a closely related indicator on an own page. A chart visualizes the development of the indicator as well as - if possible - the goal to be reached. The definitions and intentions as well as the development of the indicators are explained. The information stem from the biennial published [Indicator Report](https://dns-indikatoren.de/assets/Publikationen/Indikatorenberichte/2022.pdf) of the Federal Statistical Office.
 
 For some indicators the data are displayed at Federal States level. However, the goal shown stays the goal for Germany. Most of the Federal States of Germany have own sustainability strategies and indicators. They are not displayed the DNS platform. [Here](https://www.destatis.de/EN/Themes/Society-Environment/Sustainable-Development-Indicators/German/SubstainableDevelopmentIndicatorsLaender.html) you can find a compilation of sustainability strategies of the Federal States of Germany (also called “Länder”).
 
