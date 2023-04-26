@@ -2,13 +2,20 @@
     <div class="card">
     <div class="card-body">
 
-    <!--{% if include.card.title and include.card.title != '' %}-->
+    {% if include.card.title and include.card.title != '' %}
     <h2 class="card-title"
         {% if include.card.rule_color %}
         style="border-color: {{ include.card.rule_color }};"
         {% endif %}
     >{{ include.card.title | t }}</h2>
-    <!--{% endif %}-->
+    {% else %}
+    <h2 class="card-title"
+        {% if include.card.rule_color %}
+        style="border-color: {{ include.card.rule_color }};"
+        {% endif %}
+    ></h2>
+
+    {% endif %}
 
     {% if include.card.content and include.card.content != '' %}
     <div class="card-text">{{ include.card.content | t | markdownify }}</div>
