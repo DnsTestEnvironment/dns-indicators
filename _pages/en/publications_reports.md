@@ -5,7 +5,7 @@ language: en
 layout: page
 ---
 
-The Indicator Reports of the Federal Statistical Office provide information on the monitoring of the indicators of the German Sustainability Strategy. Supplementary data series on the respective indicators are published in the data to the Indicator Report.
+The Indicator Reports of the Federal Statistical Office provide information on the monitoring of the indicators of the German Sustainability Strategy. Supplementary data series on the respective indicators are published in the Data to the Indicator Report.
 
 ### 2022
 <br>

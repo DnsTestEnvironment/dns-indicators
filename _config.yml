@@ -195,6 +195,8 @@ frontpage_cards:
       #button_label: My button text
       # This controls the URL the button links to.
       #button_link: https://example.com
+    - rule_color: grey
+      include: components/community.html
 
 contrast_type: single
 
