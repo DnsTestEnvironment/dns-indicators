@@ -180,7 +180,7 @@ menu:
 frontpage_cards:
     - rule_color: grey
       title: ''
-      content: frontpage.gov_report_text
+      include: components/government.html
     - rule_color: grey
       title: ''
       include: components/community.html
