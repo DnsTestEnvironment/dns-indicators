@@ -370,3 +370,10 @@ abbr[title]:focus::after {
     margin-top: -1px;
     margin-left: 0px;
 }
+
+.container_frontpage {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 5px;
+}
