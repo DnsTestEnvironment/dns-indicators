@@ -180,7 +180,7 @@ menu:
 frontpage_cards:
     - rule_color: grey
       title: ''
-      content: Die Berichte der Bundesregierung zum Thema „Nachhaltigkeitspolitik“ finden Sie [hier](https://www.bundesregierung.de/breg-de/themen/nachhaltigkeitspolitik/berichte-und-reden-nachhaltigkeit/berichte-der-bundesregierung-418550)
+      content: page.t.frontpage.gov_report_text
     - rule_color: grey
       title: ''
       include: components/community.html
