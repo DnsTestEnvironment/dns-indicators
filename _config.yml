@@ -178,8 +178,13 @@ menu:
     translation_key: menu.sdglogo
 
 frontpage_cards:
-    -
-      # This controls the color of the line at the top of the card.
+    - rule_color: grey
+      title: ''
+      content: Die Berichte der Bundesregierung zum Thema „Nachhaltigkeitspolitik“ finden Sie [hier](https://www.bundesregierung.de/breg-de/themen/nachhaltigkeitspolitik/berichte-und-reden-nachhaltigkeit/berichte-der-bundesregierung-418550)
+    - rule_color: grey
+      title: ''
+      include: components/community.html
+    - # This controls the color of the line at the top of the card.
       rule_color: grey
       # This sets the title of the card.
       title: ''
@@ -195,9 +200,7 @@ frontpage_cards:
       #button_label: My button text
       # This controls the URL the button links to.
       #button_link: https://example.com
-    - rule_color: grey
-      title: ''
-      include: components/community.html
+
 
 contrast_type: single
 
