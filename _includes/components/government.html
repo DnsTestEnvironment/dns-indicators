@@ -1,6 +1,13 @@
+
+{% if page.language == 'de' %}
+  {% assign link = "https://www.bundesregierung.de/breg-de/themen/nachhaltigkeitspolitik/eine-strategie-begleitet-uns" %}
+{% else %}
+  {% assign link = "https://www.bundesregierung.de/breg-en/issues/sustainability" %}
+{% endif %}
+
 <div>
     <div>
-      <a href="https://www.bundesregierung.de/breg-de/themen/nachhaltigkeitspolitik/berichte-und-reden-nachhaltigkeit/berichte-der-bundesregierung-418550"><img src="https://dnstestenvironment.github.io/dns-indicators//public/OrgImgDe/breg.png" alt="Logo Bundesregierung" style="width:140px; margin-right:10px; float:left"></a>
+      <a href="{{ link }}"><img src="https://dns-indikatoren.de//assets/img/goals/dns/de/18.png" alt="N" style="width:140px; margin-right:10px; float:left"></a>
       {{ page.t.frontpage.gov_report_text }}
     </div>
 </div>

@@ -1,6 +1,12 @@
+{% if page.language == 'de' %}
+  {% assign link = "https://gemeinschaftswerk-nachhaltigkeit.de/" %}
+{% else %}
+  {% assign link = "https://gemeinschaftswerk-nachhaltigkeit.de/en" %}
+{% endif %}
+
 <div>
     <div>
-      <a href="https://gemeinschaftswerk-nachhaltigkeit.de/"><img src="https://dnstestenvironment.github.io/dns-indicators//assets/img/Gemeinschaftswerk_Nachhaltigkeit.png" alt="Gemeinschaftswerk Nachhaltigkeit" style="width:100px; margin-right:10px; float:left"></a>
+      <a href="{{ link }}"><img src="https://dnstestenvironment.github.io/dns-indicators//assets/img/Gemeinschaftswerk_Nachhaltigkeit.png" alt="Gemeinschaftswerk Nachhaltigkeit" style="width:100px; margin-right:10px; float:left"></a>
       {{ page.t.frontpage.community_text }}
     </div>
 </div>

@@ -180,26 +180,14 @@ menu:
 frontpage_cards:
     - rule_color: grey
       title: ''
-      include: components/government.html
+      include: components/download-all-data.html
     - rule_color: grey
       title: ''
       include: components/community.html
-    - # This controls the color of the line at the top of the card.
-      rule_color: grey
-      # This sets the title of the card.
+    - rule_color: grey
       title: ''
-      # This sets the content of the card. Markdown is supported. Note that all
-      # internal links should be relative to the frontpage. For example, instead
-      # of [link](/path) you should use [link](path).
-      #content: |
-      #  * List item
-      #  * List item with [link](https://example.com)
-      # This displays any file in the `_includes` folder.
-      include: components/download-all-data.html
-      # This controls the text for a call-to-action button.
-      #button_label: My button text
-      # This controls the URL the button links to.
-      #button_link: https://example.com
+      include: components/government.html
+
 
 
 contrast_type: single
