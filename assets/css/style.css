@@ -3718,7 +3718,7 @@ abbr[title]:focus::after {
 .container_frontpage {
   display: grid;
   grid-template-columns: 95px 1fr;
-  column-gap: 5px; }
+  column-gap: 10px; }
 
 .round-button {
   display: block;
