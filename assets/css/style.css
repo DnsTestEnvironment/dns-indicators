@@ -3738,3 +3738,6 @@ abbr[title]:focus::after {
 .round-button:hover {
   background: #f2dbda;
   color: #b90e0a; }
+
+.download-icon {
+  color: #f2dbda; }
