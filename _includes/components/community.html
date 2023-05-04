@@ -6,9 +6,15 @@
   {% assign title = 'tbd.' %}
 {% endif %}
 
+<script type="text/javascript">
+function confirm_alert(node) {
+    return confirm("<b>Sie verlassen unsere Seite!<br></b>Bitte beachten Sie, dass der folgenden Link eine Webseite öffnet, für deren Inhalt wird nicht verantwortlich sind und auf die unsere Datenschutzbestimmungen keine Anwendung findet.");
+}
+</script>
+
 <div>
     <div>
-      <a href="{{ link }}" title="{{ title }}" target="_blank"><img src="https://dnstestenvironment.github.io/dns-indicators//assets/img/Gemeinschaftswerk_Nachhaltigkeit.png" alt="Gemeinschaftswerk Nachhaltigkeit" style="width:100px; margin-right:10px; float:left"></a>
+      <a href="{{ link }}" title="{{ title }}" target="_blank" onclick="return confirm_alert(this);"><img src="https://dnstestenvironment.github.io/dns-indicators//assets/img/Gemeinschaftswerk_Nachhaltigkeit.png" alt="Gemeinschaftswerk Nachhaltigkeit" style="width:100px; margin-right:10px; float:left"></a>
       {{ page.t.frontpage.community_text }}
     </div>
 </div>
