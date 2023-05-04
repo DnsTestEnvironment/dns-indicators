@@ -387,13 +387,19 @@ abbr[title]:focus::after {
     color: #f2dbda;
     text-align: center;
     text-decoration: none;
-    background-color: #b90e0a;
+    background: #b90e0a;
     box-shadow: 0 0 3px gray;
     font-size: 20px;
     font-weight:bold;
-    font-size: 150%;
 }
 .round-button:hover {
-    background-color: #f2dbda;
+    background: #f2dbda;
     color: #b90e0a;
+}
+.download-icon {
+    color: #f2dbda;
+}
+.round-button:hover .download-icon {
+    color: #b90e0a;
+    font-size: 150%;
 }
