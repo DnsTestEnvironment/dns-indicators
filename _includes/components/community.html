@@ -1,6 +1,6 @@
 {% if page.language == 'de' %}
   {% assign link = "https://gemeinschaftswerk-nachhaltigkeit.de/" %}
-  {% assign alert = 'Sie verlassen unsere Seite! Bitte beachten Sie, dass der folgenden Link eine Webseite öffnet, für deren Inhalt wird nicht verantwortlich sind und auf die unsere Datenschutzbestimmungen keine Anwendung findet.' %}
+  {% assign alert = 'Sie verlassen unsere Webseite! Bitte beachten Sie, dass der folgenden Link eine Webseite öffnet, für deren Inhalt wird nicht verantwortlich sind und auf die unsere Datenschutzbestimmungen keine Anwendung findet.' %}
   {% assign title = 'Externer Link!' %}
 {% else %}
   {% assign link = "https://gemeinschaftswerk-nachhaltigkeit.de/en" %}
@@ -10,7 +10,7 @@
 
 <script type="text/javascript">
 function confirm_alert(node) {
-    return confirm( "{{ alert }}");
+    return confirm( "{{ alert }}" );
 }
 </script>
 
