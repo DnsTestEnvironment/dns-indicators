@@ -385,11 +385,11 @@ abbr[title]:focus::after {
     border: 3px solid #dd9b9b;
     border-radius: 50%;
     color: #f2dbda;
+    font-size: 150%
     text-align: center;
     text-decoration: none;
     background: #b90e0a;
     box-shadow: 0 0 3px gray;
-    font-size: 20px;
     font-weight:bold;
 }
 .round-button:hover {
@@ -401,5 +401,5 @@ abbr[title]:focus::after {
 }
 .round-button:hover .download-icon {
     color: #b90e0a;
-    font-size: 150%;
+    font-size: 200%;
 }
