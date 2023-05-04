@@ -1,12 +1,14 @@
 {% if page.language == 'de' %}
   {% assign link = "https://gemeinschaftswerk-nachhaltigkeit.de/" %}
+  {% assign title = '<b>Sie verlassen unsere Seite!<br></b>Bitte beachten Sie, dass der folgenden Link eine Webseite öffnet, für deren Inhalt wird nicht verantwortlich sind und auf die unsere Datenschutzbestimmungen keine Anwendung findet.' %}
 {% else %}
   {% assign link = "https://gemeinschaftswerk-nachhaltigkeit.de/en" %}
+  {% assign title = 'tbd.' %}
 {% endif %}
 
 <div>
     <div>
-      <a href="{{ link }}" target="_blank"><img src="https://dnstestenvironment.github.io/dns-indicators//assets/img/Gemeinschaftswerk_Nachhaltigkeit.png" alt="Gemeinschaftswerk Nachhaltigkeit" style="width:100px; margin-right:10px; float:left"></a>
+      <a href="{{ link }}" title="{{ title }}" target="_blank"><img src="https://dnstestenvironment.github.io/dns-indicators//assets/img/Gemeinschaftswerk_Nachhaltigkeit.png" alt="Gemeinschaftswerk Nachhaltigkeit" style="width:100px; margin-right:10px; float:left"></a>
       {{ page.t.frontpage.community_text }}
     </div>
 </div>
