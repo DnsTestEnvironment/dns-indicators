@@ -113,7 +113,7 @@ menu:
       - path: /about_platform/
         translation_key: menu.about_this_site
       - path: /about_joint_action/
-        translation_key: Gemeinschaftswerk
+        translation_key: menu.community
       - path: /guidance/
         translation_key: menu.guidance
   - translation_key: menu.publications
