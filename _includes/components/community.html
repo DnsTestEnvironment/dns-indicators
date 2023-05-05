@@ -1,13 +1,3 @@
-{% if page.language == 'de' %}
-  {% assign link = "https://gemeinschaftswerk-nachhaltigkeit.de/" %}
-  {% assign alert = 'Sie verlassen unsere Webseite! Bitte beachten Sie, dass der folgenden Link eine Webseite öffnet, für deren Inhalt wird nicht verantwortlich sind und auf die unsere Datenschutzbestimmungen keine Anwendung findet.' %}
-  {% assign title = 'Externer Link!' %}
-{% else %}
-  {% assign link = "https://gemeinschaftswerk-nachhaltigkeit.de/en" %}
-  {% assign alert = 'You are leaving our website! Please note that the following link opens a website for whose content we are not responsible and to which our privacy policy does not apply.' %}
-  {% assign title = 'Link to external website!' %}
-{% endif %}
-
 <script type="text/javascript">
 function confirm_alert(node) {
     return confirm( "{{ alert }}" );
@@ -16,7 +6,7 @@ function confirm_alert(node) {
 
 <div>
     <div>
-      <a href="{{ link }}" title="{{ title }}" target="_blank" onclick="return confirm_alert(this);"><img src="https://dnstestenvironment.github.io/dns-indicators//assets/img/Gemeinschaftswerk_Nachhaltigkeit.png" alt="Gemeinschaftswerk Nachhaltigkeit" style="width:100px; margin-right:10px; float:left"></a>
+      <a href="/about_joint_action"><img src="https://dnstestenvironment.github.io/dns-indicators//assets/img/Gemeinschaftswerk_Nachhaltigkeit.png" alt="Gemeinschaftswerk Nachhaltigkeit" style="width:100px; margin-right:10px; float:left"></a>
       {{ page.t.frontpage.community_text }}
     </div>
 </div>

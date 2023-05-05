@@ -112,12 +112,10 @@ menu:
     dropdown:
       - path: /about_platform/
         translation_key: menu.about_this_site
+      - path: /about_joint_action/
+        translation_key: Gemeinschaftswerk
       - path: /guidance/
         translation_key: menu.guidance
-  # - translation_key: menu.facts
-  #   dropdown:
-  #     - path: /facts_agenda/
-  #       translation_key: menu.facts_agenda
   - translation_key: menu.publications
     dropdown:
       - path: /publications_reports/
