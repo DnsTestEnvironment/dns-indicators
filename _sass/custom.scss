@@ -377,33 +377,24 @@ abbr[title]:focus::after {
   column-gap: 10px;
 }
 
-.round-button {
-    display: block;
-    width: 90px;
-    height: 90px;
-    line-height: 90px;
-    border: 3px solid #dd9b9b;
-    border-radius: 50%;
-    color: #f2dbda;
-    text-align: center;
-    text-decoration: none;
-    background: #b90e0a;
-    box-shadow: 0 0 3px gray;
-    font-size: 20px;
-    font-weight:bold;
-}
-.round-button:hover .download-icon {
-    color: #b90e0a;
-    font-size: 150%;
-}
 
-.round-button:hover {
-    background: #f2dbda;
-    color: #f2dbda;
-}
 .download-icon {
     font-size: 20px;
     font-weight: bold;
     font-size: 290%;
     color: #b90e0a;
+}
+
+.leftColumn {
+  box-sizing: border-box;
+  float: left;
+  width: 80%;
+  padding: 10px;
+}
+
+.rightColumn {
+  box-sizing: border-box;
+  float: right;
+  width: 20%;
+  padding: 10px;
 }
