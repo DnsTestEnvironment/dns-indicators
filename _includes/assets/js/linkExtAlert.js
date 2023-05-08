@@ -1,5 +1,5 @@
 function confirm_alert(source) {
-  if (source && source != {
+  if (source && source != '') {
     var text = 'Sie verlassen unsere Webseite!\nDer Link führt Sie zur Webseite '
     return confirm(text + source + '.');
   } else {
