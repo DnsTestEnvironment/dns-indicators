@@ -43,7 +43,7 @@
                 {% endunless %}
 
                 {% if page.indicator[indicator_metadata.name] contains "http" or page.indicator[indicator_metadata.name] contains "mailto" %}
-                  <a href="{{ metadata_content }}" target="_blank" onclick="return confirm_alert('{{ url_alert }}', '{{ language }}');">
+                  <a href="{{ page.indicator[indicator_metadata.name] }}" target="_blank" onclick="return confirm_alert('{{ url_alert }}', '{{ language }}');">
                     {{ url_text }} <span class="visuallyhidden">{{ page.t.general.opens_new_window }}</span>
                   </a>
                 {% endif %}
