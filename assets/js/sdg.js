@@ -6496,10 +6496,9 @@ $(document).ready(function() {
 });
 function confirm_alert(source) {
   if (source && source != '') {
-    var text = [translations.general.alert]
+    var text = 'Sie verlassen unsere Webseite!\nDer Link führt Sie zur Webseite '
     return confirm(text + source + '.');
   } else {
-    var text = [translations.general.alert_general]
-    return confirm(text)
+    return confirm('Sie verlassen unsere Webseite!\nDer Link führt Sie zu einer externen Webseite.')
   }
 }
