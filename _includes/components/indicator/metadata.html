@@ -22,7 +22,7 @@
       {% endif %}
 
 
-      {% unless var == 'dontShow' or indicator_metadata.name contains "_url_text" or indicator_metadata.name contains "_link_text" %}
+      {% unless var == 'dontShow' or indicator_metadata.name contains "_url_text" or indicator_metadata.name contains "_link_text" or indicator_metadata.name contains "_url_alert" %}
         {% if indicator_metadata.field.scope != 'content' %}
           <tr id="everythingElse">
             <th scope="row" style="text-align: left">{{ metadata_label }} </th>
