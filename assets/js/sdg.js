@@ -6500,6 +6500,6 @@ function confirm_alert(source) {
     return confirm(text + source + '.');
   } else {
     var text = translations.general.alert_general
-    return confirm('Sie verlassen unsere Webseite!\nDer Link führt Sie zu einer externen Webseite.')
+    return confirm(text)
   }
 }
