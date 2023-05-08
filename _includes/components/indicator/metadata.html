@@ -1,3 +1,8 @@
+{% if page.language == 'de' %}
+  {% assign language = 'De' %}
+{% else %}
+  {% assign language = 'En'' %}
+{% endif %}
 <table class="table">
   {% for indicator_metadata in site.data.schema %}
     {%- assign metadata_label = indicator_metadata.name | translate_metadata_field -%}
@@ -38,7 +43,7 @@
                 {% endunless %}
 
                 {% if page.indicator[indicator_metadata.name] contains "http" or page.indicator[indicator_metadata.name] contains "mailto" %}
-                <a href="{{ metadata_content }}" target="_blank" onclick="return confirm_alert('{{ url_alert }}');">
+                <a href="{{ metadata_content }}" target="_blank" onclick="return confirm_alert('{{ url_alert }}', '{{ language }}');">
                   {{ url_text }} <span class="visuallyhidden">{{ page.t.general.opens_new_window }}</span>
                 </a>
                 {% endif %}
