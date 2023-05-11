@@ -38,7 +38,7 @@
                 {% assign url_alert_name = indicator_metadata.name | replace_first:'_url','_url_alert'  %}
                 {% assign url_alert_name = url_alert_name | replace_first:'_link','_link_alert'  %}
                 {% assign url_alert = page.indicator[url_alert_name] %}
-                {% unless url_alert %}
+
                 {% if page.indicator[indicator_metadata.name] contains "http" or page.indicator[indicator_metadata.name] contains "mailto" %}
                   {% if url_alert %}
                     <a href="{{ page.indicator[indicator_metadata.name] }}" target="_blank" onclick="return confirm_alert('{{ url_alert }}', '{{ language }}');">
@@ -50,7 +50,6 @@
                   </a>
                   {% endif %}
                 {% endif %}
-                {% endunless %}
 
 
 
