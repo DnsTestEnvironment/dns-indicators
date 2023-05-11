@@ -51,8 +51,6 @@
                   {% endif %}
                 {% endif %}
 
-
-
               {% elsif indicator_metadata.field.element == 'multiselect' %}
                 {% for item in page.indicator[indicator_metadata.name] %}
                   {{ item | t }}{% unless forloop.last %}, {% endunless %}
