@@ -12,7 +12,7 @@
                 <div id="footerLinks">
                     <ul>
                         <li>
-                            <a href="https://open-sdg.org" target="_blank" onclick="return confirm_alert('{{ assign opensdgalert }}', '{{ language }}');">{{ page.t.general.built_using_open_sdg }}</a>
+                            <a href="https://open-sdg.org" target="_blank" onclick="return confirm_alert('{{ opensdgalert }}', '{{ language }}');">{{ page.t.general.built_using_open_sdg }}</a>
                         </li>
                         {% if site.footer_menu %}
                         {% for item in site.footer_menu %}
