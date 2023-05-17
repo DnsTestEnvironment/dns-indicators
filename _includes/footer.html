@@ -3,7 +3,7 @@
   {% assign opensdgalert = 'von open-sdg' %}
 {% else %}
   {% assign language = 'En' %}
-  {% assign opensdgalert = 'of open-sdg' %}
+  {% assign opensdgalert = 'open-sdg' %}
 {% endif %}
 <footer role="contentinfo">
     <div class="container">
@@ -21,7 +21,7 @@
                         <li>
                             {% if item_path contains ":" %}
                               {% if item_alert %}
-                                <a href="{{ item_path }}" target="_blank" onclick="return confirm_alert('{{ url_alert }}', '{{ language }}');">{{ item.translation_key | t }}</a>
+                                <a href="{{ item_path }}" target="_blank" onclick="return confirm_alert('{{ item_alert }}', '{{ language }}');">{{ item.translation_key | t }}</a>
                               {% else %}
                                 <a href="{{ item_path }}">{{ item.translation_key | t }}</a>
                               {% endif %}

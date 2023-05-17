@@ -124,54 +124,6 @@ menu:
         translation_key: menu.sustainable_development_strategy
       - path: /publications_other/
         translation_key: menu.other_publications
-  # - path: /publications/
-  #   translation_key: menu.publications
-  # - translation_key: menu.publications
-  #   dropdown:
-  #     - translation_key: menu.reports
-  #       dropdown:
-  #         - path: menu.report21path
-  #           translation_key: menu.report21
-  #         - path: menu.report_data21path
-  #           translation_key: menu.report_data21
-  #         - path: menu.report18path
-  #           translation_key: menu.report18
-  #         - path: menu.report_data18path
-  #           translation_key: menu.report_data18
-  #         - path: menu.report16path
-  #           translation_key: menu.report16
-  #         - path: menu.report_data16path
-  #           translation_key: menu.report_data16
-  #         - path: menu.report14path
-  #           translation_key: menu.report14
-  #         - path: menu.report_data14path
-  #           translation_key: menu.report_data14
-  #         - path: menu.report12path
-  #           translation_key: menu.report12
-  #         - path: menu.report_data12path
-  #           translation_key: menu.report_data12
-  #         - path: menu.report10path
-  #           translation_key: menu.report10
-  #         - path: menu.report_data10path
-  #           translation_key: menu.report_data10
-  #         - path: menu.report08path
-  #           translation_key: menu.report08
-  #         - path: menu.report_data08path
-  #           translation_key: menu.report_data08
-  #         - path: menu.report06path
-  #           translation_key: menu.report06
-  #     - translation_key: menu.sustainable_development_strategy
-  #       dropdown:
-  #         - path: menu.government_reports_path
-  #           translation_key: menu.government_reports
-  #     - translation_key: menu.other_publications
-  #       dropdown:
-  #         - path: menu.wista_path
-  #           translation_key: menu.wista
-  #         - path: menu.feasibility_study_path
-  #           translation_key: menu.feasibility_study
-  #         - path: menu.special_evel_path
-  #           translation_key: menu.special_evel
   - path: menu.pathtosdg
     translation_key: menu.sdglogo
 
@@ -199,8 +151,6 @@ footer_menu:
     translation_key: menu.contact_us
   - path: menu.twitterPath #https://twitter.com/destatis?lang=de
     translation_key:  general.twitter
-  # - path: /faq/
-  #   translation_key: menu.faq
   - path: /imprint/
     translation_key: menu.imprint
 
