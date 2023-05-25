@@ -390,6 +390,11 @@ abbr[title]:focus::after {
   box-sizing: border-box;
 }
 
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .leftColumn {
   //box-sizing: border-box;
   float: left;
@@ -404,11 +409,6 @@ abbr[title]:focus::after {
   //width: 20%;
   padding: 10px;
   flex: 20%;
-}
-
-.flex-container {
-  display: flex;
-  flex-wrap: wrap;
 }
 
 /* Responsive layout - makes a one column-layout instead of a two-column layout */
