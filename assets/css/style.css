@@ -3742,7 +3742,7 @@ abbr[title]:focus::after {
   float: right;
   padding: 10px;
   flex: 20%;
-  direction: rtl; }
+  flex-direction: row-reverse; }
 
 /* Responsive layout - makes a one column-layout instead of a two-column layout */
 @media (max-width: 1200px) {
