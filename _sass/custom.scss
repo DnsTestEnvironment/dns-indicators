@@ -393,6 +393,7 @@ abbr[title]:focus::after {
 .flex-container {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row-reverse;
 }
 
 .leftColumn {
