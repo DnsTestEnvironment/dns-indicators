@@ -391,17 +391,19 @@ abbr[title]:focus::after {
 }
 
 .leftColumn {
-  box-sizing: border-box;
+  //box-sizing: border-box;
   float: left;
-  width: 80%;
+  //width: 80%;
   padding: 10px;
+  flex: 80%;
 }
 
 .rightColumn {
-  box-sizing: border-box;
+  //box-sizing: border-box;
   float: right;
-  width: 20%;
+  //width: 20%;
   padding: 10px;
+  flex: 20%;
 }
 
 .flex-container {
