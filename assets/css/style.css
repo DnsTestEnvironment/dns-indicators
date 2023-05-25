@@ -3730,16 +3730,14 @@ abbr[title]:focus::after {
   box-sizing: border-box; }
 
 .leftColumn {
-  box-sizing: border-box;
   float: left;
-  width: 80%;
-  padding: 10px; }
+  padding: 10px;
+  flex: 80%; }
 
 .rightColumn {
-  box-sizing: border-box;
   float: right;
-  width: 20%;
-  padding: 10px; }
+  padding: 10px;
+  flex: 20%; }
 
 .flex-container {
   display: flex;
