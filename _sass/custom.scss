@@ -385,6 +385,11 @@ abbr[title]:focus::after {
     color: #b90e0a;
 }
 
+
+* {
+  box-sizing: border-box;
+}
+
 .leftColumn {
   box-sizing: border-box;
   float: left;
