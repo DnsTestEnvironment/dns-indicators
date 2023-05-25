@@ -3741,9 +3741,10 @@ abbr[title]:focus::after {
 .rightColumn {
   float: right;
   padding: 10px;
-  flex: 20%; }
+  flex: 20%;
+  direction: rtl; }
 
 /* Responsive layout - makes a one column-layout instead of a two-column layout */
-@media (max-width: 500px) {
+@media (max-width: 1200px) {
   .rightColumn, .leftColumn {
     flex: 100%; } }
