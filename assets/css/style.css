@@ -3726,6 +3726,9 @@ abbr[title]:focus::after {
   font-size: 290%;
   color: #b90e0a; }
 
+* {
+  box-sizing: border-box; }
+
 .leftColumn {
   box-sizing: border-box;
   float: left;
