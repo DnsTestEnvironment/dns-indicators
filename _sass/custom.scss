@@ -419,3 +419,14 @@ abbr[title]:focus::after {
     flex: 100%;
   }
 }
+
+/* Figcaptions*/
+.cptn {
+  margin-bottom:20px;
+  text-align: center;
+}
+@media (max-width: 1200px) {
+  .cptn {
+    visibility: hidden;
+  }
+}
