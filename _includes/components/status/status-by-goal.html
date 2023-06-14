@@ -183,7 +183,7 @@
 
                             <td width="10%" align="center" class="prio-{{ letter }}"> <a href=" {{ site.baseurl }}{{ baseurl_folder }}{{ language }}/status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/{{ current_language }}/{{ status }}.png" alt="{{ status }}" class="responsiveWeather hidden-xs" title="{{ indicator[title_key] }}" {{ opacity }}/></a> </td>
                             {% assign additional_cells_i  = additional_cells_i | minus: 1 %}
-
+                          {% endif %}
                         {% elsif indicator[year_key] %}
 
                           <td width="10%" align="center" class="prio-{{ letter }}"></td>
