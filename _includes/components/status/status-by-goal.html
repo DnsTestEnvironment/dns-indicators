@@ -139,7 +139,7 @@
                           {% assign opacity = ' style="opacity: 0.2"' %}
                         {% endif %}
 
-                        <!-- {% if indicator[item_key] and indicator[item_key] != '' and indicator[item_key] != 'Bewertung ausgesetzt' and indicator[item_key] != 'Später' and indicator[item_key] != 'Keine' and indicator[item_key] != 'Ende' %}
+                        {% if indicator[item_key] and indicator[item_key] != '' and indicator[item_key] != 'Bewertung ausgesetzt' and indicator[item_key] != 'Später' and indicator[item_key] != 'Keine' and indicator[item_key] != 'Ende' %}
                           {% if indicator[item_key] == 'Sonne' %}
                             {% assign status = page.t.weather['sonne'] %}
                           {% elsif indicator[item_key] == 'Leicht bewölkt' %}
@@ -166,24 +166,7 @@
                           {% assign no_additional_cells = true %}
                         {% elsif indicator[item_key] == 'Später' %}
                           <td colspan="7" align="center" class="prio-{{ letter }}"> <div class=responsiveText>{{ page.t.weather.assessment_later }}</div> </td>
-                          {% assign no_additional_cells = true %} -->
-                          {% if indicator[item_key] %}
-                            {% if indicator[item_key] == 'Sonne' %}
-                              {% assign status = page.t.weather['sonne'] %}
-                            {% elsif indicator[item_key] == 'Leicht bewölkt' %}
-                              {% assign status = page.t.weather['leicht bewölkt'] %}
-                            {% elsif indicator[item_key] == 'Wolke' %}
-                              {% assign status = page.t.weather['wolke'] %}
-                            {% elsif indicator[item_key] == 'Blitz' %}
-                              {% assign status = page.t.weather['blitz'] %}
-                            {% else %}
-                              {% assign status = indicator[item_key] %}
-                              {% assign no_additional_cells = true %}
-                            {% endif %}
-
-                            <td width="10%" align="center" class="prio-{{ letter }}"> <a href=" {{ site.baseurl }}{{ baseurl_folder }}{{ language }}/status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/{{ current_language }}/{{ status }}.png" alt="{{ status }}" class="responsiveWeather hidden-xs" title="{{ indicator[title_key] }}" {{ opacity }}/></a> </td>
-                            {% assign additional_cells_i  = additional_cells_i | minus: 1 %}
-                          {% endif %}
+                          {% assign no_additional_cells = true %}
                         {% elsif indicator[year_key] %}
 
                           <td width="10%" align="center" class="prio-{{ letter }}"></td>
