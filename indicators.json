@@ -231,7 +231,7 @@
         },
         {
           "id": "7-2-a",
-          "title": "Anteil erneuerbarer Energien am Bruttoendenergieverbrauch",
+          "title": "Anteil erneuerbarer Energien am Brutto-Endenergieverbrauch",
           "description": "",
           "keywords": "",
           "href": "/dns-indicators/7-2-a",
@@ -279,7 +279,7 @@
         },
         {
           "id": "8-3",
-          "title": "Verhältnis der Bruttoanlageinvestitionen zum Bruttoinlandsprodukt",
+          "title": "Verhältnis der Bruttoanlageinvestitionen zum BIP",
           "description": "",
           "keywords": "",
           "href": "/dns-indicators/8-3",
@@ -327,7 +327,7 @@
         },
         {
           "id": "9-1-b",
-          "title": "Breitbandausbau – Anteil der Haushalte mit Zugang zu Gigabit-Breitbandversorgung",
+          "title": "Breitbandausbau",
           "description": "",
           "keywords": "",
           "href": "/dns-indicators/9-1-b",
