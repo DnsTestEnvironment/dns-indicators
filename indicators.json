@@ -231,7 +231,7 @@
         },
         {
           "id": "7-2-a",
-          "title": "Anteil erneuerbarer Energien am Brutto-Endenergieverbrauch",
+          "title": "Anteil erneuerbarer Energien am Bruttoendenergieverbrauch",
           "description": "",
           "keywords": "",
           "href": "/dns-indicators/7-2-a",
@@ -279,7 +279,7 @@
         },
         {
           "id": "8-3",
-          "title": "Verhältnis der Bruttoanlageinvestitionen zum BIP",
+          "title": "Verhältnis der Bruttoanlageinvestitionen zum Bruttoinlandsprodukt",
           "description": "",
           "keywords": "",
           "href": "/dns-indicators/8-3",
@@ -287,7 +287,7 @@
         },
         {
           "id": "8-4",
-          "title": "Bruttoinlandsprodukt je Einwohner",
+          "title": "Bruttoinlandsprodukt je Einwohnerin und Einwohner",
           "description": "",
           "keywords": "",
           "href": "/dns-indicators/8-4",
@@ -327,7 +327,7 @@
         },
         {
           "id": "9-1-b",
-          "title": "Breitbandausbau",
+          "title": "Breitbandausbau – Anteil der Haushalte mit Zugang zu Gigabit-Breitbandversorgung",
           "description": "",
           "keywords": "",
           "href": "/dns-indicators/9-1-b",
@@ -503,7 +503,7 @@
         
         {
           "id": "14-1-a",
-          "title": "Stickstoffeintrag über die Zuflüsse in Nord- und Ostsee",
+          "title": "Stickstoffeintrag über die Zuflüsse in die Nord- und Ostsee",
           "description": "",
           "keywords": "",
           "href": "/dns-indicators/14-1-a",
@@ -599,7 +599,7 @@
         },
         {
           "id": "17-2",
-          "title": "Anzahl der Studierenden und Forschenden aus Entwicklungsländern sowie LDCs pro Jahr",
+          "title": "Anzahl der Studierenden und Forschenden aus Entwicklungsländern sowie aus am wenigsten entwickelten Ländern pro Jahr",
           "description": "",
           "keywords": "",
           "href": "/dns-indicators/17-2",
