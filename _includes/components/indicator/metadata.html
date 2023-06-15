@@ -189,7 +189,7 @@
             {% if item_d == 'Bewertung ausgesetzt' or item_d == 'Assessment suspended' %}
               {% assign no_futher_cells = true %}
               <td colspan="4" align="left" style="padding-left: 0px;padding-right: 0px;">
-                <p> {{ page.t.status.assessment_stoped }} </p>
+                <p> {{ page.t.weather.assessment_stoped }} </p>
               </td>
             {% endif %}
             {% unless item_c == '' or item_c == 'Bewertung ausgesetzt' or item_c == 'Assessment suspended' or no_futher_cells == true %}
@@ -200,7 +200,7 @@
             {% if item_c == 'Bewertung ausgesetzt' or item_c == 'Assessment suspended' %}
               {% assign no_futher_cells = true %}
               <td colspan="3" align="left" style="padding-left: 0px;padding-right: 0px;">
-                <p> {{ page.t.status.assessment_stoped }} </p>
+                <p> {{ page.t.weather.assessment_stoped }} </p>
               </td>
             {% endif %}
             {% unless item_b == '' or item_b == 'Bewertung ausgesetzt' or item_b == 'Assessment suspended' or no_futher_cells == true  %}
@@ -211,7 +211,7 @@
             {% if item_b == 'Bewertung ausgesetzt' or item_b == 'Assessment suspended' %}
               {% assign no_futher_cells = true %}
               <td colspan="2" align="left" style="padding-left: 0px;padding-right: 0px;">
-                <p> {{ page.t.status.assessment_stoped }} </p>
+                <p> {{ page.t.weather.assessment_stoped }} </p>
               </td>
             {% endif %}
             <td align="left" style="padding-left: 0px;padding-right: 0px;">
