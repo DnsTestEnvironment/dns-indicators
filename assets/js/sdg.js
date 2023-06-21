@@ -361,6 +361,30 @@ opensdg.autotrack = function(preset, category, action, label) {
       return [opensdg.remoteDataBaseUrl, 'geojson', subfolder, fileName].join('/');
     },
 
+    getYearSlider: function() {
+      var plugin = this,
+          years = plugin.years[plugin.currentDisaggregation];
+      return L.Control.yearSlider({
+        years: years,
+        yearChangeCallback: function(e) {
+          plugin.currentYear = years[e.target._currentTimeIndex];
+          plugin.updateColors();
+          plugin.updateTooltips();
+          plugin.selectionLegend.update();
+        }
+      });
+    },
+
+    replaceYearSlider: function() {
+      var newSlider = this.getYearSlider();
+      var oldSlider = this.yearSlider;
+      this.map.addControl(newSlider);
+      this.map.removeControl(oldSlider);
+      this.yearSlider = newSlider;
+      $(this.yearSlider.getContainer()).insertAfter($(this.disaggregationControls.getContainer()));
+      this.yearSlider._timeDimension.setCurrentTimeIndex(this.yearSlider._timeDimension.getCurrentTimeIndex());
+    },
+
     // Initialize the map itself.
     init: function() {
 
@@ -495,7 +519,10 @@ opensdg.autotrack = function(preset, category, action, label) {
                 var validValues = validEntries.map(function(entry) {
                   return entry[1];
                 });
-                availableYears = availableYears.concat(validKeys);
+                if (availableYears.length <= valueIndex) {
+                  availableYears.push([]);
+                }
+                availableYears[valueIndex] = availableYears[valueIndex].concat(validKeys);
                 if (minimumValues.length <= valueIndex) {
                   minimumValues.push([]);
                   maximumValues.push([]);
@@ -520,8 +547,11 @@ opensdg.autotrack = function(preset, category, action, label) {
         }
         plugin.setColorScale();
 
-        plugin.years = _.uniq(availableYears).sort();
+        plugin.years = availableYears.map(function(yearsForIndex) {
+          return _.uniq(yearsForIndex).sort();
+        });
         //Start the map with the most recent year
+        plugin.currentYear = plugin.years[plugin.currentDisaggregation].slice(-1)[0];
         plugin.currentYear = plugin.years.slice(-1)[0];
 
         // And we can now update the colors.
@@ -544,15 +574,7 @@ opensdg.autotrack = function(preset, category, action, label) {
         }));
 
         // Add the year slider.
-        plugin.yearSlider = L.Control.yearSlider({
-          years: plugin.years,
-          yearChangeCallback: function(e) {
-            plugin.currentYear = plugin.years[e.target._currentTimeIndex];
-            plugin.updateColors();
-            plugin.updateTooltips();
-            plugin.selectionLegend.update();
-          }
-        });
+        plugin.yearSlider = plugin.getYearSlider();
         plugin.map.addControl(plugin.yearSlider);
 
         // Add the selection legend.
@@ -562,9 +584,14 @@ opensdg.autotrack = function(preset, category, action, label) {
         // Add the disaggregation controls.
         plugin.disaggregationControls = L.Control.disaggregationControls(plugin);
         plugin.map.addControl(plugin.disaggregationControls);
-        plugin.updateTitle();
-        plugin.updateFooterFields();
-        plugin.updatePrecision();
+        if (plugin.disaggregationControls.needsMapUpdate) {
+          plugin.disaggregationControls.updateMap();
+        }
+        else {
+          plugin.updateTitle();
+          plugin.updateFooterFields();
+          plugin.updatePrecision();
+        }
 
         // Add the search feature.
         plugin.searchControl = new L.Control.SearchAccessible({
@@ -2864,6 +2891,7 @@ function getTimeSeriesAttributes(rows) {
   this.xAxisLabel = options.xAxisLabel;
   this.startValues = options.startValues;
   this.showData = options.showData;
+  this.showInfo = options.showInfo;
   this.selectedFields = [];
   this.allowedFields = [];
   this.selectedUnit = undefined;
@@ -2880,7 +2908,6 @@ function getTimeSeriesAttributes(rows) {
   this.stackedDisaggregation = options.stackedDisaggregation;
   this.showLine = options.showLine; // ? options.showLine : true;
   this.spanGaps = options.spanGaps;
-  //this.mixedTypes = options.mixedTypes;
   this.graphAnnotations = options.graphAnnotations;
   this.graphTargetLines = options.graphTargetLines;
   this.graphSeriesBreaks = options.graphSeriesBreaks;
@@ -2892,6 +2919,8 @@ function getTimeSeriesAttributes(rows) {
   this.precision = options.precision;
   this.dataSchema = options.dataSchema;
   this.graphStepsize = options.graphStepsize;
+  this.proxy = options.proxy;
+  this.proxySerieses = (this.proxy === 'both') ? options.proxySeries : [];
 
   this.initialiseUnits = function() {
     if (this.hasUnits) {
@@ -2924,7 +2953,7 @@ function getTimeSeriesAttributes(rows) {
   }
 
   // Before continuing, we may need to filter by Series, so set up all the Series stuff.
-  this.allData = helpers.prepareData(this.data);
+  this.allData = helpers.prepareData(this.data, { indicatorId: this.indicatorId });
   this.allColumns = helpers.getColumnsFromData(this.allData);
   this.hasSerieses = helpers.dataHasSerieses(this.allColumns);
   this.serieses = this.hasSerieses ? helpers.getUniqueValuesByProperty(helpers.SERIES_COLUMN, this.allData) : [];
@@ -3098,7 +3127,8 @@ function getTimeSeriesAttributes(rows) {
 
       this.onSeriesesComplete.notify({
         serieses: this.serieses,
-        selectedSeries: this.selectedSeries
+        selectedSeries: this.selectedSeries,
+        proxySerieses: this.proxySerieses,
       });
     }
 
@@ -3119,6 +3149,7 @@ function getTimeSeriesAttributes(rows) {
         allowedFields: this.allowedFields,
         edges: this.edgesData,
         hasGeoData: this.hasGeoData,
+        startValues: this.startValues,
         indicatorId: this.indicatorId,
         showMap: this.showMap,
         precision: helpers.getPrecision(this.precision, this.selectedUnit, this.selectedSeries),
@@ -3127,6 +3158,8 @@ function getTimeSeriesAttributes(rows) {
         chartTitles: this.chartTitles,
         chartSubtitles: this.chartSubtitles,
         graphStepsize: helpers.getGraphStepsize(this.graphStepsize, this.selectedUnit, this.selectedSeries),
+        proxy: this.proxy,
+        proxySerieses: this.proxySerieses,
       });
     }
 
@@ -3152,8 +3185,8 @@ function getTimeSeriesAttributes(rows) {
       headline = helpers.sortData(headline, this.selectedUnit);
     }
 
-    var combinations = helpers.getCombinationData(this.selectedFields);
-    var datasets = helpers.getDatasets(headline, filteredData, combinations, this.years, translations.data.total, this.colors, this.selectableFields, this.colorAssignments, this.showLine, this.spanGaps);
+    var combinations = helpers.getCombinationData(this.selectedFields, this.dataSchema);
+    var datasets = helpers.getDatasets(headline, filteredData, combinations, this.years, translations.data.total, this.colors, this.selectableFields, this.colorAssignments, this.showLine, this.spanGaps );
     var selectionsTable = helpers.tableDataFromDatasets(datasets, this.years);
 
     var datasetCountExceedsMax = false;
@@ -3192,6 +3225,7 @@ function getTimeSeriesAttributes(rows) {
       precision: helpers.getPrecision(this.precision, this.selectedUnit, this.selectedSeries),
       graphStepsize: helpers.getGraphStepsize(this.graphStepsize, this.selectedUnit, this.selectedSeries),
       timeSeriesAttributes: timeSeriesAttributes,
+      isProxy: this.proxy === 'proxy' || this.proxySerieses.includes(this.selectedSeries),
     });
   };
 };
@@ -3210,7 +3244,7 @@ var mapView = function () {
 
   "use strict";
 
-  this.initialise = function(indicatorId, precision, precisionItems, decimalSeparator, thousandsSeparator, dataSchema, viewHelpers, modelHelpers, chartTitles, chartSubtitles) {
+  this.initialise = function(indicatorId, precision, precisionItems, decimalSeparator, thousandsSeparator, dataSchema, viewHelpers, modelHelpers, chartTitles, chartSubtitles, startValues, proxy, proxySerieses) {
     $('.map').show();
     $('#map').sdgMap({
       indicatorId: indicatorId,
@@ -3225,6 +3259,9 @@ var mapView = function () {
       modelHelpers: modelHelpers,
       chartTitles: chartTitles,
       chartSubtitles: chartSubtitles,
+      proxy: proxy,
+      proxySerieses: proxySerieses,
+      startValues: startValues,
     });
   };
 };
@@ -3241,6 +3278,7 @@ var indicatorView = function (model, options) {
 
   var HIDE_SINGLE_SERIES = false;
 var HIDE_SINGLE_UNIT = true;
+var PROXY_PILL = '<span aria-describedby="proxy-description" class="proxy-pill">' + translations.t("indicator.proxy") + '</span>';
 
   /**
  * @param {Object} args
@@ -3389,11 +3427,13 @@ function initialiseSerieses(args) {
     if (templateElement.length > 0) {
         var template = _.template(templateElement.html()),
             serieses = args.serieses || [],
-            selectedSeries = args.selectedSeries || null;
-
+            selectedSeries = args.selectedSeries || null,
+            proxySerieses = args.proxySerieses || [];
         $('#serieses').html(template({
             serieses: serieses,
-            selectedSeries: selectedSeries
+            selectedSeries: selectedSeries,
+            proxySerieses: proxySerieses,
+            proxyPill: PROXY_PILL,
         }));
 
         var noSerieses = (serieses.length < 1);
@@ -3429,9 +3469,12 @@ function alterChartConfig(config, info) {
  * @param {String} chartTitle
  * @return null
  */
-function updateChartTitle(chartTitle) {
+function updateChartTitle(chartTitle, isProxy) {
     if (typeof chartTitle !== 'undefined') {
-        $('.chart-title').text(chartTitle);
+      if (isProxy) {
+          chartTitle += ' ' + PROXY_PILL;
+      }
+      $('.chart-title').html(chartTitle);
     }
 }
 
@@ -3590,6 +3633,7 @@ function setPlotEvents(chartInfo) {
             y: 0,
             scrollX: 0,
             scrollY: 0,
+            scale: 2,
             backgroundColor: isHighContrast() ? '#000000' : '#FFFFFF',
             // Allow a chance to alter the screenshot's HTML.
             onclone: function (clone) {
@@ -3920,9 +3964,9 @@ opensdg.chartTypes.base = function(info) {
                     suggestedMin: 0,
                     ticks: {
                         color: tickColor,
-                        callback: function (value) {
-                            return alterDataDisplay(value, undefined, 'chart y-axis tick');
-                        },
+                         callback: function (value) {
+                             return alterDataDisplay(value, undefined, 'chart y-axis tick');
+                         },
                     },
                     title: {
                         display: MODEL.selectedUnit ? translations.t(MODEL.selectedUnit) : MODEL.measurementUnit,
@@ -4393,7 +4437,7 @@ function initialiseDataTable(el, info) {
  * @return null
  */
 function createSelectionsTable(chartInfo) {
-    createTable(chartInfo.selectionsTable, chartInfo.indicatorId, '#selectionsTable', true);
+    createTable(chartInfo.selectionsTable, chartInfo.indicatorId, '#selectionsTable', chartInfo.isProxy);
     $('#tableSelectionDownload').empty();
     createTableTargetLines(chartInfo.graphAnnotations);
     createDownloadButton(chartInfo.selectionsTable, 'Table', chartInfo.indicatorId, '#tableSelectionDownload');
@@ -4443,7 +4487,7 @@ function tableHasData(table) {
  * @param {Element} el
  * @return null
  */
-function createTable(table, indicatorId, el) {
+function createTable(table, indicatorId, el, isProxy) {
 
     var table_class = OPTIONS.table_class || 'table table-hover';
 
@@ -4455,11 +4499,14 @@ function createTable(table, indicatorId, el) {
             'class': table_class,
             'width': '100%'
         });
-
+        var tableTitle = MODEL.chartTitle;
+        if (isProxy) {
+            tableTitle += ' ' + PROXY_PILL;
+        }
         if (MODEL.chartSubtitle) {
-          currentTable.append('<caption>' + MODEL.chartTitle + '<br><small>' + MODEL.chartSubtitle + '</small></caption>');
+          currentTable.append('<caption>' + tableTitle + '<br><small>' + MODEL.chartSubtitle + '</small></caption>');
         } else {
-          currentTable.append('<caption>' + MODEL.chartTitle + '<br><small>' + MODEL.measurementUnit + '</small></caption>');
+          currentTable.append('<caption>' + tableTitle + '<br><small>' + MODEL.measurementUnit + '</small></caption>');
         }
         var table_head = '<thead><tr>';
 
@@ -4641,7 +4688,7 @@ function alterDataDisplay(value, info, context) {
         altered = altered.toString().replace('.', OPTIONS.decimalSeparator);
     }
     // Apply thousands seperator if needed
-    if (OPTIONS.thousandsSeparator){
+    if (OPTIONS.thousandsSeparator && precision <=3){
         altered = altered.toString().replace(/\B(?=(\d{3})+(?!\d))/g, OPTIONS.thousandsSeparator);
     }
 
@@ -4802,6 +4849,7 @@ function createIndicatorDownloadButtons(indicatorDownloads, indicatorId, el) {
   return {
     HIDE_SINGLE_SERIES: HIDE_SINGLE_SERIES,
     HIDE_SINGLE_UNIT: HIDE_SINGLE_UNIT,
+    PROXY_PILL: PROXY_PILL,
     initialiseFields: initialiseFields,
     initialiseUnits: initialiseUnits,
     initialiseSerieses: initialiseSerieses,
@@ -4879,8 +4927,8 @@ function createIndicatorDownloadButtons(indicatorDownloads, indicatorId, el) {
                 $main.removeClass('indicator-main-full');
                 // Make sure the unit/series items are updated, in case
                 // they were changed while on the map.
-                helpers.updateChartTitle(VIEW._dataCompleteArgs.chartTitle);
                 helpers.updateChartSubtitle(VIEW._dataCompleteArgs.chartSubtitle);
+                helpers.updateChartTitle(VIEW._dataCompleteArgs.chartTitle, VIEW._dataCompleteArgs.isProxy);
                 helpers.updateSeriesAndUnitElements(VIEW._dataCompleteArgs.selectedSeries, VIEW._dataCompleteArgs.selectedUnit);
                 helpers.updateUnitElements(VIEW._dataCompleteArgs.selectedUnit);
                 helpers.updateTimeSeriesAttributes(VIEW._dataCompleteArgs.timeSeriesAttributes);
@@ -4904,8 +4952,8 @@ function createIndicatorDownloadButtons(indicatorDownloads, indicatorId, el) {
         }
 
         helpers.createSelectionsTable(args);
-        helpers.updateChartTitle(args.chartTitle);
         helpers.updateChartSubtitle(args.chartSubtitle);
+        helpers.updateChartTitle(args.chartTitle, args.isProxy);
         helpers.updateSeriesAndUnitElements(args.selectedSeries, args.selectedUnit);
         helpers.updateUnitElements(args.selectedUnit);
         helpers.updateTimeSeriesAttributes(args.timeSeriesAttributes);
@@ -4930,6 +4978,9 @@ function createIndicatorDownloadButtons(indicatorDownloads, indicatorId, el) {
                 MODEL.helpers,
                 args.chartTitles,
                 args.chartSubtitles,
+                args.startValues,
+                args.proxy,
+                args.proxySerieses,
             );
         }
     });
@@ -5130,6 +5181,7 @@ var indicatorInit = function () {
                         measurementUnit: domData.measurementunit,
                         xAxisLabel: domData.xaxislabel,
                         showData: domData.showdata,
+                        showInfo: domData.showinfo,
                         graphType: domData.graphtype,
                         graphTypes: domData.graphtypes,
                         startValues: domData.startvalues,
@@ -5137,7 +5189,6 @@ var indicatorInit = function () {
                         stackedDisaggregation: domData.stackeddisaggregation,
                         showLine: domData.showline,
                         spanGaps: domData.spangaps,
-                        //mixedTypes: domData.mixedtypes,
                         graphAnnotations: domData.graphannotations,
                         graphTargetLines: domData.graphtargetlines,
                         graphSeriesBreaks: domData.graphseriesbreaks,
@@ -5149,6 +5200,8 @@ var indicatorInit = function () {
                         compositeBreakdownLabel: domData.compositebreakdownlabel,
                         precision: domData.precision,
                         graphStepsize: domData.graphstepsize,
+                        proxy: domData.proxy,
+                        proxySeries: domData.proxyseries,
                     });
                     var view = new indicatorView(model, {
                         rootElement: '#indicatorData',
@@ -6034,16 +6087,23 @@ $(function() {
             this.form = null;
             this.currentDisaggregation = 0;
             this.displayedDisaggregation = 0;
+            this.needsMapUpdate = false;
             this.seriesColumn = 'Series';
             this.unitsColumn = 'Units';
             this.displayForm = true;
-            this.updateDisaggregations();
+            this.updateDisaggregations(plugin.startValues);
         },
 
-        updateDisaggregations: function() {
+        updateDisaggregations: function(startValues) {
             // TODO: Not all of this needs to be done
             // at every update.
-            this.disaggregations = this.getVisibleDisaggregations();
+            var features = this.getFeatures();
+            if (startValues && startValues.length > 0) {
+                this.currentDisaggregation = this.getStartingDisaggregation(features, startValues);
+                this.displayedDisaggregation = this.currentDisaggregation;
+                this.needsMapUpdate = true;
+            }
+            this.disaggregations = this.getVisibleDisaggregations(features);
             this.fieldsInOrder = this.getFieldsInOrder();
             this.valuesInOrder = this.getValuesInOrder();
             this.allSeries = this.getAllSeries();
@@ -6055,10 +6115,43 @@ $(function() {
             this.hasDisaggregationsWithMultipleValuesFlag = this.hasDisaggregationsWithMultipleValues();
         },
 
-        getVisibleDisaggregations: function() {
-            var features = this.plugin.getVisibleLayers().toGeoJSON().features.filter(function(feature) {
+        getFeatures: function() {
+            return this.plugin.getVisibleLayers().toGeoJSON().features.filter(function(feature) {
                 return typeof feature.properties.disaggregations !== 'undefined';
             });
+        },
+
+        getStartingDisaggregation: function(features, startValues) {
+            if (features.length === 0) {
+                return;
+            }
+            var disaggregations = features[0].properties.disaggregations,
+                fields = Object.keys(disaggregations[0]),
+                weighted = _.sortBy(disaggregations.map(function(disaggregation, index) {
+                    var disaggClone = Object.assign({}, disaggregation);
+                    disaggClone.emptyFields = 0;
+                    disaggClone.index = index;
+                    fields.forEach(function(field) {
+                        if (disaggClone[field] == '') {
+                            disaggClone.emptyFields += 1;
+                        }
+                    });
+                    return disaggClone;
+                }), 'emptyFields').reverse(),
+                match = weighted.find(function(disaggregation) {
+                    return _.every(startValues, function(startValue) {
+                        return disaggregation[startValue.field] === startValue.value;
+                    });
+                });
+            if (match) {
+                return match.index;
+            }
+            else {
+                return 0;
+            }
+        },
+
+        getVisibleDisaggregations: function(features) {
             if (features.length === 0) {
                 return [];
             }
@@ -6232,6 +6325,9 @@ $(function() {
                     input.checked = (series === that.getCurrentSeries()) ? 'checked' : '';
                     var label = L.DomUtil.create('label', 'disaggregation-label');
                     label.innerHTML = series;
+                    if (that.plugin.proxySerieses.includes(series)) {
+                        label.innerHTML += ' ' + that.plugin.viewHelpers.PROXY_PILL;
+                    }
                     label.prepend(input);
                     fieldset.append(label);
                     input.addEventListener('change', function(e) {
@@ -6314,18 +6410,24 @@ $(function() {
                 that.updateForm();
             });
             applyButton.addEventListener('click', function(e) {
-                that.plugin.currentDisaggregation = that.currentDisaggregation;
-                that.plugin.updatePrecision();
-                that.plugin.setColorScale();
-                that.plugin.updateColors();
-                that.plugin.updateTooltips();
-                that.plugin.selectionLegend.resetSwatches();
-                that.plugin.selectionLegend.update();
-                that.plugin.updateTitle();
-                that.plugin.updateFooterFields();
+                that.updateMap();
                 that.updateList();
                 $('.disaggregation-form-outer').toggle();
             });
+        },
+
+        updateMap: function() {
+            this.needsMapUpdate = false;
+            this.plugin.currentDisaggregation = this.currentDisaggregation;
+            this.plugin.updatePrecision();
+            this.plugin.setColorScale();
+            this.plugin.updateColors();
+            this.plugin.updateTooltips();
+            this.plugin.selectionLegend.resetSwatches();
+            this.plugin.selectionLegend.update();
+            this.plugin.updateTitle();
+            this.plugin.updateFooterFields();
+            this.plugin.replaceYearSlider();
         },
 
         onAdd: function () {
