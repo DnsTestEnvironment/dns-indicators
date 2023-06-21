@@ -261,9 +261,9 @@ map_options:
 
   # Set the color for boundaries that have no data.
   noValueColor: 'rgba(255,255,255,0.2)'
-  map_layers:
-    - serviceUrl:  https://DnsTestEnvironment.github.io/dns-indicators/assets/maps/boundariesKrs.geojson
-    - serviceUrl:  https://DnsTestEnvironment.github.io/dns-indicators/assets/maps/boundaries.geojson
+map_layers:
+  - serviceUrl:  https://DnsTestEnvironment.github.io/dns-indicators/assets/maps/boundariesKrs.geojson
+  - serviceUrl:  https://DnsTestEnvironment.github.io/dns-indicators/assets/maps/boundaries.geojson
 
 progressive_web_app:
   enabled: true
