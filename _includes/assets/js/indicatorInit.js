@@ -34,6 +34,7 @@ var indicatorInit = function () {
                         measurementUnit: domData.measurementunit,
                         xAxisLabel: domData.xaxislabel,
                         showData: domData.showdata,
+                        showInfo: domData.showinfo,
                         graphType: domData.graphtype,
                         graphTypes: domData.graphtypes,
                         startValues: domData.startvalues,
@@ -41,7 +42,6 @@ var indicatorInit = function () {
                         stackedDisaggregation: domData.stackeddisaggregation,
                         showLine: domData.showline,
                         spanGaps: domData.spangaps,
-                        //mixedTypes: domData.mixedtypes,
                         graphAnnotations: domData.graphannotations,
                         graphTargetLines: domData.graphtargetlines,
                         graphSeriesBreaks: domData.graphseriesbreaks,
@@ -53,6 +53,8 @@ var indicatorInit = function () {
                         compositeBreakdownLabel: domData.compositebreakdownlabel,
                         precision: domData.precision,
                         graphStepsize: domData.graphstepsize,
+                        proxy: domData.proxy,
+                        proxySeries: domData.proxyseries,
                     });
                     var view = new indicatorView(model, {
                         rootElement: '#indicatorData',

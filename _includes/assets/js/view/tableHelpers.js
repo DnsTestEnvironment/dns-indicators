@@ -73,7 +73,7 @@ function initialiseDataTable(el, info) {
  * @return null
  */
 function createSelectionsTable(chartInfo) {
-    createTable(chartInfo.selectionsTable, chartInfo.indicatorId, '#selectionsTable', true);
+    createTable(chartInfo.selectionsTable, chartInfo.indicatorId, '#selectionsTable', chartInfo.isProxy);
     $('#tableSelectionDownload').empty();
     createTableTargetLines(chartInfo.graphAnnotations);
     createDownloadButton(chartInfo.selectionsTable, 'Table', chartInfo.indicatorId, '#tableSelectionDownload');
@@ -123,7 +123,7 @@ function tableHasData(table) {
  * @param {Element} el
  * @return null
  */
-function createTable(table, indicatorId, el) {
+function createTable(table, indicatorId, el, isProxy) {
 
     var table_class = OPTIONS.table_class || 'table table-hover';
 
@@ -135,11 +135,14 @@ function createTable(table, indicatorId, el) {
             'class': table_class,
             'width': '100%'
         });
-
+        var tableTitle = MODEL.chartTitle;
+        if (isProxy) {
+            tableTitle += ' ' + PROXY_PILL;
+        }
         if (MODEL.chartSubtitle) {
-          currentTable.append('<caption>' + MODEL.chartTitle + '<br><small>' + MODEL.chartSubtitle + '</small></caption>');
+          currentTable.append('<caption>' + tableTitle + '<br><small>' + MODEL.chartSubtitle + '</small></caption>');
         } else {
-          currentTable.append('<caption>' + MODEL.chartTitle + '<br><small>' + MODEL.measurementUnit + '</small></caption>');
+          currentTable.append('<caption>' + tableTitle + '<br><small>' + MODEL.measurementUnit + '</small></caption>');
         }
         var table_head = '<thead><tr>';
 
