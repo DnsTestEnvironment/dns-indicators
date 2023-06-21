@@ -262,19 +262,6 @@ map_options:
   # Set the color for boundaries that have no data.
   noValueColor: 'rgba(255,255,255,0.2)'
 
-map_layers:
-  - serviceUrl:  https://DnsTestEnvironment.github.io/dns-indicators/assets/maps/boundariesKrs.geojson
-    min_zoom: 8
-    max_zoom: 11
-    staticBorders: true
-    subfolder: kreise
-    label: indicator.counties
-  - serviceUrl:  https://DnsTestEnvironment.github.io/dns-indicators/assets/maps/boundaries.geojson
-    min_zoom: 0
-    max_zoom: 7
-    staticBorders: true
-    subfolder: laender
-    label: indicator.laender
 
 progressive_web_app:
   enabled: true
