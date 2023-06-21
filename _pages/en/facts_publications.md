@@ -47,7 +47,7 @@ Sustainable Development in Germany - Indicator report  2022 - Downloadable repor
 <br><br>
 ### Feasibility study for the presentation of the indicators
 <br>
-[Feasibility study for the presentation of indicators of German sustainability strategies by Federal States (only available in German)](https://dns-indikatoren.de/assets/publications/machbarkeitsstudie.pd)
+[Feasibility study for the presentation of indicators of German Sustainable Development Strategies by Federal States (only available in German)](https://dns-indikatoren.de/assets/publications/machbarkeitsstudie.pd)
 <br><br>
 ### Special evaluation for selected indicators by territorial status
 <br>

@@ -7,7 +7,7 @@ layout: page
 
 ## Layout of the SDG online platform
 
-The online platform comprises two components, namely the German set of indicators for the global sustainability goals ([Sustainable Development Goals](https://www.un.org/sustainabledevelopment/sustainable-development-goals/), SDGs) of the United Nations 2030 Agenda and the indicator set of the [German Sustainable Development Strategy](https://www.bundesregierung.de/breg-en/issues/sustainability/) (Deutsche Nachhaltigkeitsstrategie, DNS). Since the German Sustainable Development Strategy is aimed at implementing the 2030 Agenda at the national level, indicators shared by both strategies are linked to each other on the platform.
+The online platform comprises two components, namely the German set of indicators for the global sustainable development goals ([Sustainable Development Goals](https://www.un.org/sustainabledevelopment/sustainable-development-goals/), SDGs) of the United Nations 2030 Agenda and the indicator set of the [German Sustainable Development Strategy](https://www.bundesregierung.de/breg-en/issues/sustainability/) (Deutsche Nachhaltigkeitsstrategie, DNS). Since the German Sustainable Development Strategy is aimed at implementing the 2030 Agenda at the national level, indicators shared by both strategies are linked to each other on the platform.
 
 A direct link to the homepage of the DNS online platform can be found at the top right of this page next to the search field: [<img src="https://g205sdgs.github.io/sdg-indicators/assets/img/about/DNS Wheel.png" alt="Wheel">](https://sustainabledevelopment-deutschland.github.io/en)
 
