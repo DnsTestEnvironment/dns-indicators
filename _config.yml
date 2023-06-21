@@ -299,3 +299,9 @@ map_layers:
     staticBorders: true
     subfolder: laender
     label: indicator.laender
+
+progressive_web_app:
+  enabled: true 
+  name: DNS Indikatoren
+  short_name: DNS App
+  precaching: true
