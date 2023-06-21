@@ -59,7 +59,7 @@ opensdg.autotrack = function(preset, category, action, label) {
     maxZoom: 10,
     // Visual/choropleth considerations.
     colorRange: chroma.brewer.BuGn,
-    noValueColor: '#66f0f0f0',
+    noValueColor: '#f0f0f0',
     styleNormal: {
       weight: 1,
       opacity: 1,
@@ -109,16 +109,15 @@ opensdg.autotrack = function(preset, category, action, label) {
           break;
         }
       }
+      if (overrideColorRange && typeof colorRange === 'function') {
+        var indicatorId = options.indicatorId.replace('indicator_', ''),
+            indicatorIdParts = indicatorId.split('-'),
+            goalId = (indicatorIdParts.length > 0) ? indicatorIdParts[0] : null,
+            indicatorIdDots = indicatorIdParts.join('.');
+        colorRange = colorRange(indicatorIdDots, goalId);
+      }
       options.mapOptions.colorRange = (overrideColorRange) ? colorRange : defaults.colorRange;
     }
-
-    // Support multiple colorsets
-    if (Array.isArray(options.mapOptions.colorRange[0])) {
-      this.goalNumber = parseInt(options.indicatorId.slice(options.indicatorId.indexOf('_')+1,options.indicatorId.indexOf('-')));
-      options.mapOptions.colorRange = options.mapOptions.colorRange[this.goalNumber-1];
-      console.log("goal: ",this.goalNumber);
-    }
-
 
     this.options = $.extend(true, {}, defaults, options.mapOptions);
     this.mapLayers = [];
@@ -126,13 +125,11 @@ opensdg.autotrack = function(preset, category, action, label) {
     this._precision = options.precision;
     this.precisionItems = options.precisionItems;
     this._decimalSeparator = options.decimalSeparator;
-    this._thousandsSeparator = options.thousandsSeparator;
     this.currentDisaggregation = 0;
     this.dataSchema = options.dataSchema;
     this.viewHelpers = options.viewHelpers;
     this.modelHelpers = options.modelHelpers;
     this.chartTitles = options.chartTitles;
-    this.chartSubtitles = options.chartSubtitles;
     this.proxy = options.proxy;
     this.proxySerieses = options.proxySerieses;
     this.startValues = options.startValues;
@@ -172,21 +169,18 @@ opensdg.autotrack = function(preset, category, action, label) {
       var currentSeries = this.disaggregationControls.getCurrentSeries(),
           currentUnit = this.disaggregationControls.getCurrentUnit(),
           newTitle = null;
-          newSubtitle = null;
       if (this.modelHelpers.GRAPH_TITLE_FROM_SERIES) {
         newTitle = currentSeries;
       }
       else {
         var currentTitle = $('#map-heading').text();
-        var currentSubtitle = $('#map-subheading').text();
         newTitle = this.modelHelpers.getChartTitle(currentTitle, this.chartTitles, currentUnit, currentSeries);
-        newSubtitle = this.modelHelpers.getChartTitle(currentSubtitle, this.chartSubtitles, currentUnit, currentSeries);
       }
       if (newTitle) {
-        $('#map-heading').text(newTitle);
-      }
-      if (newSubtitle) {
-        $('#map-subheading').text(newSubtitle);
+        if (this.proxy === 'proxy' || this.proxySerieses.includes(currentSeries)) {
+            newTitle += ' ' + this.viewHelpers.PROXY_PILL;
+        }
+        $('#map-heading').html(newTitle);
       }
     },
 
@@ -321,14 +315,21 @@ opensdg.autotrack = function(preset, category, action, label) {
       opensdg.dataDisplayAlterations.forEach(function(callback) {
         value = callback(value);
       });
-      if (this._precision || this._precision === 0) {
-        value = Number.parseFloat(value).toFixed(this._precision);
+      if (typeof value !== 'number') {
+        if (this._precision || this._precision === 0) {
+          value = Number.parseFloat(value).toFixed(this._precision);
+        }
+        if (this._decimalSeparator) {
+          value = value.toString().replace('.', this._decimalSeparator);
+        }
       }
-      if (this._decimalSeparator) {
-        value = value.toString().replace('.', this._decimalSeparator);
-      }
-      if (this._thousandsSeparator) {
-        value = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, this._thousandsSeparator);
+      else {
+        var localeOpts = {};
+        if (this._precision || this._precision === 0) {
+            localeOpts.minimumFractionDigits = this._precision;
+            localeOpts.maximumFractionDigits = this._precision;
+        }
+        value = value.toLocaleString(opensdg.language, localeOpts);
       }
       return value;
     },
