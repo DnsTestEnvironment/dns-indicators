@@ -261,6 +261,26 @@ map_options:
 
   # Set the color for boundaries that have no data.
   noValueColor: 'rgba(255,255,255,0.2)'
+  styleNormal:
+    weight: 1
+    opacity: 1
+    color: #888888
+    fillOpacity: 0.7
+  # Set the style for boundaries that have been selected/highlighted:
+  styleHighlighted:
+    weight: 1
+    opacity: 1
+    color: #111111
+    fillOpacity: 0.7
+  # Set the style for top-level boundaries that are displaying in other layers.
+  # Note: This is only applicable when using the "nested zoom" feature (see below).
+  styleStatic:
+    weight: 2
+    opacity: 1
+    fillOpacity: 0
+    color: #172d44
+    dashArray: 5,5
+    
 map_layers:
   - serviceUrl:  https://DnsTestEnvironment.github.io/dns-indicators/assets/maps/boundariesKrs.geojson
   - serviceUrl:  https://DnsTestEnvironment.github.io/dns-indicators/assets/maps/boundaries.geojson
