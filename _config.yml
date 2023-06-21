@@ -230,9 +230,7 @@ disclaimer:
 map_options:
   disaggregation_controls: true
 
-  # Control the limits on zooming in/out in the map:
-  minZoom: 0
-  maxZoom: 11
+
   # If you would like to use tile (background) imagery, use these:
   tileURL: https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png
   tileOptions:
@@ -263,28 +261,6 @@ map_options:
 
   # Set the color for boundaries that have no data.
   noValueColor: 'rgba(255,255,255,0.2)'
-  # For documentation on the style options below, see here:
-  # https://leafletjs.com/reference-1.4.0.html#path-option
-  # Set the default style for boundaries in the map:
-  styleNormal:
-    weight: 1
-    opacity: 1
-    color: '#888'
-    fillOpacity: 0.7
-  # Set the style for boundaries that have been selected/highlighted:
-  styleHighlighted:
-    weight: 1
-    opacity: 1
-    color: '#111'
-    fillOpacity: 0.7
-  # Set the style for top-level boundaries that are displaying in other layers.
-  # Note: This is only applicable when using the "nested zoom" feature (see below).
-  styleStatic:
-    weight: 2
-    opacity: 1
-    fillOpacity: 0
-    color: '#172d44'
-    dashArray: 5,5
 
 map_layers:
   - serviceUrl:  https://DnsTestEnvironment.github.io/dns-indicators/assets/maps/boundariesKrs.geojson
@@ -301,7 +277,7 @@ map_layers:
     label: indicator.laender
 
 progressive_web_app:
-  enabled: true 
+  enabled: true
   name: DNS Indikatoren
   short_name: DNS App
   precaching: true
