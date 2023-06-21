@@ -128,6 +128,9 @@ opensdg.autotrack = function(preset, category, action, label) {
     this.modelHelpers = options.modelHelpers;
     this.chartTitles = options.chartTitles;
     this.chartSubtitles = options.chartSubtitles;
+    this.proxy = options.proxy;
+    this.proxySerieses = options.proxySerieses;
+    this.startValues = options.startValues;
 
     // Require at least one geoLayer.
     if (!options.mapLayers || !options.mapLayers.length) {
@@ -5181,7 +5184,6 @@ var indicatorInit = function () {
                         measurementUnit: domData.measurementunit,
                         xAxisLabel: domData.xaxislabel,
                         showData: domData.showdata,
-                        showInfo: domData.showinfo,
                         graphType: domData.graphtype,
                         graphTypes: domData.graphtypes,
                         startValues: domData.startvalues,
