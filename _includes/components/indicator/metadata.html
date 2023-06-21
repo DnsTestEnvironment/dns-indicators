@@ -191,6 +191,9 @@
               <td colspan="4" align="left" style="padding-left: 0px;padding-right: 0px;">
                 <p> {{ page.t.weather.assessment_stoped }} </p>
               </td>
+            {% elsif no_futher_cells == false %}
+              <p> {{ page.t.status.no_evaluation_possible }} </p>
+            {% endif %}
             {% endif %}
             {% unless item_c != 'Sonne' and item_c != 'Leicht bewölkt' and item_c != 'Wolke' and item_c != 'Blitz' %}
               <td align="left" style="padding-left: 0px;padding-right: 0px;">
@@ -202,6 +205,9 @@
               <td colspan="3" align="left" style="padding-left: 0px;padding-right: 0px;">
                 <p> {{ page.t.weather.assessment_stoped }} </p>
               </td>
+            {% elsif no_futher_cells == false %}
+              <p> {{ page.t.status.no_evaluation_possible }} </p>
+            {% endif %}
             {% endif %}
             {% unless item_b != 'Sonne' and item_b != 'Leicht bewölkt' and item_b != 'Wolke' and item_b != 'Blitz' %}
               <td align="left" style="padding-left: 0px;padding-right: 0px;">
@@ -213,6 +219,9 @@
               <td colspan="2" align="left" style="padding-left: 0px;padding-right: 0px;">
                 <p> {{ page.t.weather.assessment_stoped }} </p>
               </td>
+            {% elsif no_futher_cells == false %}
+              <p> {{ page.t.status.no_evaluation_possible }} </p>
+            {% endif %}
             {% endif %}
             <td align="left" style="padding-left: 0px;padding-right: 0px;">
               {% if item_a== 'Sonne' or item_a == 'Leicht bewölkt' or item_a == 'Wolke' or item_a == 'Blitz' and no_futher_cells == false  %}
