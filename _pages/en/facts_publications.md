@@ -43,11 +43,11 @@ Sustainable Development in Germany - Indicator report  2022 - Downloadable repor
 <br><br>
 ### Extract from the publication "WISTA - Economy and Statistics", 1/2017
 <br>
-[New edition of the German sustainability strategy (only available in German)](https://dns-indikatoren.de/assets/publications/wista2017_01.pdf)
+[New edition of the German Sustainable Development Strategy (only available in German)](https://dns-indikatoren.de/assets/publications/wista2017_01.pdf)
 <br><br>
 ### Feasibility study for the presentation of the indicators
 <br>
-[Feasibility study for the presentation of indicators of German sustainability strategies by federal states (only available in German)](https://dns-indikatoren.de/assets/publications/machbarkeitsstudie.pd)
+[Feasibility study for the presentation of indicators of German sustainability strategies by Federal States (only available in German)](https://dns-indikatoren.de/assets/publications/machbarkeitsstudie.pd)
 <br><br>
 ### Special evaluation for selected indicators by territorial status
 <br>
