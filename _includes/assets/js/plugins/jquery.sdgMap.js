@@ -97,6 +97,9 @@
     this.modelHelpers = options.modelHelpers;
     this.chartTitles = options.chartTitles;
     this.chartSubtitles = options.chartSubtitles;
+    this.proxy = options.proxy;
+    this.proxySerieses = options.proxySerieses;
+    this.startValues = options.startValues;
 
     // Require at least one geoLayer.
     if (!options.mapLayers || !options.mapLayers.length) {
