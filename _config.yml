@@ -230,7 +230,9 @@ disclaimer:
 map_options:
   disaggregation_controls: true
 
-
+  # Control the limits on zooming in/out in the map:
+  minZoom: 0
+  maxZoom: 11
   # If you would like to use tile (background) imagery, use these:
   tileURL: https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png
   tileOptions:
@@ -239,7 +241,7 @@ map_options:
     attribution: <a href="https://www.openstreetmap.org/copyright">&copy; OpenStreetMap</a> contributors |<br class="visible-xs"> <a href="https://www.bkg.bund.de">&copy; GeoBasis-De / BKG 2023</a> |<br class="hidden-lg"> <a href="https://www.destatis.de/DE/Home/_inhalt.html">&copy; Statistisches Bundesamt (Destatis), 2023</a>
   # Control the choropleth color range. See https://gka.github.io/chroma.js/#chroma-brewer
   # 1 map color depending on goal --- start ---
-  # colorRange: chroma.brewer.BuGn
+  #colorRange: ["#F6E8EC", "#E3BAC6", "#D18CA1", "#BE5E7B", "#AB3055", "#A21942", "#821435", "#610F28", "#410A1A", "#20050D"]
   colorRange: [["#FCE9EB", "#F7BDC4", "#F2929D", "#ED6676", "#E83A4F", "#E5243B", "#B71D2F", "#891623", "#5C0E18", "#2E070C"],
               ["#FCF8EB", "#F7E9C2", "#F2DB9A", "#EDCD72", "#E8BE49", "#E5B735", "#CEA530", "#A08025", "#735C1B", "#453710"],
               ["#EDF5EB", "#C9E2C3", "#A6CF9C", "#82BC74", "#5EA94C", "#4C9F38", "#3D7F2D", "#2E5F22", "#1E4016", "#0F200B"],
@@ -257,20 +259,23 @@ map_options:
               ["#EEF9EA", "#CCECBF", "#ABE095", "#89D36B", "#67C640", "#56C02B", "#459A22", "#34731A", "#224D11", "#112609"],
               ["#E6F0F5", "#B3D2E2", "#80B4CE", "#4D95BA", "#1A77A7", "#00689D", "#00537E", "#003E5E", "#002A3F", "#00151F"],
               ["#E8EDF0", "#BAC8D2", "#8CA4B5", "#5E7F97", "#305A79", "#19486A", "#143A55", "#0F2B40", "#0A1D2A", "#050E15"]]
-  #--- stop ---
+  # --- stop ---
 
   # Set the color for boundaries that have no data.
   noValueColor: 'rgba(255,255,255,0.2)'
+  # For documentation on the style options below, see here:
+  # https://leafletjs.com/reference-1.4.0.html#path-option
+  # Set the default style for boundaries in the map:
   styleNormal:
     weight: 1
     opacity: 1
-    color: #888888
+    color: '#888'
     fillOpacity: 0.7
   # Set the style for boundaries that have been selected/highlighted:
   styleHighlighted:
     weight: 1
     opacity: 1
-    color: #111111
+    color: '#111'
     fillOpacity: 0.7
   # Set the style for top-level boundaries that are displaying in other layers.
   # Note: This is only applicable when using the "nested zoom" feature (see below).
@@ -278,23 +283,23 @@ map_options:
     weight: 2
     opacity: 1
     fillOpacity: 0
-    color: #172d44
+    color: '#172d44'
     dashArray: 5,5
 
 map_layers:
-  - serviceUrl:  https://DnsTestEnvironment.github.io/dns-indicators/assets/maps/boundariesKrs.geojson
-    min_zoom: 8
-    max_zoom: 11
-    staticBorders: true
-    subfolder: kreise
-    label: indicator.counties
-  - serviceUrl:  https://DnsTestEnvironment.github.io/dns-indicators/assets/maps/boundaries.geojson
-    min_zoom: 0
-    max_zoom: 7
+  - serviceUrl:  https://Nachhaltige-Entwicklung-Deutschland.github.io/open-sdg-site-starter/assets/maps/boundaries.geojson
+    min_zoom: 4.5
+    max_zoom: 6.5
     staticBorders: true
     subfolder: laender
     label: indicator.laender
-
+  - serviceUrl:  https://Nachhaltige-Entwicklung-Deutschland.github.io/open-sdg-site-starter/assets/maps/boundariesKrs.geojson
+    min_zoom: 7
+    max_zoom: 11
+    staticBorders: false
+    subfolder: kreise
+    label: indicator.counties
+    
 progressive_web_app:
   enabled: true
   name: DNS Indikatoren
