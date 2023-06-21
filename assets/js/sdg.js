@@ -157,8 +157,7 @@ opensdg.autotrack = function(preset, category, action, label) {
     this._name = 'sdgMap';
 
     this.init();
-  };
-  console.log("maplayers: ", this.mapLayers);
+  }
 
   Plugin.prototype = {
 
