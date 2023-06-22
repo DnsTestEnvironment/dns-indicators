@@ -287,19 +287,19 @@ map_options:
     dashArray: 5,5
 
 map_layers:
-  - serviceUrl:  https://Nachhaltige-Entwicklung-Deutschland.github.io/open-sdg-site-starter/assets/maps/boundaries.geojson
-    min_zoom: 4.5
-    max_zoom: 6.5
+  - serviceUrl:  https://DnsTestEnvironment.github.io/dns-indicators/assets/maps/boundariesKrs.geojson
+    min_zoom: 8
+    max_zoom: 11
+    staticBorders: true
+    subfolder: kreise
+    label: indicator.counties
+  - serviceUrl:  https://DnsTestEnvironment.github.io/dns-indicators/assets/maps/boundaries.geojson
+    min_zoom: 0
+    max_zoom: 7
     staticBorders: true
     subfolder: laender
     label: indicator.laender
-  - serviceUrl:  https://Nachhaltige-Entwicklung-Deutschland.github.io/open-sdg-site-starter/assets/maps/boundariesKrs.geojson
-    min_zoom: 7
-    max_zoom: 11
-    staticBorders: false
-    subfolder: kreise
-    label: indicator.counties
-    
+
 progressive_web_app:
   enabled: true
   name: DNS Indikatoren
