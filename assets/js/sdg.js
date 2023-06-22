@@ -366,6 +366,30 @@ opensdg.autotrack = function(preset, category, action, label) {
       return [opensdg.remoteDataBaseUrl, 'geojson', subfolder, fileName].join('/');
     },
 
+    getYearSlider: function() {
+      var plugin = this,
+          years = plugin.years[plugin.currentDisaggregation];
+      return L.Control.yearSlider({
+        years: years,
+        yearChangeCallback: function(e) {
+          plugin.currentYear = years[e.target._currentTimeIndex];
+          plugin.updateColors();
+          plugin.updateTooltips();
+          plugin.selectionLegend.update();
+        }
+      });
+    },
+
+    replaceYearSlider: function() {
+      var newSlider = this.getYearSlider();
+      var oldSlider = this.yearSlider;
+      this.map.addControl(newSlider);
+      this.map.removeControl(oldSlider);
+      this.yearSlider = newSlider;
+      $(this.yearSlider.getContainer()).insertAfter($(this.disaggregationControls.getContainer()));
+      this.yearSlider._timeDimension.setCurrentTimeIndex(this.yearSlider._timeDimension.getCurrentTimeIndex());
+    },
+
     // Initialize the map itself.
     init: function() {
 
@@ -500,7 +524,10 @@ opensdg.autotrack = function(preset, category, action, label) {
                 var validValues = validEntries.map(function(entry) {
                   return entry[1];
                 });
-                availableYears = availableYears.concat(validKeys);
+                if (availableYears.length <= valueIndex) {
+                  availableYears.push([]);
+                }
+                availableYears[valueIndex] = availableYears[valueIndex].concat(validKeys);
                 if (minimumValues.length <= valueIndex) {
                   minimumValues.push([]);
                   maximumValues.push([]);
@@ -525,8 +552,11 @@ opensdg.autotrack = function(preset, category, action, label) {
         }
         plugin.setColorScale();
 
-        plugin.years = _.uniq(availableYears).sort();
+        plugin.years = availableYears.map(function(yearsForIndex) {
+          return _.uniq(yearsForIndex).sort();
+        });
         //Start the map with the most recent year
+        plugin.currentYear = plugin.years[plugin.currentDisaggregation].slice(-1)[0];
         plugin.currentYear = plugin.years.slice(-1)[0];
 
         // And we can now update the colors.
@@ -549,15 +579,7 @@ opensdg.autotrack = function(preset, category, action, label) {
         }));
 
         // Add the year slider.
-        plugin.yearSlider = L.Control.yearSlider({
-          years: plugin.years,
-          yearChangeCallback: function(e) {
-            plugin.currentYear = plugin.years[e.target._currentTimeIndex];
-            plugin.updateColors();
-            plugin.updateTooltips();
-            plugin.selectionLegend.update();
-          }
-        });
+        plugin.yearSlider = plugin.getYearSlider();
         plugin.map.addControl(plugin.yearSlider);
 
         // Add the selection legend.
@@ -567,9 +589,14 @@ opensdg.autotrack = function(preset, category, action, label) {
         // Add the disaggregation controls.
         plugin.disaggregationControls = L.Control.disaggregationControls(plugin);
         plugin.map.addControl(plugin.disaggregationControls);
-        plugin.updateTitle();
-        plugin.updateFooterFields();
-        plugin.updatePrecision();
+        if (plugin.disaggregationControls.needsMapUpdate) {
+          plugin.disaggregationControls.updateMap();
+        }
+        else {
+          plugin.updateTitle();
+          plugin.updateFooterFields();
+          plugin.updatePrecision();
+        }
 
         // Add the search feature.
         plugin.searchControl = new L.Control.SearchAccessible({
