@@ -188,41 +188,60 @@
               <td align="left" style="padding-left: 0px;padding-right: 0px;">
                 <a href=" {{ site.baseurl }}{{ baseurl_folder }}/status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/{{ item_d }}.png" title="{{ title_d }}" alt="{{  item_d | markdownify }}" class="responsiveWeather" style="border: transparent"/></a>
               </td>
-            {% elsif item_d == 'Bewertung ausgesetzt' or item_d == 'Später' or item_d == 'Keine' or item_d == 'Ende' and no_futher_cells != true %}
+            {% elsif item_d == 'Bewertung ausgesetzt' or item_d == 'Später' or item_d == 'Ende' and no_futher_cells != true %}
               <td colspan="4" align="left" style="padding-left: 0px;padding-right: 0px;">
-                <p> {{ page.t.weather.[item_d] }} </p>
+                <p> {{ page.t.weather[item_d] }} </p>
               </td>
               {% assign no_futher_cells = true %}
+            {% elsif item_d == 'Keine' and no_futher_cells != true %}
+              <td colspan="1" align="left" style="padding-left: 0px;padding-right: 0px;">
+                <p> {{ page.t.weather[item_d] }} </p>
+              </td>
             {% endif %}
+
             {% if item_c == 'Sonne' or item_c == 'Leicht bewölkt' or item_c == 'Wolke' or item_c == 'Blitz' %}
               <td align="left" style="padding-left: 0px;padding-right: 0px;">
                 <a href=" {{ site.baseurl }}{{ baseurl_folder }}/status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/{{ item_c }}.png" title="{{ title_c }}" alt="{{  item_c | markdownify }}" class="responsiveWeather" style="border: transparent"/></a>
               </td>
-            {% elsif item_c == 'Bewertung ausgesetzt' or item_c == 'Später' or item_c == 'Keine' or item_c == 'Ende' and no_futher_cells != true %}
-              <td colspan="4" align="left" style="padding-left: 0px;padding-right: 0px;">
-                <p> {{ page.t.weather.[item_c] }} </p>
+            {% elsif item_c == 'Bewertung ausgesetzt' or item_c == 'Später' or item_c == 'Ende' and no_futher_cells != true %}
+              <td colspan="3" align="left" style="padding-left: 0px;padding-right: 0px;">
+                <p> {{ page.t.weather[item_c] }} </p>
               </td>
               {% assign no_futher_cells = true %}
+            {% elsif item_c == 'Keine' and no_futher_cells != true %}
+              <td colspan="1" align="left" style="padding-left: 0px;padding-right: 0px;">
+                <p> {{ page.t.weather[item_c] }} </p>
+              </td>
             {% endif %}
+
             {% if item_b == 'Sonne' or item_b == 'Leicht bewölkt' or item_b == 'Wolke' or item_b == 'Blitz' %}
               <td align="left" style="padding-left: 0px;padding-right: 0px;">
                 <a href=" {{ site.baseurl }}{{ baseurl_folder }}/status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/{{ item_b }}.png" title="{{ title_b }}" alt="{{  item_b | markdownify }}" class="responsiveWeather" style="border: transparent"/></a>
               </td>
-            {% elsif item_b == 'Bewertung ausgesetzt' or item_b == 'Später' or item_b == 'Keine' or item_b == 'Ende' and no_futher_cells != true %}
-              <td colspan="4" align="left" style="padding-left: 0px;padding-right: 0px;">
-                <p> {{ page.t.weather.[item_b] }} </p>
+            {% elsif item_b == 'Bewertung ausgesetzt' or item_b == 'Später' or item_b == 'Ende' and no_futher_cells != true %}
+              <td colspan="2" align="left" style="padding-left: 0px;padding-right: 0px;">
+                <p> {{ page.t.weather[item_b] }} </p>
               </td>
               {% assign no_futher_cells = true %}
+            {% elsif item_b == 'Keine' and no_futher_cells != true %}
+              <td colspan="1" align="left" style="padding-left: 0px;padding-right: 0px;">
+                <p> {{ page.t.weather[item_b] }} </p>
+              </td>
             {% endif %}
+
             {% if item_a == 'Sonne' or item_a == 'Leicht bewölkt' or item_a == 'Wolke' or item_a == 'Blitz' %}
               <td align="left" style="padding-left: 0px;padding-right: 0px;">
                 <a href=" {{ site.baseurl }}{{ baseurl_folder }}/status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/{{ item_a }}.png" title="{{ title_a }}" alt="{{  item_a | markdownify }}" class="responsiveWeather" style="border: transparent"/></a>
               </td>
-            {% elsif item_a == 'Bewertung ausgesetzt' or item_a == 'Später' or item_a == 'Keine' or item_a == 'Ende' and no_futher_cells != true %}
-              <td colspan="4" align="left" style="padding-left: 0px;padding-right: 0px;">
-                <p> {{ page.t.weather.[item_a] }} </p>
+            {% elsif item_a == 'Bewertung ausgesetzt' or item_a == 'Später' or item_a == 'Ende' and no_futher_cells != true %}
+              <td colspan="1" align="left" style="padding-left: 0px;padding-right: 0px;">
+                <p> {{ page.t.weather[item_a] }} </p>
               </td>
               {% assign no_futher_cells = true %}
+            {% elsif item_a == 'Keine' and no_futher_cells != true %}
+              <td colspan="1" align="left" style="padding-left: 0px;padding-right: 0px;">
+                <p> {{ page.t.weather[item_a] }} </p>
+              </td>
             {% endif %}
           </tr>
 
