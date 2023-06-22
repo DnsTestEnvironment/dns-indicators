@@ -16,7 +16,7 @@
 <div class="container">
   <div class="row justify-content-around">
     {% if page.indicator.sdg_indicator and page.indicator != '' %}
-      <div class="col-sm-3 d-grid gap-2">
+      <div class="col-sm-4 d-grid gap-2">
     {% else %}
       <div class="col-sm-6 d-grid gap-2">
     {% endif %}
@@ -38,7 +38,7 @@
           </a>
         </div>
       {% else %}
-        <div class="col-sm-6 d-grid gap-2">
+        <div class="col-sm-4 d-grid gap-2">
           <a href="https://sdg-indikatoren.de/{{ language }}{{ page.indicator.sdg_indicator | replace: '.', '-'}}" class="btn btn-primary btn-block goal-{{ page.goal.number }} navigation-btn" title="{{ t.general.link_sdg_goal }}" role="button">
             <b class="btn-label d-sm-none d-lg-block">{{ page.t.general.link_sdg_indicator }} {{ page.indicator.sdg_indicator | replace: "/", ""}}</b><b class="btn-label d-none d-sm-block d-lg-none">SDG {{ page.indicator.sdg_indicator | replace: "/", ""}}</b>
           </a>
@@ -49,7 +49,7 @@
     {% if page.indicator.sdg_indicator and page.indicator != '' %}
       <div class="col-sm-3 d-grid gap-2">
     {% else %}
-      <div class="col-sm-6 d-grid gap-2">
+      <div class="col-sm-4 d-grid gap-2">
     {% endif %}
       <a href="{{ baseurl }}/{{ language }}{{ page.indicator.next }}" class="btn btn-primary btn-block goal-{{ page.goal.number }} navigation-btn text-nowrap" role="button">
         <b class="btn-label d-sm-none d-lg-block">{{ page.t.general.next_indicator }} <i class="fa fa-chevron-right" aria-hidden="true"></i></b><b class="d-none d-sm-block d-lg-none"><i class="fa fa-chevron-right" aria-hidden="true"></i></b>
