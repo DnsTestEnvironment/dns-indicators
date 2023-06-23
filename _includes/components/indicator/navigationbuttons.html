@@ -5,7 +5,7 @@
 {% endif %}
 
 {% if site.environment == 'staging' %}
-  {% assign baseurl = 'https://dnstestenvironment.github.io/dns-indicators' %}
+  {% assign baseurl = 'https://nachhaltige-entwicklung-deutschland.github.io/open-sdg-site-starter' %}
 {% else %}
   {% assign baseurl = 'https://dns-indikatoren.de' %}
 {% endif %}
@@ -16,7 +16,11 @@
 <div class="container">
   <div class="row justify-content-around">
     {% if page.indicator.sdg_indicator and page.indicator != '' %}
-      <div class="col-sm-4 d-grid gap-2">
+      {% if page.indicator.sdg_indicator2 and page.indicator != '' %}
+        <div class="col-sm-3 d-grid gap-2">
+      {% else %}
+        <div class="col-sm-4 d-grid gap-2">
+      {% endif %}
     {% else %}
       <div class="col-sm-6 d-grid gap-2">
     {% endif %}
@@ -47,7 +51,11 @@
     {% endif %}
 
     {% if page.indicator.sdg_indicator and page.indicator != '' %}
-      <div class="col-sm-4 d-grid gap-2">
+      {% if page.indicator.sdg_indicator2 and page.indicator != '' %}
+        <div class="col-sm-3 d-grid gap-2">
+      {% else %}
+        <div class="col-sm-4 d-grid gap-2">
+      {% endif %}
     {% else %}
       <div class="col-sm-6 d-grid gap-2">
     {% endif %}

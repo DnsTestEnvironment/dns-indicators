@@ -197,6 +197,9 @@
               <td colspan="1" align="left" style="padding-left: 0px;padding-right: 0px; width: auto">
                 <p> {{ page.t.weather[item_d] }} </p>
               </td>
+            {% elsif item_d == '' %}
+              <td colspan="1" align="left" style="padding-left: 0px;padding-right: 0px; width: auto">
+              </td>
             {% endif %}
 
             {% if item_c == 'Sonne' or item_c == 'Leicht bewölkt' or item_c == 'Wolke' or item_c == 'Blitz' %}
@@ -212,6 +215,9 @@
               <td colspan="1" align="left" style="padding-left: 0px;padding-right: 0px; width: auto">
                 <p> {{ page.t.weather[item_c] }} </p>
               </td>
+            {% elsif item_c == '' %}
+              <td colspan="1" align="left" style="padding-left: 0px;padding-right: 0px; width: auto">
+              </td>
             {% endif %}
 
             {% if item_b == 'Sonne' or item_b == 'Leicht bewölkt' or item_b == 'Wolke' or item_b == 'Blitz' %}
@@ -226,6 +232,9 @@
             {% elsif item_b == 'Keine' and no_futher_cells != true %}
               <td colspan="1" align="left" style="padding-left: 0px;padding-right: 0px; width: auto">
                 <p> {{ page.t.weather[item_b] }} </p>
+              </td>
+            {% elsif item_b == '' %}
+              <td colspan="1" align="left" style="padding-left: 0px;padding-right: 0px; width: auto">
               </td>
             {% endif %}
 
