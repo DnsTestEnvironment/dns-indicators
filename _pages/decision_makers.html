@@ -4,17 +4,7 @@ permalink: /decision_maker/
 layout: page
 ---
 
-{% include components/indicator/fields-template.html %}
-{% include components/indicator/units-template.html %}
-{% include components/indicator/series-template.html %}
-{% include components/indicator/data-main.html %}
-{% include components/indicator/data-tabs.html %}
-{% include components/indicator/data-panes.html %}
-{% include components/indicator/data-sidebar.html %}
-{% include components/indicator/headline.html %}
-{% include components/indicator/table.html %}
-{% include multilingual-js.html key="indicator" %}
-{% include multilingual-js.html key="data" %}
+
 
 {% for goal in page.goals %}
   {% if goal.number == '2' %}
@@ -29,6 +19,11 @@ layout: page
           </tr>
           <tr>
             <td>
+              {% include components/indicator/fields-template.html %}
+              {% include components/indicator/units-template.html %}
+              {% include components/indicator/series-template.html %}
+              {% include multilingual-js.html key="indicator" %}
+              {% include multilingual-js.html key="data" %}
               <div id="main-content" class="container goal-2" role="main">
                 {% include components/indicator/data-notice.html %}
                 {% include components/indicator/indicator-available.html %}
@@ -43,22 +38,3 @@ layout: page
     {% endfor %}
   {% endif %}
 {% endfor %}
-
-
-
-
-
-  <!-- HTML-Inhalt der Seite -->
-
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script>
-    $(document).ready(function() {
-      $.ajax({
-        url: 'https://christoph-lsn.github.io/MT_Site/2-2-1/index.html',
-        success: function(data) {
-          $('#div id="main-content" class="container goal-2" role="main').html(data);
-        }
-      });
-    });
-  </script>
-</body>
