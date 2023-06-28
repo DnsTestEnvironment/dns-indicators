@@ -1,0 +1,64 @@
+---
+title: Indikatoren für EntscheiderInnen
+permalink: /decision_maker/
+layout: page
+---
+
+{% include components/indicator/fields-template.html %}
+{% include components/indicator/units-template.html %}
+{% include components/indicator/series-template.html %}
+{% include components/indicator/data-main.html %}
+{% include components/indicator/data-tabs.html %}
+{% include components/indicator/data-panes.html %}
+{% include components/indicator/data-sidebar.html %}
+{% include components/indicator/headline.html %}
+{% include components/indicator/table.html %}
+{% include multilingual-js.html key="indicator" %}
+{% include multilingual-js.html key="data" %}
+
+{% for goal in page.goals %}
+  {% if goal.number == '2' %}
+    <h2>{{ goal.number }} {{ goal.name }}</h2>
+    {% for indicator in page.indicators %}
+      {% if indicator.number == '2.1.a' or indicator.number == '2.1.b' %}
+        <table width="100%">
+          <col style="width:90%">
+          <col style="width:10%">
+          <tr>
+            <td><a href="{{ indicator.url }}">{{ indicator.number }} {{ indicator.name }}</a></td>
+          </tr>
+          <tr>
+            <td>
+              <div id="main-content" class="container goal-2" role="main">
+                {% include components/indicator/data-notice.html %}
+                {% include components/indicator/indicator-available.html %}
+                {% include components/indicator/indicator-progress.html %}
+                {% include components/indicator/indicator-content.html %}
+                {% include components/indicator/indicator-main.html %}
+              </div>
+            </td>
+          </tr>
+        </table>
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+{% endfor %}
+
+
+
+
+
+  <!-- HTML-Inhalt der Seite -->
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $.ajax({
+        url: 'https://christoph-lsn.github.io/MT_Site/2-2-1/index.html',
+        success: function(data) {
+          $('#div id="main-content" class="container goal-2" role="main').html(data);
+        }
+      });
+    });
+  </script>
+</body>
