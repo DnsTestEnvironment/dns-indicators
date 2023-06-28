@@ -11,6 +11,7 @@ layout: page
     <h2>{{ goal.number }} {{ goal.name }}</h2>
     {% for indicator in page.indicators %}
       {% if indicator.number == '2.1.a' or indicator.number == '2.1.b' %}
+      {% assign source = "https://" | append: indicator.url %}
         <table width="100%">
           <col style="width:90%">
           <col style="width:10%">
@@ -19,7 +20,7 @@ layout: page
           </tr>
           <tr>
             <td>
-              <iframe src=“{{ indicator.url }}“ height=“600″ width=“800″ name=“{{ indicator.name }}“>              
+              <iframe src="{{ source }}" height="600" width="100%" name="{{ indicator.name }}">              
               </iframe>
             </td>
           </tr>
