@@ -19,18 +19,8 @@ layout: page
           </tr>
           <tr>
             <td>
-              {% include components/indicator/fields-template.html %}
-              {% include components/indicator/units-template.html %}
-              {% include components/indicator/series-template.html %}
-              {% include multilingual-js.html key="indicator" %}
-              {% include multilingual-js.html key="data" %}
-              <div id="main-content" class="container goal-2" role="main">
-                {% include components/indicator/data-notice.html %}
-                {% include components/indicator/indicator-available.html %}
-                {% include components/indicator/indicator-progress.html %}
-                {% include components/indicator/indicator-content.html %}
-                {% include components/indicator/indicator-main.html %}
-              </div>
+              <iframe src=“{{ indicator.url }}“ height=“600″ width=“800″ name=“{{ indicator.name }}“>              
+              </iframe>
             </td>
           </tr>
         </table>
