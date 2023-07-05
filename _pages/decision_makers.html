@@ -37,6 +37,10 @@ layout: page
         iframeDocument.querySelectorAll(".breadcrumb").forEach(a=>a.style.display = "none");
         // Buttons ausblenden
         iframeDocument.getElementById("navigationbuttons").style.display = 'none';
+        // Buttons ausblenden
+        iframeDocument.querySelectorAll(".app-c-back-to-top__icon").forEach(a=>a.style.display = "none");
+        // Footer ausblenden
+        iframeDocument.querySelectorAll('[role="contentinfo"]').forEach(a=>a.style.display = "none");
 
     };
 
