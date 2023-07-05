@@ -9,7 +9,7 @@ layout: page
 {% for decision_indicator in decision_indicators %}
   <h2>Iframe Indicator {{ decision_indicator }}</h2>
 
-  <iframe onload="deleteStuffFromIndicatorPagesForIframe({{ decision_indicator }})" id="myIframe_{{ decision_indicator }}" src="https://dnstestenvironment.github.io/dns-indicators/{{ decision_indicator }}/index.html" width="1500" height="2500">
+  <iframe onload="deleteStuffFromIndicatorPagesForIframe('{{ decision_indicator }}')" id="myIframe_{{ decision_indicator }}" src="https://dnstestenvironment.github.io/dns-indicators/{{ decision_indicator }}/index.html" width="1500" height="2500">
        Sorry your browser does not support inline frames.
   </iframe>
 {% endfor %}
