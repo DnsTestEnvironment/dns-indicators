@@ -3,17 +3,41 @@ title: Indikatoren für EntscheiderInnen
 permalink: /decision_maker2/
 layout: page
 ---
+<form method="post" action="/Tests/Post">
+  <fieldset>
+    <legend>Choose some indicators:</legend>
+    {% assign indicators = page.indicators | where: 'goal_number', 3  %}
+    {% for indicator in indicators %}
+      <div>
+        <input type="checkbox" name="selectedIndicators" value="{{ indicator.indicator_sort_order }}" onclick="return ValidatePetSelection();">
+        <label for="{{ indicator.indicator_sort_order }}">{{ indicator.indicator_display }}</label>
+      </div>
+    {% endfor %}
+    <input type="submit" value="Submit now" onclick="showResults()">
+  </fieldset>
+</form>
 
-<fieldset>
-  <legend>Choose some indicators:</legend>
-  {% assign indicators = page.indicators | where: 'goal_number', 3  %}
-  {% for indicator in indicators %}
-    <div>
-      <input type="checkbox">
-      <label for="{{ indicator.indicator_sort_order }}">{{ indicator.indicator_display }}</label>
-    </div>
-  {% endfor %}
-</fieldset>
+
+<script type="text/javascript">
+function ValidatePetSelection(){
+    var checkboxes = document.getElementsByName("selectedIndicators");
+    var numberOfCheckedItems = 0;
+    for(var i = 0; i < checkboxes.length; i++)
+    {
+        if(checkboxes[i].checked)
+            numberOfCheckedItems++;
+    }
+}
+
+function showResults(){
+  alert("X:", selectedIndicators);
+}
+
+</script>
+
+
+
+
 
 {% assign decision_indicators = '2-1-a,2-1-b' | split: ',' %}
 {% for decision_indicator in decision_indicators %}
