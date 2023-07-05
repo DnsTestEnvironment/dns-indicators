@@ -21,14 +21,22 @@ layout: page
             header.style.display = "none";
         }
 
-        // Footer ausblenden
+        // Element mit Klasse "heading goal-banner indicator goal-2" ausblenden
+        var element = iframeDocument.querySelector(".heading.goal-banner.indicator.goal-2");
+        if (element) {
+            element.style.display = "none";
+        }
+
+        // Disclaimer ausblenden
         var disclaimer = iframeDocument.getElementById("disclaimer");
         if (disclaimer) {
             disclaimer.style.display = "none";
         }
 
         // Breadcrumbs ausblenden
-        iframeDocument.querySelectorAll(".breadcrumb").forEach(a=>a.style.display = "none")
+        iframeDocument.querySelectorAll(".breadcrumb").forEach(a=>a.style.display = "none");
+        // Buttons ausblenden
+        iframeDocument.getElementById("navigationbuttons").style.display = 'none';
 
     };
 
