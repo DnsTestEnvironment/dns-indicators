@@ -27,6 +27,12 @@ layout: page
             disclaimer.style.display = "none";
         }
 
+        // Breadcrumbs ausblenden
+        var disclaimer = iframeDocument.getElementsByClassName("breadcrumb");
+        if (disclaimer) {
+            disclaimer.style.display = "none";
+        }
+
         // Navigation ausblenden
         var navigation = iframeDocument.querySelector("nav");
         if (navigation) {
