@@ -9,25 +9,16 @@ layout: page
     {% assign indicators = page.indicators | where: 'goal_number', 3  %}
     {% for indicator in indicators %}
       <div>
-        <input type="checkbox" name="selectedIndicators" value="{{ indicator.indicator_sort_order }}" onclick="return ValidatePetSelection();">
+        <input type="checkbox" name="selectedIndicators" value="{{ indicator.indicator_sort_order }}" id="{{ indicator.indicator_sort_order }}" >
         <label for="{{ indicator.indicator_sort_order }}">{{ indicator.indicator_display }}</label>
       </div>
     {% endfor %}
-    <input type="submit" value="Submit now" onclick="showResults()">
+    <input type="submit" value="Submit now" onclick="showResults();">
   </fieldset>
 </form>
 
 
 <script type="text/javascript">
-function ValidatePetSelection(){
-    var checkboxes = document.getElementsByName("selectedIndicators");
-    var numberOfCheckedItems = 0;
-    for(var i = 0; i < checkboxes.length; i++)
-    {
-        if(checkboxes[i].checked)
-            numberOfCheckedItems++;
-    }
-}
 
 function showResults(){
   alert("X:", selectedIndicators);
