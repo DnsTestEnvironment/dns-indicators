@@ -16,7 +16,7 @@ layout: page
 
 <script>
   function deleteStuffFromIndicatorPagesForIframe(indicator) {
-      var iframeId = 'myIframe' + indicator;
+      var iframeId = 'myIframe_' + indicator;
       console.log(iframeId);
       var iframe = document.getElementById(iframeId);
       var iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
