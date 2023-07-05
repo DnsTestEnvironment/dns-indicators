@@ -10,7 +10,7 @@ layout: page
   {% for indicator in indicators %}
     <div>
       <input type="checkbox">
-      <label for="{{ indicator }}">{{ indicator }}</label>
+      <label for="{{ indicator.indicator_sort_order }}">{{ indicator.indicator_display }}</label>
     </div>
   {% endfor %}
 </fieldset>
