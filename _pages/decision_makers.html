@@ -8,7 +8,7 @@ layout: page
 
 <script>
   function resizeIframe(obj) {
-    obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
+    obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + '.px';
   }
 </script>
 
@@ -39,9 +39,9 @@ layout: page
         lengthOfArray=breadcrumbArray.length;
 
         for (var i=0; i<lengthOfArray;i++){
-            breadcrumbArray[i].style.display='none';
+            breadcrumbArray[i].style.display = 'none';
         }
-        
+
 
         // Navigation ausblenden
         var navigation = iframeDocument.querySelector("nav");
