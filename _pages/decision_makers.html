@@ -35,10 +35,13 @@ layout: page
         }
 
         // Breadcrumbs ausblenden
-        var breadcrumb = iframeDocument.getElementsByClassName("breadcrumb");
-        if (breadcrumb) {
-            breadcrumb.style.display = "none";
+        var breadcrumbArray = iframeDocument.getElementsByClassName("breadcrumb");
+        lengthOfArray=breadcrumbArray.length;
+
+        for (var i=0; i<lengthOfArray;i++){
+            breadcrumbArray[i].style.display='none';
         }
+        
 
         // Navigation ausblenden
         var navigation = iframeDocument.querySelector("nav");
