@@ -143,7 +143,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20230705114205">
+        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20230705115006">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -313,62 +313,26 @@ data-event-label="high"
         
 
 
-    <body>
+    <style>
+    html, body, iframe { height: 100%; }
+    html { overflow: hidden; }
+</style>
+
+<body>
 
 
 
   <h2>Iframe Indicator 2-1-a</h2>
-  <div class="container" style="position: relative; width: 100%; height: 0; padding-bottom: 56.25%;"">
-    <iframe onload="deleteStuffFromIndicatorPagesForIframe('2-1-a')" id="myIframe_2-1-a" src="https://dnstestenvironment.github.io/dns-indicators/2-1-a/index.html" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-         Sorry your browser does not support inline frames.
-    </iframe>
-  </div>
+  <iframe onload="deleteStuffFromIndicatorPagesForIframe('2-1-a')" id="myIframe_2-1-a" src="https://dnstestenvironment.github.io/dns-indicators/2-1-a/index.html" width="100%" scrolling="yes" frameborder="0">
+       Sorry your browser does not support inline frames.
+  </iframe>
 
   <h2>Iframe Indicator 2-1-b</h2>
-  <div class="container" style="position: relative; width: 100%; height: 0; padding-bottom: 56.25%;"">
-    <iframe onload="deleteStuffFromIndicatorPagesForIframe('2-1-b')" id="myIframe_2-1-b" src="https://dnstestenvironment.github.io/dns-indicators/2-1-b/index.html" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-         Sorry your browser does not support inline frames.
-    </iframe>
-  </div>
+  <iframe onload="deleteStuffFromIndicatorPagesForIframe('2-1-b')" id="myIframe_2-1-b" src="https://dnstestenvironment.github.io/dns-indicators/2-1-b/index.html" width="100%" scrolling="yes" frameborder="0">
+       Sorry your browser does not support inline frames.
+  </iframe>
 
 
-<script>
-  function deleteStuffFromIndicatorPagesForIframe(indicator) {
-      var iframeId = 'myIframe_' + indicator;
-      console.log(iframeId);
-      var iframe = document.getElementById(iframeId);
-      var iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
-
-      // Header ausblenden
-      var header = iframeDocument.querySelector("header[role='banner']");
-      if (header) {
-          header.style.display = "none";
-      }
-
-      // Element mit Klasse "heading goal-banner indicator goal-2" ausblenden
-      var element = iframeDocument.querySelector(".heading.goal-banner.indicator.goal-2");
-      if (element) {
-          element.style.display = "none";
-      }
-
-      // Disclaimer ausblenden
-      var disclaimer = iframeDocument.getElementById("disclaimer");
-      if (disclaimer) {
-          disclaimer.style.display = "none";
-      }
-
-      // Breadcrumbs ausblenden
-      iframeDocument.querySelectorAll(".breadcrumb").forEach(a=>a.style.display = "none");
-      // Buttons ausblenden
-      iframeDocument.getElementById("navigationbuttons").style.display = 'none';
-      // Buttons ausblenden
-      iframeDocument.querySelectorAll(".app-c-back-to-top__icon").forEach(a=>a.style.display = "none");
-      // Footer ausblenden
-      iframeDocument.querySelectorAll('[role="contentinfo"]').forEach(a=>a.style.display = "none");
-
-    };
-
-</script>
 
 </body>
 
@@ -444,12 +408,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/dns-indicators/assets/js/sdg.js?v=20230705114205'></script>
+<script src='/dns-indicators/assets/js/sdg.js?v=20230705115006'></script>
 
 
     
     
-    <script src="/dns-indicators/assets/js/custom.js?v=20230705114205"></script><script>
+    <script src="/dns-indicators/assets/js/custom.js?v=20230705115006"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
