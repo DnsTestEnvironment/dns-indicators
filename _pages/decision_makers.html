@@ -3,54 +3,20 @@ title: Indikatoren für EntscheiderInnen
 permalink: /decision_maker/
 layout: page
 ---
+<style>
+    html, body, iframe { height: 100%; }
+    html { overflow: hidden; }
+</style>
+
 <body>
 
 {% assign decision_indicators = '2-1-a,2-1-b' | split: ',' %}
 {% for decision_indicator in decision_indicators %}
   <h2>Iframe Indicator {{ decision_indicator }}</h2>
-  <div class="container" style="position: relative; width: 100%; height: 0; padding-bottom: 56.25%;"">
-    <iframe onload="deleteStuffFromIndicatorPagesForIframe('{{ decision_indicator }}')" id="myIframe_{{ decision_indicator }}" src="https://dnstestenvironment.github.io/dns-indicators/{{ decision_indicator }}/index.html" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-         Sorry your browser does not support inline frames.
-    </iframe>
-  </div>
+  <iframe onload="deleteStuffFromIndicatorPagesForIframe('{{ decision_indicator }}')" id="myIframe_{{ decision_indicator }}" src="https://dnstestenvironment.github.io/dns-indicators/{{ decision_indicator }}/index.html" width="100%" scrolling="yes" frameborder="0">
+       Sorry your browser does not support inline frames.
+  </iframe>
 {% endfor %}
 
-<script>
-  function deleteStuffFromIndicatorPagesForIframe(indicator) {
-      var iframeId = 'myIframe_' + indicator;
-      console.log(iframeId);
-      var iframe = document.getElementById(iframeId);
-      var iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
-
-      // Header ausblenden
-      var header = iframeDocument.querySelector("header[role='banner']");
-      if (header) {
-          header.style.display = "none";
-      }
-
-      // Element mit Klasse "heading goal-banner indicator goal-2" ausblenden
-      var element = iframeDocument.querySelector(".heading.goal-banner.indicator.goal-2");
-      if (element) {
-          element.style.display = "none";
-      }
-
-      // Disclaimer ausblenden
-      var disclaimer = iframeDocument.getElementById("disclaimer");
-      if (disclaimer) {
-          disclaimer.style.display = "none";
-      }
-
-      // Breadcrumbs ausblenden
-      iframeDocument.querySelectorAll(".breadcrumb").forEach(a=>a.style.display = "none");
-      // Buttons ausblenden
-      iframeDocument.getElementById("navigationbuttons").style.display = 'none';
-      // Buttons ausblenden
-      iframeDocument.querySelectorAll(".app-c-back-to-top__icon").forEach(a=>a.style.display = "none");
-      // Footer ausblenden
-      iframeDocument.querySelectorAll('[role="contentinfo"]').forEach(a=>a.style.display = "none");
-
-    };
-
-</script>
 
 </body>
