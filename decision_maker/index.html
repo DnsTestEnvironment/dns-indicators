@@ -143,7 +143,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20230705092844">
+        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20230705093900">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -338,100 +338,12 @@ data-event-label="high"
         }
 
         // Breadcrumbs ausblenden
-        var breadcrumbArray = iframeDocument.getElementsByClassName("breadcrumb");
-        lengthOfArray=breadcrumbArray.length;
+        iframeDocument.querySelectorAll(".breadcrumb").forEach(a=>a.style.display = "none")
 
-        for (var i=0; i<lengthOfArray;i++){
-            breadcrumbArray[i].style.display = 'none';
-        }
-
-
-        // Navigation ausblenden
-        var navigation = iframeDocument.querySelector("nav");
-        if (navigation) {
-            navigation.style.display = "none";
-        }
-
-        // Vorherigen/nächsten Linksteil ausblenden
-        var prevNextLinks = iframeDocument.querySelector("previous-next-links");
-        if (prevNextLinks) {
-            prevNextLinks.style.display = "none";
-        }
-
-         // Element mit Klasse "heading goal-banner indicator goal-2" ausblenden
-        var element = iframeDocument.querySelector(".heading.goal-banner.indicator.goal-2");
-        if (element) {
-            element.style.display = "none";
-        }
-        // Element mit der Klasse "footer" ausblenden
-        var footer = iframeDocument.querySelector("footer[role='contentinfo']");
-
-        if (footer) {
-            footer.style.display = "none";
-        }
-
-       var container = iframeDocument.querySelector("container");
-    if (container) {
-        container.style.display = "none";
-       }
     };
 
 </script>
 
-
-
-
-<br>
-
-<h2>Iframe Indicator 2-1-b/index.html</h2>
-<iframe id="myIframe" src="https://dnstestenvironment.github.io/dns-indicators/2-1-a/index.html" width="1024" height="2500">
-     Sorry your browser does not support inline frames.
-</iframe>
-
-
-<script>
-    document.getElementById("indicator_2-1-b").onload = function() {
-        var iframe = document.getElementById("indicator_2-1-b");
-        var iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
-
-        // Header ausblenden
-        var header = iframeDocument.querySelector("header[role='banner']");
-        if (header) {
-            header.style.display = "none";
-        }
-
-        // Footer ausblenden
-        var disclaimer = iframeDocument.getElementById("disclaimer");
-        if (disclaimer) {
-            disclaimer.style.display = "none";
-        }
-
-        // Navigation ausblenden
-        var navigation = iframeDocument.querySelector("nav");
-        if (navigation) {
-            navigation.style.display = "none";
-        }
-
-        // Vorherigen/nächsten Linksteil ausblenden
-        var prevNextLinks = iframeDocument.querySelector(".previous-next-links");
-        if (prevNextLinks) {
-            prevNextLinks.style.display = "none";
-        }
-
-         // Element mit Klasse "heading goal-banner indicator goal-2" ausblenden
-        var element = iframeDocument.querySelector(".heading.goal-banner.indicator.goal-2");
-        if (element) {
-            element.style.display = "none";
-        }
-        // Element mit der Klasse "previous-next-links" ausblenden
-        var footer = iframeDocument.querySelector("footer[role='contentinfo']");
-
-        if (footer) {
-            footer.style.display = "none";
-        }
-    };
-
-</script>
 </body>
 
 
@@ -506,12 +418,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/dns-indicators/assets/js/sdg.js?v=20230705092844'></script>
+<script src='/dns-indicators/assets/js/sdg.js?v=20230705093900'></script>
 
 
     
     
-    <script src="/dns-indicators/assets/js/custom.js?v=20230705092844"></script><script>
+    <script src="/dns-indicators/assets/js/custom.js?v=20230705093900"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
