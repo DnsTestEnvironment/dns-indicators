@@ -4,11 +4,15 @@ permalink: /decision_maker/
 layout: page
 ---
 <body>
-<h2>Iframe Indicator 2-2-1/index.html</h2>
 
-<iframe id="myIframe" src="https://dnstestenvironment.github.io/dns-indicators/2-1-a/index.html" width="1024" height="2500">
-     Sorry your browser does not support inline frames.
-</iframe>
+{% assign decision_indicators = '2-1-a', '2-1-b' %}
+{% for decision_indicator in decision_indicators %}
+  <h2>Iframe Indicator {{ decision_indicator }}</h2>
+
+  <iframe id="myIframe" src="https://dnstestenvironment.github.io/dns-indicators/{{ decision_indicator }}/index.html" width="1024" height="2500">
+       Sorry your browser does not support inline frames.
+  </iframe>
+{% endfor %}
 
 <script>
     document.getElementById("myIframe").onload = function() {
