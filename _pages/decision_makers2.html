@@ -1,0 +1,24 @@
+---
+title: Indikatoren für EntscheiderInnen
+permalink: /decision_maker2/
+layout: page
+---
+
+<fieldset>
+  <legend>Choose some indicators:</legend>
+  {% assign indicators = page.indicators | where: 'goal_number', 3  %}
+  {% for indicator in indicators %}
+    <div>
+      <input type="checkbox">
+      <label for="{{ indicator }}">{{ indicator }}</label>
+    </div>
+  {% endfor %}
+</fieldset>
+
+{% assign decision_indicators = '2-1-a,2-1-b' | split: ',' %}
+{% for decision_indicator in decision_indicators %}
+  <h2>Iframe Indicator {{ decision_indicator }}</h2>
+  <iframe onload="deleteStuffFromIndicatorPagesForIframe('{{ decision_indicator }}')" id="myIframe_{{ decision_indicator }}" src="https://dnstestenvironment.github.io/dns-indicators/{{ decision_indicator }}/index.html" width="100%" height="1800px" frameborder="0">
+       Sorry your browser does not support inline frames.
+  </iframe>
+{% endfor %}
