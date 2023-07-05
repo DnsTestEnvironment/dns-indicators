@@ -5,7 +5,7 @@ layout: page
 ---
 <body>
 
-{% assign decision_indicators = '2-1-a', '2-1-b' %}
+{% assign decision_indicators = '2-1-a,2-1-b' split: ',' %}
 {% for decision_indicator in decision_indicators %}
   <h2>Iframe Indicator {{ decision_indicator }}</h2>
 
