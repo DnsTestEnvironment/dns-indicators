@@ -29,9 +29,7 @@ layout: page
 </script>
 
 
-
-{% assign decision_indicators = '2-1-a,2-1-b' | split: ',' %}
-{% for decision_indicator in indicators %}
+{% for indicator in indicators %}
   <iframe onload="deleteStuffFromIndicatorPagesForIframe('{{ indicator.indicator_sort_order }}')" id="myIframe_{{ indicator.indicator_sort_order }}" src="https://dnstestenvironment.github.io/dns-indicators/{{ indicator.indicator_sort_order }}/index.html" width="100%" height="1800px" frameborder="0" style="display: none">
        Sorry your browser does not support inline frames.
   </iframe>
