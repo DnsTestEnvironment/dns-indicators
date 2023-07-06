@@ -1,0 +1,14 @@
+---
+title: Indikatoren für EntscheiderInnen
+permalink: /en/decision_maker/
+layout: page
+---
+
+
+{% assign decision_indicators = '2-1-a,2-1-b' | split: ',' %}
+{% for decision_indicator in decision_indicators %}
+  <h2>Iframe Indicator {{ decision_indicator }}</h2>
+  <iframe onload="deleteStuffFromIndicatorPagesForIframe('{{ decision_indicator }}')" id="myIframe_{{ decision_indicator }}" src="https://dnstestenvironment.github.io/dns-indicators/{{ decision_indicator }}/index.html" width="100%" height="1800px" frameborder="0">
+       Sorry your browser does not support inline frames.
+  </iframe>
+{% endfor %}
