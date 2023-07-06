@@ -28,9 +28,11 @@ function deleteStuffFromIndicatorPagesForIframe(indicator) {
     iframeDocument.querySelectorAll('[role="contentinfo"]').forEach(a=>a.style.display = "none");
   };
 
-function deleteStuffFromIndicatorPagesForIframe2(iframeDocument, indicator) {
-    var iframeId = 'myIframe_' + indicator;
-    var goal = str(indicator.substring(0, indicator.search('-')));
+function deleteStuffFromIndicatorPagesForIframe2(indicator) {
+    var iframeId = indicator;
+    var goal = iframeId.substring(0, indicator.search('-'));
+    var iframe = document.getElementById(iframeId);
+    var iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
     // Header ausblenden
     var header = iframeDocument.querySelector("header[role='banner']");
     if (header) {
