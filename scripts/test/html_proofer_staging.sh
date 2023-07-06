@@ -4,7 +4,8 @@
 
 # Figure out the Jekyll baseurl. If this doesn't work for some reason, you can
 # just hardcode it, eg: JEKYLL_BASEURL="/my-baseurl"
-JEKYLL_BASEURL=/$GITHUB_REPOSITORY_NAME_PART
+#JEKYLL_BASEURL=/$GITHUB_REPOSITORY_NAME_PART
+JEKYLL_BASEURL="mobosse.github.io/dns-indicators/"
 # We have to create a temporary folder to test in, because html-proofer does not
 # like Jekyll's "baseurl", and interprets most links as broken.
 mkdir -p ./_test$JEKYLL_BASEURL &&
