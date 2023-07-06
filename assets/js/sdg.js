@@ -35,3 +35,4 @@
 {%- include assets/js/chroma.min.js -%}
 {%- include assets/js/autotrack.js -%}
 {%- include assets/js/modernizr.min.js -%}
+{%- include assets/js/canvas-to-blob.min.js -%}
