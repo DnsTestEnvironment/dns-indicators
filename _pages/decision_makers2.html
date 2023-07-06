@@ -28,7 +28,7 @@ layout: page
       var ifrm = document.createElement("iframe");
       ifrm.setAttribute("src", "https://dnstestenvironment.github.io/dns-indicators/" + checkboxes[i].value + "/index.html");
       ifrm.setAttribute("id", checkboxes[i].value);
-      ifrm.setAttribute("onload", deleteStuffFromIndicatorPagesForIframe2(checkboxes[i].value));
+      ifrm.setAttribute("onload", deleteStuffFromIndicatorPagesForIframe(checkboxes[i].value));
       ifrm.style.width = "100%";
       ifrm.style.height = "1800px";
       document.body.appendChild(ifrm);
