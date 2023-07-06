@@ -32,3 +32,5 @@
 {%- include assets/js/linkExtAlert.js -%}
 {%- include assets/js/indicatorCleanupForIframe.js -%}
 {%- include assets/js/loadash.min.js -%}
+{%- include assets/js/chroma.min.js -%}
+{%- include assets/js/autotrack.js -%}
