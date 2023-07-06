@@ -1,0 +1,38 @@
+---
+title: Indikatoren für EntscheiderInnen
+permalink: /en/decision_maker3/
+layout: page
+---
+<form>
+  <fieldset>
+    <legend>Choose some indicators:</legend>
+    {% assign indicators = page.indicators | where: 'goal_number', 3  %}
+    {% for indicator in indicators %}
+      <div>
+        <input type="checkbox" name="selectedIndicators" class="chkbx" value="{{ indicator.indicator_sort_order }}" id="{{ indicator.indicator_sort_order }}" >
+        <label for="{{ indicator.indicator_sort_order }}">{{ indicator.indicator_display }}</label>
+      </div>
+    {% endfor %}
+  </fieldset>
+</form>
+<button onclick="myFunction()">Show indicators</button>
+
+{% for indicator in indicators %}
+  <iframe onload="deleteStuffFromIndicatorPagesForIframe('{{ indicator.indicator_sort_order }}')" id="myIframe_{{ indicator.indicator_sort_order }}" src="https://dnstestenvironment.github.io/dns-indicators/{{ indicator.indicator_sort_order }}/index.html" width="100%" height="1800px" frameborder="0" style="display: none" >
+       Sorry your browser does not support inline frames.
+  </iframe>
+{% endfor %}
+
+
+<script type="text/javascript">
+  function myFunction() {
+  	var checkboxes = document.querySelectorAll('input[type=checkbox]:checked')
+    for (var i = 0; i < checkboxes.length; i++) {
+      var id = "myIframe_" + checkboxes[i].value;
+      var iframe = document.getElementById(id);
+      iframe.style.display = "block";
+      iframe.contentWindow.location.reload();
+    }
+
+  };
+</script>
