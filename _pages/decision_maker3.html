@@ -16,6 +16,13 @@ layout: page
   </fieldset>
 </form>
 
+
+{% for indicator in indicators %}
+  <iframe onload="deleteStuffFromIndicatorPagesForIframe('{{ indicator.indicator_sort_order }}')" id="myIframe_{{ indicator.indicator_sort_order }}" src="https://dnstestenvironment.github.io/dns-indicators/{{ indicator.indicator_sort_order }}/index.html" width="100%" height="1800px" frameborder="0" style="display: none">
+       Sorry your browser does not support inline frames.
+  </iframe>
+{% endfor %}
+
 <button onclick="myFunction()">Click me</button>
 <script type="text/javascript">
   function myFunction() {
@@ -27,10 +34,3 @@ layout: page
     }
   };
 </script>
-
-
-{% for indicator in indicators %}
-  <iframe onload="deleteStuffFromIndicatorPagesForIframe('{{ indicator.indicator_sort_order }}')" id="myIframe_{{ indicator.indicator_sort_order }}" src="https://dnstestenvironment.github.io/dns-indicators/{{ indicator.indicator_sort_order }}/index.html" width="100%" height="1800px" frameborder="0" style="display: none">
-       Sorry your browser does not support inline frames.
-  </iframe>
-{% endfor %}
