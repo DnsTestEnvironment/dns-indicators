@@ -31,3 +31,4 @@
 {%- include assets/js/backToTop.js -%}
 {%- include assets/js/linkExtAlert.js -%}
 {%- include assets/js/indicatorCleanupForIframe.js -%}
+{%- include assets/js/loadash.min.js -%}
