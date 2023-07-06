@@ -1,6 +1,6 @@
 function deleteStuffFromIndicatorPagesForIframe(indicator) {
     var iframeId = 'myIframe_' + indicator;
-    var goal = str(indicatort.substring(0, indicatort.search('-')));
+    var goal = string(indicatort.substring(0, indicatort.search('-')));
     var iframe = document.getElementById(iframeId);
     var iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
     // Header ausblenden
