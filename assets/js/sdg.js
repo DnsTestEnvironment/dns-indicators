@@ -6622,7 +6622,7 @@ function confirm_alert(source, lang) {
 }
 function deleteStuffFromIndicatorPagesForIframe(indicator) {
     var iframeId = 'myIframe_' + indicator;
-    var goal = string(indicatort.substring(0, indicatort.search('-')));
+    var goal = string(indicator.substring(0, indicator.search('-')));
     var iframe = document.getElementById(iframeId);
     var iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
     // Header ausblenden
