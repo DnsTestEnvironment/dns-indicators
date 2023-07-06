@@ -143,7 +143,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20230706080424">
+        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20230706082923">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -358,31 +358,31 @@ data-event-label="high"
 
 
 
-  <iframe onload="deleteStuffFromIndicatorPagesForIframe('3-1-ab')" id="myIframe_3-1-ab" src="https://dnstestenvironment.github.io/dns-indicators/3-1-ab/index.html" width="100%" height="1800px" frameborder="0" style="display: none">
+  <iframe onload="deleteStuffFromIndicatorPagesForIframe('3-1-ab')" id="myIframe_3-1-ab" src="https://dnstestenvironment.github.io/dns-indicators/3-1-ab/index.html" width="100%" height="1800px" frameborder="0" >
        Sorry your browser does not support inline frames.
   </iframe>
 
-  <iframe onload="deleteStuffFromIndicatorPagesForIframe('3-1-cd')" id="myIframe_3-1-cd" src="https://dnstestenvironment.github.io/dns-indicators/3-1-cd/index.html" width="100%" height="1800px" frameborder="0" style="display: none">
+  <iframe onload="deleteStuffFromIndicatorPagesForIframe('3-1-cd')" id="myIframe_3-1-cd" src="https://dnstestenvironment.github.io/dns-indicators/3-1-cd/index.html" width="100%" height="1800px" frameborder="0" >
        Sorry your browser does not support inline frames.
   </iframe>
 
-  <iframe onload="deleteStuffFromIndicatorPagesForIframe('3-1-e')" id="myIframe_3-1-e" src="https://dnstestenvironment.github.io/dns-indicators/3-1-e/index.html" width="100%" height="1800px" frameborder="0" style="display: none">
+  <iframe onload="deleteStuffFromIndicatorPagesForIframe('3-1-e')" id="myIframe_3-1-e" src="https://dnstestenvironment.github.io/dns-indicators/3-1-e/index.html" width="100%" height="1800px" frameborder="0" >
        Sorry your browser does not support inline frames.
   </iframe>
 
-  <iframe onload="deleteStuffFromIndicatorPagesForIframe('3-1-f')" id="myIframe_3-1-f" src="https://dnstestenvironment.github.io/dns-indicators/3-1-f/index.html" width="100%" height="1800px" frameborder="0" style="display: none">
+  <iframe onload="deleteStuffFromIndicatorPagesForIframe('3-1-f')" id="myIframe_3-1-f" src="https://dnstestenvironment.github.io/dns-indicators/3-1-f/index.html" width="100%" height="1800px" frameborder="0" >
        Sorry your browser does not support inline frames.
   </iframe>
 
-  <iframe onload="deleteStuffFromIndicatorPagesForIframe('3-2-a')" id="myIframe_3-2-a" src="https://dnstestenvironment.github.io/dns-indicators/3-2-a/index.html" width="100%" height="1800px" frameborder="0" style="display: none">
+  <iframe onload="deleteStuffFromIndicatorPagesForIframe('3-2-a')" id="myIframe_3-2-a" src="https://dnstestenvironment.github.io/dns-indicators/3-2-a/index.html" width="100%" height="1800px" frameborder="0" >
        Sorry your browser does not support inline frames.
   </iframe>
 
-  <iframe onload="deleteStuffFromIndicatorPagesForIframe('3-2-b')" id="myIframe_3-2-b" src="https://dnstestenvironment.github.io/dns-indicators/3-2-b/index.html" width="100%" height="1800px" frameborder="0" style="display: none">
+  <iframe onload="deleteStuffFromIndicatorPagesForIframe('3-2-b')" id="myIframe_3-2-b" src="https://dnstestenvironment.github.io/dns-indicators/3-2-b/index.html" width="100%" height="1800px" frameborder="0" >
        Sorry your browser does not support inline frames.
   </iframe>
 
-  <iframe onload="deleteStuffFromIndicatorPagesForIframe('3-3')" id="myIframe_3-3" src="https://dnstestenvironment.github.io/dns-indicators/3-3/index.html" width="100%" height="1800px" frameborder="0" style="display: none">
+  <iframe onload="deleteStuffFromIndicatorPagesForIframe('3-3')" id="myIframe_3-3" src="https://dnstestenvironment.github.io/dns-indicators/3-3/index.html" width="100%" height="1800px" frameborder="0" >
        Sorry your browser does not support inline frames.
   </iframe>
 
@@ -394,7 +394,7 @@ data-event-label="high"
     for (var i = 0; i < checkboxes.length; i++) {
       var id = "myIframe_" + checkboxes[i].value;
       var iframe = document.getElementById(id);
-      iframe.style.display = "block";
+      iframe.style.display = "none";
     }
   };
 </script>
@@ -471,12 +471,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/dns-indicators/assets/js/sdg.js?v=20230706080424'></script>
+<script src='/dns-indicators/assets/js/sdg.js?v=20230706082923'></script>
 
 
     
     
-    <script src="/dns-indicators/assets/js/custom.js?v=20230706080424"></script><script>
+    <script src="/dns-indicators/assets/js/custom.js?v=20230706082923"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
