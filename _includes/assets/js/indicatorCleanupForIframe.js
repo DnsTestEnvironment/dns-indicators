@@ -1,6 +1,5 @@
 function deleteStuffFromIndicatorPagesForIframe(indicator) {
     var iframeId = 'myIframe_' + indicator;
-    var goal = string(indicator.substring(0, indicator.search('-')));
     var iframe = document.getElementById(iframeId);
     var iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
     // Header ausblenden
@@ -9,7 +8,7 @@ function deleteStuffFromIndicatorPagesForIframe(indicator) {
         header.style.display = "none";
     }
     // Element mit Klasse "heading goal-banner indicator goal-2" ausblenden
-    var element = iframeDocument.querySelector(".heading.goal-banner.indicator.goal-" + goal);
+    var element = iframeDocument.querySelector(".heading.goal-banner.indicator.goal-2");
     if (element) {
         element.style.display = "none";
     }
