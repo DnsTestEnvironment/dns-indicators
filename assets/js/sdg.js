@@ -6622,6 +6622,8 @@ function confirm_alert(source, lang) {
 }
 function deleteStuffFromIndicatorPagesForIframe(indicator) {
     var iframeId = 'myIframe_' + indicator;
+    var goal = indicator.substring(0, indicator.search('-'));
+    alert(goal);
     var iframe = document.getElementById(iframeId);
     var iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
     // Header ausblenden
