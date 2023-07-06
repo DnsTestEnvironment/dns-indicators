@@ -34,3 +34,4 @@
 {%- include assets/js/loadash.min.js -%}
 {%- include assets/js/chroma.min.js -%}
 {%- include assets/js/autotrack.js -%}
+{%- include assets/js/modernizr.min.js -%}
