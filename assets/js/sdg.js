@@ -6623,7 +6623,6 @@ function confirm_alert(source, lang) {
 function deleteStuffFromIndicatorPagesForIframe(indicator) {
     var iframeId = 'myIframe_' + indicator;
     var goal = indicator.substring(0, indicator.search('-'));
-    alert(goal);
     var iframe = document.getElementById(iframeId);
     var iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
     // Header ausblenden
@@ -6632,7 +6631,7 @@ function deleteStuffFromIndicatorPagesForIframe(indicator) {
         header.style.display = "none";
     }
     // Element mit Klasse "heading goal-banner indicator goal-2" ausblenden
-    var element = iframeDocument.querySelector(".heading.goal-banner.indicator.goal-2");
+    var element = iframeDocument.querySelector(".heading.goal-banner.indicator.goal-" + goal);
     if (element) {
         element.style.display = "none";
     }
