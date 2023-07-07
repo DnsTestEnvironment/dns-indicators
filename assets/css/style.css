@@ -3803,12 +3803,14 @@ abbr[title]:focus::after {
   background-color: #999; }
 .collapsibleElements .collapsible:after {
   content: '\002B';
+  font-size: 24px;
   color: black;
   font-weight: bold;
   float: right;
   margin-left: 5px; }
 .collapsibleElements .active:after {
-  content: "\2212"; }
+  content: "\2212";
+  font-size: 24px; }
 .collapsibleElements .content {
   padding: 0 18px;
   max-height: 0;
