@@ -3787,6 +3787,9 @@ abbr[title]:focus::after {
   .cptn {
     visibility: hidden; } }
 .collapsibleElements .collapsible {
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
   width: 100%;
   border: none;
   text-align: left;
