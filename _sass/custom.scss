@@ -435,6 +435,9 @@ abbr[title]:focus::after {
 // collapsible Texts on publications strategy page
 .collapsibleElements {
   .collapsible {
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
     width: 100%;
     border: none;
     text-align: left;
