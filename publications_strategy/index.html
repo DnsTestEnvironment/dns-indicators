@@ -141,7 +141,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20230707133327">
+        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20230707133825">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -311,24 +311,7 @@ data-event-label="high"
         
 
 
-    <script>
-var coll = document.getElementsByClassName("collapsible");
-var i;
-
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.maxHeight){
-      content.style.maxHeight = null;
-    } else {
-      content.style.maxHeight = content.scrollHeight + "px";
-    }
-  });
-}
-</script>
-
-<h2>Deutsche Nachhaltigkeits&shy;strategie</h2>
+    <h2>Deutsche Nachhaltigkeits&shy;strategie</h2>
 <div class="flex-container">
   <div class="rightColumn">
     <img src="https://dnstestenvironment.github.io/dns-indicators//public/DnsLogo.png" alt="Logo of the DNS" style="width: 100%; padding-left: 20px; padding-right:20px; padding-bottom:10px; padding-top:10px; max-width: 350px;">
@@ -402,6 +385,22 @@ for (i = 0; i < coll.length; i++) {
     </div>
   </div>
 </div>
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  });
+}
+</script>
 
 
 
@@ -475,12 +474,12 @@ for (i = 0; i < coll.length; i++) {
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/dns-indicators/assets/js/sdg.js?v=20230707133327'></script>
+<script src='/dns-indicators/assets/js/sdg.js?v=20230707133825'></script>
 
 
     
     
-    <script src="/dns-indicators/assets/js/custom.js?v=20230707133327"></script><script>
+    <script src="/dns-indicators/assets/js/custom.js?v=20230707133825"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
