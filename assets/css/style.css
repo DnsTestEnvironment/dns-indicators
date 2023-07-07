@@ -3787,12 +3787,16 @@ abbr[title]:focus::after {
   .cptn {
     visibility: hidden; } }
 .collapsibleElements .collapsible {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.2;
   cursor: pointer;
   padding: 18px;
+  margin: 3px;
   width: 100%;
   width: 100%;
   border: none;
-  radius: 8px;
+  border-radius: 5px;
   text-align: left;
   outline: none; }
 .collapsibleElements .active, .collapsibleElements .collapsible:hover {
