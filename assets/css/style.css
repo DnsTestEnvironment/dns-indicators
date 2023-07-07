@@ -3786,3 +3786,24 @@ abbr[title]:focus::after {
 @media (max-width: 1200px) {
   .cptn {
     visibility: hidden; } }
+.collapsibleElements .collapsible {
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none; }
+.collapsibleElements .active, .collapsibleElements .collapsible:hover {
+  background-color: #999; }
+.collapsibleElements .collapsible:after {
+  content: '\002B';
+  color: black;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px; }
+.collapsibleElements .active:after {
+  content: "\2212"; }
+.collapsibleElements .content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1; }
