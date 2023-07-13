@@ -123,9 +123,9 @@ menu:
       - translation_key: menu.sustainable_development_strategy
         dropdown:
         - path: /publications_strategy/
-          translation_key: menu.sustainable_development_strategy_germany
+          translation_key: Bundesregierung
         - path: /publications_strategy_laender/
-          translation_key: menu.sustainable_development_strategy_laender
+          translation_key: Bundesländer
       - path: /publications_other/
         translation_key: menu.other_publications
   - path: menu.pathtosdg
