@@ -141,7 +141,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20230713121216">
+        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20230713123339">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -358,6 +358,19 @@ data-event-label="high"
           Aktuell wird in Berlin eine landesweite Nachhaltigkeitsstrategie entwickelt, die auf der Broschüre
           "<a href="https://www.berlin.de/sen/uvk/umwelt/nachhaltigkeit/nachhaltigkeitsziele-in-berlin/" target="_blank" onclick="return confirm_alert('von Berlin', 'De');">Die 17 Nachhaltigkeitsziele in Berlin</a>" aufbaut. </p>
       </div>
+      <button class="collapsible">Brandenburg</button>
+      <div class="content">
+        <p>Die Landesregierung Brandenburg hatte 2010 beschlossen, eine Strategie für eine Nachhaltige Entwicklung des Landes Brandenburg aufzustellen.
+          Im April 2014 wurde die
+          <a href="https://mluk.brandenburg.de/mluk/de/ueber-uns/agrar-und-umweltpolitik/nachhaltigkeit/nachhaltigkeitsstrategie/fortschreibung-2019/" target="_blank" onclick="return confirm_alert('vom Ministerium für Landwirtschaft, Umwelt und Klimaschutz (MLUK) des Landes Brandenburg', 'De');">Nachhaltigkeitsstrategie</a>
+          für Brandenburg als Ergebnis verschiedener Dialogphasen verabschiedet, welche 2019 fortgeschrieben wurde.
+          Im Juli 2017 wurde ein erster Bericht mit 49 Nachhaltigkeitsindikatoren für Brandenburg vorgelegt.
+          Diese Bestandsaufnahme zu möglichen
+          <a href="vom Amt für Statistik Berlin-Brandenburg erarbeitet." target="_blank" onclick="return confirm_alert('von Statistik Berlin Brandenburg', 'De');">Nachhaltigkeitsindikatoren</a> versteht sich als Diskussionsgrundlage zur Umsetzung und Fortschreibung der
+          Landesnachhaltigkeitsstrategie. Sie wurde im Auftrag des brandenburgischen Ministeriums für Ländliche Entwicklung, Umwelt und Landwirtschaft (MLUL) vom
+          Amt für Statistik Berlin-Brandenburg erarbeitet.
+      </div>
+
     </div>
   </div>
 </div>
@@ -450,12 +463,12 @@ for (i = 0; i < coll.length; i++) {
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/dns-indicators/assets/js/sdg.js?v=20230713121216'></script>
+<script src='/dns-indicators/assets/js/sdg.js?v=20230713123339'></script>
 
 
     
     
-    <script src="/dns-indicators/assets/js/custom.js?v=20230713121216"></script><script>
+    <script src="/dns-indicators/assets/js/custom.js?v=20230713123339"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
