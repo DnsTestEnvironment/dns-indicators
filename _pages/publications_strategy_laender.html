@@ -1,0 +1,70 @@
+---
+title: 'Nachhaltigkeits&shy;strategien der Bundesländer'
+permalink: /publications_strategy_laender/
+layout: page
+---
+
+<div class="flex-container">
+  <div class="leftColumn" >
+  <h1>Nachhaltigkeits&shy;strategien der Bundesländer</h1>
+    <p>Neben der Bundesregierung verfügt die Mehrzahl der Bundesländer über eigene Nachhaltigkeitsstrategien.
+      Einige Landesregierungen haben diese bereits an den globalen Nachhaltigkeitszielen der Agenda 2030 ausgerichtet;
+      in anderen Bundesländern gibt es Bestrebungen zur Anpassung oder Erarbeitung einer länderspezifischen Nachhaltigkeitsstrategie.
+    </p>
+    <div class=collapsibleElements>
+      <button class="collapsible">Baden-Württemberg</button>
+      <div class="content">
+        <p>Seit 2007 existiert eine <a href="https://www.nachhaltigkeitsstrategie.de/strategie" target="_blank" onclick="return confirm_alert('des Landes Baden-Württemberg', 'De');">Nachhaltigkeitsstrategie</a>
+          für das Bundesland Baden-Württemberg, welche 2011 neu aufgelegt wurde.
+          Der Indikatorenbericht - Statusindikatoren einer nachhaltigen Entwicklung in Baden-Württemberg erscheint seit 2014.
+          Für die vierte Auflage 2022 wurde der
+          <a href="https://www.nachhaltigkeitsstrategie.de/strategie/landesverwaltung/indikatoren" target="_blank" onclick="return confirm_alert('des Landes Baden-Württemberg', 'De');">Bericht</a> erstmals ausschließlich im interaktiven Online-Format erstellt.
+          Er wurde von der Geschäftsstelle Nachhaltigkeitsstrategie im Ministerium für Umwelt, Klima und Energiewirtschaft
+          Baden-Württemberg herausgegeben. 52 Statusindikatoren geben einen Überblick über eine nachhaltige Entwicklung mit Daten,
+          Hintergründen und Bewertung. 6 Indikatoren geben Einblicke in die persönliche Einstellung und Empfindungen der Menschen in
+          Baden-Württemberg. Um die Vergleichbarkeit der Indikatoren auf Bundes- und Landesebene weiter zu verbessern, wurde das
+          Indikatorenset soweit wie möglich mit dem bundesweiten Indikatorensatz der Deutschen Nachhaltigkeitsstrategie und den
+          Indikatoren des <a href="https://www.statistikportal.de/de/nachhaltigkeit" target="_blank" onclick="return confirm_alert('des gemeinsamen Statistikportals von Bund und Ländern', 'De');">AK Nachhaltige Entwicklung</a>
+          der Statistischen Landesämter harmonisiert.
+          Das <a href="http://www.statistik-bw.de/" target="_blank" onclick="return confirm_alert('des Statistischen Landesamts Baden-Württemberg', 'De');">Statistische Landesamt</a> Baden-Württemberg hat bei der Erstellung der Indikatorenberichte mitgewirkt.
+          Federführend ist die <a href="https://www.lubw.baden-wuerttemberg.de/" target="_blank" onclick="return confirm_alert('der Landesanstalt für Umwelt Baden-Württemberg', 'De');">Landesanstalt für Umwelt</a> Baden-Württemberg.</p>
+      </div>
+      <button class="collapsible">Bayern</button>
+      <div class="content">
+        <p>Der aktuelle Stand der Bayerischen <a href="https://www.nachhaltigkeit.bayern.de/" target="_blank" onclick="return confirm_alert('des Landes Bayern', 'De');">Nachhaltigkeitsstrategie</a>
+          wurde im März 2022 vom Ministerrat beschlossen. Sie ist das Ergebnis einer intensiven Zusammenarbeit aller Ressorts und der
+          Staatskanzlei. Mit der Nachhaltigkeitsstrategie legt die Staatsregierung dar, welche konkreten Ziele sie sich steckt und
+          welche Maßnahmen sie ergreift, um diese zu erreichen. Im August 2021veröffentlichte das Bayerische Landesamt für Statistik
+          zudem den ersten <a href="https://www.statistik.bayern.de/mam/produkte/veroffentlichungen/2021_indikatorenbericht_nachhaltigkeit.pdf" target="_blank" onclick="return confirm_alert('des Statistischen Landesamts Bayern', 'De');">Indikatorenbericht</a>
+          zur nachhaltigen Entwicklung. Außerdem veröffentlicht das Bayerische Landesamt für Umwelt
+          <a href ="https://www.lfu.bayern.de/umweltdaten/indikatoren/index.htm" target="_blank" onclick="return confirm_alert('des Bayrischen Landesamtes für Umwelt', 'De');">Umweltindikatoren</a> für Bayern.</p>
+      </div>
+      <button class="collapsible">Berlin</button>
+      <div class="content">
+        <p>Die Bewertung nachhaltiger Entwicklung in Berlin beruht auf der Basis eines Indikatorensatzes bestehend aus 40
+          sogenannten <a href="https://www.berlin.de/sen/uvk/umwelt/nachhaltigkeit/indikatorenbericht/" target="_blank" onclick="return confirm_alert('von Berlin', 'De');">Kernindikatoren</a>,
+          die jeweils einem der 17 globalen Nachhaltigkeitsziele zugeordnet sind. Der Kernindikatorenbericht zur nachhaltigen
+          Entwicklung Berlins wurde zuletzt 2021 gemeinsam von der Senatsverwaltung für Umwelt, Mobilität, Verbraucher-
+          und Klimaschutz in Zusammenarbeit mit dem Amt für Statistik Berlin-Brandenburg aktualisiert.
+          Aktuell wird in Berlin eine landesweite Nachhaltigkeitsstrategie entwickelt, die auf der Broschüre
+          "<a href="https://www.berlin.de/sen/uvk/umwelt/nachhaltigkeit/nachhaltigkeitsziele-in-berlin/" target="_blank" onclick="return confirm_alert('von Berlin', 'De');">Die 17 Nachhaltigkeitsziele in Berlin</a>" aufbaut. </p>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = (content.scrollHeight + 10) + "px";
+    }
+  });
+}
+</script>

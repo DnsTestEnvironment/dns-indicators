@@ -120,8 +120,12 @@ menu:
     dropdown:
       - path: /publications_reports/
         translation_key: menu.reports
-      - path: /publications_strategy/
-        translation_key: menu.sustainable_development_strategy
+      - translation_key: menu.sustainable_development_strategy
+        dropdown:
+        - path: /publications_strategy/
+          translation_key: menu.sustainable_development_strategy_germany
+        - path: /publications_strategy_laender/
+          translation_key: menu.sustainable_development_strategy_laender
       - path: /publications_other/
         translation_key: menu.other_publications
   - path: menu.pathtosdg
