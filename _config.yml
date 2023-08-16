@@ -110,7 +110,7 @@ menu:
     dropdown:
       - translation_key: menu.national_indicators
         dropdown:
-        - path: /about/dns/
+        - path: /about/publications_strategy/
           translation_key: menu.dns
         - translation_key: menu.publications
           dropdown:
