@@ -141,7 +141,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20230816121938">
+        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20230816123446">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -261,6 +261,9 @@ layout-page
 <li class=" ">
     <a class="dropdown-item" href="/dns-indicators/help/guidace/">Technische&nbspHinweise</a>
 </li>
+<li class=" ">
+    <a class="dropdown-item" href="/dns-indicators/help/faq/">FAQ</a>
+</li>
 </ul>
           </li></ul>
 
@@ -287,12 +290,12 @@ layout-page
 
   <div class="language-toggle-container d-flex">
     <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-de list-inline-item" style="opacity:0.3">
-            <i class="flag flag-de">
+            <span class="flag-icon flag-icon-de flag-icon-squared"></span>
             <span>
               Deutsch
             </span>
         </li><li class="language-option-en list-inline-item">
-          <i class="flag flag-en">
+            <span class="flag-icon flag-icon-de flag-icon-squared"></span>
             <a class="language-toggle-link" href="/dns-indicators/en/en/publications_strategy_laender/">
                 English
             </a>
@@ -636,12 +639,12 @@ for (i = 0; i < coll.length; i++) {
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/dns-indicators/assets/js/sdg.js?v=20230816121938'></script>
+<script src='/dns-indicators/assets/js/sdg.js?v=20230816123446'></script>
 
 
     
     
-    <script src="/dns-indicators/assets/js/custom.js?v=20230816121938"></script><script>
+    <script src="/dns-indicators/assets/js/custom.js?v=20230816123446"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
