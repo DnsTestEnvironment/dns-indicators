@@ -143,7 +143,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20230816114044">
+        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20230816120148">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -222,7 +222,7 @@ layout-goal
                                   Publications
                               </a>
                               <ul class="submenu dropdown-menu"><li><a class="dropdown-item" href="/dns-indicators/en//publications/dns_indcator_set/">DNS-Indicatorset</a></li><li><a class="dropdown-item" href="/dns-indicators/en//publications/reports/">Indicator reports</a></li><li><a class="dropdown-item" href="/dns-indicators/en//publications/other/">Other Publications</a></li></ul>
-                            </li><li><a class="dropdown-item" href="/dns-indicators/en/">Publications</a></li><li><a class="dropdown-item" href="/dns-indicators/en//about_joint_action/">Joint Action</a></li></ul>
+                            </li><li><a class="dropdown-item" href="/dns-indicators/en//about_joint_action/">Joint Action</a></li></ul>
                     </li><li>
                       <a class="dropdown-item dropdown-toggle" href="#">
                           Global indicators (SDG)
@@ -232,7 +232,7 @@ layout-goal
                                   Publications
                               </a>
                               <ul class="submenu dropdown-menu"><li><a class="dropdown-item" href="/dns-indicators/en/">SDG-Indicatorset</a></li><li><a class="dropdown-item" href="/dns-indicators/en/menu.path_wista_6_16">Extract from the publication "WISTA - Wirtschaft und Statistik", 5/2016</a></li><li><a class="dropdown-item" href="/dns-indicators/en/">Report on the HLPF</a></li></ul>
-                            </li><li><a class="dropdown-item" href="/dns-indicators/en/">Publications</a></li></ul>
+                            </li></ul>
                     </li></ul>
           </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-status-overview" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Status overview
@@ -279,9 +279,15 @@ layout-goal
 
   <div class="language-toggle-container d-flex">
     <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-de list-inline-item">
+          <i class="flag flag-de">
             <a class="language-toggle-link" href="/dns-indicators/14/">
-                <i class="flag flag-de"></i>Deutsch
+                Deutsch
             </a>
+        </li><li class="language-option-en list-inline-item" style="opacity:0.3">
+            <i class="flag flag-en">
+            <span>
+              English
+            </span>
         </li></ul>
 </div>
 
@@ -511,12 +517,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/dns-indicators/assets/js/sdg.js?v=20230816114044'></script>
+<script src='/dns-indicators/assets/js/sdg.js?v=20230816120148'></script>
 
 
     
     
-    <script src="/dns-indicators/assets/js/custom.js?v=20230816114044"></script><script>
+    <script src="/dns-indicators/assets/js/custom.js?v=20230816120148"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
