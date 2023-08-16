@@ -4,14 +4,16 @@
         {%- assign language_abbreviation = site.languages_public[language] | default: language -%}
         {%- if language != page.language -%}
         <li class="language-option-{{ language }} list-inline-item">
+          <i class="flag flag-{{ language }}">
             <a class="language-toggle-link" href="{{ page.url_by_language[language] }}">
-                <i class="flag flag-{{ language }}"></i>{{ page.t.languages[language] }}
+                {{ page.t.languages[language] }}
             </a>
         </li>
-        {%- elsif site.languages.size > 2 -%}
+        {%- else -%}
         <li class="language-option-{{ language }} list-inline-item" style="opacity:0.3">
+            <i class="flag flag-{{ language }}">
             <span>
-                <i class="flag flag-{{ language }}">{{ page.t.languages[language] }}
+              {{ page.t.languages[language] }}
             </span>
         </li>
         {%- endif -%}
