@@ -161,10 +161,10 @@ frontpage_cards:
       include: components/government.html
 
 language_toggle_setting: flags
+header_language_toggle: flags
 
 contrast_type: single
 
-header_language_toggle: links
 header:
     include: header-default.html
 
