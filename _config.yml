@@ -154,6 +154,8 @@ menu:
       translation_key: menu.navigation
     - path: /help/guidace/
       translation_key: menu.guidance
+    - path: /help/faq/
+      translation_key: menu.faq
 
 frontpage_cards:
     - rule_color: grey
