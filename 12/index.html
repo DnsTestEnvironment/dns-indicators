@@ -143,7 +143,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20230816093918">
+        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20230816095852">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -201,13 +201,13 @@ layout-goal
             <div class="d-flex flex-wrap w-100 justify-content-between">
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav" id="menu"><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-start" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    menu.start
+                    Start
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdown-menu-start"><li class=" ">
-    <a class="dropdown-item" href="/dns-indicators/">menu.dns_plattform</a>
+    <a class="dropdown-item" href="/dns-indicators/">DNS-Online Plattform <img class="link_btn" src="https://sdg-indikatoren.de/public/DNS Wheel_Transparent.png" title="Klicken Sie hier um zur Seite der DNS Indikatoren zu gelangen" alt="Link DNS" style="width:24px;height:24px;"/></a>
 </li>
 <li class=" ">
-    <a class="dropdown-item" href="https://www.sdg-indikatoren.de">menu.sdg_plattform</a>
+    <a class="dropdown-item" href="https://www.sdg-indikatoren.de">SDG-Online Plattform <img class="link_btn" src="https://sdg-indikatoren.de/public/SDG Wheel_Transparent.png" title="Klicken Sie hier um zur Seite der SDG Indikatoren zu gelangen" alt="Link SDG" style="width:24px;height:24px;"/></a>
 </li>
 </ul>
           </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-about" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -215,33 +215,55 @@ layout-goal
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdown-menu-about"><li>
                       <a class="dropdown-item dropdown-toggle" href="#">
-                          menu.national_indicators
+                          Nationale Indikatoren (DNS)
                       </a>
-                      <ul class="submenu dropdown-menu"><li><a class="dropdown-item" href="/dns-indicators//about/publications_strategy/">menu.dns</a></li><li><a class="dropdown-item" href="/dns-indicators/">Publikationen</a></li><li><a class="dropdown-item" href="/dns-indicators//about_joint_action/">menu.joint_action</a></li></ul>
+                      <ul class="submenu dropdown-menu"><li class=" ">
+    <a class="dropdown-item" href="/dns-indicators/about/publications_strategy/">Deutsche Nachhaltigkeitsstrategie (DNS)</a>
+</li>
+<li><a class="dropdown-item" href="/dns-indicators//about/publications_strategy/">Deutsche Nachhaltigkeitsstrategie (DNS)</a></li><li>
+                              <a class="dropdown-item dropdown-toggle" href="#">
+                                  Publikationen
+                              </a>
+                              <ul class="submenu dropdown-menu"><li><a class="dropdown-item" href="/dns-indicators//publications/dns_indcator_set/">DNS-Indikatorenset</a></li><li><a class="dropdown-item" href="/dns-indicators//publications/reports/">menu.indicator_reports</a></li><li><a class="dropdown-item" href="/dns-indicators//publications/other/">Weitere Publikationen</a></li></ul>
+                            </li><li><a class="dropdown-item" href="/dns-indicators/">Publikationen</a></li><li class=" ">
+    <a class="dropdown-item" href="/dns-indicators/about_joint_action/">Gemeinschaftswerk</a>
+</li>
+<li><a class="dropdown-item" href="/dns-indicators//about_joint_action/">Gemeinschaftswerk</a></li></ul>
                     </li><li>
                       <a class="dropdown-item dropdown-toggle" href="#">
-                          menu.global_indicators
+                          Globale Indikatoren (SDG)
                       </a>
-                      <ul class="submenu dropdown-menu"><li><a class="dropdown-item" href="/dns-indicators/menu.path_sdg_agenda">Agenda 2030</a></li><li><a class="dropdown-item" href="/dns-indicators/menu.path_un_sdg">menu.un_sdg</a></li><li><a class="dropdown-item" href="/dns-indicators/">Publikationen</a></li></ul>
+                      <ul class="submenu dropdown-menu"><li class=" ">
+    <a class="dropdown-item" href="https://sdgtestenvironment.github.io/sdg-indicators/facts_agenda/">Agenda 2030</a>
+</li>
+<li><a class="dropdown-item" href="/dns-indicators/menu.path_sdg_agenda">Agenda 2030</a></li><li class=" ">
+    <a class="dropdown-item" href="/dns-indicators/???">UN-Nachhaltigkeitsziele (SDG)</a>
+</li>
+<li><a class="dropdown-item" href="/dns-indicators/menu.path_un_sdg">UN-Nachhaltigkeitsziele (SDG)</a></li><li>
+                              <a class="dropdown-item dropdown-toggle" href="#">
+                                  Publikationen
+                              </a>
+                              <ul class="submenu dropdown-menu"><li><a class="dropdown-item" href="/dns-indicators/">SDG-Indikatorenset</a></li><li><a class="dropdown-item" href="/dns-indicators/menu.path_wista_6_16">Auszug aus der Publikation "WISTA - Wirtschaft und Statistik", 5/2016</a></li><li><a class="dropdown-item" href="/dns-indicators/">Bericht zum HLPF</a></li></ul>
+                            </li><li><a class="dropdown-item" href="/dns-indicators/">Publikationen</a></li></ul>
                     </li></ul>
           </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-status-overview" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    menu.status_overview
+                    Statusübersicht
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdown-menu-status-overview"><li class=" ">
-    <a class="dropdown-item" href="/dns-indicators/status/">menu.methodology</a>
+    <a class="dropdown-item" href="/dns-indicators/status/">Methodik</a>
 </li>
 <li class=" ">
-    <a class="dropdown-item" href="/dns-indicators/status_summary/">menu.status_overview</a>
+    <a class="dropdown-item" href="/dns-indicators/status_summary/">Statusübersicht</a>
 </li>
 </ul>
           </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-sustainable-development-strategy" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Nachhaltigkeitsstrategie
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdown-menu-sustainable-development-strategy"><li class=" ">
-    <a class="dropdown-item" href="/dns-indicators/publications_strategy/">menu.federal_government</a>
+    <a class="dropdown-item" href="/dns-indicators/publications_strategy/">Bundesregierung</a>
 </li>
 <li class=" ">
-    <a class="dropdown-item" href="/dns-indicators/publications_strategy_laender/">menu.federal_states</a>
+    <a class="dropdown-item" href="/dns-indicators/publications_strategy_laender/">Bundesländer</a>
 </li>
 </ul>
           </li></ul>
@@ -571,12 +593,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/dns-indicators/assets/js/sdg.js?v=20230816093918'></script>
+<script src='/dns-indicators/assets/js/sdg.js?v=20230816095852'></script>
 
 
     
     
-    <script src="/dns-indicators/assets/js/custom.js?v=20230816093918"></script><script>
+    <script src="/dns-indicators/assets/js/custom.js?v=20230816095852"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
