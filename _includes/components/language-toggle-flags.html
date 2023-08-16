@@ -6,14 +6,14 @@
         <li class="language-option-{{ language }} list-inline-item">
             <span class="flag-icon flag-icon-de flag-icon-squared"></span>
             <a class="language-toggle-link" href="{{ page.url_by_language[language] }}">
-                {{ page.t.languages[language] }}
+                <img src="https://sdgtestenvironment.github.io/dns-indicators//public/{{ language }}.png" alt="flag">{{ page.t.languages[language] }}
             </a>
         </li>
         {%- else -%}
         <li class="language-option-{{ language }} list-inline-item" style="opacity:0.3">
             <span class="flag-icon flag-icon-de flag-icon-squared"></span>
             <span>
-              {{ page.t.languages[language] }}
+              <img src="https://sdgtestenvironment.github.io/dns-indicators//public/{{ language }}.png" alt="flag">{{ page.t.languages[language] }}
             </span>
         </li>
         {%- endif -%}
