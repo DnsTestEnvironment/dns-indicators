@@ -1,6 +1,6 @@
 ---
 title: Frequently Asked Questions (FAQ)
-permalink: /faq/
+permalink: /help/faq/
 layout: page
 ---
 

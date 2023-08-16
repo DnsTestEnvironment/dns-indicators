@@ -1,6 +1,6 @@
 ---
 title: Navigation
-permalink: /navigation/
+permalink: /help/navigation/
 layout: page
 ---
 

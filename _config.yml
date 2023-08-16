@@ -110,18 +110,18 @@ menu:
     dropdown:
     - translation_key: menu.national_indicators
       dropdown:
-      - path: /about/publications_strategy/
+      - path: /about/strategy/
         translation_key: menu.dns
       - translation_key: menu.publications
         dropdown:
-        - path: /publications/dns_indcator_set/
+        - path: /about/publications/dns_indcators/
           translation_key: menu.dns_indcator_set
-        - path: /publications/reports/
+        - path: /about/publications/reports/
           translation_key: menu.indicator_reports
-        - path: /publications/other/
+        - path: /about/publications/other/
           translation_key: menu.other_publications
       - translation_key: menu.joint_action
-        path: /about_joint_action/
+        path: /about/joint_action/
     - translation_key: menu.global_indicators
       dropdown:
       - path: menu.path_sdg_agenda
@@ -148,6 +148,12 @@ menu:
       translation_key: menu.federal_government
     - path: /publications_strategy_laender/
       translation_key: menu.federal_states
+  - translation_key: menu.help
+    dropdown:
+    - path: /help/navigation/
+      translation_key: menu.navigation
+    - path: /help/guidace/
+      translation_key: menu.guidance
 
 frontpage_cards:
     - rule_color: grey
