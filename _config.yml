@@ -160,7 +160,7 @@ frontpage_cards:
       title: ''
       include: components/government.html
 
-
+language_toggle_setting: flags
 
 contrast_type: single
 
