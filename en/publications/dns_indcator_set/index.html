@@ -115,7 +115,7 @@ var translations = {
         ================================================== -->
 
         
-    <title>Weitere Publikationen - Indikatoren der Deutschen Nachhaltigkeitsstrategie</title>
+    <title>DNS-Indikatorenset - Indikatoren der Deutschen Nachhaltigkeitsstrategie</title>
 
 
 
@@ -141,7 +141,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20230810131901">
+        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20230816093918">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -198,51 +198,51 @@ layout-page
             </button>
             <div class="d-flex flex-wrap w-100 justify-content-between">
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav" id="menu"><li class="nav-item ">
-    <a class="nav-link" href="/dns-indicators/">17 Ziele</a>
-</li>
-<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-status-title" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Bewertung
+                    <ul class="navbar-nav" id="menu"><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-start" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    menu.start
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-status-title"><li class=" ">
-    <a class="dropdown-item" href="/dns-indicators/status_summary/">Statusübersicht</a>
+                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-start"><li class=" ">
+    <a class="dropdown-item" href="/dns-indicators/">menu.dns_plattform</a>
 </li>
 <li class=" ">
-    <a class="dropdown-item" href="/dns-indicators/status/">Methodik</a>
+    <a class="dropdown-item" href="https://www.sdg-indikatoren.de">menu.sdg_plattform</a>
 </li>
 </ul>
           </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-about" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Über uns
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-about"><li class=" ">
-    <a class="dropdown-item" href="/dns-indicators/about_platform/">Die&nbspDNS&#8209;Online&nbspPlattform</a>
-</li>
-<li class=" ">
-    <a class="dropdown-item" href="/dns-indicators/about_joint_action/">Gemeinschaftswerk</a>
-</li>
-<li class=" ">
-    <a class="dropdown-item" href="/dns-indicators/about_guidance/">Technische&nbspHinweise</a>
-</li>
-</ul>
-          </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-publications" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Publikationen
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-publications"><li class=" ">
-    <a class="dropdown-item" href="/dns-indicators/publications_reports/">Indikatorenberichte</a>
-</li>
-<li>
+                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-about"><li>
                       <a class="dropdown-item dropdown-toggle" href="#">
-                          Nachhaltigkeitsstrategie
+                          menu.national_indicators
                       </a>
-                      <ul class="submenu dropdown-menu"><li><a class="dropdown-item" href="/dns-indicators//publications_strategy/">Bundesregierung</a></li><li><a class="dropdown-item" href="/dns-indicators//publications_strategy_laender/">Bundesländer</a></li></ul>
-                    </li><li class=" active">
-    <a class="dropdown-item" href="/dns-indicators/publications_other/">Weitere Publikationen</a>
+                      <ul class="submenu dropdown-menu"><li><a class="dropdown-item" href="/dns-indicators//about/publications_strategy/">menu.dns</a></li><li><a class="dropdown-item" href="/dns-indicators/">Publikationen</a></li><li><a class="dropdown-item" href="/dns-indicators//about_joint_action/">menu.joint_action</a></li></ul>
+                    </li><li>
+                      <a class="dropdown-item dropdown-toggle" href="#">
+                          menu.global_indicators
+                      </a>
+                      <ul class="submenu dropdown-menu"><li><a class="dropdown-item" href="/dns-indicators/menu.path_sdg_agenda">Agenda 2030</a></li><li><a class="dropdown-item" href="/dns-indicators/menu.path_un_sdg">menu.un_sdg</a></li><li><a class="dropdown-item" href="/dns-indicators/">Publikationen</a></li></ul>
+                    </li></ul>
+          </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-status-overview" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    menu.status_overview
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-status-overview"><li class=" ">
+    <a class="dropdown-item" href="/dns-indicators/status/">menu.methodology</a>
+</li>
+<li class=" ">
+    <a class="dropdown-item" href="/dns-indicators/status_summary/">menu.status_overview</a>
 </li>
 </ul>
-          </li><li class="nav-item ">
-    <a class="nav-link" href="https://www.sdg-indikatoren.de"><img class="link_btn" src="https://g205sdgs.github.io/sdg-indicators/public/SDG Wheel_Transparent.png" title="Klicken Sie hier um zur Seite der SDG Indikatoren zu gelangen" alt="Link SDG" style="width:24px;height:24px;"/></a>
+          </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-sustainable-development-strategy" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Nachhaltigkeitsstrategie
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-sustainable-development-strategy"><li class=" ">
+    <a class="dropdown-item" href="/dns-indicators/publications_strategy/">menu.federal_government</a>
+</li>
+<li class=" ">
+    <a class="dropdown-item" href="/dns-indicators/publications_strategy_laender/">menu.federal_states</a>
 </li>
 </ul>
+          </li></ul>
 
                 </div>
                 <div class="header-search-bar">
@@ -268,7 +268,7 @@ layout-page
   <div class="language-toggle-container d-flex">
     <i class="fa fa-globe language-toggle-globe-links"></i>
     <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-en list-inline-item">
-            <a class="language-toggle-link" href="/dns-indicators/en/publications_other/">
+            <a class="language-toggle-link" href="/dns-indicators/en/en/publications/dns_indcator_set/">
                 English
             </a>
         </li></ul>
@@ -278,7 +278,7 @@ layout-page
                     <span class="no-js-language-toggle"><div class="language-toggle-container d-flex">
     <i class="fa fa-globe language-toggle-globe-links"></i>
     <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-en list-inline-item">
-            <a class="language-toggle-link" href="/dns-indicators/en/publications_other/">
+            <a class="language-toggle-link" href="/dns-indicators/en/en/publications/dns_indcator_set/">
                 English
             </a>
         </li></ul>
@@ -303,78 +303,28 @@ data-event-label="high"
         <li class="breadcrumb-item" >
             <a href="/dns-indicators/">Start</a>
         </li>
-        <li class="breadcrumb-item active">Weitere Publikationen</li>
+        <li class="breadcrumb-item active">DNS-Indikatorenset</li>
     </ol>
 </nav>
 </div>
 <div id="main-content" class="container" role="main">
     <div>
-        <h1>Weitere Publikationen</h1>
+        <h1>DNS-Indikatorenset</h1>
         
 
 
-    <div class="flex-container">
-  <h3 style="width: 80%;"><a href="https://dns-indikatoren.de/assets/Publikationen/wista2017_01.pdf">Neuauflage der deutschen Nachhaltigkeitsstrategie</a></h3>
-  <div class="rightColumn">
-    <figure style="margin-left: 10px; max-width:280px; width:100%; border: 1px solid #ddd; border-radius: 4px;">
-      <img src="https://dnstestenvironment.github.io/dns-indicators//assets/img/report/wista.PNG"
-      alt="Abbildung 1: WISTA" style="width: 100%; padding-left: 20px; padding-right:20px; padding-bottom:10px; padding-top:10px;">
-      <figcaption class="cptn"><small>Abb. 1: WISTA</small>
-      </figcaption>
-    </figure>
-  </div>
-  <div class="leftColumn">
-    Auszug aus der Publikation „WISTA - Wirtschaft und Statistik“, 1/2017
-    <br><br>
-    <p style="padding-bottom: 70px;">Das Bundeskabinett hat am 11. Januar 2017 die Neuauflage der deutschen
-      Nachhaltigkeitsstrategie beschlossen. Diese Überarbeitung stellt die umfassendste Weiterentwicklung der Strategie
-      seit ihrer Konzeption im Jahr 2002 dar und steht im Zeichen der Agenda 2030 der Vereinten Nationen. Die Neuauflage
-      ist dabei der wesentliche Rahmen für die nationale Umsetzung der Agenda 2030 und ihrer 17 Sustainable Development
-      Goals (SDGs). Das Statistische Bundesamt ist seit 2006 von der Bundesregierung mit der Analyse und dem Monitoring
-      der Nachhaltigkeitsstrategie beauftragt. Es erstellt die Indikatoren, die die Zielerreichung der einzelnen
-      Themenbereiche messen, und veröffentlicht zweijährlich sogenannte Indikatorenberichte.
-    </p>
-  </div>
-  <h3 style="width: 80%;"><a href="https://dns-indikatoren.de/assets/Publikationen/machbarkeitsstudie.pdf">Machbarkeitsstudie zur Darstellung der Indikatoren der Deutschen Nachhaltigkeitsstrategie nach Bundesländern</a></h3>
-  <div class="rightColumn">
-    <figure style="margin-left: 10px; max-width:280px; width:100%; border: 1px solid #ddd; border-radius: 4px;">
-      <img src="https://dnstestenvironment.github.io/dns-indicators//assets/img/report/mbkStudie.PNG"
-      alt="Abbildung 2: Machbarkeitsstudie"
-      style="width: 100%; padding-left: 20px; padding-right:20px; padding-bottom:10px; padding-top:10px; max-width: 350px;">
-      <figcaption class="cptn"><small>Abb. 2: Machbarkeitsstudie</small>
-      </figcaption>
-    </figure>
-  </div>
-  <div class="leftColumn">
-    Neben der Bundesregierung verfügt die Mehrzahl der Bundesländer über eigene Nachhaltigkeitsstrategien.
-    Einige Landesregierungen haben diese bereits an den 17 globalen Nachhaltigkeitszielen der Agenda 2030 ausgerichtet;
-    in anderen Bundesländern gibt es Bestrebungen zur Anpassung oder Erarbeitung einer länderspezifischen
-    Nachhaltigkeitsstrategie.
-    <br><br>
-    <p style="padding-bottom: 100px;">Die Chefs der Staats- und Senatskanzleien des Bundes und der Länder (CdS) haben
-      beschlossen, für die Erfolgskontrolle der DNS einheitliche Indikatoren und Bewertungsmaßstäbe für Bund und Länder zu
-      entwickeln. Das Statistische Bundesamt wurde vom Bund Länder Erfahrungsaustausch Nachhaltigkeit (BLE NH) – einem
-      Gremium der für Nachhaltigkeit zuständigen Ressorts bei Bund und Ländern – gebeten, eine Übersicht zur Darstellung
-      der Indikatoren der DNS nach Bundesländern zur Verfügung zu stellen. Die hier vorliegende Machbarkeitsstudie
-      entspricht der fortentwickelten Übersicht.
-    </p>
-  </div>
-  <h3 style="width: 80%;"><a href="https://dns-indikatoren.de/assets/Publikationen/DNS_Sonderauswertung_2021.pdf">Sonderauswertung für ausgewählte Indikatoren nach Gebietsstand</a></h3>
-  <div class="rightColumn">
-    <figure style="margin-left: 10px; max-width:280px; width:100%; border: 1px solid #ddd; border-radius: 4px;">
-      <img src="https://dnstestenvironment.github.io/dns-indicators//assets/img/report/sawGebietsstand.PNG"
-      alt="Abbildung 3: Sonderauswertung Gebietsstand"
-      style="width: 100%; padding-left: 20px; padding-right:20px; padding-bottom:10px; padding-top:10px; max-width: 350px;">
-      <figcaption class="cptn"><small>Abb. 3: Sonderauswertung Gebietsstand</small>
-      </figcaption>
-    </figure>
-  </div>
-  <div class="leftColumn">
-    <p style="padding-bottom: 380px;">Veröffentlichung ausgewählter Indikatoren nach Gebietsstand: Neue Länder mit Berlin,
-      Neue Länder ohne Berlin, Früheres Bundesgebiet.
-    </p>
-  </div>
-</div>
+    Deutschland hat seit 2002 eine nationale Nachhaltigkeitsstrategie mit eigenen Zielen, Indikatorenberichten und Postulaten.
+2017 wurde diese Strategie anlässlich der <a href="https://sustainabledevelopment-germany.github.io/agenda/">Agenda 2030</a> der
+Vereinten Nationen und den zugehörigen 17 Zielen für eine nachhaltige Entwicklung (Sustainable Development Goals, SGDs)
+überarbeitet und nun
+<a href="https://www.bundesregierung.de/breg-de/themen/nachhaltigkeitspolitik/eine-strategie-begleitet-uns">Deutsche Nachhaltigkeitsstrategie (DNS)</a>
+genannt. Bei der Überarbeitung wurde thematisch zur Agenda 2030 passend mindestens ein Indikator zu jedem der 17 Ziele in die Strategie aufgenommen.
+Die Zielwerte, die Indikatoren, ihre Datengrundlagen und Berechnungen sind von der Bundesregierung beschlossen worden.
+
+Seit 2006 berichtet das Statistische Bundesamt im Auftrag der Bundesregierung im zweijährlichen Rhythmus über die Zielerreichung der Deutschen
+Nachhaltigkeitsstrategie. In gebundener Form und als PDF liegen die Informationen als
+<a href="https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Nachhaltigkeitsindikatoren/Publikationen/Downloads-Nachhaltigkeit/indicator-report-0230002189004.pdf?__blob=publicationFile">Indikatorenbericht</a>
+vor. Seit 2020 wird die Entwicklung der DNS-Indikatoren zusätzlich auf dieser Online Plattform veröffentlicht.
 
 
 
@@ -448,12 +398,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/dns-indicators/assets/js/sdg.js?v=20230810131901'></script>
+<script src='/dns-indicators/assets/js/sdg.js?v=20230816093918'></script>
 
 
     
     
-    <script src="/dns-indicators/assets/js/custom.js?v=20230810131901"></script><script>
+    <script src="/dns-indicators/assets/js/custom.js?v=20230816093918"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

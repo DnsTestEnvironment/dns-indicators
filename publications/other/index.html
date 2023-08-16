@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="de" class="no-js">
     <head>
         <meta charset="utf-8">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
@@ -9,7 +9,7 @@
 var opensdg = {
 
   // A base URL for asynchronous calls to SDG data.
-  remoteDataBaseUrl: 'https://DnsTestEnvironment.github.io/dns-data/en',
+  remoteDataBaseUrl: 'https://DnsTestEnvironment.github.io/dns-data/de',
 
   chartConfigAlterations: [],
   // A hook which can be used to modify the configuration for Chart.js.
@@ -40,7 +40,7 @@ var opensdg = {
   // Disaggregations which should be ignored on indicator pages.
   ignoredDisaggregations: null,
 
-  language: 'en',
+  language: 'de',
 
   mapColors: {
     "default": [
@@ -115,7 +115,7 @@ var translations = {
         ================================================== -->
 
         
-    <title>Publications - Indicators of the German Sustainable Development Strategy</title>
+    <title>Weitere Publikationen - Indikatoren der Deutschen Nachhaltigkeitsstrategie</title>
 
 
 
@@ -141,7 +141,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20230810131901">
+        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20230816093918">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -162,17 +162,17 @@ var translations = {
         
 
     </head>
-<body class="language-en
+<body class="language-de
 layout-page
 ">
 <!-- <div class="container"> -->
 
-<script>translations['header'] = {"alpha":"Alpha","beta":"Beta","disclaimer":"This is a development website. We welcome your <a href=\"mailto:%email_contacts.suggestions\">feedback</a>.","internet_explorer_message":"We have detected that you are using Internet Explorer to visit this website. Internet Explorer is now being phased out by Microsoft. As a result, this website no longer supports any version of Internet Explorer. Some features on this site will not work. You should use a modern browser such as Edge, Chrome, Firefox, or Safari.","internet_explorer_message_title":"This internet browser is no longer supported","skip_link":"Skip to main content","tag_line":"17 Goals to Transform our World"};</script>
+<script>translations['header'] = {"alpha":"Alpha-Version","beta":"Beta-Version","disclaimer":"Diese Seite befindet sich im Entwicklungsstadium. Wir freuen uns über Ihre <a href=\"mailto:%email_contacts.suggestions\">Kommentare</a>.","internet_explorer_message":"Wir haben festgestellt, dass Sie den Internet Explorer verwenden, um diese Website zu besuchen. Der Internet Explorer wird von Microsoft nicht mehr unterstützt. Aus diesem Grund hat diese Website ebenfalls die Unterstützung für alle Versionen des Internet Explorers eingestellt, einige Bereiche auf dieser Website werden daher nicht oder nur eingeschränkt funktionieren. Bitte verwenden Sie einen modernen Browser wie Edge, Chrome, Firefox oder Safari.","internet_explorer_message_title":"Dieser Internet-Browser wird nicht mehr unterstützt","skip_link":" Zum Hauptinhalt springen","tag_line":""};</script>
 
-<a class="sr-only-focusable" id="skiplink" href="#main-content" tabindex="0">Skip to main content</a>
+<a class="sr-only-focusable" id="skiplink" href="#main-content" tabindex="0"> Zum Hauptinhalt springen</a>
 <div class="container internet-explorer-message">
-    <h2 class="internet-explorer-message-title">This internet browser is no longer supported</h2>
-    <p class="internet-explorer-message-body">We have detected that you are using Internet Explorer to visit this website. Internet Explorer is now being phased out by Microsoft. As a result, this website no longer supports any version of Internet Explorer. Some features on this site will not work. You should use a modern browser such as Edge, Chrome, Firefox, or Safari.</p>
+    <h2 class="internet-explorer-message-title">Dieser Internet-Browser wird nicht mehr unterstützt</h2>
+    <p class="internet-explorer-message-body">Wir haben festgestellt, dass Sie den Internet Explorer verwenden, um diese Website zu besuchen. Der Internet Explorer wird von Microsoft nicht mehr unterstützt. Aus diesem Grund hat diese Website ebenfalls die Unterstützung für alle Versionen des Internet Explorers eingestellt, einige Bereiche auf dieser Website werden daher nicht oder nur eingeschränkt funktionieren. Bitte verwenden Sie einen modernen Browser wie Edge, Chrome, Firefox oder Safari.</p>
 </div>
 <div id="disclaimer">
     
@@ -180,7 +180,7 @@ layout-page
   <div class="disclaimer-alert">
     <strong class="phase-tag">beta</strong>
     
-    This is a development website. We welcome your <a href="mailto:dns-indikatoren@destatis.de">feedback</a>.
+    Diese Seite befindet sich im Entwicklungsstadium. Wir freuen uns über Ihre <a href="mailto:dns-indikatoren@destatis.de">Kommentare</a>.
     
   </div>
 </div>
@@ -190,66 +190,66 @@ layout-page
 <header role="banner" class="">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light flex-wrap align-items-start">
-            <a class="navbar-brand" href="/dns-indicators/en/" id="home" aria-label="" title="">
-    <img src="/dns-indicators/assets/img/en/DNS_logo.png" alt="DESTATIS - German Strategy for Sustainable Development" />
+            <a class="navbar-brand" href="/dns-indicators/" id="home" aria-label="" title="">
+    <img src="/dns-indicators/assets/img/de/DNS_logo.png" alt="DESTATIS - Deutsche Nachhaltikeitsstrategie" />
 </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="d-flex flex-wrap w-100 justify-content-between">
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav" id="menu"><li class="nav-item ">
-    <a class="nav-link" href="/dns-indicators/en/">17 Goals</a>
-</li>
-<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-status-title" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Evaluation
+                    <ul class="navbar-nav" id="menu"><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-start" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    menu.start
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-status-title"><li class=" ">
-    <a class="dropdown-item" href="/dns-indicators/en/status_summary/">Summary</a>
+                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-start"><li class=" ">
+    <a class="dropdown-item" href="/dns-indicators/">menu.dns_plattform</a>
 </li>
 <li class=" ">
-    <a class="dropdown-item" href="/dns-indicators/en/status/">Methodology</a>
+    <a class="dropdown-item" href="https://www.sdg-indikatoren.de">menu.sdg_plattform</a>
 </li>
 </ul>
           </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-about" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    About
+                    Über uns
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-about"><li class=" ">
-    <a class="dropdown-item" href="/dns-indicators/en/about_platform/">DNS&nbsponline&nbspplatform</a>
-</li>
-<li class=" ">
-    <a class="dropdown-item" href="/dns-indicators/en/about_joint_action/">Joint action</a>
-</li>
-<li class=" ">
-    <a class="dropdown-item" href="/dns-indicators/en/about_guidance/">Technical&nbspinstructions</a>
-</li>
-</ul>
-          </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-publications" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Publications
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-publications"><li class=" ">
-    <a class="dropdown-item" href="/dns-indicators/en/publications_reports/">Indicator reports</a>
-</li>
-<li>
+                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-about"><li>
                       <a class="dropdown-item dropdown-toggle" href="#">
-                          Sustainable Development Strategy
+                          menu.national_indicators
                       </a>
-                      <ul class="submenu dropdown-menu"><li><a class="dropdown-item" href="/dns-indicators/en//publications_strategy/">Bundesregierung</a></li><li><a class="dropdown-item" href="/dns-indicators/en//publications_strategy_laender/">Bundesländer</a></li></ul>
-                    </li><li class=" ">
-    <a class="dropdown-item" href="/dns-indicators/en/publications_other/">Other Publications</a>
+                      <ul class="submenu dropdown-menu"><li><a class="dropdown-item" href="/dns-indicators//about/publications_strategy/">menu.dns</a></li><li><a class="dropdown-item" href="/dns-indicators/">Publikationen</a></li><li><a class="dropdown-item" href="/dns-indicators//about_joint_action/">menu.joint_action</a></li></ul>
+                    </li><li>
+                      <a class="dropdown-item dropdown-toggle" href="#">
+                          menu.global_indicators
+                      </a>
+                      <ul class="submenu dropdown-menu"><li><a class="dropdown-item" href="/dns-indicators/menu.path_sdg_agenda">Agenda 2030</a></li><li><a class="dropdown-item" href="/dns-indicators/menu.path_un_sdg">menu.un_sdg</a></li><li><a class="dropdown-item" href="/dns-indicators/">Publikationen</a></li></ul>
+                    </li></ul>
+          </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-status-overview" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    menu.status_overview
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-status-overview"><li class=" ">
+    <a class="dropdown-item" href="/dns-indicators/status/">menu.methodology</a>
+</li>
+<li class=" ">
+    <a class="dropdown-item" href="/dns-indicators/status_summary/">menu.status_overview</a>
 </li>
 </ul>
-          </li><li class="nav-item ">
-    <a class="nav-link" href="https://www.sdg-indicators.de"><img class="link_btn" src="https://g205sdgs.github.io/sdg-indicators/public/SDG Wheel_Transparent.png" title="Click here to get to the SDG indicators page" alt="Link SDG" style="width:24px;height:24px;"/></a>
+          </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-sustainable-development-strategy" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Nachhaltigkeitsstrategie
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-sustainable-development-strategy"><li class=" ">
+    <a class="dropdown-item" href="/dns-indicators/publications_strategy/">menu.federal_government</a>
+</li>
+<li class=" ">
+    <a class="dropdown-item" href="/dns-indicators/publications_strategy_laender/">menu.federal_states</a>
 </li>
 </ul>
+          </li></ul>
 
                 </div>
                 <div class="header-search-bar">
-                    <form class="align-self-lg-end" id="search" action="/dns-indicators/en/search/">
+                    <form class="align-self-lg-end" id="search" action="/dns-indicators/search/">
     <div class="input-group">
-        <label class="visually-hidden" for="indicator_search">Search</label>
-        <input class="form-control" type="search" name="q" id="indicator_search" title="Search">
+        <label class="visually-hidden" for="indicator_search">Suche</label>
+        <input class="form-control" type="search" name="q" id="indicator_search" title="Suche">
         <span class="input-group-append">
             <button class="btn btn-outline-secondary ms-n5" aria-label="" id="search-btn" type="submit">
                 <i class="fa fa-search"></i>
@@ -267,9 +267,9 @@ layout-page
 
   <div class="language-toggle-container d-flex">
     <i class="fa fa-globe language-toggle-globe-links"></i>
-    <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-de list-inline-item">
-            <a class="language-toggle-link" href="/dns-indicators/publications_other/">
-                Deutsch
+    <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-en list-inline-item">
+            <a class="language-toggle-link" href="/dns-indicators/en/publications/other/">
+                English
             </a>
         </li></ul>
 </div>
@@ -277,9 +277,9 @@ layout-page
 
                     <span class="no-js-language-toggle"><div class="language-toggle-container d-flex">
     <i class="fa fa-globe language-toggle-globe-links"></i>
-    <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-de list-inline-item">
-            <a class="language-toggle-link" href="/dns-indicators/publications_other/">
-                Deutsch
+    <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-en list-inline-item">
+            <a class="language-toggle-link" href="/dns-indicators/en/publications/other/">
+                English
             </a>
         </li></ul>
 </div></span><a title="" aria-label=""
@@ -301,73 +301,77 @@ data-event-label="high"
     <nav>
     <ol aria-label="breadcrumb" class="breadcrumb" style="--bs-breadcrumb-divider: '&rsaquo;';">
         <li class="breadcrumb-item" >
-            <a href="/dns-indicators/en/">Home</a>
+            <a href="/dns-indicators/">Start</a>
         </li>
-        <li class="breadcrumb-item active">Publications</li>
+        <li class="breadcrumb-item active">Weitere Publikationen</li>
     </ol>
 </nav>
 </div>
 <div id="main-content" class="container" role="main">
     <div>
-        <h1>Publications</h1>
+        <h1>Weitere Publikationen</h1>
         
 
 
     <div class="flex-container">
+  <h3 style="width: 80%;"><a href="https://dns-indikatoren.de/assets/Publikationen/wista2017_01.pdf">Neuauflage der deutschen Nachhaltigkeitsstrategie</a></h3>
   <div class="rightColumn">
     <figure style="margin-left: 10px; max-width:280px; width:100%; border: 1px solid #ddd; border-radius: 4px;">
       <img src="https://dnstestenvironment.github.io/dns-indicators//assets/img/report/wista.PNG"
-      alt="Figure 1: WISTA" style="width: 100%; padding-left: 20px; padding-right:20px; padding-bottom:10px; padding-top:10px;">
-      <figcaption class="cptn"><small>Fig. 1: WISTA</small>
+      alt="Abbildung 1: WISTA" style="width: 100%; padding-left: 20px; padding-right:20px; padding-bottom:10px; padding-top:10px;">
+      <figcaption class="cptn"><small>Abb. 1: WISTA</small>
       </figcaption>
     </figure>
   </div>
   <div class="leftColumn">
-    <h3><a href="https://dns-indikatoren.de/assets/Publikationen/wista2017_01.pdf">New Edition of the German Sustainable Development Strategy</a></h3>
-    Extract from the publication „WISTA - Wirtschaft und Statistik“, 1/2017
+    Auszug aus der Publikation „WISTA - Wirtschaft und Statistik“, 1/2017
     <br><br>
-    <p style="padding-bottom: 70px;">On January 11, 2017, the German Federal Cabinet approved the new edition of the German Sustainable Development
-      Strategy. This revision represents the most comprehensive further development of the strategy since its conception in 2002 and is in line with
-      the United Nations' 2030 Agenda. In this context, the new edition is the essential framework for the national implementation of the 2030 Agenda and its
-      17 Sustainable Development Goals (SDGs). The Federal Statistical Office has been commissioned by the German government to analyze and monitor the
-      Sustainable Development Strategy since 2006. It produces the indicators that measure the achievement of the goals in the individual thematic areas and
-      publishes so-called indicator reports every two years.
+    <p style="padding-bottom: 70px;">Das Bundeskabinett hat am 11. Januar 2017 die Neuauflage der deutschen
+      Nachhaltigkeitsstrategie beschlossen. Diese Überarbeitung stellt die umfassendste Weiterentwicklung der Strategie
+      seit ihrer Konzeption im Jahr 2002 dar und steht im Zeichen der Agenda 2030 der Vereinten Nationen. Die Neuauflage
+      ist dabei der wesentliche Rahmen für die nationale Umsetzung der Agenda 2030 und ihrer 17 Sustainable Development
+      Goals (SDGs). Das Statistische Bundesamt ist seit 2006 von der Bundesregierung mit der Analyse und dem Monitoring
+      der Nachhaltigkeitsstrategie beauftragt. Es erstellt die Indikatoren, die die Zielerreichung der einzelnen
+      Themenbereiche messen, und veröffentlicht zweijährlich sogenannte Indikatorenberichte.
     </p>
   </div>
+  <h3 style="width: 80%;"><a href="https://dns-indikatoren.de/assets/Publikationen/machbarkeitsstudie.pdf">Machbarkeitsstudie zur Darstellung der Indikatoren der Deutschen Nachhaltigkeitsstrategie nach Bundesländern</a></h3>
   <div class="rightColumn">
     <figure style="margin-left: 10px; max-width:280px; width:100%; border: 1px solid #ddd; border-radius: 4px;">
       <img src="https://dnstestenvironment.github.io/dns-indicators//assets/img/report/mbkStudie.PNG"
-      alt="Figure 2: Feasibility study"
+      alt="Abbildung 2: Machbarkeitsstudie"
       style="width: 100%; padding-left: 20px; padding-right:20px; padding-bottom:10px; padding-top:10px; max-width: 350px;">
-      <figcaption class="cptn"><small>Fig. 2: Feasibility study</small>
+      <figcaption class="cptn"><small>Abb. 2: Machbarkeitsstudie</small>
       </figcaption>
     </figure>
   </div>
   <div class="leftColumn">
-    <h3><a href="https://dns-indikatoren.de/assets/Publikationen/machbarkeitsstudie.pdf">Feasibility study on the presentation of the indicators of the German Sustainable Development Strategy by federal states (only available in German)</a></h3>
-    In addition to the federal government, the majority of the German states have their own Sustainable Development Strategies. Some state governments have
-    already aligned these with the 17 global sustainable development goals of the 2030 Agenda; in other states, there are efforts to adapt or develop a
-    state-specific Sustainable Development Strategy.
+    Neben der Bundesregierung verfügt die Mehrzahl der Bundesländer über eigene Nachhaltigkeitsstrategien.
+    Einige Landesregierungen haben diese bereits an den 17 globalen Nachhaltigkeitszielen der Agenda 2030 ausgerichtet;
+    in anderen Bundesländern gibt es Bestrebungen zur Anpassung oder Erarbeitung einer länderspezifischen
+    Nachhaltigkeitsstrategie.
     <br><br>
-    <p style="padding-bottom: 100px;">The heads of the state and senate chancelleries of the Federation and the Länder (CdS) have decided to develop uniform indicators and evaluation
-    standards for the Federal Government and the Länder for monitoring the success of the DNS. The Federal Statistical Office was asked by the Bund
-    Länder Erfahrungsaustausch Nachhaltigkeit (BLE NH) - a body of the federal and state departments responsible for sustainability - to provide an
-    overview for presenting the indicators of the DNS by federal state. The feasibility study presented here corresponds to the advanced overview.
+    <p style="padding-bottom: 100px;">Die Chefs der Staats- und Senatskanzleien des Bundes und der Länder (CdS) haben
+      beschlossen, für die Erfolgskontrolle der DNS einheitliche Indikatoren und Bewertungsmaßstäbe für Bund und Länder zu
+      entwickeln. Das Statistische Bundesamt wurde vom Bund Länder Erfahrungsaustausch Nachhaltigkeit (BLE NH) – einem
+      Gremium der für Nachhaltigkeit zuständigen Ressorts bei Bund und Ländern – gebeten, eine Übersicht zur Darstellung
+      der Indikatoren der DNS nach Bundesländern zur Verfügung zu stellen. Die hier vorliegende Machbarkeitsstudie
+      entspricht der fortentwickelten Übersicht.
     </p>
   </div>
+  <h3 style="width: 80%;"><a href="https://dns-indikatoren.de/assets/Publikationen/DNS_Sonderauswertung_2021.pdf">Sonderauswertung für ausgewählte Indikatoren nach Gebietsstand</a></h3>
   <div class="rightColumn">
     <figure style="margin-left: 10px; max-width:280px; width:100%; border: 1px solid #ddd; border-radius: 4px;">
       <img src="https://dnstestenvironment.github.io/dns-indicators//assets/img/report/sawGebietsstand.PNG"
-      alt="Figure 3: Special evaluation by territorial status"
+      alt="Abbildung 3: Sonderauswertung Gebietsstand"
       style="width: 100%; padding-left: 20px; padding-right:20px; padding-bottom:10px; padding-top:10px; max-width: 350px;">
-      <figcaption class="cptn"><small>Fig. 3: Special evaluation by territorial status</small>
+      <figcaption class="cptn"><small>Abb. 3: Sonderauswertung Gebietsstand</small>
       </figcaption>
     </figure>
   </div>
   <div class="leftColumn">
-    <h3><a href="https://dns-indikatoren.de/assets/Publikationen/DNS_Sonderauswertung_2021.pdf">Special evaluation for selected indicators by territorial status (only available in German)</a></h3>
-    <p style="padding-bottom: 380px;">Publication of selected indicators by territorial
-      status: New Länder with Berlin, New Länder without Berlin, Former Federal Territory.
+    <p style="padding-bottom: 380px;">Veröffentlichung ausgewählter Indikatoren nach Gebietsstand: Neue Länder mit Berlin,
+      Neue Länder ohne Berlin, Früheres Bundesgebiet.
     </p>
   </div>
 </div>
@@ -385,27 +389,27 @@ data-event-label="high"
                 <div id="footerLinks">
                     <ul>
                         <li>
-                            <a href="https://open-sdg.org" target="_blank" onclick="return confirm_alert('open-sdg', 'En');">
-                              Built using Open SDG
+                            <a href="https://open-sdg.org" target="_blank" onclick="return confirm_alert('von open-sdg', 'De');">
+                              Seite basiert auf Open SDG
                             </a>
                         </li>
                         
                         <li>
                               
                                 
-                                  <a href="mailto:dns-indikatoren@destatis.de">Contact us</a>
+                                  <a href="mailto:dns-indikatoren@destatis.de">Kontakt</a>
                                 
                               
                           </li>
                         <li>
                               
                                 
-                                  <a href="https://twitter.com/destatis?lang=en" target="_blank" onclick="return confirm_alert('', 'En');"><i class="fa fa-twitter" aria-hidden="true"></i>@destatis</a></a>
+                                  <a href="https://twitter.com/destatis?lang=de" target="_blank" onclick="return confirm_alert('', 'De');"><i class="fa fa-twitter" aria-hidden="true"></i>@destatis</a></a>
                                 
                               
                           </li>
                         <li>
-                              <a href="/dns-indicators/en/imprint/ ">Legal Notice</a>
+                              <a href="/dns-indicators/imprint/ ">Im­pres­s­um</a>
                               
                           </li>
                         
@@ -442,14 +446,14 @@ data-event-label="high"
     translations['general']['hide'] = '';</script>
 
 <script>translations['search'] = translations['search'] || {};
-    translations['search']['search'] = 'Search';</script>
+    translations['search']['search'] = 'Suche';</script>
 
-<script src='/dns-indicators/assets/js/sdg.js?v=20230810131901'></script>
+<script src='/dns-indicators/assets/js/sdg.js?v=20230816093918'></script>
 
 
     
     
-    <script src="/dns-indicators/assets/js/custom.js?v=20230810131901"></script><script>
+    <script src="/dns-indicators/assets/js/custom.js?v=20230816093918"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
