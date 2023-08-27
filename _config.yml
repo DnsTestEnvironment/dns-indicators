@@ -114,7 +114,7 @@ menu:
         translation_key: menu.dns
       - translation_key: menu.publications
         dropdown:
-        - path: /about/publications/dns_indcators/
+        - path: /about/publications/dns_indicators/
           translation_key: menu.dns_indcator_set
         - path: /about/publications/reports/
           translation_key: menu.indicator_reports
