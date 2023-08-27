@@ -168,7 +168,7 @@ frontpage_cards:
       title: ''
       include: components/government.html
 
-
+header_language_toggle: links
 contrast_type: single
 
 header:
