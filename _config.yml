@@ -169,7 +169,6 @@ frontpage_cards:
       include: components/government.html
 
 
-
 contrast_type: single
 
 header:
