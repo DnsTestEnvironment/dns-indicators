@@ -155,7 +155,7 @@ menu:
     - path: /help/guidace/
       translation_key: menu.guidance
     - path: /help/faq/
-      translation_key: menu.faq 
+      translation_key: menu.faq
 
 frontpage_cards:
     - rule_color: grey
@@ -168,8 +168,7 @@ frontpage_cards:
       title: ''
       include: components/government.html
 
-language_toggle_setting: flags
-header_language_toggle: flags
+
 
 contrast_type: single
 
