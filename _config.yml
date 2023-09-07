@@ -121,8 +121,8 @@ menu:
           translation_key: menu.1_about_2_dns_3_publications_4_others
     - translation_key: menu.1_about_2_sdg
       dropdown:
-      - path: menu.1_about_2_sdg_indicators_path
-        translation_key: menu.1_about_2_sdg_indicators
+      - path: menu.1_about_2_sdg_3_indicators_path
+        translation_key: menu.1_about_2_sdg_3_indicators
       - path: menu.1_about_2_sdg_3_publications_path
         translation_key: menu.1_about_2_sdg_3_publications
     - translation_key: menu.1_about_2_joint_action
