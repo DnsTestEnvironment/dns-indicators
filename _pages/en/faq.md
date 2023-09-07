@@ -8,15 +8,6 @@ layout: page
 ## How do I suggest new or different data sources?
 If you have feedback on the data sources we have used or have suggestions for new data sources then please contact us at: <a href="mailto:{{site.email_contacts.questions}}">{{site.email_contacts.questions}}</a>.
 
-## What does the reporting status mean?
-There are three differently colour-coded reporting statuses for each indicator:
-
-* Reported online (green) – As a minimum the headline national data are available for this indicator on this website, but the data might not be fully disaggregated yet. We are seeking to fill this data gap.
-* Exploring data sources (red) – We are still looking for a suitable data source for this indicator of this.
-* Not applicable (grey) – The calculation of this internationally relevant indicator for Germany alone makes little sense or the indicators can only be compiled in a global context.
-
-Where there is additional information about the status of indicator data collection and reporting, this will be displayed at the top of the indicator page.
-
 ## What does disaggregation mean?
 Disaggregation is used to break an existing indicator down into subcategories for closer examination. The best known are age or sex. However, the disaggregations used differ from indicator to indicator and are referenced in the indicator name or defined by the international organisation responsible for the indicator.
 

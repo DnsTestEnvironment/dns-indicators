@@ -135,15 +135,15 @@ menu:
         translation_key: menu.1_status_2_overview
   - translation_key: menu.1_strategy
     dropdown:
-    - path: /publications_strategy/
+    - path: /strategy/federal_government/
       translation_key: menu.1_strategy_2_government
-    - path: /publications_strategy_laender/
+    - path: /strategy/laender/
       translation_key: menu.1_strategy_2_laender
   - translation_key: menu.1_help
     dropdown:
     - path: /help/navigation/
       translation_key: menu.1_help_2_navigation
-    - path: /help/guidace/
+    - path: /help/guidance/
       translation_key: menu.1_help_2_guidance
     - path: /help/faq/
       translation_key: menu.1_help_2_faq

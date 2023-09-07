@@ -7,15 +7,6 @@ layout: page
 ## Wie kann ich neue oder andere Datenquellen vorschlagen?
 Für Feedback zu den von uns verwendeten Datenquellen oder für Vorschläge zu neuen Datenquellen, kontaktieren Sie uns bitte hier: <a href="mailto:{{site.email_contacts.questions}}">{{site.email_contacts.questions}}</a>.
 
-## Was bedeutet der Berichtsstatus?
-Für jeden Indikator gibt es drei verschiedene Kennzeichnungen zu dessen Berichtsstatus. Diese unterscheiden sich farblich folgendermaßen:
-
-* Grün: Daten verfügbar - die wichtigsten nationalen Daten für diesen Indikator sind auf dieser Website verfügbar. Möglicherweise stehen für die Daten noch nicht nach allen gewünschten Auswahlmöglichkeiten vollständig zur Verfügung. Wir versuchen, diese Datenlücke zu schließen.
-* Rot: Datenquellenanalyse - für diesen Indikator wird noch nach einer geeigneten Datenquelle gesucht.
-* Grau: Nicht zutreffend - dieser international relevante Indikator lässt sich nicht sinnvoll für Deutschland berechnen oder ist nur im globalen Kontext zu beantworten.
-
-Zusätzliche Informationen über den Status der Erhebung und die Berichterstattung eines Indikators finden Sie im oberen Abschnitt auf der Indikatorseite.
-
 ## Was ist Disaggregation?
 Eine Disaggregation dient dazu, einen bestehenden Indikator zur genaueren Betrachtung in weitere Unterkategorien aufzuteilen. Die bekanntesten sind Alter oder Geschlecht. Für jeden Indikator gelten jedoch gesonderte Disaggregationen, die im Indikatornamen oder durch die für den Indikator zuständige internationale Organisation festgelegt sind.
 
