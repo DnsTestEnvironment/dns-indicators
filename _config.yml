@@ -99,62 +99,54 @@ date_formats:
 
 # Menu
 menu:
-  - translation_key: menu.start
+  - translation_key: menu.1_start
     dropdown:
     - path: /
-      translation_key: menu.dns_plattform
-    - path: menu.pathtosdg
-      translation_key: menu.sdg_plattform
-  - translation_key: menu.about
+      translation_key: menu.1_start_2_dns_platform
+    - path: menu.1_start_2_sdg_platform_path
+      translation_key: menu.1_start_2_sdg_platform
+  - translation_key: menu.1_about
     dropdown:
-    - translation_key: menu.national_indicators
+    - translation_key: menu.1_about_2_dns
       dropdown:
-      - path: /about/strategy/
-        translation_key: menu.dns
-      - translation_key: menu.publications
+      - path: /about/dns/strategy/
+        translation_key: menu.1_about_2_dns_3_indicators
+      - translation_key: menu.1_about_2_dns_3_publications
         dropdown:
-        - path: /about/publications/dns_indicators/
-          translation_key: menu.dns_indcator_set
-        - path: /about/publications/reports/
-          translation_key: menu.indicator_reports
-        - path: /about/publications/other/
-          translation_key: menu.other_publications
-      - translation_key: menu.joint_action
-        path: /about/joint_action/
-    - translation_key: menu.global_indicators
+        - path: /about/dns/publications/dns_indicators/
+          translation_key: menu.1_about_2_dns_3_publications_4_indicatorset
+        - path: /about/dns/publications/reports/
+          translation_key: menu.1_about_2_dns_3_publications_4_reports
+        - path: /about/dns/publications/other/
+          translation_key: menu.1_about_2_dns_3_publications_4_others
+    - translation_key: menu.1_about_2_sdg
       dropdown:
-      - path: menu.path_sdg_agenda
-        translation_key: menu.agenda
-      - path: menu.path_un_sdg
-        translation_key: menu.un_sdg
-      - translation_key: menu.publications
-        dropdown:
-        - path:
-          translation_key: menu.sdg_indicator_set
-        - path: menu.path_wista_6_16
-          translation_key: menu.wista_6_16
-        - path:
-          translation_key: menu.report_hlpf
-  - translation_key: menu.status_overview
+      - path: menu.1_about_2_sdg_indicators_path
+        translation_key: menu.1_about_2_sdg_indicators
+      - path: menu.1_about_2_sdg_3_publications_path
+        translation_key: menu.1_about_2_sdg_3_publications
+    - translation_key: menu.1_about_2_joint_action
+      path: /about/joint_action/
+  - translation_key: menu.1_status
     dropdown:
       - path: /status/
-        translation_key: menu.methodology
+        translation_key: menu.1_status_2_methodology
       - path: /status_summary/
-        translation_key: menu.status_overview
-  - translation_key: menu.sustainable_development_strategy
+        translation_key: menu.1_status_2_overview
+  - translation_key: menu.1_strategy
     dropdown:
     - path: /publications_strategy/
-      translation_key: menu.federal_government
+      translation_key: menu.1_strategy_2_government
     - path: /publications_strategy_laender/
-      translation_key: menu.federal_states
-  - translation_key: menu.help
+      translation_key: menu.1_strategy_2_laender
+  - translation_key: menu.1_help
     dropdown:
     - path: /help/navigation/
-      translation_key: menu.navigation
+      translation_key: menu.1_help_2_navigation
     - path: /help/guidace/
-      translation_key: menu.guidance
+      translation_key: menu.1_help_2_guidance
     - path: /help/faq/
-      translation_key: menu.faq
+      translation_key: menu.1_help_2_faq
 
 frontpage_cards:
     - rule_color: grey
