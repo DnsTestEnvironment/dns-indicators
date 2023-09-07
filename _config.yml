@@ -168,9 +168,6 @@ header:
 footer_menu:
   - path: 'mailto:dns-indikatoren@destatis.de' #menu.contactPath
     translation_key: menu.contact_us
-  - path: menu.twitterPath #https://twitter.com/destatis?lang=de
-    translation_key:  general.twitter
-    alert: twitter
   - path: /imprint/
     translation_key: menu.imprint
 
