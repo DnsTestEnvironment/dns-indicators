@@ -111,14 +111,8 @@ menu:
       dropdown:
       - path: /about/dns/strategy/
         translation_key: menu.1_about_2_dns_3_indicators
-      - translation_key: menu.1_about_2_dns_3_publications
-        dropdown:
-        - path: /about/dns/publications/dns_indicators/
-          translation_key: menu.1_about_2_dns_3_publications_4_indicatorset
-        - path: /about/dns/publications/reports/
-          translation_key: menu.1_about_2_dns_3_publications_4_reports
-        - path: /about/dns/publications/other/
-          translation_key: menu.1_about_2_dns_3_publications_4_others
+      - path: /about/dns/publications/
+        translation_key: menu.1_about_2_dns_3_publications
     - translation_key: menu.1_about_2_sdg
       dropdown:
       - path: menu.1_about_2_sdg_3_indicators_path
