@@ -1,5 +1,5 @@
 ---
-title: Status der Indikatoren
+title: Status der Indikatoren - Methodik
 permalink: /status/
 layout: page
 ---

@@ -1,5 +1,5 @@
 ---
 layout: status_summary
-title: Statusübersicht
+title: Status der Indikatoren - Übersicht
 permalink: /status_summary/
 ---
