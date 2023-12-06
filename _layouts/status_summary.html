@@ -3,7 +3,11 @@
 
 {% assign reporting_data = site.data.reporting %}
 
-<div id="main-content" class="container weathet" role="main">
+<div class="container">
+  {% include components/page/breadcrumbs.html %}
+</div>
+
+<div id="main-content" class="container weather" role="main">
   {% include components/status/status-overall.html overall=reporting_data.overall title=page.t.summary.status_summary %}
   {% include components/status/status-by-goal.html goals=reporting_data.goals title=summary.status_summary %}
   {% include back-to-top.html %}
