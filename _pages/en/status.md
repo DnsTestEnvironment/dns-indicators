@@ -1,5 +1,5 @@
 ---
-title: Indicator status
+title: Indicator status - Methodology
 permalink: /en/status/
 language: en
 layout: page
