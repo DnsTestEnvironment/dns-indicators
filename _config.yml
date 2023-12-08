@@ -109,7 +109,7 @@ menu:
     dropdown:
     - translation_key: menu.1_about_2_dns
       dropdown:
-      - path: /about/dns/strategy/
+      - path: /about/dns/monitoring/
         translation_key: menu.1_about_2_dns_3_indicators
       - path: /about/dns/publications/
         translation_key: menu.1_about_2_dns_3_publications
