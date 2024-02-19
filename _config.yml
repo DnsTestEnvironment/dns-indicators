@@ -11,7 +11,7 @@ description: Data Platform Prototype
 url: ""
 data_dir: data
 environment: staging
-remote_data_prefix: "https://dialogfassungdns.github.io/data"
+remote_data_prefix: "https://DnsTestEnvironment.github.io/dns-data"
 # URL for the "Edit Data" button on indicators.
 data_edit_url: http://prose.io/#DnsTestEnvironment/dns-data/edit/develop/data/indicator_[id].csv
 # URL for the "Edit Metadata" button on indicators.
@@ -80,6 +80,7 @@ collections:
 # The list of languages that are translated. The first one is the default.
 languages:
   - de
+  - en
 
 logos:
   - src: assets/img/de/DNS_logo.png
