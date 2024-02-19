@@ -80,7 +80,6 @@ collections:
 # The list of languages that are translated. The first one is the default.
 languages:
   - de
-  - en
 
 logos:
   - src: assets/img/de/DNS_logo.png
