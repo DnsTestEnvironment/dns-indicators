@@ -11,7 +11,7 @@
 var opensdg = {
 
   // A base URL for asynchronous calls to SDG data.
-  remoteDataBaseUrl: 'https://dialogfassungdns.github.io/data/de',
+  remoteDataBaseUrl: 'https://DnsTestEnvironment.github.io/dns-data/de',
 
   chartConfigAlterations: [],
   // A hook which can be used to modify the configuration for Chart.js.
@@ -117,7 +117,7 @@ var translations = {
         ================================================== -->
 
         
-    <title>Indikatoren für EntscheiderInnen - Indikatoren der Dialogfassung der Deutschen Nachhaltigkeitsstrategie</title>
+    <title>Indikatoren für EntscheiderInnen - Indikatoren der Deutschen Nachhaltigkeitsstrategie</title>
 
 
 
@@ -143,7 +143,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20240219083416">
+        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20240219084614">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -274,7 +274,38 @@ layout-page
 </form>
 
                 </div>
-                <div class="header-toggles d-flex"><a title="" aria-label=""
+                <div class="header-toggles d-flex">
+
+
+
+
+
+  <div class="language-toggle-container d-flex">
+    <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-de list-inline-item" style="opacity:0.3">
+            <span>
+                Deutsch
+            </span>
+        </li><li class="language-option-en list-inline-item">
+            <a class="language-toggle-link" href="/dns-indicators/en/en/decision_maker3/">
+                English
+            </a>
+        </li></ul>
+</div>
+
+
+
+                    <span class="no-js-language-toggle"><div class="language-toggle-container d-flex">
+    <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-de list-inline-item" style="opacity:0.3">
+            <span>
+                Deutsch
+            </span>
+        </li><li class="language-option-en list-inline-item">
+            <a class="language-toggle-link" href="/dns-indicators/en/en/decision_maker3/">
+                English
+            </a>
+        </li></ul>
+</div>
+</span><a title="" aria-label=""
     data-contrast-switch-to="" href="javascript:void(0)" data-on="click"
 data-event-category="Accessibility"
 data-event-action="Change contrast setting"
@@ -311,8 +342,23 @@ data-event-label="high"
     
     
       <div>
-        <input type="checkbox" name="selectedIndicators" class="chkbx" value="3-1-a" id="3-1-a" >
-        <label for="3-1-a">3.1.a</label>
+        <input type="checkbox" name="selectedIndicators" class="chkbx" value="3-1-ab" id="3-1-ab" >
+        <label for="3-1-ab">3.1.a, b</label>
+      </div>
+    
+      <div>
+        <input type="checkbox" name="selectedIndicators" class="chkbx" value="3-1-cd" id="3-1-cd" >
+        <label for="3-1-cd">3.1.c, d</label>
+      </div>
+    
+      <div>
+        <input type="checkbox" name="selectedIndicators" class="chkbx" value="3-1-e" id="3-1-e" >
+        <label for="3-1-e">3.1.e</label>
+      </div>
+    
+      <div>
+        <input type="checkbox" name="selectedIndicators" class="chkbx" value="3-1-f" id="3-1-f" >
+        <label for="3-1-f">3.1.f</label>
       </div>
     
       <div>
@@ -335,7 +381,19 @@ data-event-label="high"
 <button onclick="myFunction()">Show indicators</button>
 
 
-  <iframe onload="deleteStuffFromIndicatorPagesForIframe('3-1-a')" id="myIframe_3-1-a" src="https://dnstestenvironment.github.io/dns-indicators/3-1-a/index.html" width="100%" height="1800px" frameborder="0" style="display: none" >
+  <iframe onload="deleteStuffFromIndicatorPagesForIframe('3-1-ab')" id="myIframe_3-1-ab" src="https://dnstestenvironment.github.io/dns-indicators/3-1-ab/index.html" width="100%" height="1800px" frameborder="0" style="display: none" >
+       Sorry your browser does not support inline frames.
+  </iframe>
+
+  <iframe onload="deleteStuffFromIndicatorPagesForIframe('3-1-cd')" id="myIframe_3-1-cd" src="https://dnstestenvironment.github.io/dns-indicators/3-1-cd/index.html" width="100%" height="1800px" frameborder="0" style="display: none" >
+       Sorry your browser does not support inline frames.
+  </iframe>
+
+  <iframe onload="deleteStuffFromIndicatorPagesForIframe('3-1-e')" id="myIframe_3-1-e" src="https://dnstestenvironment.github.io/dns-indicators/3-1-e/index.html" width="100%" height="1800px" frameborder="0" style="display: none" >
+       Sorry your browser does not support inline frames.
+  </iframe>
+
+  <iframe onload="deleteStuffFromIndicatorPagesForIframe('3-1-f')" id="myIframe_3-1-f" src="https://dnstestenvironment.github.io/dns-indicators/3-1-f/index.html" width="100%" height="1800px" frameborder="0" style="display: none" >
        Sorry your browser does not support inline frames.
   </iframe>
 
@@ -431,12 +489,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/dns-indicators/assets/js/sdg.js?v=20240219083416'></script>
+<script src='/dns-indicators/assets/js/sdg.js?v=20240219084614'></script>
 
 
     
     
-    <script src="/dns-indicators/assets/js/custom.js?v=20240219083416"></script><script>
+    <script src="/dns-indicators/assets/js/custom.js?v=20240219084614"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
