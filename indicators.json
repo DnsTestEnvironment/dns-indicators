@@ -7,10 +7,18 @@
         
         {
           "id": "1-1-ab",
-          "title": "Materielle Deprivation sowie erhebliche materielle Deprivation",
+          "title": "Materielle und soziale Deprivation sowie erhebliche materielle und soziale Deprivation",
           "description": "",
           "keywords": "",
           "href": "/dns-indicators/1-1-ab/",
+          "status": "complete"
+        },
+        {
+          "id": "1-1-c",
+          "title": "Prävention Verbraucherverschuldung",
+          "description": "",
+          "keywords": "",
+          "href": "/dns-indicators/1-1-c/",
           "status": "complete"
         }]
     }
@@ -54,35 +62,11 @@
       "indicators": [
         
         {
-          "id": "3-1-ab",
-          "title": "Vorzeitige Sterblichkeit",
+          "id": "3-1-a",
+          "title": "Durch Prävention und Behandlung vermeidbare Sterblichkeit",
           "description": "",
           "keywords": "",
-          "href": "/dns-indicators/3-1-ab/",
-          "status": "complete"
-        },
-        {
-          "id": "3-1-cd",
-          "title": "Raucherquote von Jugendlichen und Erwachsenen",
-          "description": "",
-          "keywords": "",
-          "href": "/dns-indicators/3-1-cd/",
-          "status": "complete"
-        },
-        {
-          "id": "3-1-e",
-          "title": "Adipositasquote von Kindern und Jugendlichen",
-          "description": "",
-          "keywords": "",
-          "href": "/dns-indicators/3-1-e/",
-          "status": "complete"
-        },
-        {
-          "id": "3-1-f",
-          "title": "Adipositasquote von Erwachsenen",
-          "description": "",
-          "keywords": "",
-          "href": "/dns-indicators/3-1-f/",
+          "href": "/dns-indicators/3-1-a/",
           "status": "complete"
         },
         {
@@ -95,7 +79,7 @@
         },
         {
           "id": "3-2-b",
-          "title": "Anteil der Bevölkerung mit erhöhter PM₁₀-Feinstaubexposition",
+          "title": "Anteil der Bevölkerung mit erhöhter PM2,5-Feinstaubexposition",
           "description": "",
           "keywords": "",
           "href": "/dns-indicators/3-2-b/",
@@ -134,8 +118,24 @@
           "status": "complete"
         },
         {
+          "id": "4-1-c",
+          "title": "Zusammenhang zwischen sozialer Herkunft und Bildungserfolg",
+          "description": "",
+          "keywords": "",
+          "href": "/dns-indicators/4-1-c/",
+          "status": "complete"
+        },
+        {
+          "id": "4-1-d",
+          "title": "Schulen mit BNE-Schullabel",
+          "description": "",
+          "keywords": "",
+          "href": "/dns-indicators/4-1-d/",
+          "status": "complete"
+        },
+        {
           "id": "4-2-ab",
-          "title": "Ganztagsbetreuung für Kinder",
+          "title": "Kinder in Ganztagsbetreuung in Tageseinrichtungen oder Tagespflege",
           "description": "",
           "keywords": "",
           "href": "/dns-indicators/4-2-ab/",
@@ -175,10 +175,18 @@
         },
         {
           "id": "5-1-e",
-          "title": "Berufliche Qualifizierung von Frauen und Mädchen durch deutsche entwicklungspolitische Zusammenarbeit",
+          "title": "Durchschnittliche wöchentliche Erwerbsarbeitszeit bezogen auf alle Mütter und Väter",
           "description": "",
           "keywords": "",
           "href": "/dns-indicators/5-1-e/",
+          "status": "complete"
+        },
+        {
+          "id": "5-1-f",
+          "title": "Berufliche Qualifizierung von Frauen und Mädchen durch deutsche entwicklungspolitische Zusammenarbeit",
+          "description": "",
+          "keywords": "",
+          "href": "/dns-indicators/5-1-f/",
           "status": "complete"
         }]
     }
@@ -303,7 +311,7 @@
         },
         {
           "id": "8-6",
-          "title": "Mitglieder des Textilbündnisses",
+          "title": "Tarifvertragliche Abdeckung von Beschäftigten",
           "description": "",
           "keywords": "",
           "href": "/dns-indicators/8-6/",
