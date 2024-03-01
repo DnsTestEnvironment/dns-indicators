@@ -109,11 +109,11 @@ menu:
         translation_key: menu.1_status_2_overview
   - translation_key: menu.1_strategy
     dropdown:
-      - path: /startegy/monitoring/
+      - path: /strategy/monitoring/
         translation_key: menu.1_strategy_2_monitoring
-      - path: /startegy/publications/
+      - path: /strategy/publications/
         translation_key: menu.1_strategy_2_publications
-      - path: /startegy/links/
+      - path: /strategy/links/
         translation_key: menu.1_strategy_2_links
   - path: /laender/
     translation_key: menu.1_laender
