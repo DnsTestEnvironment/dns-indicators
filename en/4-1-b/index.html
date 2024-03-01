@@ -148,7 +148,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20240228160256">
+        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20240301105917">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -205,31 +205,10 @@ layout-indicator
             </button>
             <div class="d-flex flex-wrap w-100 justify-content-between">
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav" id="menu"><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-start" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Start
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-1-start"><li class=" ">
-    <a class="dropdown-item" href="/dns-indicators/en/">National indicators <img class="link_btn" src="https://sdg-indikatoren.de/public/DNS Wheel.png" title="Klicken Sie hier um zur Seite der DNS Indikatoren zu gelangen" alt="Link DNS" style="width:24px;height:24px;"/></a>
+                    <ul class="navbar-nav" id="menu"><li class="nav-item ">
+    <a class="nav-link" href="/dns-indicators/en/">Start</a>
 </li>
-<li class=" ">
-    <a class="dropdown-item" href="https://sdg-indicators.de">Global indicators <img class="link_btn" src="https://sdg-indikatoren.de/public/SDG Wheel_Transparent.png" title="Klicken Sie hier um zur Seite der SDG Indikatoren zu gelangen" alt="Link SDG" style="width:24px;height:24px;"/></a>
-</li>
-</ul>
-          </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-about" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Topics
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-1-about"><li>
-                      <a class="dropdown-item dropdown-toggle" href="#">
-                          German Sustainable Developmnet Strategy (DNS)
-                      </a>
-                      <ul class="submenu dropdown-menu"><li><a class="dropdown-item" href="/dns-indicators/en//about/dns/monitoring/">Monitoring</a></li><li><a class="dropdown-item" href="/dns-indicators/en//about/dns/publications/">Publications</a></li></ul>
-                    </li><li>
-                      <a class="dropdown-item dropdown-toggle" href="#">
-                          2030 Agenda (SDG)
-                      </a>
-                      <ul class="submenu dropdown-menu"><li><a class="dropdown-item" href="https://sdg-indicators.de/about/sdg/monitoring">Monitoring</a></li><li><a class="dropdown-item" href="https://sdg-indicators.de/about/sdg/publications">Publications</a></li></ul>
-                    </li></ul>
-          </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-status" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-status" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Status overview
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdown-menu-1-status"><li class=" ">
@@ -243,13 +222,22 @@ layout-indicator
                     Sustainable Development Strategy
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdown-menu-1-strategy"><li class=" ">
-    <a class="dropdown-item" href="/dns-indicators/en/strategy/federal_government/">Federal Government</a>
+    <a class="dropdown-item" href="/dns-indicators/en/startegy/monitoring/">menu.1_strategy_2_monitoring</a>
 </li>
 <li class=" ">
-    <a class="dropdown-item" href="/dns-indicators/en/strategy/laender/">Bundesländer</a>
+    <a class="dropdown-item" href="/dns-indicators/en/startegy/publications/">menu.1_strategy_2_publications</a>
+</li>
+<li class=" ">
+    <a class="dropdown-item" href="/dns-indicators/en/startegy/links/">menu.1_strategy_2_links</a>
 </li>
 </ul>
-          </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-help" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          </li><li class="nav-item ">
+    <a class="nav-link" href="/dns-indicators/en/laender/">menu.1_laender</a>
+</li>
+<li class="nav-item ">
+    <a class="nav-link" href="/dns-indicators/en/menu.1_sdg_platform_path">menu.1_sdg_platform</a>
+</li>
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-help" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Help
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdown-menu-1-help"><li class=" ">
@@ -7253,12 +7241,12 @@ data-event-label="Change to indicator.sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/dns-indicators/assets/js/sdg.js?v=20240228160256'></script>
+<script src='/dns-indicators/assets/js/sdg.js?v=20240301105917'></script>
 
 
     
     
-    <script src="/dns-indicators/assets/js/custom.js?v=20240228160256"></script><script>
+    <script src="/dns-indicators/assets/js/custom.js?v=20240301105917"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

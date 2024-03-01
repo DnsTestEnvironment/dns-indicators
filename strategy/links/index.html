@@ -117,7 +117,7 @@ var translations = {
         ================================================== -->
 
         
-    <title>Publikationen - Indikatoren der Deutschen Nachhaltigkeitsstrategie</title>
+    <title>Links - Indikatoren der Deutschen Nachhaltigkeitsstrategie</title>
 
 
 
@@ -143,7 +143,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20240228160256">
+        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20240301105917">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -200,31 +200,10 @@ layout-page
             </button>
             <div class="d-flex flex-wrap w-100 justify-content-between">
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav" id="menu"><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-start" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Start
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-1-start"><li class=" ">
-    <a class="dropdown-item" href="/dns-indicators/">Nationale Indikatoren <img class="link_btn" src="https://sdg-indikatoren.de/public/DNS Wheel.png" title="Klicken Sie hier um zur Seite der DNS Indikatoren zu gelangen" alt="Link DNS" style="width:24px;height:24px;"/></a>
+                    <ul class="navbar-nav" id="menu"><li class="nav-item ">
+    <a class="nav-link" href="/dns-indicators/">Start</a>
 </li>
-<li class=" ">
-    <a class="dropdown-item" href="https://sdg-indikatoren.de">Globale Indikatoren <img class="link_btn" src="https://sdg-indikatoren.de/public/SDG Wheel_Transparent.png" title="Klicken Sie hier um zur Seite der SDG Indikatoren zu gelangen" alt="Link SDG" style="width:24px;height:24px;"/></a>
-</li>
-</ul>
-          </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-about" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Themen
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-1-about"><li>
-                      <a class="dropdown-item dropdown-toggle" href="#">
-                          Deutsche Nachhaltigkeitsstrategie (DNS)
-                      </a>
-                      <ul class="submenu dropdown-menu"><li><a class="dropdown-item" href="/dns-indicators//about/dns/monitoring/">Monitoring</a></li><li><a class="dropdown-item" href="/dns-indicators//about/dns/publications/">Publikationen</a></li></ul>
-                    </li><li>
-                      <a class="dropdown-item dropdown-toggle" href="#">
-                          Agenda 2030 (SDG)
-                      </a>
-                      <ul class="submenu dropdown-menu"><li><a class="dropdown-item" href="https://sdg-indikatoren.de/about/sdg/monitoring">Monitoring</a></li><li><a class="dropdown-item" href="https://sdg-indikatoren.de/about/sdg/publications">Publikationen</a></li></ul>
-                    </li></ul>
-          </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-status" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-status" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Status
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdown-menu-1-status"><li class=" ">
@@ -238,13 +217,22 @@ layout-page
                     Nachhaltigkeitsstrategie
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdown-menu-1-strategy"><li class=" ">
-    <a class="dropdown-item" href="/dns-indicators/strategy/federal_government/">Bundesregierung</a>
+    <a class="dropdown-item" href="/dns-indicators/startegy/monitoring/">menu.1_strategy_2_monitoring</a>
 </li>
 <li class=" ">
-    <a class="dropdown-item" href="/dns-indicators/strategy/laender/">Bundesländer</a>
+    <a class="dropdown-item" href="/dns-indicators/startegy/publications/">menu.1_strategy_2_publications</a>
+</li>
+<li class=" ">
+    <a class="dropdown-item" href="/dns-indicators/startegy/links/">menu.1_strategy_2_links</a>
 </li>
 </ul>
-          </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-help" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          </li><li class="nav-item ">
+    <a class="nav-link" href="/dns-indicators/laender/">menu.1_laender</a>
+</li>
+<li class="nav-item ">
+    <a class="nav-link" href="/dns-indicators/menu.1_sdg_platform_path">menu.1_sdg_platform</a>
+</li>
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-help" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Hilfe
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdown-menu-1-help"><li class=" ">
@@ -286,7 +274,7 @@ layout-page
                 Deutsch
             </span>
         </li><li class="language-option-en list-inline-item">
-            <a class="language-toggle-link" href="/dns-indicators/en/about/dns/publications/">
+            <a class="language-toggle-link" href="/dns-indicators/en/strategy/links/">
                 English
             </a>
         </li></ul>
@@ -300,7 +288,7 @@ layout-page
                 Deutsch
             </span>
         </li><li class="language-option-en list-inline-item">
-            <a class="language-toggle-link" href="/dns-indicators/en/about/dns/publications/">
+            <a class="language-toggle-link" href="/dns-indicators/en/strategy/links/">
                 English
             </a>
         </li></ul>
@@ -326,161 +314,17 @@ data-event-label="high"
         <li class="breadcrumb-item" >
             <a href="/dns-indicators/">Start</a>
         </li>
-        <li class="breadcrumb-item active">Publikationen</li>
+        <li class="breadcrumb-item active">Links</li>
     </ol>
 </nav>
 </div>
 <div id="main-content" class="container" role="main">
     <div>
-        <h1>Publikationen</h1>
+        <h1>Links</h1>
         
 
 
-    <h3 style="width: 80%;"><a href="https://dns-indikatoren.de/assets/Publikationen/wista2017_01.pdf" target="_blank">Neuauflage der deutschen Nachhaltigkeitsstrategie 2021</a></h3>
-<div class="flex-container">
-  <div class="rightColumn">
-    <figure style="margin-left: 10px; max-width:280px; width:100%; border: 1px solid #ddd; border-radius: 4px;">
-      <img src="https://dnstestenvironment.github.io/dns-indicators//assets/img/report/wista.PNG"
-      alt="Abbildung 1: WISTA" style="width: 100%; padding-left: 20px; padding-right:20px; padding-bottom:10px; padding-top:10px;">
-    </figure>
-  </div>
-  <div class="leftColumn">
-    Erschienen im Januar 2017
-    <br><br>
-    <p style="padding-bottom: 70px;">
-    Die Bundesregierung hat am 10. März 2021 die Neuauflage der Deutsche Nachhaltigkeitsstrategie beschlossen und sich 72
-    Ziele gesetzt, um Deutschland zukünftig nachhaltiger zu machen. Dabei wurden sechs Indikatoren in den Themen Gesundheit,
-    Gleichstellung, Infrastruktur, Kulturerbe und Bodenschutz neu aufgenommen. Zudem wurden bei zehn bestehenden Indikatoren
-    Ziele und Methodik weiterentwickelt.<br><br>Bereits im Jahr 2016 hatte die Bundesregierung, nach der Verabschiedung der
-    Agenda 2030 der Vereinten Nationen, die Deutsche Nachhaltigkeitsstrategie überarbeitet und am 11. Januar 2017 neu beschlossen.
-    Diese Überarbeitung stellt die umfassendste Weiterentwicklung der Strategie seit ihrer Konzeption im Jahr 2002 dar.
-    Die "Neuauflage der Deutschen Nachhaltigkeitsstrategie" ist dabei der wesentliche Rahmen für die nationale Umsetzung
-    der Agenda 2030 und ihrer 17 Sustainable Development Goals (SDGs). Das Statistische Bundesamt ist seit 2006 von der
-    Bundesregierung mit der Analyse und dem Monitoring der Nachhaltigkeitsstrategie beauftragt. Es erstellt die Indikatoren,
-    die die Zielerreichung der einzelnen Themenbereiche messen, und veröffentlicht zweijährlich sogenannte Indikatorenberichte.
-    <br><br>
-    Mehr Informationen erhalten Sie hier<br>
-    <a href="https://www.bundesregierung.de/resource/blob/975274/1873516/9d73d857a3f7f0f8df5ac1b4c349fa07/2021-03-10-dns-2021-finale-langfassung-barrierefrei-data.pdf?download=1" target="_blank">Neuauflage der Deutschen Nachhaltigkeitsstrategie 2021</a>
-    </p>
-  </div>
-</div>
-
-<h3 style="width: 80%;"><a href="https://dns-indikatoren.de/assets/Publikationen/machbarkeitsstudie.pdf" target="_blank">Machbarkeitsstudie zur Darstellung der Indikatoren der Deutschen Nachhaltigkeitsstrategie nach Bundesländern</a></h3>
-<div class="flex-container">
-  <div class="rightColumn">
-    <figure style="margin-left: 10px; max-width:280px; width:100%; border: 1px solid #ddd; border-radius: 4px;">
-      <img src="https://dnstestenvironment.github.io/dns-indicators//assets/img/report/mbkStudie.PNG"
-      alt="Abbildung 2: Machbarkeitsstudie"
-      style="width: 100%; padding-left: 20px; padding-right:20px; padding-bottom:10px; padding-top:10px; max-width: 350px;">
-    </figure>
-  </div>
-  <div class="leftColumn">
-    Erschienen im November 2018
-    <br><br>
-    Neben der Bundesregierung verfügt die Mehrzahl der Bundesländer über eigene Nachhaltigkeitsstrategien.
-    Einige Landesregierungen haben diese bereits an den 17 globalen Nachhaltigkeitszielen der Agenda 2030 ausgerichtet;
-    in anderen Bundesländern gibt es Bestrebungen zur Anpassung oder Erarbeitung einer länderspezifischen
-    Nachhaltigkeitsstrategie.
-    <br><br>
-    <p style="padding-bottom: 100px;">Die Chefs der Staats- und Senatskanzleien des Bundes und der Länder (CdS) haben
-      beschlossen, für die Erfolgskontrolle der DNS einheitliche Indikatoren und Bewertungsmaßstäbe für Bund und Länder zu
-      entwickeln. Das Statistische Bundesamt wurde vom Bund Länder Erfahrungsaustausch Nachhaltigkeit (BLE NH) – einem
-      Gremium der für Nachhaltigkeit zuständigen Ressorts bei Bund und Ländern – gebeten, eine Übersicht zur Darstellung
-      der Indikatoren der DNS nach Bundesländern zur Verfügung zu stellen. Die hier vorliegende Machbarkeitsstudie
-      entspricht der fortentwickelten Übersicht.
-    </p>
-  </div>
-</div>
-
-<h3 style="width: 80%;"><a href="https://dns-indikatoren.de/assets/Publikationen/DNS_Sonderauswertung_2021.pdf" target="_blank">Sonderauswertung für ausgewählte Indikatoren nach Gebietsstand</a></h3>
-<div class="flex-container">
-  <div class="rightColumn">
-    <figure style="margin-left: 10px; max-width:280px; width:100%; border: 1px solid #ddd; border-radius: 4px;">
-      <img src="https://dnstestenvironment.github.io/dns-indicators//assets/img/report/sawGebietsstand.PNG"
-      alt="Abbildung 3: Sonderauswertung Gebietsstand"
-      style="width: 100%; padding-left: 20px; padding-right:20px; padding-bottom:10px; padding-top:10px; max-width: 350px;">
-    </figure>
-  </div>
-  <div class="leftColumn">
-    Erschienen am 28. Mai 2021
-    <br><br>
-    <p style="padding-bottom: 320px;">Veröffentlichung ausgewählter Indikatoren nach Gebietsstand: Neue Länder mit Berlin,
-      Neue Länder ohne Berlin, Früheres Bundesgebiet.
-    </p>
-  </div>
-</div>
-
-<h1 style="width: 80%;">Indikatorenberichte</h1>
-<div class="flex-container">
-  <div class="rightColumn">
-    <figure style="margin-left: 10px; max-width:280px; width:100%; border: 1px solid #ddd; border-radius: 4px;">
-      <img src="https://dnstestenvironment.github.io/dns-indicators//assets/img/report/cover.PNG"
-        alt="Indikatorenbericht 2022"
-        style="width: 100%; padding-left: 20px; padding-right:20px; padding-bottom:10px; padding-top:10px; max-width: 350px;">
-    </figure>
-  </div>
-  <div class="leftColumn">
-    Die Indikatorenberichte des Statistischen Bundesamtes informieren über das Monitoring der Indikatoren der Deutschen Nachhaltigkeitsstrategie. Ergänzend werden zusätzliche Datenreihen zu den jeweiligen Indikatoren in den Daten zum Indikatorenbericht veröffentlicht.
-
-    <h3>2022</h3>
-    <a href="https://dns-indikatoren.de/assets/Publikationen/Indikatorenberichte/2022.pdf" target="_blank">Indikatorenbericht 2022</a>
-    <br>
-    <p style="width:70%">
-    Daten zum Indikatorenbericht 2022 – Die Publikation wurde eingestellt. Die Informationen sind nun online auf dieser Plattform bei den Indikatoren unter dem Reiter „Weitere Informationen“ verfügbar.
-    <br></p>
-    <h3>2021</h3>
-    <a href="https://dns-indikatoren.de/assets/Publikationen/Indikatorenberichte/2021.pdf" target="_blank">Indikatorenbericht 2021</a>
-    <br>
-    <a href="https://dns-indikatoren.de/assets/Publikationen/Indikatorenberichte/daten2021.pdf" target="_blank">Daten zum Indikatorenbericht 2021</a>
-    <br>
-    <h3>2018</h3>
-    <a href="https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00089372" target="_blank">Indikatorenbericht 2018</a>
-    <br>
-    <a href="https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00132993" target="_blank">Daten zum Indikatorenbericht 2018</a>
-    <br>
-    <h3>2016</h3>
-    <a href="https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00066907" target="_blank">Indikatorenbericht 2016</a>
-    <br>
-    <a href="https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00132992" target="_blank">Daten zum Indikatorenbericht 2016</a>
-    <br>
-    <h3>2014</h3>
-    <a href="https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00023410" target="_blank">Indikatorenbericht 2014</a>
-    <br>
-    <a href="https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00067001" target="_blank">Daten zum Indikatorenbericht 2014</a>
-    <br>
-    <h3>2012</h3>
-    <a href="https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00010546" target="_blank">Indikatorenbericht 2012</a>
-    <br>
-    <a href="https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00010558" target="_blank">Daten zum Indikatorenbericht 2012</a>
-    <br>
-    <h3>2010</h3>
-    <a href="https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00010549" target="_blank">Indikatorenbericht 2010</a>
-    <br>
-    <a href="https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00010572" target="_blank">Daten zum Indikatorenbericht 2010</a>
-    <br>
-    <h3>2008</h3>
-    <a href="https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00010552" target="_blank">Indikatorenbericht 2008</a>
-    <br>
-    <a href="https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00010568" target="_blank">Daten zum Indikatorenbericht 2008</a>
-    <br>
-    <h3>2006</h3>
-    <a href="https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00010555" target="_blank">Indikatorenbericht 2006</a>
-  </div>
-</div>
-<br>
-<h1 style="width: 80%;">Pressemitteilungen</h1>
-<div class="flex-container">
-  <div class="leftColumn">
-    <h3>Bundesregierung erreicht vier ihrer zwölf Nachhaltigkeitsziele für 2020</h3>
-    <a href="https://www.destatis.de/DE/Presse/Pressemitteilungen/2021/03/PD21_121_325.html" target="_blank">Pressemitteilung Nr. 121 vom 10. März 2021</a>
-    <br>
-    <h3>Zum Start des Nachhaltigkeitsdialogs der Bundesregierung: Nachhaltigkeitsindikatoren interaktiv verfügbar</h3>
-    <a href="https://www.destatis.de/DE/Presse/Pressemitteilungen/2020/10/PD20_388_325.html" target="_blank">Pressemitteilung Nr. 388 vom 1. Oktober 2020</a>
-    <br>
-    <h3>Deutsche Nachhaltigkeitsstrategie: Monitoring jetzt auch interaktiv</h3>
-    <a href="https://www.destatis.de/DE/Presse/Pressemitteilungen/2020/02/PD20_053_325.html" target="_blank">Pressemitteilung Nr. 053 vom 19. Februar 2020</a>
-  </div>
-</div>
+    tbd
 
 
 
@@ -547,12 +391,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/dns-indicators/assets/js/sdg.js?v=20240228160256'></script>
+<script src='/dns-indicators/assets/js/sdg.js?v=20240301105917'></script>
 
 
     
     
-    <script src="/dns-indicators/assets/js/custom.js?v=20240228160256"></script><script>
+    <script src="/dns-indicators/assets/js/custom.js?v=20240301105917"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
