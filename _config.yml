@@ -117,8 +117,8 @@ menu:
         translation_key: menu.1_strategy_2_links
   - path: /laender/
     translation_key: menu.1_laender
-  - path: menu.1_sdg_platform_path
-    translation_key: menu.1_sdg_platform
+  - path: menu.1_global_indicators_path
+    translation_key: menu.1_global_indicators
   - translation_key: menu.1_help
     dropdown:
     - path: /help/navigation/
