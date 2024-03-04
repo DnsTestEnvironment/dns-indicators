@@ -109,6 +109,8 @@ menu:
         translation_key: menu.1_status_2_overview
   - translation_key: menu.1_strategy
     dropdown:
+      - path: /strategy/dns/
+        translation_key: menu.1_strategy_2_dns
       - path: /strategy/monitoring/
         translation_key: menu.1_strategy_2_monitoring
       - path: /strategy/publications/
