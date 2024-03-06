@@ -3,7 +3,7 @@
     <div class="row">
       {% unless page.indicator.standalone %}
       <div class="col-4 col-md-3 col-lg-2 goal-icon goal-tiles">
-        <a href="{{ page.goal.url }}" title="{{ page.t.indicator.view_indicator_list }}">
+        <a href="{{ page.goal.url }}" aria-label="{{ page.t.goal.indicators_for_goal }} {{ page.goal.number }}" title="{{ page.t.indicator.view_indicator_list }}">
           <img src="{{ page.goal.icon }}"
               alt="{{ page.goal.short | escape }} - {{ page.t.general.goal }} {{ page.goal.number }}"
               id="goal-{{ page.goal.number }}"
@@ -17,11 +17,9 @@
         <div>
           <h1>
             {% unless page.indicator.standalone %}
-              <h1 class="titles goal-{{ page.goal.number}}" title="{{ page.t.general.section }}: {{ page.indicator.section }}">
-                {{ page.indicator.section }} – <i title="{{ page.t.general.postulate}}: {{ page.indicator.postulate }}">{{ page.indicator.postulate }}</i>
-              </h1>
-              <h2 class="titles goal-{{ page.goal.number }}">{{ page.t.general.indicator }} {{ page.indicator.indicator_display }}: {{ page.indicator.indicator_name }}</h2>
+            {{ page.t.general.indicator }} {{ page.indicator.number }}
             {% endunless %}
+            <span class="lead-copy">{{ page.t.general.indicator }} {{ page.indicator.indicator_display }}: {{ page.indicator.indicator_name }}</span>
           </h1>
         </div>
       </div>
