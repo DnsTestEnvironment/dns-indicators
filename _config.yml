@@ -97,6 +97,9 @@ date_formats:
     language: en
     format: "%b %d, %Y"
 
+disclaimer:
+  hidden: true
+
 # Menu
 menu:
   - path: /
