@@ -143,7 +143,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20240426075312">
+        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20240426082714">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -332,9 +332,7 @@ data-event-label="high"
     <div class=collapsibleElements>
       <button class="collapsible">Indikatorenberichte</button>
       <div class="content">
-        <p>Die Indikatorenberichte des Statistischen Bundesamtes informieren über das Monitoring der
-          Indikatoren der Deutschen Nachhaltigkeitsstrategie. Ergänzend werden zusätzliche Datenreihen
-          zu den jeweiligen Indikatoren in den Daten zum Indikatorenbericht veröffentlicht.</p>
+        <p></p>
           <h4>2022</h4>
           <a href="https://dns-indikatoren.de/assets/Publikationen/Indikatorenberichte/2022.pdf" target="_blank">Indikatorenbericht 2022</a>
           <br>
@@ -385,7 +383,9 @@ data-event-label="high"
           <br></p>
           <h4>2006</h4>
           <a href="https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00010555" target="_blank">Indikatorenbericht 2006</a>
-          <br><br>
+          <p>
+          Daten zum Indikatorenbericht 2006 – Die Publikation ist für 2006 nicht verfügbar.
+          <br><br></p>
       </div>
       <button class="collapsible">Pressemitteilungen</button>
       <div class="content">
@@ -505,12 +505,12 @@ for (i = 0; i < coll.length; i++) {
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/dns-indicators/assets/js/sdg.js?v=20240426075312'></script>
+<script src='/dns-indicators/assets/js/sdg.js?v=20240426082714'></script>
 
 
     
     
-    <script src="/dns-indicators/assets/js/custom.js?v=20240426075312"></script><script>
+    <script src="/dns-indicators/assets/js/custom.js?v=20240426082714"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
