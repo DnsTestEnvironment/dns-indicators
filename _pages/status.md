@@ -6,7 +6,7 @@ layout: page
 
 Um einen schnellen Überblick zum Status der einzelnen Indikatoren zu ermöglichen, wird im Bericht bei jedem Indikator, sofern berechenbar, eines von vier möglichen Wettersymbolen abgebildet. Diese Kennzeichnung ist keine politische Bewertung und auch keine Prognose. Stattdessen bieten die Symbole eine erste Einschätzung der Entwicklung, ersetzen aber nicht die erläuternden Texte sowie weitere Analysen und Hintergrundinformationen. Die Art und Weise, wie die Symbole den einzelnen Indikatoren zugeordnet werden, hängt von der Formulierung des jeweiligen Ziels ab.
 
-<b>Indikatoren mit absoluten oder relativen Zielwerten</b>
+<h3 class="h3bold">Indikatoren mit absoluten oder relativen Zielwerten</h3>
 
 In den meisten Fällen soll ein Indikator einen konkreten absoluten oder relativen Zielwert in einem Zieljahr erreichen (zum Beispiel [Indikator 3.1.a](https://dns-indikatoren.de/3-1-ab/)). Bei einer solchen Zielformulierung wird zunächst anhand der letzten sechs Datenpunkte der Durchschnitt der letzten fünf jährlichen Veränderungen ermittelt. Dieser Wert wird für die zukünftige jährliche Entwicklung bis zum Zieljahr unterstellt. Auf dieser Entwicklung aufbauend wird ein hypothetischer Zielwert ermittelt und mit dem vorgegebenen Zielwert des Indikators verglichen. Basierend auf der resultierenden Differenz der beiden Werte wird dem Indikator eines der folgenden Symbole zugewiesen:
 
@@ -20,11 +20,11 @@ In den meisten Fällen soll ein Indikator einen konkreten absoluten oder relativ
 
 In Ausnahmefällen kann die oben genannte Berechnung der durchschnittlichen Veränderung mit vier oder fünf Datenpunkten erfolgt sein. Stehen weniger als vier verwendbare Jahreswerte zur Verfügung, wird von einer Berechnung abgesehen.
 
-<b>Indikatoren mit Zielintervallen</b>
+<h3 class="h3bold">Indikatoren mit Zielintervallen</h3>
 
 Falls kein exakter Zielwert, sondern ein Zielintervall vorgegeben ist (zum Beispiel [Indikator 11.1.a](https://dns-indikatoren.de/11-1-a/)), so wird zur Bestimmung des Status die schwächste Zielforderung angenommen, die sich aus dem Zielintervall ergibt. Falls für einen Indikator mehrere Zielwerte vorgegeben sind, die in unterschiedlichen Jahren erreicht werden sollen (zum Beispiel [Indikator 7.2.a](https://dns-indikatoren.de/7-2-a/)), so wird für die Bestimmung des Status jeweils das zeitlich nächste Zieljahr verwendet.
 
-<b>Indikatoren mit gleichbleibender Zielvorgabe in jedem Jahr</b>
+<h3 class="h3bold">Indikatoren mit gleichbleibender Zielvorgabe in jedem Jahr</h3>
 
 Soll ein Ziel- oder Grenzwert nicht zukünftig erreicht, sondern jedes Jahr eingehalten werden (zum Beispiel [Indikator 6.2.a, b](https://dns-indikatoren.de/6-2-ab/)), so werden für die Bewertung zwei Informationen kombiniert, und zwar vorrangig der zuletzt erreichte Wert sowie untergeordnet der Durchschnitt der letzten fünf Veränderungen:
 
@@ -35,7 +35,7 @@ Soll ein Ziel- oder Grenzwert nicht zukünftig erreicht, sondern jedes Jahr eing
 
 Dieses Verfahren wird auch dann angewandt, wenn ein Indikator zwar einen konkreten Zielwert für ein genaues Zieljahr erreichen soll, diesen aber bereits vorher erreicht hat oder, wenn das Zieljahr mit dem letzten Berichtsjahr zusammenfällt, da für diese Fälle das Standardverfahren keine richtungssicheren Aussagen treffen kann.
 
-<b>Indikatoren mit Zielrichtungsvorgabe ohne konkreten Zielwert</b>
+<h3 class="h3bold">Indikatoren mit Zielrichtungsvorgabe ohne konkreten Zielwert</h3>
 
 Wenn für einen Indikator nur eine Richtung vorgegeben ist, in die er sich entwickeln soll, aber kein konkreter Zielwert (zum Beispiel [Indikator 15.3.a](https://dns-indikatoren.de/15-3-ab/)), dann werden für die Bewertung zwei Informationen kombiniert, und zwar vorrangig der Durchschnitt der letzten fünf Veränderungen und untergeordnet die letzte jährliche Veränderung:
 
@@ -44,10 +44,10 @@ Wenn für einen Indikator nur eine Richtung vorgegeben ist, in die er sich entwi
 * Zielt umgekehrt der Durchschnittswert in die falsche Richtung oder zeigt eine Stagnation an, im letzten Jahr zeigte sich jedoch eine Wende in die gewünschte Richtung, so wird eine Wolke gezeigt.
 * Deuten weder Durchschnittswert noch die letzte Veränderung in die richtige Richtung, wird ein Gewitter dargestellt.
 
-<b>Indikatoren mit mehreren Zielwerten</b>
+<h3 class="h3bold">Indikatoren mit mehreren Zielwerten</h3>
 
 Falls für einen einzelnen Indikator mehrere Ziele vorgegeben sind, die zugleich erfüllt werden sollen (zum Beispiel [Indikator 10.1](https://dns-indikatoren.de/10-1/)), so wird die Entwicklung für jedes der Ziele bewertet. Das Wettersymbol für den Indikator folgt dann der negativsten Einzelbewertung.
 
-<b>Bewertungen im Zeitvergleich</b>
+<h3 class="h3bold">Bewertungen im Zeitvergleich</h3>
 
 In der Übersichtstabelle sind jeweils auch die Bewertungen eines Indikators nach Stand der vorhergehenden Jahre angegeben. Daran lässt sich ablesen, ob das Wettersymbol für einen Indikator in den vergangenen Jahren stabil oder eher volatil war.

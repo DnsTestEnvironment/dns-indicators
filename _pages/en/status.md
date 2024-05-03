@@ -7,7 +7,7 @@ layout: page
 
 As means of providing at-a-glance information on the status of the sustainability indicators, every indicator is assigned, if calculable, one of four “weather symbols” in the report. This symbol is neither a political appraisal nor a forecast. Instead, the symbols provide a first impression of developments but do not replace a study of the explanatory texts, further analyses and background information. The manner in which the symbols are assigned to the individual indicators depends on the formulation of the respective target.
 
-<b>Indicators with absolute or relative target values</b>
+<h3 class="h3bold">Indicators with absolute or relative target values</h3>
 
 In most of the cases an indicator is supposed to reach a concrete absolute or relative target value by a target year (for example [indicator 3.1.a](https://dns-indikatoren.de/en/3-1-ab/)). In the case of such a target formulation, first the average annual change over the last five years is calculated by means of the last six data points. This value is imputed for all years up to the target year. Building on this development, a hypothetical target value is calculated and compared to the predefined target value of the indicator. Based on the resulting difference between these two values, the indicators are assigned one of the following symbols:
 
@@ -21,11 +21,11 @@ In most of the cases an indicator is supposed to reach a concrete absolute or re
 
 In exceptional cases where there are not enough data for the above mentioned calculation to be carried out, the last four consecutive points of time for which data are available will, as a minimum, be used to calculate the average change. In the case of less than four suitable annual values, there will be no calculation.
 
-<b>Indicators with target intervals</b>
+<h3 class="h3bold">Indicators with target intervals</h3>
 
 If the target is not an exact value but a specific interval (for example [indicator 11.1.a](https://dns-indikatoren.de/en/11-1-a/)), the weakest of the targets in the target interval will be used to determine the status. If several target values have been specified for one indicator that are to be reached in different years (for example [indicator 7.2.a](https://dns-indikatoren.de/en/7-2-a/)), the next target year will be used to determine the status.
 
-<b>Indicators with a constant target for each year</b>
+<h3 class="h3bold">Indicators with a constant target for each year</h3>
 
 If a target value or a threshold is not to be reached at some time in the future but to be maintained in every single year (for example [indicator 6.2.a, b](https://dns-indikatoren.de/en/6-2-ab/)), two pieces of information are combined for evaluation: primarily, the value last achieved and, subordinately, the average change over the last five years.
 
@@ -36,7 +36,7 @@ If a target value or a threshold is not to be reached at some time in the future
 
 This procedure is used also when an indicator is supposed to reach a concrete target value by an exact target year and has reached the goal already. In such cases the standard procedure cannot provide reliable information on the direction in which the indicator is moving.
 
-<b>Indicators with directional targets without specific target values</b>
+<h3 class="h3bold">Indicators with directional targets without specific target values</h3>
 
 In cases where only the targeted direction of the indicator trend is given but no concrete target value (for example [indicator 15.3.a](https://dns-indikatoren.de/en/15-3-ab/)), two pieces of information are combined for evaluation: primarily, the average change over the last five years and, subordinately, the last annual change.
 
@@ -45,10 +45,10 @@ In cases where only the targeted direction of the indicator trend is given but n
 * If, on the contrary, the average value points in the wrong direction or indicates stagnation while the last year appears to mark a turn in the desired direction, a cloud is shown.
 * If neither the average value nor the last change point in the right direction, the symbol shown is a thunderstorm.
 
-<b>Indicators with several target values</b>
+<h3 class="h3bold">Indicators with several target values</h3>
 
 If several targets are defined for one indicator that are to be reached at the same time (for example  [indicator 10.1](https://dns-indikatoren.de/en/10-1/)), the development is evaluated individually for each target. The most negative evaluation determines the weather symbol to be assigned to the indicator.
 
-<b>Comparison of evaluations over time</b>
+<h3 class="h3bold">Comparison of evaluations over time</h3>
 
 The synoptic table provides information also about the evaluation of an indicator in previous years. It shows if the weather symbol assigned to an indicator was rather stable or volatile in the past years.
