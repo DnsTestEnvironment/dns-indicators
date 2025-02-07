@@ -2316,7 +2316,7 @@ function getGraphSeriesBreaks(graphSeriesBreaks, selectedUnit, selectedSeries) {
  * @param {Array} colorAssignments Color/striping assignments for disaggregation combinations
  * @return {Array} Datasets suitable for Chart.js
  */
-function getDatasets(headline, data, combinations, years, defaultLabel, colors, selectableFields, colorAssignments, allObservationAttributes) {
+function getDatasets(headline, data, combinations, years, defaultLabel, colors, selectableFields, colorAssignments, showLine, spanGaps, allObservationAttributes) {
   var datasets = [], index = 0, dataset, colorIndex, color, background, border, striped, excess, combinationKey, colorAssignment, showLine, spanGaps;
   var numColors = colors.length,
       maxColorAssignments = numColors * 2;
@@ -2356,8 +2356,7 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
       color = getColor(colorIndex, colors);
       background = getBackground(color, striped);
       border = getBorderDash(striped);
-      dataset = makeDataset(years, filteredData, combination, defaultLabel, color, background, border, excess, allObservationAttributes);
-
+      dataset = makeDataset(years, filteredData, combination, defaultLabel, color, background, border, excess, showLine, spanGaps, allObservationAttributes);
       datasets.push(dataset);
       index++;
     }
@@ -2548,7 +2547,7 @@ function getBorderDash(striped) {
  * @param {Array} excess
  * @return {Object} Dataset object for Chart.js
  */
-function makeDataset(years, rows, combination, labelFallback, color, background, border, excess, allObservationAttributes) {
+function makeDataset(years, rows, combination, labelFallback, color, background, border, excess, showLine, spanGaps, allObservationAttributes) {
    var dataset = getBaseDataset(),
        prepared = prepareDataForDataset(years, rows, allObservationAttributes),
        data = prepared.data,
@@ -2676,7 +2675,7 @@ function getHeadlineColor() {
  * @param {string} label
  * @return {Object} Dataset object for Chart.js
  */
- function makeHeadlineDataset(years, rows, label, allObservationAttributes) {
+function makeHeadlineDataset(years, rows, label, showLine, spanGaps, colors, allObservationAttributes) {
    var dataset = getBaseDataset(),
        prepared = prepareDataForDataset(years, rows, allObservationAttributes),
        data = prepared.data,
