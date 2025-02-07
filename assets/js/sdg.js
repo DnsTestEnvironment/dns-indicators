@@ -3806,6 +3806,7 @@ function getChartConfig(chartInfo) {
         console.log('Unknown chart type: ' + chartType + '. Falling back to "line".');
         chartType = 'line';
     }
+    console.log('chartInfo: ' + chartInfo);
     return opensdg.chartTypes[chartType](chartInfo);
 }
 
