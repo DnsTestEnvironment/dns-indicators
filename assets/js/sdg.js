@@ -3806,7 +3806,7 @@ function getChartConfig(chartInfo) {
         console.log('Unknown chart type: ' + chartType + '. Falling back to "line".');
         chartType = 'line';
     }
-    console.log('chartInfo: ' + chartInfo);
+    console.log('chartInfo: ', chartInfo);
     return opensdg.chartTypes[chartType](chartInfo);
 }
 
@@ -4133,7 +4133,7 @@ opensdg.chartTypes.base = function(info) {
 
     var gridColor = getGridColor();
     var tickColor = getTickColor();
-    console.log('info.datasets: ' + info.datasets);
+    console.log('info.datasets: ', info.datasets);
     var config = {
         type: null,
         data: {
