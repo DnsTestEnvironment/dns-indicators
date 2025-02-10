@@ -2598,13 +2598,19 @@ function getBaseDataset() {
  */
 function getCombinationType(combination, fallback, mixedTypes) {
   var combi = getCombinationDescription(combination, fallback);
-  if (mixedTypes.length === 0) {
-    return '';
+  if mixedTypes{
+    if (mixedTypes.length === 0) {
+      return '';
+    }
+    else {
+      console.log("MT", typeof mixedTypes, mixedTypes);
+      return '';//mixedTypes.find(item => item.combination === combi).chartType;
+    }
   }
   else {
-    console.log("MT", typeof mixedTypes, mixedTypes);
-    return '';//mixedTypes.find(item => item.combination === combi).chartType;
+    return '';
   }
+
 }
 
 /**
