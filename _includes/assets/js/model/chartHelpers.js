@@ -145,8 +145,8 @@ function getGraphSeriesBreaks(graphSeriesBreaks, selectedUnit, selectedSeries) {
  * @param {Array} colorAssignments Color/striping assignments for disaggregation combinations
  * @return {Array} Datasets suitable for Chart.js
  */
-function getDatasets(headline, data, combinations, years, defaultLabel, colors, selectableFields, colorAssignments, showLine, spanGaps, allObservationAttributes) {
-  var datasets = [], index = 0, dataset, colorIndex, color, background, border, striped, excess, combinationKey, colorAssignment, showLine, spanGaps;
+function getDatasets(headline, data, combinations, years, defaultLabel, colors, selectableFields, colorAssignments, showLine, spanGaps, allObservationAttributes, mixedTypes) {
+  var datasets = [], index = 0, dataset, colorIndex, color, background, border, striped, excess, combinationKey, colorAssignment, showLine, spanGaps, mixedTypes;
   var numColors = colors.length,
       maxColorAssignments = numColors * 2;
 
@@ -185,14 +185,14 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
       color = getColor(colorIndex, colors);
       background = getBackground(color, striped);
       border = getBorderDash(striped);
-      dataset = makeDataset(years, filteredData, combination, defaultLabel, color, background, border, excess, showLine, spanGaps, allObservationAttributes);
+      dataset = makeDataset(years, filteredData, combination, defaultLabel, color, background, border, excess, showLine, spanGaps, allObservationAttributes, mixedTypes);
       datasets.push(dataset);
       index++;
     }
   }, this);
 
   if (headline.length > 0) {
-    dataset = makeHeadlineDataset(years, headline, defaultLabel, showLine, spanGaps, allObservationAttributes);
+    dataset = makeHeadlineDataset(years, headline, defaultLabel, showLine, spanGaps, allObservationAttributes, mixedTypes);
     datasets.unshift(dataset);
   }
   return datasets;
@@ -376,7 +376,7 @@ function getBorderDash(striped) {
  * @param {Array} excess
  * @return {Object} Dataset object for Chart.js
  */
-function makeDataset(years, rows, combination, labelFallback, color, background, border, excess, showLine, spanGaps, allObservationAttributes) {
+function makeDataset(years, rows, combination, labelFallback, color, background, border, excess, showLine, spanGaps, allObservationAttributes, mixedTypes) {
    var dataset = getBaseDataset(),
        prepared = prepareDataForDataset(years, rows, allObservationAttributes),
        data = prepared.data,
@@ -384,7 +384,7 @@ function makeDataset(years, rows, combination, labelFallback, color, background,
   return Object.assign(dataset, {
     label: getCombinationDescription(combination, labelFallback),
     combination: combination,
-    //type: getCombinationType(combination, labelFallback, mixedTypes),
+    type: getCombinationType(combination, labelFallback, mixedTypes),
     disaggregation: combination,
     borderColor: color,
     backgroundColor: background,
@@ -397,6 +397,7 @@ function makeDataset(years, rows, combination, labelFallback, color, background,
     data: data,
     excess: excess,
     spanGaps: spanGaps,
+    mixedTypes: mixedTypes,
     showLine: showLine,
     observationAttributes: obsAttributes,
   });
@@ -418,22 +419,22 @@ function getBaseDataset() {
   });
 }
 
-// /**
-//  * @param {Object} combination Key/value representation of a field combo
-//  * @param {string} fallback
-//  * @param {Object} mixedTypes combinations and the respective charttype
-//  * @return {string} type of chart for the given combination
-//  */
-// function getCombinationType(combination, fallback, mixedTypes) {
-//   var combi = getCombinationDescription(combination, fallback);
-//   if (mixedTypes.length === 0) {
-//     return 'line';
-//   }
-//   else {
-//     console.log("MT", typeof mixedTypes);
-//     return 'bar';//mixedTypes.find(item => item.combination === combi).chartType;
-//   }
-// }
+/**
+ * @param {Object} combination Key/value representation of a field combo
+ * @param {string} fallback
+ * @param {Object} mixedTypes combinations and the respective charttype
+ * @return {string} type of chart for the given combination
+ */
+function getCombinationType(combination, fallback, mixedTypes) {
+  var combi = getCombinationDescription(combination, fallback);
+  if (mixedTypes.length === 0) {
+    return '';
+  }
+  else {
+    console.log("MT", typeof mixedTypes, mixedTypes);
+    return '';//mixedTypes.find(item => item.combination === combi).chartType;
+  }
+}
 
 /**
  * @param {Object} combination Key/value representation of a field combo
@@ -504,7 +505,7 @@ function getHeadlineColor() {
  * @param {string} label
  * @return {Object} Dataset object for Chart.js
  */
-function makeHeadlineDataset(years, rows, label, showLine, spanGaps, colors, allObservationAttributes) {
+function makeHeadlineDataset(years, rows, label, showLine, spanGaps, colors, allObservationAttributes, mixedTypes) {
    var dataset = getBaseDataset(),
        prepared = prepareDataForDataset(years, rows, allObservationAttributes),
        data = prepared.data,
@@ -523,7 +524,7 @@ function makeHeadlineDataset(years, rows, label, showLine, spanGaps, colors, all
     observationAttributes: obsAttributes,
     showLine: showLine,
     spanGaps: spanGaps,
-    //type: getCombinationType([], '', mixedTypes),
+    type: getCombinationType([], '', mixedTypes),
   });
 }
 
