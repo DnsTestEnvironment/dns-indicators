@@ -427,13 +427,16 @@ function getBaseDataset() {
  * @return {string} type of chart for the given combination
  */
 function getCombinationType(combination, fallback, mixedTypes) {
-  console.log("MT", typeof mixedTypes, mixedTypes);
+
   var combi = getCombinationDescription(combination, fallback);
   if (mixedTypes){
+    console.log("A", typeof mixedTypes, mixedTypes, combi, combination);
     if (mixedTypes.length === 0) {
+      console.log("AA", typeof mixedTypes, mixedTypes, combi, combination);
       return '';
     }
     else {
+      console.log("AB", typeof mixedTypes, mixedTypes, combi, combination);
       return mixedTypes.find(function(item) {
         return getCombinationDescription([item.field, item.value],'') === combination;
       });
@@ -441,6 +444,7 @@ function getCombinationType(combination, fallback, mixedTypes) {
     }
   }
   else {
+    console.log("B", typeof mixedTypes, mixedTypes, combi, combination);
     return '';
   }
 
