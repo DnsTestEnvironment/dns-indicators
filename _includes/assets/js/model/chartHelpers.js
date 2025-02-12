@@ -438,8 +438,8 @@ function getCombinationType(combination, fallback, mixedTypes) {
     else {
       return mixedTypes.find(function(item) {
         console.log("AB", typeof mixedTypes, mixedTypes, combi, combination, getCombinationDescription([item.field, item.value],''));
-        console.log("ABx", getCombinationDescription([item.field, item.value],'') === combination);
-        return getCombinationDescription([item.field, item.value],'') === combination;
+        console.log("ABx", getCombinationDescription([item.value],'') === combination);
+        return getCombinationDescription([item.value],'') === combination;
       });
       //return '';//mixedTypes.find(item => item.combination === combi).chartType;
     }
