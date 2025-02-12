@@ -2598,9 +2598,10 @@ function getBaseDataset() {
  * @return {string} type of chart for the given combination
  */
 function getCombinationType(combination, fallback, mixedTypes) {
-  var values = mixedTypes.map(a => a.value);
+
   var combi = getCombinationDescription(combination, fallback);
   if (mixedTypes){
+    var values = mixedTypes.map(a => a.value);
     if (values.indexOf(combi) != 0) {
       return mixedTypes.find(function(item) {
         console.log("AB", typeof mixedTypes, mixedTypes, combi, combination, getCombinationDescription([item.value],''));
