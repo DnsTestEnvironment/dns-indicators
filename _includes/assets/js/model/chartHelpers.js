@@ -430,14 +430,12 @@ function getCombinationType(combination, fallback, mixedTypes) {
 
   var combi = getCombinationDescription(combination, fallback);
   if (mixedTypes){
-    console.log("A", typeof mixedTypes, mixedTypes, combi, combination);
     if (mixedTypes.length === 0) {
-      console.log("AA", typeof mixedTypes, mixedTypes, combi, combination);
       return '';
     }
     else {
       return mixedTypes.find(function(item) {
-        console.log("AB", typeof mixedTypes, mixedTypes, combi, combination, getCombinationDescription([item.field, item.value],''));
+        console.log("AB", typeof mixedTypes, mixedTypes, combi, combination, getCombinationDescription([item.value],''));
         console.log("ABx", getCombinationDescription([item.value],'') === combination);
         return getCombinationDescription([item.value],'') === combination;
       });
@@ -457,6 +455,7 @@ function getCombinationType(combination, fallback, mixedTypes) {
  * @return {string} Human-readable description of combo
  */
 function getCombinationDescription(combination, fallback) {
+  console.log("what does getCombinationDescp recive?", combination);
   var keys = Object.keys(combination);
   if (keys.length === 0) {
     return fallback;
