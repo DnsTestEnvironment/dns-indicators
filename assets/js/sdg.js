@@ -2607,8 +2607,8 @@ function getCombinationType(combination, fallback, mixedTypes) {
       return '';
     }
     else {
-      console.log("AB", typeof mixedTypes, mixedTypes, combi, combination, getCombinationDescription([item.field, item.value],''));
       return mixedTypes.find(function(item) {
+        console.log("AB", typeof mixedTypes, mixedTypes, combi, combination, getCombinationDescription([item.field, item.value],''));
         return getCombinationDescription([item.field, item.value],'') === combination;
       });
       //return '';//mixedTypes.find(item => item.combination === combi).chartType;
