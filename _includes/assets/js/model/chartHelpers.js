@@ -427,7 +427,7 @@ function getBaseDataset() {
  */
 function getCombinationType(combination, fallback, mixedTypes) {
   var combi = getCombinationDescription(combination, fallback);
-  if mixedTypes{
+  if (mixedTypes){
     if (mixedTypes.length === 0) {
       return '';
     }
