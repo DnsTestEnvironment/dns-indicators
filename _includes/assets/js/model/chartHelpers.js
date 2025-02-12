@@ -426,13 +426,14 @@ function getBaseDataset() {
  * @return {string} type of chart for the given combination
  */
 function getCombinationType(combination, fallback, mixedTypes) {
+  console.log("MT", typeof mixedTypes, mixedTypes);
   var combi = getCombinationDescription(combination, fallback);
   if (mixedTypes){
     if (mixedTypes.length === 0) {
       return '';
     }
     else {
-      console.log("MT", typeof mixedTypes, mixedTypes);
+
       return '';//mixedTypes.find(item => item.combination === combi).chartType;
     }
   }
