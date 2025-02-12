@@ -2594,7 +2594,7 @@ function getBaseDataset() {
 /**
  * @param {Object} combination Key/value representation of a field combo
  * @param {string} fallback
- * @param {Object} mixedTypes combinations and the respective charttype
+ * @param {Array} mixedTypes objects containing field, value, type
  * @return {string} type of chart for the given combination
  */
 function getCombinationType(combination, fallback, mixedTypes) {
@@ -2602,7 +2602,7 @@ function getCombinationType(combination, fallback, mixedTypes) {
   var combi = getCombinationDescription(combination, fallback);
   if (mixedTypes){
     if (mixedTypes.length === 0) {
-      return 'a';
+      return '';
     }
     else {
       return mixedTypes.find(function(item) {
@@ -2612,7 +2612,7 @@ function getCombinationType(combination, fallback, mixedTypes) {
     }
   }
   else {
-    return 'b';
+    return '';
   }
 
 }
