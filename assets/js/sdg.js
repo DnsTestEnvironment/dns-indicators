@@ -2320,7 +2320,7 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
   var datasets = [], index = 0, dataset, colorIndex, color, background, border, striped, excess, combinationKey, colorAssignment, showLine, spanGaps, mixedTypes;
   var numColors = colors.length,
       maxColorAssignments = numColors * 2;
-
+  console.log("mixeTypes in getDatasets: ", mixedTypes);
   prepareColorAssignments(colorAssignments, maxColorAssignments);
   setAllColorAssignmentsReadyForEviction(colorAssignments);
 
@@ -2602,17 +2602,17 @@ function getCombinationType(combination, fallback, mixedTypes) {
   var combi = getCombinationDescription(combination, fallback);
   if (mixedTypes){
     if (mixedTypes.length === 0) {
-      return '';
+      return 'a';
     }
     else {
-      // return mixedTypes.find(function(item) {
-      //   return item.key === combination;
-      // });
-      return '';//mixedTypes.find(item => item.combination === combi).chartType;
+      return mixedTypes.find(function(item) {
+        return getCombinationDescription([item.field, item.value],'') === combination;
+      });
+      //return '';//mixedTypes.find(item => item.combination === combi).chartType;
     }
   }
   else {
-    return '';
+    return 'b';
   }
 
 }
