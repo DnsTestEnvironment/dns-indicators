@@ -3348,7 +3348,7 @@ function getAllObservationAttributes(rows) {
     }
 
     var combinations = helpers.getCombinationData(this.selectedFields, this.dataSchema);
-    console.log("mixedTypes in indicatorModel:", this.mixedTypes, this.spanGaps);
+    console.log("mixedTypes in indicatorModel:", this.mixedTypes);
     var datasets = helpers.getDatasets(headline, filteredData, combinations, this.years, translations.data.total, this.colors, this.selectableFields, this.colorAssignments, this.showLine, this.spanGaps, this.allObservationAttributes, this.mixedTypes);
     var selectionsTable = helpers.tableDataFromDatasets(datasets, this.years);
     var observationAttributesTable = helpers.observationAttributesTableFromDatasets(datasets, this.years);
