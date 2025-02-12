@@ -2598,13 +2598,16 @@ function getBaseDataset() {
  * @return {string} type of chart for the given combination
  */
 function getCombinationType(combination, fallback, mixedTypes) {
-  console.log("MT", typeof mixedTypes, mixedTypes);
+
   var combi = getCombinationDescription(combination, fallback);
   if (mixedTypes){
+    console.log("A", typeof mixedTypes, mixedTypes, combi, combination);
     if (mixedTypes.length === 0) {
+      console.log("AA", typeof mixedTypes, mixedTypes, combi, combination);
       return '';
     }
     else {
+      console.log("AB", typeof mixedTypes, mixedTypes, combi, combination);
       return mixedTypes.find(function(item) {
         return getCombinationDescription([item.field, item.value],'') === combination;
       });
@@ -2612,6 +2615,7 @@ function getCombinationType(combination, fallback, mixedTypes) {
     }
   }
   else {
+    console.log("B", typeof mixedTypes, mixedTypes, combi, combination);
     return '';
   }
 
@@ -3348,7 +3352,6 @@ function getAllObservationAttributes(rows) {
     }
 
     var combinations = helpers.getCombinationData(this.selectedFields, this.dataSchema);
-    console.log("mixedTypes in indicatorModel:", this.mixedTypes);
     var datasets = helpers.getDatasets(headline, filteredData, combinations, this.years, translations.data.total, this.colors, this.selectableFields, this.colorAssignments, this.showLine, this.spanGaps, this.allObservationAttributes, this.mixedTypes);
     var selectionsTable = helpers.tableDataFromDatasets(datasets, this.years);
     var observationAttributesTable = helpers.observationAttributesTableFromDatasets(datasets, this.years);
