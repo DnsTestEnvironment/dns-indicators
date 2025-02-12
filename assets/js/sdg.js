@@ -2413,6 +2413,7 @@ function getDataMatchingCombination(data, combination, selectableFields) {
  * @return {Object|undefined} Color assignment object if found.
  */
 function getColorAssignmentByCombination(colorAssignments, combination) {
+  console.log("colorAssignement: ", colorAssignments);
   return colorAssignments.find(function(assignment) {
     return assignment.combination === combination;
   });
@@ -2604,7 +2605,9 @@ function getCombinationType(combination, fallback, mixedTypes) {
       return '';
     }
     else {
-
+      // return mixedTypes.find(function(item) {
+      //   return item.key === combination;
+      // });
       return '';//mixedTypes.find(item => item.combination === combi).chartType;
     }
   }
