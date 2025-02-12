@@ -2609,7 +2609,7 @@ function getCombinationType(combination, fallback, mixedTypes) {
         console.log("AB", typeof mixedTypes, mixedTypes, combi, combination, getCombinationDescription([item.value],''));
         console.log("ABx", getCombinationDescription([item.value],'') === combi);
         return getCombinationDescription([item.value],'') === combi;
-      });
+      }).type;
       //return '';//mixedTypes.find(item => item.combination === combi).chartType;
     }
   }
@@ -2626,7 +2626,7 @@ function getCombinationType(combination, fallback, mixedTypes) {
  * @return {string} Human-readable description of combo
  */
 function getCombinationDescription(combination, fallback) {
-  console.log("what does getCombinationDescp recive?", combination);
+  //console.log("what does getCombinationDescp recive?", combination);
   var keys = Object.keys(combination);
   if (keys.length === 0) {
     return fallback;
