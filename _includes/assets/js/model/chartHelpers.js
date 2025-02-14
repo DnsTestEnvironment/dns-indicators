@@ -429,7 +429,7 @@ function getBaseDataset() {
 function getCombinationType(combination, fallback, mixedTypes) {
 
   var combi = getCombinationDescription(combination, fallback);
-  if (mixedTypes !== undefined){
+  if (mixedTypes !== undefined && mixedTypes !== null){
     var values = mixedTypes.map(a => a.value);
     if (values.indexOf(combi) != -1) {
       return mixedTypes.find(function(item) {
