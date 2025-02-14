@@ -398,7 +398,6 @@ function makeDataset(years, rows, combination, labelFallback, color, background,
     data: data,
     excess: excess,
     spanGaps: spanGaps,
-    mixedTypes: mixedTypes,
     showLine: showLine,
     observationAttributes: obsAttributes,
   });
@@ -536,7 +535,6 @@ function makeHeadlineDataset(years, rows, label, showLine, spanGaps, colors, all
     observationAttributes: obsAttributes,
     showLine: showLine,
     spanGaps: spanGaps,
-    mixedTypes: mixedTypes,
     type: getCombinationType([], '', mixedTypes),
   });
 }
