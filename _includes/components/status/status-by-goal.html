@@ -150,7 +150,7 @@
                             {% assign status = page.t.weather['blitz'] %}
                           {% endif %}
 
-                          <td width="10%" align="center" class="prio-{{ letter }}"> <a href=" {{ site.baseurl }}{{ baseurl_folder }}{{ language }}/status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/{{ current_language }}/{{ indicator[item_key] }}.png" alt="{{ indicator[item_key] }}" class="responsiveWeather hidden-xs" title="{{ indicator[title_key] }}" {{ opacity }}/></a> </td>
+                          <td width="10%" align="center" class="prio-{{ letter }}"> <a href=" {{ site.baseurl }}{{ baseurl_folder }}{{ language }}/status/ "><img src="https://sdg-indikatoren.de/public/Wettersymbole/{{ current_language }}/{{ indicator[item_key] }}.png" alt="{{ indicator[item_key] }}" class="responsiveWeather hidden-xs" title="{{ indicator[title_key] }}" {{ opacity }}/></a> </td>
                           {% assign additional_cells_i  = additional_cells_i | minus: 1 %}
                         {% elsif letter == 'a' and additional_cells_i == letters.size and indicator[item_key] != 'Bewertung ausgesetzt' %}
                           <td colspan="7" style="padding-left: 4%"> <div class=responsiveText>{{ page.t.weather.no_assessment }}</div> </td>
