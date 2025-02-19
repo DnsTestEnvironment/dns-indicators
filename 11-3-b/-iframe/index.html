@@ -147,7 +147,7 @@ var translations = {
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
-        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20250219120059">
+        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20250219125251">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -294,22 +294,6 @@ layout-indicator-iframe
   
 
   
-
-<div class="row" id="page-content">
-  <div class="col-xs-12">
-    <div>
-  <div class="my-header">
-    <label class="default">Grünflächen in Städten: 
-    </label>
-  </div>
-</div>
-<div class="my-header-note">
-  <label class="default"><b>(Keine Bewertung möglich)
-  </b></label>
-</div>
-
-  </div>
-</div>
 
 
   
@@ -907,22 +891,6 @@ data-event-label="Change to indicator.sources tab"
 
 
       
-
-      <!-- weather -->
-      
-
-      
-    
-  
-      
-        
-      
-
-      
-      
-
-
-      
         
           <tr id="everythingElse"  style="opacity: 0.5" >
             <th scope="row" style="text-align: left; width: 130px;">Ziel und Intention <small><br>(Text aus dem Indikatoren&shy;bericht 2022 - Stand 31.10.2022)</small> </th>
@@ -953,10 +921,10 @@ data-event-label="Change to indicator.sources tab"
       
         
           <tr id="everythingElse" >
-            <th scope="row" style="text-align: left; width: 130px;">Datenstand </th>
+            <th scope="row" style="text-align: left; width: 130px;">Definition </th>
             <td>
               
-                <p>15.01.2025</p>
+                <p>Der Indikator stellt als gewichtetes Mittel über alle Städte mit mehr als 20 000 Einwohnerinnen und Einwohner den Anteil der Bevölkerung (in Prozent) dar, der in fußläufiger Entfernung (max. 300 m Luftlinie) zu, für die Erholung geeigneten, Grünflächen mit einer definierten Mindestgröße von einem Hektar wohnt.</p>
 
               
             </td>
@@ -981,10 +949,94 @@ data-event-label="Change to indicator.sources tab"
       
         
           <tr id="everythingElse" >
-            <th scope="row" style="text-align: left; width: 130px;">Letztes Datenupdate </th>
+            <th scope="row" style="text-align: left; width: 130px;">Intention </th>
             <td>
               
-                <p>2025-02-19</p>
+                <p>Wohngebietsnahe Stadtnatur bietet der Stadtbevölkerung wichtige Räume für Erholung, Bewegung, Sport, Naturerfahrung und Begegnung und sorgt für eine Anpassung an Wetterextreme, wie <abbr title="zum Beispiel" tabindex="0">z. B.</abbr> durch Kühlung in Hitzeperioden, Frischlufterzeugung oder durch Regenrückhalt bei Starkregenereignissen. Sie hat somit eine große Bedeutung für Umweltgerechtigkeit und Lebensqualität inklusive körperlichem und psychischem Wohlbefinden. So ist die Lebensqualität im direkten Wohnumfeld umso höher, je näher der Versorgungsgrad bei 100 Prozent liegt. Stadtnatur bietet zudem vielfältige Lebensräume für Pflanzen und Tiere und leistet so einen Betrag zur Erhaltung der biologischen Vielfalt.</p>
+
+              
+            </td>
+          </tr>
+        
+      
+
+      <!-- weather -->
+      
+
+      
+    
+  
+      
+        
+      
+
+      
+      
+
+
+      
+        
+          <tr id="everythingElse" >
+            <th scope="row" style="text-align: left; width: 130px;">Ziel </th>
+            <td>
+              
+                <p>Die fußläufige Erreichbarkeit von Stadtgrün, Parks <abbr title="und so weiter (et cetera)" tabindex="0">etc.</abbr> in Städten soll perspektivisch für alle Bewohnerinnen und Bewohner ermöglicht werden</p>
+
+              
+            </td>
+          </tr>
+        
+      
+
+      <!-- weather -->
+      
+
+      
+    
+  
+      
+        
+      
+
+      
+      
+
+
+      
+        
+          <tr id="everythingElse" >
+            <th scope="row" style="text-align: left; width: 130px;">Art des Ziels </th>
+            <td>
+              
+                <p>Zielrichtungsvorgabe</p>
+
+              
+            </td>
+          </tr>
+        
+      
+
+      <!-- weather -->
+      
+
+      
+    
+  
+      
+        
+      
+
+      
+      
+
+
+      
+        
+          <tr id="everythingElse" >
+            <th scope="row" style="text-align: left; width: 130px;">Umsetzung in der Wetter&shy;symbol&shy;berechnung </th>
+            <td>
+              
+                <p>Der Anteil der Bevölkerung mit fußläufiger Erreichbarkeit von für die Erholung geeigneten Grünflächen in Städten soll steigen.<br /><br />Keine Bewertung möglich. Zu wenig Datenpunkte.</p>
 
               
             </td>
@@ -1003,13 +1055,32 @@ data-event-label="Change to indicator.sources tab"
           
       
         
-          
+      
+
+      
+      
+
+
       
         
-          
-      
+          <tr id="everythingElse" >
+            <th scope="row" style="text-align: left; width: 130px;">Datenstand </th>
+            <td>
+              
+                <p>15.01.2025</p>
+
+              
+            </td>
+          </tr>
         
-          
+      
+
+      <!-- weather -->
+      
+
+      
+    
+  
   
   
   
@@ -5160,12 +5231,12 @@ data-event-label="Change to indicator.sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/dns-indicators/assets/js/sdg.js?v=20250219120059'></script>
+<script src='/dns-indicators/assets/js/sdg.js?v=20250219125251'></script>
 
 
     
     
-    <script src="/dns-indicators/assets/js/custom.js?v=20250219120059"></script><script>
+    <script src="/dns-indicators/assets/js/custom.js?v=20250219125251"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
