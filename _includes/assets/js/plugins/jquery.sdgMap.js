@@ -684,6 +684,7 @@
         // Update the series/unit stuff in case it changed
         // while on the chart/table.
         plugin.updateTitle();
+        plugin.updateFooterFields();
         plugin.updatePrecision();
         // The year slider does not seem to be correct unless we refresh it here.
         plugin.yearSlider._timeDimension.setCurrentTimeIndex(plugin.yearSlider._timeDimension.getCurrentTimeIndex());

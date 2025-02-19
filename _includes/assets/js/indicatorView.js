@@ -137,7 +137,7 @@ var indicatorView = function (model, options) {
             helpers.updateIndicatorDataSeriesStatus(args);
         });
     }
-    
+
     MODEL.onFieldsCleared.attach(function (sender, args) {
 
         $(OPTIONS.rootElement).find(':checkbox').prop('checked', false);
