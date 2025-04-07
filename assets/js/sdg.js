@@ -1,8 +1,3 @@
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/dns-indicators/service-worker.js');
-    });
-}
 /**
  * This function returns a javascript object containing autotrack.js properties.
  *
@@ -1248,7 +1243,7 @@ $(document).ready(function() {
 opensdg.chartColors = function(indicatorId) {
   var colorSet = "goal";
   var numberOfColors = 9;
-  var customColorList = null;
+  var customColorList = [];
 
   this.goalNumber = parseInt(indicatorId.slice(indicatorId.indexOf('_')+1,indicatorId.indexOf('-')));
   this.goalColors = [['891523', 'ef7b89', '2d070b', 'f4a7b0', 'b71c2f', 'ea4f62', '5b0e17', 'fce9eb'],
@@ -1366,7 +1361,7 @@ function nonFieldColumns() {
     'Unit multiplier',
     'Unit measure',
   ];
-  var timeSeriesAttributes = [{"field":"COMMENT_TS","label":"indicator.footnote"},{"field":"DATA_LAST_UPDATE","label":"metadata_fields.national_data_update_url"}];
+  var timeSeriesAttributes = [{"field":"COMMENT_TS","label":"indicator.footnote"}];
   if (timeSeriesAttributes && timeSeriesAttributes.length > 0) {
     timeSeriesAttributes.forEach(function(tsAttribute) {
       columns.push(tsAttribute.field);
@@ -2558,6 +2553,7 @@ function makeDataset(years, rows, combination, labelFallback, color, background,
     label: getCombinationDescription(combination, labelFallback),
     combination: combination,
     type: getCombinationType(combination, labelFallback, mixedTypes),
+    order: getCombinationType(combination, labelFallback, mixedTypes) == undefined ? 0 : 1,
     disaggregation: combination,
     borderColor: color,
     backgroundColor: background,
@@ -2604,15 +2600,11 @@ function getCombinationType(combination, fallback, mixedTypes) {
     var values = mixedTypes.map(a => a.value);
     if (values.indexOf(combi) != -1) {
       return mixedTypes.find(function(item) {
-        console.log("AB", typeof mixedTypes, mixedTypes, combi, combination, getCombinationDescription([item.value],''));
-        console.log("ABx", getCombinationDescription([item.value],'') === combi);
         return getCombinationDescription([item.value],'') === combi;
       }).type;
-      //return '';//mixedTypes.find(item => item.combination === combi).chartType;
     }
   }
   else {
-    console.log("B", typeof mixedTypes, mixedTypes, combi, combination);
     return '';
   }
 
@@ -2708,6 +2700,7 @@ function makeHeadlineDataset(years, rows, label, showLine, spanGaps, colors, all
     showLine: showLine,
     spanGaps: spanGaps,
     type: getCombinationType([], '', mixedTypes),
+    order: getCombinationType([], '', mixedTypes) == '' ? 0 : 1,
   });
 }
 
@@ -2909,7 +2902,7 @@ function getTimeSeriesAttributes(rows) {
     return [];
   }
   var timeSeriesAttributes = [],
-      possibleAttributes = [{"field":"COMMENT_TS","label":"indicator.footnote"},{"field":"DATA_LAST_UPDATE","label":"metadata_fields.national_data_update_url"}],
+      possibleAttributes = [{"field":"COMMENT_TS","label":"indicator.footnote"}],
       firstRow = rows[0],
       firstRowKeys = Object.keys(firstRow);
   possibleAttributes.forEach(function(possibleAttribute) {
@@ -3414,7 +3407,7 @@ var mapView = function () {
     $('.map').show();
     $('#map').sdgMap({
       indicatorId: indicatorId,
-      mapOptions: {"disaggregation_controls":true,"minZoom":0,"maxZoom":11,"tileURL":"https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png","tileOptions":{"id":"mapbox.light","accessToken":"pk.eyJ1IjoibW9ib3NzZSIsImEiOiJjazU1M2trazQwYnFwM2trYmdwNm9rOWxkIn0.u36w-RJPqoTGmivl_zED1w","attribution":"<a href=\"https://www.openstreetmap.org/copyright\">&copy; OpenStreetMap</a> contributors |<br class=\"visible-xs\"> <a href=\"https://www.bkg.bund.de\">&copy; GeoBasis-De / BKG 2024</a> |<br class=\"hidden-lg\"> <a href=\"https://www.destatis.de/DE/Home/_inhalt.html\">&copy; Statistisches Bundesamt (Destatis), 2024</a>"},"colorRange":[["#FCE9EB","#F7BDC4","#F2929D","#ED6676","#E83A4F","#E5243B","#B71D2F","#891623","#5C0E18","#2E070C"],["#FCF8EB","#F7E9C2","#F2DB9A","#EDCD72","#E8BE49","#E5B735","#CEA530","#A08025","#735C1B","#453710"],["#EDF5EB","#C9E2C3","#A6CF9C","#82BC74","#5EA94C","#4C9F38","#3D7F2D","#2E5F22","#1E4016","#0F200B"],["#F9E8EA","#EEBAC0","#E28C96","#D65E6C","#CB3042","#C5192D","#9E1424","#760F1B","#4F0A12","#270509"],["#FFEBE9","#FFC4BC","#FF9D90","#FF7564","#FF4E37","#FF3A21","#CC2E1A","#992314","#66170D","#330C07"],["#E9F8FB","#BEEBF6","#93DEF0","#67D1EA","#3CC4E5","#26BDE2","#1E97B5","#177188","#0F4C5A","#08262D"],["#FFF9E7","#FEEDB6","#FEE185","#FDD554","#FCC923","#FCC30B","#CA9C09","#977507","#654E04","#322702"],["#F6E8EC","#E3BAC6","#D18CA1","#BE5E7B","#AB3055","#A21942","#821435","#610F28","#410A1A","#20050D"],["#FFF0E9","#FED2BE","#FEB492","#FE9666","#FD783B","#FD6925","#CA541E","#983F16","#652A0F","#331507"],["#FCE7F0","#F5B8D1","#EE89B3","#E75A95","#E02B76","#DD1367","#B10F52","#850B3E","#580829","#2C0415"],["#FFF5E6","#FEE2B3","#FECE80","#FEBA4D","#FDA71A","#FD9D00","#CA7E00","#985E00","#653F00","#331F00"],["#FAF5EA","#EFE0C0","#E4CC96","#D9B86C","#CEA342","#C9992D","#A17A24","#795C1B","#503D12","#281F09"],["#ECF2EC","#C5D8C7","#9FBFA2","#79A57C","#528B57","#3F7E44","#326536","#264C29","#19321B","#0D190E"],["#E7F5FB","#B6E0F4","#85CBEC","#54B6E4","#23A1DD","#0A97D9","#0879AE","#065B82","#043C57","#021E2B"],["#EEF9EA","#CCECBF","#ABE095","#89D36B","#67C640","#56C02B","#459A22","#34731A","#224D11","#112609"],["#E6F0F5","#B3D2E2","#80B4CE","#4D95BA","#1A77A7","#00689D","#00537E","#003E5E","#002A3F","#00151F"],["#E8EDF0","#BAC8D2","#8CA4B5","#5E7F97","#305A79","#19486A","#143A55","#0F2B40","#0A1D2A","#050E15"]],"noValueColor":"rgba(255,255,255,0.2)","styleNormal":{"weight":1,"opacity":1,"color":"#888","fillOpacity":0.7},"styleHighlighted":{"weight":1,"opacity":1,"color":"#111","fillOpacity":0.7},"styleStatic":{"weight":2,"opacity":1,"fillOpacity":0,"color":"#172d44","dashArray":55}},
+      mapOptions: {"disaggregation_controls":true,"minZoom":0,"maxZoom":11,"tileURL":"https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png","tileOptions":{"id":"mapbox.light","accessToken":"pk.eyJ1IjoibW9ib3NzZSIsImEiOiJjazU1M2trazQwYnFwM2trYmdwNm9rOWxkIn0.u36w-RJPqoTGmivl_zED1w","attribution":"<a href=\"https://www.openstreetmap.org/copyright\">&copy; OpenStreetMap</a> contributors |<br class=\"visible-xs\"> <a href=\"https://www.bkg.bund.de\">&copy; GeoBasis-De / BKG 2024</a> |<br class=\"hidden-lg\"> <a href=\"https://www.destatis.de/DE/Home/_inhalt.html\">&copy; Statistisches Bundesamt (Destatis), 2024</a>"},"colorRange":[["#FCE9EB","#F7BDC4","#F2929D","#ED6676","#E83A4F","#E5243B","#B71D2F","#891623","#5C0E18","#2E070C"],["#FCF8EB","#F7E9C2","#F2DB9A","#EDCD72","#E8BE49","#E5B735","#CEA530","#A08025","#735C1B","#453710"],["#EDF5EB","#C9E2C3","#A6CF9C","#82BC74","#5EA94C","#4C9F38","#3D7F2D","#2E5F22","#1E4016","#0F200B"],["#F9E8EA","#EEBAC0","#E28C96","#D65E6C","#CB3042","#C5192D","#9E1424","#760F1B","#4F0A12","#270509"],["#FFEBE9","#FFC4BC","#FF9D90","#FF7564","#FF4E37","#FF3A21","#CC2E1A","#992314","#66170D","#330C07"],["#E9F8FB","#BEEBF6","#93DEF0","#67D1EA","#3CC4E5","#26BDE2","#1E97B5","#177188","#0F4C5A","#08262D"],["#FFF9E7","#FEEDB6","#FEE185","#FDD554","#FCC923","#FCC30B","#CA9C09","#977507","#654E04","#322702"],["#F6E8EC","#E3BAC6","#D18CA1","#BE5E7B","#AB3055","#A21942","#821435","#610F28","#410A1A","#20050D"],["#FFF0E9","#FED2BE","#FEB492","#FE9666","#FD783B","#FD6925","#CA541E","#983F16","#652A0F","#331507"],["#FCE7F0","#F5B8D1","#EE89B3","#E75A95","#E02B76","#DD1367","#B10F52","#850B3E","#580829","#2C0415"],["#FFF5E6","#FEE2B3","#FECE80","#FEBA4D","#FDA71A","#FD9D00","#CA7E00","#985E00","#653F00","#331F00"],["#FAF5EA","#EFE0C0","#E4CC96","#D9B86C","#CEA342","#C9992D","#A17A24","#795C1B","#503D12","#281F09"],["#ECF2EC","#C5D8C7","#9FBFA2","#79A57C","#528B57","#3F7E44","#326536","#264C29","#19321B","#0D190E"],["#E7F5FB","#B6E0F4","#85CBEC","#54B6E4","#23A1DD","#0A97D9","#0879AE","#065B82","#043C57","#021E2B"],["#EEF9EA","#CCECBF","#ABE095","#89D36B","#67C640","#56C02B","#459A22","#34731A","#224D11","#112609"],["#E6F0F5","#B3D2E2","#80B4CE","#4D95BA","#1A77A7","#00689D","#00537E","#003E5E","#002A3F","#00151F"],["#E8EDF0","#BAC8D2","#8CA4B5","#5E7F97","#305A79","#19486A","#143A55","#0F2B40","#0A1D2A","#050E15"]],"noValueColor":"#f0f0f0","styleNormal":{"weight":1,"opacity":1,"fillOpacity":0.7,"color":"#888888","dashArray":""},"styleHighlighted":{"weight":1,"opacity":1,"fillOpacity":0.7,"color":"#111111","dashArray":""},"styleStatic":{"weight":2,"opacity":1,"fillOpacity":0,"color":"#172d44","dashArray":""}},
       mapLayers: [{"serviceUrl":"https://DnsTestEnvironment.github.io/dns-indicators/assets/maps/boundariesKrs.geojson","min_zoom":8,"max_zoom":11,"staticBorders":true,"subfolder":"kreise","label":"indicator.counties"},{"serviceUrl":"https://DnsTestEnvironment.github.io/dns-indicators/assets/maps/boundaries.geojson","min_zoom":0,"max_zoom":7,"staticBorders":true,"subfolder":"laender","label":"indicator.laender"}],
       precision: precision,
       precisionItems: precisionItems,
@@ -3443,7 +3436,7 @@ var indicatorView = function (model, options) {
     var helpers = 
 (function() {
 
-  var HIDE_SINGLE_SERIES = false;
+  var HIDE_SINGLE_SERIES = true;
 var HIDE_SINGLE_UNIT = true;
 var PROXY_PILL = '<span aria-describedby="proxy-description" class="proxy-pill">' + translations.t("indicator.proxy") + '</span>';
 
@@ -3517,7 +3510,7 @@ function sortFieldGroup(fieldGroupElement) {
  * @return null
  */
 function updateTimeSeriesAttributes(tsAttributeValues) {
-    var timeSeriesAttributes = [{"field":"COMMENT_TS","label":"indicator.footnote"},{"field":"DATA_LAST_UPDATE","label":"metadata_fields.national_data_update_url"}];
+    var timeSeriesAttributes = [{"field":"COMMENT_TS","label":"indicator.footnote"}];
     timeSeriesAttributes.forEach(function(tsAttribute) {
         var field = tsAttribute.field,
             valueMatch = tsAttributeValues.find(function(tsAttributeValue) {
@@ -3788,14 +3781,14 @@ function updateIndicatorDataSeriesStatus(series) {
  */
 //Override: No Headline Color
 //function getHeadlineColor(contrast) {
-    //return isHighContrast(contrast) ? '#FFDD00' : '#e5243b#dda63a#4c9f38#c5192d#ff3a21#26bde2#fcc30b#a21942#fd6925#dd1367#fd9d24#bf8b2e#3f7e44#0a97d9#56c02b#00689d#19486a';
+    //return isHighContrast(contrast) ? '#55a6e5' : '#e5243b#dda63a#4c9f38#c5192d#ff3a21#26bde2#fcc30b#a21942#fd6925#dd1367#fd9d24#bf8b2e#3f7e44#0a97d9#56c02b#00689d#19486a';
 function getHeadlineColor(contrast, goalNumber) {
 
   var headlineColors = ["#e5243b", "#dda63a", "#4c9f38", "#c5192d", "#ff3a21", "#26bde2", "#fcc30b", "#a21942", "#fd6925", "#dd1367", "#fd9d24", "#bf8b2e", "#3f7e44", "#0a97d9", "#56c02b", "#00689d", "#19486a"];
   var headlineColor = headlineColors[goalNumber-1];
   var htmlString = '' + headlineColor + '';
   console.log("goalNumber: ", htmlString);
-    return isHighContrast(contrast) ? '#FFDD00' : htmlString;
+    return isHighContrast(contrast) ? '#55a6e5' : htmlString;
 }
 
 /**
@@ -3820,7 +3813,6 @@ function getChartConfig(chartInfo) {
         console.log('Unknown chart type: ' + chartType + '. Falling back to "line".');
         chartType = 'line';
     }
-    console.log('chartInfo: ', chartInfo);
     return opensdg.chartTypes[chartType](chartInfo);
 }
 
@@ -3845,7 +3837,7 @@ function setPlotEvents(chartInfo) {
         $(VIEW._legendElement).html(generateChartLegend(VIEW._chartInstance));
     });
 
-    createDownloadButton(chartInfo.selectionsTable, 'Chart', chartInfo.indicatorId, '#chartSelectionDownload', chartInfo.selectedSeries, chartInfo.selectedUnit);
+    createDownloadButton(chartInfo.selectionsTable, 'Chart', chartInfo.indicatorId, '#chartSelectionDownload');
     createSourceButton(chartInfo.shortIndicatorId, '#chartSelectionDownload');
     createIndicatorDownloadButtons(chartInfo.indicatorDownloads, chartInfo.shortIndicatorId, '#chartSelectionDownload');
 
@@ -4954,8 +4946,15 @@ function alterDataDisplay(value, info, context, additionalInfo) {
     // Before passing to user-defined dataDisplayAlterations, let's
     // do our best to ensure that it starts out as a number.
     var altered = value;
+    var obsText = '';
     if (typeof altered !== 'number') {
-        altered = Number(value);
+        if (typeof altered == 'string' && context === 'table cell' && altered.indexOf(' ') > 0) {
+            obsText = altered.substring(altered.indexOf(' ') + 1);
+            altered = Number(altered.substring(0, altered.indexOf(' ')));
+        }
+        else {
+            altered = Number(value);
+        }
     }
     // If that gave us a non-number, return original.
     if (isNaN(altered)) {
@@ -5006,7 +5005,7 @@ function alterDataDisplay(value, info, context, additionalInfo) {
         altered = altered.toLocaleString(opensdg.language, localeOpts);
         // Apply thousands seperator if needed
         if (OPTIONS.thousandsSeparator && precision <=3 && opensdg.language == 'de'){
-            altered = altered.replace('.', OPTIONS.thousandsSeparator);
+            altered = altered.replaceAll('.', OPTIONS.thousandsSeparator);
         }
     }
     // Now let's add any footnotes from observation attributes.
@@ -5020,13 +5019,39 @@ function alterDataDisplay(value, info, context, additionalInfo) {
             col = additionalInfo.col,
             obsAttributesTable = additionalInfo.observationAttributesTable;
         obsAttributes = obsAttributesTable.data[row][col];
+        //altered += ' ' + obsText;
     }
     if (obsAttributes.length > 0) {
         var obsAttributeFootnoteNumbers = obsAttributes.map(function(obsAttribute) {
-            return getObservationAttributeFootnoteSymbol(obsAttribute.footnoteNumber);
+          return getObservationAttributeFootnoteSymbol(obsAttribute);
         });
-        altered += ' ' + obsAttributeFootnoteNumbers.join(' ');
+        // if (context == 'table cell'){
+        //   obsAttributeFootnoteNumbers.splice(obsAttributeFootnoteNumbers.indexOf('0'),1);
+        // }
+        var attributes = ' [' + obsAttributeFootnoteNumbers.join(', ') + ']';
     }
+    else {
+      var attributes = '';
+    }
+
+    // for table: we do not want "0 [-]" but "-"; and not "0,00 [0]" but "0,00"
+    if (context == 'table cell'){
+      if (parseFloat(altered) == 0){
+        // case: "0"
+        if (attributes.indexOf('0') > -1) {
+          var deci = ['0', '0.0', '0.00', '0.000']
+          for (var i = 0; i < deci.length; i++) {
+            attributes = attributes.replace('[' + deci[i] + ']','').replace('' + deci[i] + ', ','').replace(', ' + deci[i] + '','');
+          }
+        }
+        else if (attributes.indexOf('‒') > -1){
+          altered = '‒';
+          attributes = attributes.replace('[‒]','').replace('‒, ','').replace(', ‒','');
+        }
+      }
+    }
+    altered += attributes;
+
     return altered;
 }
 
@@ -5036,8 +5061,16 @@ function alterDataDisplay(value, info, context, additionalInfo) {
  * @param {int} num
  * @returns {string} Number converted into unicode character for footnotes.
  */
-function getObservationAttributeFootnoteSymbol(num) {
-    return '[' + translations.indicator.note + ' ' + (num + 1) + ']';
+function getObservationAttributeFootnoteSymbol(obsAttribute) {
+    // make sure we do not get 0.000 for obsValue
+    if (isNaN(parseInt(obsAttribute.value))) {
+        return '' + obsAttribute.value + '';
+    }
+    else{
+        return '' + String(parseInt(obsAttribute.value)) + '';
+    }
+
+    //return '[' + translations.indicator.note + ' ' + (num + 1) + ']';
 }
 
   /**
