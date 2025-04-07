@@ -386,6 +386,7 @@ function makeDataset(years, rows, combination, labelFallback, color, background,
     label: getCombinationDescription(combination, labelFallback),
     combination: combination,
     type: getCombinationType(combination, labelFallback, mixedTypes),
+    order: getCombinationType(combination, labelFallback, mixedTypes) == undefined ? 0 : 1,
     disaggregation: combination,
     borderColor: color,
     backgroundColor: background,
@@ -432,15 +433,11 @@ function getCombinationType(combination, fallback, mixedTypes) {
     var values = mixedTypes.map(a => a.value);
     if (values.indexOf(combi) != -1) {
       return mixedTypes.find(function(item) {
-        console.log("AB", typeof mixedTypes, mixedTypes, combi, combination, getCombinationDescription([item.value],''));
-        console.log("ABx", getCombinationDescription([item.value],'') === combi);
         return getCombinationDescription([item.value],'') === combi;
       }).type;
-      //return '';//mixedTypes.find(item => item.combination === combi).chartType;
     }
   }
   else {
-    console.log("B", typeof mixedTypes, mixedTypes, combi, combination);
     return '';
   }
 
@@ -536,6 +533,7 @@ function makeHeadlineDataset(years, rows, label, showLine, spanGaps, colors, all
     showLine: showLine,
     spanGaps: spanGaps,
     type: getCombinationType([], '', mixedTypes),
+    order: getCombinationType([], '', mixedTypes) == '' ? 0 : 1,
   });
 }
 

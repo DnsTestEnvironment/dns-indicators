@@ -1,38 +1,7 @@
-# This files contains overrides of _config.yml for the production site.
-
-# # Site settings
-# baseurl: "sustainabledevelopment-germany.github.io/" # the subpath of your site, e.g. /blog
-# environment: production
-# remotedatabaseurl: "https://sustainabledevelopment-germany.github.io/sdg-data-pub/"
-# jekyll_get_json:
-#   - data: meta
-#     json: 'https://sustainabledevelopment-germany.github.io/sdg-data-pub/meta/all.json'
-#     # cache: true
-#     # directory: 'remotedata'
-#   - data: headlines
-#     json: 'https://sustainabledevelopment-germany.github.io/sdg-data-pub/headline/all.json'
-#     # cache: true
-#     # directory: 'remotedata'
-#   - data: schema
-#     json: 'https://sustainabledevelopment-germany.github.io/sdg-data-pub/meta/schema.json'
-#   - data: reporting
-#     # Replace my-github-org and open-sdg-data-starter as needed.
-#     json: 'https://G205SDGs.github.io/sdg-data/stats/reporting.json'
-#   - data: translations
-#     # Pin to version 0.3.0 of the translation repository.
-#     #json: 'https://JustusCas.github.io/sdg-translations/translations.json'
-#     json: 'https://G205SDGs.github.io/sdg-translations/translations.json'
+# Jekyll configuration for Open SDG platform
 #
-# analytics:
-#   ga_prod: ''
-
+# NOTE: This "production" version only contains differences from _config.yml.
+#       See also _data/site_config_prod.yml in this repository.
 
 baseurl: ""
 environment: production
-# Replace my-github-org and open-sdg-data-starter as needed.
-#remote_data_prefix: "https://sustainabledevelopment-germany.github.io/sdg-data-pub"
-remote_data_prefix: "https://dns-indikatoren.de/sdg-data-pub/"
-
-analytics:
-  # For production, you likely want to enter a Google Analytics code below.
-  ga_prod: ''

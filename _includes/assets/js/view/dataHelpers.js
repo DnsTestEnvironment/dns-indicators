@@ -13,8 +13,15 @@ function alterDataDisplay(value, info, context, additionalInfo) {
     // Before passing to user-defined dataDisplayAlterations, let's
     // do our best to ensure that it starts out as a number.
     var altered = value;
+    var obsText = '';
     if (typeof altered !== 'number') {
-        altered = Number(value);
+        if (typeof altered == 'string' && context === 'table cell' && altered.indexOf(' ') > 0) {
+            obsText = altered.substring(altered.indexOf(' ') + 1);
+            altered = Number(altered.substring(0, altered.indexOf(' ')));
+        }
+        else {
+            altered = Number(value);
+        }
     }
     // If that gave us a non-number, return original.
     if (isNaN(altered)) {
@@ -65,7 +72,7 @@ function alterDataDisplay(value, info, context, additionalInfo) {
         altered = altered.toLocaleString(opensdg.language, localeOpts);
         // Apply thousands seperator if needed
         if (OPTIONS.thousandsSeparator && precision <=3 && opensdg.language == 'de'){
-            altered = altered.replace('.', OPTIONS.thousandsSeparator);
+            altered = altered.replaceAll('.', OPTIONS.thousandsSeparator);
         }
     }
     // Now let's add any footnotes from observation attributes.
@@ -79,13 +86,39 @@ function alterDataDisplay(value, info, context, additionalInfo) {
             col = additionalInfo.col,
             obsAttributesTable = additionalInfo.observationAttributesTable;
         obsAttributes = obsAttributesTable.data[row][col];
+        //altered += ' ' + obsText;
     }
     if (obsAttributes.length > 0) {
         var obsAttributeFootnoteNumbers = obsAttributes.map(function(obsAttribute) {
-            return getObservationAttributeFootnoteSymbol(obsAttribute.footnoteNumber);
+          return getObservationAttributeFootnoteSymbol(obsAttribute);
         });
-        altered += ' ' + obsAttributeFootnoteNumbers.join(' ');
+        // if (context == 'table cell'){
+        //   obsAttributeFootnoteNumbers.splice(obsAttributeFootnoteNumbers.indexOf('0'),1);
+        // }
+        var attributes = ' [' + obsAttributeFootnoteNumbers.join(', ') + ']';
     }
+    else {
+      var attributes = '';
+    }
+
+    // for table: we do not want "0 [-]" but "-"; and not "0,00 [0]" but "0,00"
+    if (context == 'table cell'){
+      if (parseFloat(altered) == 0){
+        // case: "0"
+        if (attributes.indexOf('0') > -1) {
+          var deci = ['0', '0.0', '0.00', '0.000']
+          for (var i = 0; i < deci.length; i++) {
+            attributes = attributes.replace('[' + deci[i] + ']','').replace('' + deci[i] + ', ','').replace(', ' + deci[i] + '','');
+          }
+        }
+        else if (attributes.indexOf('‒') > -1){
+          altered = '‒';
+          attributes = attributes.replace('[‒]','').replace('‒, ','').replace(', ‒','');
+        }
+      }
+    }
+    altered += attributes;
+
     return altered;
 }
 
@@ -95,6 +128,14 @@ function alterDataDisplay(value, info, context, additionalInfo) {
  * @param {int} num
  * @returns {string} Number converted into unicode character for footnotes.
  */
-function getObservationAttributeFootnoteSymbol(num) {
-    return '[' + translations.indicator.note + ' ' + (num + 1) + ']';
+function getObservationAttributeFootnoteSymbol(obsAttribute) {
+    // make sure we do not get 0.000 for obsValue
+    if (isNaN(parseInt(obsAttribute.value))) {
+        return '' + obsAttribute.value + '';
+    }
+    else{
+        return '' + String(parseInt(obsAttribute.value)) + '';
+    }
+
+    //return '[' + translations.indicator.note + ' ' + (num + 1) + ']';
 }

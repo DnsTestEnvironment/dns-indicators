@@ -158,7 +158,6 @@ function getChartConfig(chartInfo) {
         console.log('Unknown chart type: ' + chartType + '. Falling back to "line".');
         chartType = 'line';
     }
-    console.log('chartInfo: ', chartInfo);
     return opensdg.chartTypes[chartType](chartInfo);
 }
 
@@ -183,7 +182,7 @@ function setPlotEvents(chartInfo) {
         $(VIEW._legendElement).html(generateChartLegend(VIEW._chartInstance));
     });
 
-    createDownloadButton(chartInfo.selectionsTable, 'Chart', chartInfo.indicatorId, '#chartSelectionDownload', chartInfo.selectedSeries, chartInfo.selectedUnit);
+    createDownloadButton(chartInfo.selectionsTable, 'Chart', chartInfo.indicatorId, '#chartSelectionDownload');
     createSourceButton(chartInfo.shortIndicatorId, '#chartSelectionDownload');
     createIndicatorDownloadButtons(chartInfo.indicatorDownloads, chartInfo.shortIndicatorId, '#chartSelectionDownload');
 
