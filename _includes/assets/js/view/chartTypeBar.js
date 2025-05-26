@@ -4,6 +4,7 @@ opensdg.chartTypes.bar = function (info) {
         type: 'bar',
     };
     if (info.stackedDisaggregation) {
+        console.log('Stacked', info.stackedDisaggregation, typeof info.stackedDisaggregation);
         overrides.options = {
             scales: {
                 x: { stacked: true },
@@ -47,6 +48,14 @@ opensdg.chartTypes.bar = function (info) {
         dataset.borderWidth = 0;
       }
         //dataset.borderWidth = 0;
+    });
+    config.data.datasets.forEach(function(dataset) {
+      if (dataset.type == 'line') {
+        dataset.order = 0;
+      }
+      else {
+        dataset.order = 1;
+      }
     });
     // Add these overrides onto the normal config, and return it.
     _.merge(config, overrides);
