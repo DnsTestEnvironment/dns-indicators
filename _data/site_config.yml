@@ -121,6 +121,7 @@ indicator_tabs:
 languages:
   - de
   - en
+  
 languages_public: []
 logos:
   - src: assets/img/de/DNS_logo.png
