@@ -141,7 +141,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20250623131601">
+        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20250623143030">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -615,32 +615,8 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.national_indicator_available'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('dns_indicator_definition', "Der Indikator setzt die Erzeugung erneuerbarer Energien in Relation zum Bruttoendenergieverbrauch. Der Brutto-Endenergieverbrauch umfasst den Energieverbrauch beim Letztverbraucher, die Übertragungsverluste sowie den Eigenverbrauch der Energiegewinnungsbereiche.");
-        var propertyEditor = editor.getEditor('root.dns_indicator_definition');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: dns_indicator_definition');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.dns_indicator_definition'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('dns_indicator_intention', "Die Reserven fossiler Energieträger wie Öl und Gas sind begrenzt. Darüber hinaus ist ihre Nutzung mit der Emission von Treibhausgasen verbunden. Ein Umstieg auf erneuerbare Energien, die sich als natürliche Energiequellen ständig regenerieren, verringert die energetisch bedingten Emissionen und folglich das Ausmaß des Klimawandels. Zusätzlich werden die Abhängigkeit von Energieimporten und der Ressourcenverbrauch gemindert sowie technische Innovationen gefördert. Ziel der Bundesregierung ist es daher, den Anteil der erneuerbaren Energien am Brutto-Endenergieverbrauch bis zum Jahr 2020&nbsp;auf 18&nbsp;%, bis 2030&nbsp;auf 30&nbsp;%, bis 2040&nbsp;auf 45&nbsp;% und bis 2050&nbsp;auf 60&nbsp;% zu erhöhen.");
-        var propertyEditor = editor.getEditor('root.dns_indicator_intention');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: dns_indicator_intention');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.dns_indicator_intention'));
 
     
@@ -873,12 +849,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/dns-indicators/assets/js/sdg.js?v=20250623131601'></script>
+<script src='/dns-indicators/assets/js/sdg.js?v=20250623143030'></script>
 
 
     
     
-    <script src="/dns-indicators/assets/js/custom.js?v=20250623131601"></script><script>
+    <script src="/dns-indicators/assets/js/custom.js?v=20250623143030"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
