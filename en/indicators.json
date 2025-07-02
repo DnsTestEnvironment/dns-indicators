@@ -95,7 +95,7 @@
         },
         {
           "id": "3-2-b",
-          "title": "Share of the population with excessive exposure<br>to PM₂.₅",
+          "title": "Share of the population with excessive exposure to fine particulate matter (PM₂.₅)",
           "description": "",
           "keywords": "",
           "href": "/dns-indicators/en/3-2-b/",
@@ -119,7 +119,7 @@
         
         {
           "id": "4-1-a",
-          "title": "Early school and training leavers",
+          "title": "Early leavers from education and training",
           "description": "",
           "keywords": "",
           "href": "/dns-indicators/en/4-1-a/",
@@ -127,7 +127,7 @@
         },
         {
           "id": "4-1-b",
-          "title": "Persons with an academic or higher vocational qualification",
+          "title": "Persons with a tertiary or post-secondary non-tertiary level of education",
           "description": "",
           "keywords": "",
           "href": "/dns-indicators/en/4-1-b/",
@@ -135,7 +135,7 @@
         },
         {
           "id": "4-1-c",
-          "title": "Schools with ESD label (Education for Sustainable Development)",
+          "title": "Schools with an ESD label (education for sustainable <br>development)",
           "description": "",
           "keywords": "",
           "href": "/dns-indicators/en/4-1-c/",
@@ -143,7 +143,7 @@
         },
         {
           "id": "4-2-ab",
-          "title": "All-day care provision for children",
+          "title": "All-day care for children",
           "description": "",
           "keywords": "",
           "href": "/dns-indicators/en/4-2-ab/",
@@ -151,7 +151,7 @@
         },
         {
           "id": "4-3-a",
-          "title": "Participation in continuing education",
+          "title": "Participation in education and training",
           "description": "",
           "keywords": "",
           "href": "/dns-indicators/en/4-3-a/",
@@ -199,7 +199,7 @@
         },
         {
           "id": "5-1-e",
-          "title": "Average weekly working hours in relation to all mothers and fathers",
+          "title": "Average weekly working hours of all mothers and fathers",
           "description": "",
           "keywords": "",
           "href": "/dns-indicators/en/5-1-e/",
@@ -207,7 +207,7 @@
         },
         {
           "id": "5-1-f",
-          "title": "Vocational qualifications of women and girls through German development cooperation",
+          "title": "Vocational qualifications for women and girls through German development cooperation",
           "description": "",
           "keywords": "",
           "href": "/dns-indicators/en/5-1-f/",
@@ -231,7 +231,7 @@
         
         {
           "id": "6-1-a",
-          "title": "Phosphorous in flowing waters",
+          "title": "Phosphorus in flowing waters",
           "description": "",
           "keywords": "",
           "href": "/dns-indicators/en/6-1-a/",
@@ -263,7 +263,7 @@
         
         {
           "id": "7-1-ab",
-          "title": "Final energy productivity and primary energy<br>consumption",
+          "title": "Final energy productivity and primary energy consumption",
           "description": "",
           "keywords": "",
           "href": "/dns-indicators/en/7-1-ab/",
@@ -319,7 +319,7 @@
         },
         {
           "id": "8-3",
-          "title": "Gross fixed capital formation in relation to GDP",
+          "title": "Gross fixed capital formation in relation to gross domestic product (GDP) (investment ratio)",
           "description": "",
           "keywords": "",
           "href": "/dns-indicators/en/8-3/",
@@ -327,7 +327,7 @@
         },
         {
           "id": "8-4",
-          "title": "Gross domestic product per capita",
+          "title": "Gross domestic product (GDP) per capita",
           "description": "",
           "keywords": "",
           "href": "/dns-indicators/en/8-4/",
@@ -375,7 +375,7 @@
         },
         {
           "id": "9-1-b",
-          "title": "Rollout of broadband – share of households with access to gigabit broadband services",
+          "title": "Rollout of broadband – Share of households with access to gigabit broadband services",
           "description": "",
           "keywords": "",
           "href": "/dns-indicators/en/9-1-b/",
@@ -447,7 +447,7 @@
         },
         {
           "id": "11-2-c",
-          "title": "Accessibility of mediumsized and large cities by public transport",
+          "title": "Accessibility of medium-sized and large cities by <br>public transport",
           "description": "",
           "keywords": "",
           "href": "/dns-indicators/en/11-2-c/",
@@ -463,7 +463,7 @@
         },
         {
           "id": "11-3-b",
-          "title": "Accessibility of recreational green<br>spaces in cities",
+          "title": "Accessibility of recreational green spaces in cities",
           "description": "",
           "keywords": "",
           "href": "/dns-indicators/en/11-3-b/",
@@ -479,7 +479,7 @@
         
         {
           "id": "12-1-a",
-          "title": "Market share of products with official sustainability labels",
+          "title": "Market share of products certified by a state sustainability standard",
           "description": "",
           "keywords": "",
           "href": "/dns-indicators/en/12-1-a/",
@@ -495,7 +495,7 @@
         },
         {
           "id": "12-2-a",
-          "title": "Eco-Management and Audit Scheme (EMAS)",
+          "title": "Eco-management and Audit Scheme (EMAS)",
           "description": "",
           "keywords": "",
           "href": "/dns-indicators/en/12-2-a/",
@@ -559,7 +559,7 @@
         
         {
           "id": "14-1-a",
-          "title": "Nitrogen input in coastal and marine waters – nitrogen input via the inflows into the Baltic and North Seas",
+          "title": "Nitrogen input in coastal and marine waters – Nitrogen input via the inflows into the Baltic and North Seas",
           "description": "",
           "keywords": "",
           "href": "/dns-indicators/en/14-1-a/",
@@ -567,7 +567,7 @@
         },
         {
           "id": "14-1-b",
-          "title": "Share of sustainably fished stocks of fish in the North and Baltic Seas",
+          "title": "Share of sustainably fished stocks of fish in the North <br>and Baltic Seas",
           "description": "",
           "keywords": "",
           "href": "/dns-indicators/en/14-1-b/",
@@ -607,7 +607,7 @@
         },
         {
           "id": "15-4",
-          "title": "Bilateral contributions of German international cooperation to the protection, sustainable use, and restoration of land (including forests)",
+          "title": "Bilateral contributions from german international cooperation arrangements towards the protection, sustainable use and restoration of land (including forests)",
           "description": "",
           "keywords": "",
           "href": "/dns-indicators/en/15-4/",
@@ -631,7 +631,7 @@
         },
         {
           "id": "16-3-ab",
-          "title": "Corruption Perceptions Index in Germany and in partner<br>countries for German development cooperation",
+          "title": "Corruption Perceptions Index in Germany and in partner countries for German development cooperation",
           "description": "",
           "keywords": "",
           "href": "/dns-indicators/en/16-3-ab/",
@@ -655,7 +655,7 @@
         
         {
           "id": "17-1",
-          "title": "Official developmentassistance as a proportion of gross national income",
+          "title": "Official development assistance as a proportion of gross national income",
           "description": "",
           "keywords": "",
           "href": "/dns-indicators/en/17-1/",
