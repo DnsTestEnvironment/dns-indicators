@@ -4236,7 +4236,7 @@ opensdg.chartTypes.base = function(info) {
                             }
                             return line;
                           } else {
-                            return label + ': ' + alterDataDisplay(tooltipItem.raw, tooltipItem.dataset, 'chart tooltip', tooltipItem).replace("<u>","").replace("</u>","");
+                            return label.replace("<u>","").replace("</u>","") + ': ' + alterDataDisplay(tooltipItem.raw, tooltipItem.dataset, 'chart tooltip', tooltipItem);
                           }
                         },
                         afterLabel: function(tooltipItem) {
