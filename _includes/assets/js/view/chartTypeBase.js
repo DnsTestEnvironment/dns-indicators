@@ -85,7 +85,7 @@ opensdg.chartTypes.base = function(info) {
                         label: function (tooltipItem) {
 
                           var label =  translations.t(tooltipItem.dataset.label);
-                          label = label.replace('<sub>','').replace('</sub>','');
+                          label = label.replace('<sub>','').replace('</sub>','').replace("<u>","").replace("</u>","");
                           if (label.length > 45){
 
                             label = label.split(' ');
@@ -101,13 +101,13 @@ opensdg.chartTypes.base = function(info) {
                             }
                             return line;
                           } else {
-                            return label.replace("<u>","").replace("</u>","") + ': ' + alterDataDisplay(tooltipItem.raw, tooltipItem.dataset, 'chart tooltip', tooltipItem);
+                            return label + ': ' + alterDataDisplay(tooltipItem.raw, tooltipItem.dataset, 'chart tooltip', tooltipItem);
                           }
                         },
                         afterLabel: function(tooltipItem) {
 
                           var label =  tooltipItem.dataset.label;
-                          label = label.replace('<sub>','').replace('</sub>','');
+                          label = label.replace('<sub>','').replace('</sub>','').replace('<u>','').replace('</u>','');
                           if (label.length > 45){
                             label = label.split(' ');
                             var re = [];
