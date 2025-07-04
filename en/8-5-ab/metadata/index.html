@@ -141,7 +141,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20250704095449">
+        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20250704122346">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -615,32 +615,8 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.national_indicator_available'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('dns_indicator_definition', "Die Indikatoren geben die Anteile der Erwerbstätigen im Alter von 20&nbsp;bis 64&nbsp;Jahren (8.5.a) und im Alter von 60&nbsp;bis 64&nbsp;Jahren (8.5.b) jeweils gemessen an der Gesamtbevölkerung derselben Altersklasse an.");
-        var propertyEditor = editor.getEditor('root.dns_indicator_definition');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: dns_indicator_definition');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.dns_indicator_definition'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('dns_indicator_intention', "Aufgrund des demografischen Wandels kann es langfristig zu einem Mangel an Fachkräften in Deutschland kommen. Gleichzeitig droht eine zunehmende Unterfinanzierung der sozialen Sicherungssysteme. Das vorhandene Arbeitskräftepotenzial ist daher künftig besser auszuschöpfen. Die Erwerbstätigenquote, das heißt der Anteil der Erwerbstätigen an der Bevölkerung im erwerbsfähigen Alter (20- bis 64-Jährige), soll bis zum Jahr 2030&nbsp;auf 78&nbsp;% erhöht werden. Außerdem ist es das Ziel der Bundesregierung, dass bis 2030&nbsp;die Erwerbstätigenquote der Älteren (60- bis 64-Jährige) 60&nbsp;% beträgt.");
-        var propertyEditor = editor.getEditor('root.dns_indicator_intention');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: dns_indicator_intention');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.dns_indicator_intention'));
 
     
@@ -873,12 +849,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/dns-indicators/assets/js/sdg.js?v=20250704095449'></script>
+<script src='/dns-indicators/assets/js/sdg.js?v=20250704122346'></script>
 
 
     
     
-    <script src="/dns-indicators/assets/js/custom.js?v=20250704095449"></script><script>
+    <script src="/dns-indicators/assets/js/custom.js?v=20250704122346"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
