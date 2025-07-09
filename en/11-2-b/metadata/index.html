@@ -141,7 +141,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20250709145905">
+        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20250709152633">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -615,32 +615,8 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.national_indicator_available'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('dns_indicator_definition', "Der Indikator stellt die Entwicklung des Endenergieverbrauchs durch die Beförderung von Personen mit der Bahn, im Luft- und Straßenverkehr (öffentlicher und Individualverkehr) im Inland dar.");
-        var propertyEditor = editor.getEditor('root.dns_indicator_definition');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: dns_indicator_definition');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.dns_indicator_definition'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('dns_indicator_intention', "Der Verkehr bringt eine Reihe von Herausforderungen mit sich. So beeinträchtigen etwa Lärm und Luftschadstoffe die Lebensqualität insbesondere in Städten und verkehrsbedingte Emissionen tragen zum Klimawandel bei. Der Ausstoß von schädlichen Treibhausgasen (<abbr title=\"Treibhausgas\" tabindex=\"0\">THG</abbr>) steht im Zusammenhang mit der im Verkehr verbrauchten Energie.<br>Ziel ist es, den Endenergieverbrauch im Personenverkehr bis zum Jahr 2030&nbsp;um 15&nbsp;bis 20&nbsp;% zu senken.");
-        var propertyEditor = editor.getEditor('root.dns_indicator_intention');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: dns_indicator_intention');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.dns_indicator_intention'));
 
     
@@ -673,7 +649,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('political_target', "Senkung um 15&nbsp;bis 20&nbsp;Prozent bis 2030&nbsp;gegenüber 2005");
+        var currentValue = normalizeCurrentValue('political_target', "Senkung um 15&nbsp;bis 20&nbsp;Prozent bis 2030&nbsp;gegenüber 2015");
         var propertyEditor = editor.getEditor('root.political_target');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -701,7 +677,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('target_description', "Der Endenergieverbrauch im Personenverkehr soll bis 2030&nbsp;auf höchstens 85&nbsp;Prozent des Wertes von 2005&nbsp;gesenkt werden.<br><br>Ausgehend von der Zielformulierung wird für Ziele ohne einen exakten Zielwert, sondern mit einem Zielintervall, jeweils die schwächste Zielforderung (hier: Reduzierung auf 85&nbsp;Prozent des Wertes von 2005) als mindestens zu erfüllende politisch festgelegte Zielgröße angesehen. Der Indikator 11.2.b ist im Durchschnitt der letzten sechs Jahre deutlich gesunken, sodass das Ziel von 85&nbsp;Prozent in 2030&nbsp;bei einer Beibehaltung voraussichtlich erreicht wird. Der Indikator wird für das Jahr 2023&nbsp;mit „Sonne“ bewertet.<br><br><u>Hinweis:</u> Auch die, für diese Bewertung nicht relevante, Zielgröße von 80&nbsp;Prozent würde bei einer Beibehaltung der Entwicklung erreicht werden.");
+        var currentValue = normalizeCurrentValue('target_description', "Der Endenergieverbrauch im Personenverkehr soll bis 2030&nbsp;auf höchstens 85&nbsp;Prozent des Wertes von 2015&nbsp;gesenkt werden.<br><br>Ausgehend von der Zielformulierung wird für Ziele ohne einen exakten Zielwert, sondern mit einem Zielintervall, jeweils die schwächste Zielforderung (hier: Reduzierung auf 85&nbsp;Prozent des Wertes von 2015) als mindestens zu erfüllende politisch festgelegte Zielgröße angesehen. Der Indikator 11.2.b ist im Durchschnitt der letzten sechs Jahre deutlich gesunken, sodass das Ziel von 85&nbsp;Prozent in 2030&nbsp;bei einer Beibehaltung voraussichtlich erreicht wird. Der Indikator wird für das Jahr 2023&nbsp;mit „Sonne“ bewertet.<br><br><u>Hinweis:</u> Auch die, für diese Bewertung nicht relevante, Zielgröße von 80&nbsp;Prozent würde bei einer Beibehaltung der Entwicklung erreicht werden.");
         var propertyEditor = editor.getEditor('root.target_description');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -873,12 +849,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/dns-indicators/assets/js/sdg.js?v=20250709145905'></script>
+<script src='/dns-indicators/assets/js/sdg.js?v=20250709152633'></script>
 
 
     
     
-    <script src="/dns-indicators/assets/js/custom.js?v=20250709145905"></script><script>
+    <script src="/dns-indicators/assets/js/custom.js?v=20250709152633"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
