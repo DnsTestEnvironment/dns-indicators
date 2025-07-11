@@ -146,7 +146,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20250711082317">
+        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20250711100209">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -969,22 +969,6 @@ data-event-label="high"
         <tr>
           
           
-          <td>2023</td>
-          
-          
-          
-          <td>89.945</td>
-          
-          
-          
-          <td class="table-value">2000 = 100</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
           <td>2000</td>
           
           
@@ -1342,22 +1326,6 @@ data-event-label="high"
           
           
           <td>1668.389</td>
-          
-          
-          
-          <td class="table-value">Einwohner/-innen pro km² Siedlungs- und Verkehrsfläche</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2023</td>
-          
-          
-          
-          <td>1667.11</td>
           
           
           
@@ -1744,10 +1712,60 @@ data-event-label="Change to indicator.sources tab"
   
       
         
-          
+      
+
+      
+      
+
+
       
         
-          
+          <tr id="everythingElse"  style="opacity: 0.5" >
+            <th scope="row" style="text-align: left; width: 130px;">Definition <small><br>(Text aus dem Indikatoren&shy;bericht 2022 - Stand 31.10.2022)</small> </th>
+            <td>
+              
+                <p>Der Indikator zeigt die Entwicklung der Bevölkerung je Quadratkilometer Siedlungs- und Verkehrsfläche im Vergleich zum Basisjahr 2000.</p>
+
+              
+            </td>
+          </tr>
+        
+      
+
+      <!-- weather -->
+      
+
+      
+    
+  
+      
+        
+      
+
+      
+      
+
+
+      
+        
+          <tr id="everythingElse"  style="opacity: 0.5" >
+            <th scope="row" style="text-align: left; width: 130px;">Ziel und Intention <small><br>(Text aus dem Indikatoren&shy;bericht 2022 - Stand 31.10.2022)</small> </th>
+            <td>
+              
+                <p>Der Indikator „Siedlungsdichte“ gibt Hinweise auf die Effizienz der Siedlungsflächennutzung. Ziel der Bundesregierung ist es, durch flächensparende Maßnahmen beim Neubau und bei der Innenentwicklung, wie der Reduzierung von Wohnungs- und Gewerbeleerstand sowie Nachverdichtungen und Erhöhung der Baudichte, der Verringerung der Siedlungsdichte entgegenzuwirken.</p>
+
+              
+            </td>
+          </tr>
+        
+      
+
+      <!-- weather -->
+      
+
+      
+    
+  
       
         
       
@@ -1874,7 +1892,7 @@ data-event-label="Change to indicator.sources tab"
             <th scope="row" style="text-align: left; width: 130px;">Umsetzung in der Wetter&shy;symbol&shy;berechnung </th>
             <td>
               
-                <p>Die Anzahl der Einwohnerinnen und Einwohner pro Quadratkilometer Siedlungs- und Verkehrsfläche soll steigen.<br /><br />Da der Wert des Indikators 11.1.c im Jahr 2023 sowie im Durchschnitt der letzten sechs Jahre konstant geblieben ist, wird der Indikator für das Jahr 2023 mit „Leicht bewölkt“ bewertet.</p>
+                <p>Die Anzahl der Einwohnerinnen und Einwohner pro Quadratkilometer Siedlungs- und Verkehrsfläche soll steigen.<br /><br />Da der Wert des Indikators 11.1.c im Jahr 2022 gestiegen aber im Durchschnitt der letzten sechs Jahre leicht gesungen ist, wird der Indikator für das Jahr 2022 mit „Wolke“ bewertet.</p>
 
               
             </td>
@@ -1902,7 +1920,7 @@ data-event-label="Change to indicator.sources tab"
             <th scope="row" style="text-align: left; width: 130px;">Bewertung </th>
             <td>
               
-                <p><a href="https://dnsTestEnvironment.github.io/dns-indicators/status"><img src="https://sdg-indikatoren.de/public/Wettersymbole/Leicht bewölkt.png" title="Die durchschnittliche Entwicklung zielte in 2023 in die richtige Richtung, im vorangegangenen Jahr ergab sich jedoch eine Entwicklung in die falsche Richtung oder gar keine Veränderung." alt="Wettersymbol Leicht bewölkt" /></a></p>
+                <p><a href="https://dnsTestEnvironment.github.io/dns-indicators/status"><img src="https://sdg-indikatoren.de/public/Wettersymbole/Wolke.png" title="Der Durchschnittswert zielte in 2022 in die falsche Richtung oder zeigt eine Stagnation an, im vorangegangenen Jahr zeigte sich jedoch eine Wende in die gewünschte Richtung." alt="Wettersymbol Wolke" /></a></p>
 
               
             </td>
@@ -2765,7 +2783,7 @@ data-event-label="Change to indicator.sources tab"
 
       
          <!-- case: content -->
-          <p> <p><b style="color: #fd9d24; font-size: large">11.1.c Siedlungsdichte</b><br /><br />Die Siedlungsdichte beschreibt das Verhältnis der Einwohnerzahl zur Siedlungs- und Verkehrsfläche (SuV). Sie unterscheidet sich damit von der Bevölkerungsdichte, die sich auf die gesamte Fläche des Bundesgebiets bezieht.<br /><br />Zur Siedlungsfläche zählen neben Wohnbauflächen auch Flächen mit speziellen Funktionen wie Krankenhäuser, Schulen, Industrie- und Gewerbegebiete, Mischgebiete sowie Sport-, Freizeit- und Erholungsflächen. Sowohl Veränderungen der Einwohnerzahl als auch die Ausdehnung der SuV beeinflussen die Siedlungsdichte.<br /><br />Die Siedlungsdichte variiert deutlich zwischen „ländlichen“ und „nicht-ländlichen“ Gebieten. Die Einteilung basiert auf der Typisierung des Thünen-Instituts, das Kreise und kreisfreie Städte anhand von Kriterien wie Siedlungsdichte, dem Anteil land- und forstwirtschaftlich genutzter Flächen sowie der Erreichbarkeit größerer Zentren klassifiziert.<br /><br />Da die Definition von „ländlich“ unter anderem die Siedlungsdichte selbst berücksichtigt, ist zu beachten, dass Unterschiede im Indikator zwischen ländlichen und nicht-ländlichen Gebieten teilweise durch die Klassifikation selbst bedingt sind. So kann ein Anstieg der Siedlungsdichte in einem ländlichen Gebiet dazu führen, dass dieses künftig als nicht-ländlich eingestuft wird.<br /><br />Zwischen 2000&nbsp;und 2011&nbsp;ging die Siedlungsdichte in beiden Gebietstypen zurück&nbsp;–&nbsp;in ländlichen Gebieten um 12&nbsp;%, in nicht-ländlichen um 5&nbsp;%. Seit 2011&nbsp;liegt der Wert des Indikators für Deutschland insgesamt relativ konstant bei etwa 1&nbsp;670&nbsp;Einwohnerinnen und Einwohnern pro Quadratkilometer SuV, was etwa 90&nbsp;% des Wertes von 2000&nbsp;entspricht. In nicht-ländlichen Gebieten steigt die Siedlungsdichte seit 2011&nbsp;wieder an und erreichte 2023&nbsp;mit 3&nbsp;384&nbsp;Einwohnerinnen und Einwohnern pro Quadratkilometer SuV nahezu das Niveau von 2000.<br /><br />Ein Vergleich der Entwicklungen von SuV und Bevölkerungszahlen zeigt unterschiedliche Trends der beiden Einflussfaktoren: Während die Siedlungs- und Verkehrsfläche seit dem Jahr 2000&nbsp;kontinuierlich zunahm, gingen die Bevölkerungszahlen zwischen 2000&nbsp;und 2011&nbsp;zunächst zurück&nbsp;–&nbsp;was einen Rückgang der Siedlungsdichte zur Folge hatte. Seit 2011&nbsp;steigen die Bevölkerungszahlen wieder, sodass der Indikator seither weitgehend konstant geblieben ist.<br /><br />Der Anteil der SuV an der Gesamtfläche liegt in ländlichen Gebieten mit 12,3&nbsp;% deutlich unter dem in nicht ländlichen Gebieten (36,8&nbsp;%&nbsp;–&nbsp;jeweils für 2023). Der Flächenzuwachs der SuV betrifft beide Gebietsarten, fiel jedoch in ländlichen Gebieten mit 17,4&nbsp;% (2023&nbsp;gegenüber 2000) deutlich stärker aus als in nicht-ländlichen mit 9,3&nbsp;%. Gleichzeitig verlief der Bevölkerungsanstieg seit 2011&nbsp;in ländlichen Gebieten deutlich schwächer, wodurch die Siedlungsdichte dort leicht zurückging.<br /><br />Nach der Definition des Thünen-Instituts lebten im Jahr 2023&nbsp;rund 43&nbsp;% der Bevölkerung in nicht-ländlichen und 57&nbsp;% in ländlichen Gebieten. Gleichzeitig entfielen rund 80&nbsp;% der Siedlungs- und Verkehrsfläche auf ländliche Gebiete.<br /><br />Das politisch festgelegte Ziel sieht vor, die Anzahl der Einwohnerinnen und Einwohner pro Quadratkilometer SuV zu erhöhen. Aufgrund der stagnierenden Entwicklung in den letzten Jahren wird dieses Ziel jedoch nicht oder nur in geringem Maße erreicht.<br /><br />Die Datengrundlage für diesen Indikator bilden die Bevölkerungsstatistik sowie die Flächenerhebung nach Art der tatsächlichen Nutzung (amtliche Flächenstatistik) des Statistischen Bundesamtes. Die Länder harmonisieren ihre Liegenschaftskataster, wodurch es in den letzten Jahren zu Neuzuordnungen von Flächen gekommen ist&nbsp;–&nbsp;auch ohne tatsächliche Nutzungsänderungen. Im Jahr 2016&nbsp;erfolgte eine Umstellung auf einen neuen Nutzungsartenkatalog, was Auswirkungen auf die amtliche Flächenstatistik hatte und die Vergleichbarkeit mit den Vorjahren erschwert. Um dennoch aussagekräftige Zeitvergleiche zu ermöglichen, wurden die Daten auf Basis des Zensus 2011&nbsp;und der Flächenerhebung 2016&nbsp;rückgerechnet.<br /><br />Der Indikator weist inhaltliche Querbezüge zum Indikator 11.1.a „Anstieg der Siedlungs- und Verkehrsfläche“ auf.</p>
+          <p> <p style="opacity: 0.5"><b>Text aus dem <a href="https://dns-indikatoren.de/assets/Publikationen/Indikatorenberichte/2022.pdf">Indikatorenbericht 2022&nbsp;- Stand 31.10.2022</a></b><br /><br />Bei der Siedlungsdichte wird die Einwohnerzahl ins Verhältnis zur Siedlungs- und Verkehrsfläche gesetzt, im Gegensatz zur Bevölkerungsdichte, wo die Gesamtfläche die Bezugsgröße ist.<br /><br />Zur Siedlungsfläche zählen dabei neben Wohnbauflächen auch Flächen besonderer funktionaler Prägung (zum Beispiel Krankenhäuser oder Schulen), Industrie- und Gewerbeflächen, Flächen mit gemischter Nutzung (zum Beispiel an Einkaufsstraßen) sowie Sport-, Freizeit- und Erholungsflächen. Sowohl Veränderungen der Einwohnerzahl als auch Veränderungen bei der Ausdehnung der Siedlungs- und Verkehrsflächen haben Einfluss auf den Wert der Siedlungsdichte.<br /><br />Die Siedlungsdichte unterscheidet sich zwischen ländlichem und nicht ländlichem Raum erheblich: Auf einem Quadratkilometer Siedlungs- und Verkehrsfläche leben in nicht ländlichen Kreistypen durchschnittlich 3&nbsp;337&nbsp;Menschen, in ländlichen rund 1&nbsp;197&nbsp;(Stand: 2020). In Städten werden dabei die Wohnbauflächen oft wesentlich dichter und auch mehrstöckiger bebaut als in ländlichen Regionen, wo eine lockerere Bebauung mit größeren, unversiegelten Flächenanteilen, wie zum Beispiel Hausgärten, vorherrscht.<br /><br />Von 2000&nbsp;bis 2009&nbsp;nahm die Siedlungsdichte sowohl in ländlichen als auch in nicht ländlichen Regionen kontinuierlich ab. Dabei war in nicht ländlichen Regionen der absolute Rückgang etwas geringer als in den ländlichen Regionen. Bedingt durch die deutlich geringere Siedlungsdichte in den ländlichen Regionen fiel der Rückgang dort relativ betrachtet mit 11&nbsp;% stärker aus als in den nicht ländlichen Regionen mit 4&nbsp;%. In den nicht ländlichen Räumen ist die Siedlungsdichte seit dem Jahr 2011&nbsp;wieder angestiegen. Somit werden die Siedlungs- und Verkehrsflächen in eher städtisch geprägten Räumen wieder effizienter genutzt als in den Jahren zuvor.<br /><br />Werden die Entwicklungen der Einwohnerzahl und der Siedlungs- und Verkehrsfläche einzeln betrachtet, so zeigen sich deutliche Unterschiede zwischen ländlichen und nicht ländlichen Regionen. Zwischen 2000&nbsp;und 2020&nbsp;stieg die Siedlungs- und Verkehrsfläche sowohl in ländlichen als auch in nicht ländlichen Regionen an, allerdings mit 15,9&nbsp;<abbr title="beziehungsweise" tabindex="0">bzw.</abbr> 8,8&nbsp;% in unterschiedlichem Umfang. Nachdem die Bevölkerungszahl in den ländlichen Regionen Anfang des Jahrtausends noch leicht anstieg, verringerte sie sich danach bis 2012&nbsp;um rund 2,6&nbsp;%, um dann bis 2020&nbsp;wieder um 2,1&nbsp;% zu steigen. In den nicht ländlichen Regionen hingegen stieg die Einwohnerzahl sowohl zwischen 2000&nbsp;und 2010&nbsp;(um 1,7&nbsp;%) als auch zwischen 2011&nbsp;und 2020&nbsp;(um 5,6&nbsp;%) an. Die Auswirkungen der Inanspruchnahme zusätzlicher Siedlungs- und Verkehrsflächen wurden deshalb in ländlichen Regionen durch den Rückgang der Bevölkerungszahl verstärkt.<br /><br />Datengrundlagen des Indikators sind die Bevölkerungszahlen und die Flächenerhebung nach Art der tatsächlichen Nutzung des Statistischen Bundesamtes. Bei den Bevölkerungsdaten ergab sich durch den Zensus 2011&nbsp;ein Sprung in den Zeitreihen. Daneben kam es im amtlichen Liegenschaftskataster der Länder in den vergangenen Jahren teilweise zur Neuzuordnung von Flächennutzungen, denen keine realen Nutzungsänderungen zugrunde lagen. Zudem wurde im Jahr 2016&nbsp;die Umstellung des alten auf den neuen Nutzungsartenkatalog vollendet, was sich auch auf die amtliche Flächenstatistik auswirkte, sodass die Vergleichbarkeit der Daten von 2016&nbsp;mit den Vorjahren eingeschränkt ist. Um die Daten dennoch vergleichen zu können, wurden die jeweiligen Werte ausgehend vom Zensus 2011&nbsp;und der Veränderung der Flächenerhebung im Jahr 2016&nbsp;zurückgerechnet.<br /><br />Die Unterscheidung zwischen „ländlich“ und „nicht ländlich“ basiert auf einer Typisierung des Thünen-Instituts. Das Institut ordnet Landkreisen und kreisfreien Städten&nbsp;–&nbsp;auf Basis von räumlichen Merkmalen wie „Siedlungsdichte“, „Anteil land- und forstwirtschaftlicher Fläche“ und der Erreichbarkeit großer Zentren&nbsp;–&nbsp;einen Grad an „Ländlichkeit“ zu. Somit bezieht sich diese Typisierung auf die Kreisebene und nicht auf kleinere räumliche Einheiten wie Städte und Dörfer. Nach dieser Unterscheidung wohnten im Jahr 2020&nbsp;rund 43&nbsp;% der Bevölkerung in nicht ländlichen Räumen und rund 57&nbsp;% in ländlichen Räumen.</p>
  </p>
         
       
@@ -4761,12 +4779,12 @@ data-event-label="Change to indicator.sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/dns-indicators/assets/js/sdg.js?v=20250711082317'></script>
+<script src='/dns-indicators/assets/js/sdg.js?v=20250711100209'></script>
 
 
     
     
-    <script src="/dns-indicators/assets/js/custom.js?v=20250711082317"></script><script>
+    <script src="/dns-indicators/assets/js/custom.js?v=20250711100209"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
