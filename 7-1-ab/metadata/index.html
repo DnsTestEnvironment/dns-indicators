@@ -141,7 +141,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20250714135042">
+        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20250721131835">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -615,8 +615,32 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.national_indicator_available'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('dns_indicator_definition', "Der Indikator „Endenergieproduktivität“ stellt die Entwicklung der Wertschöpfung je eingesetzte Einheit Endenergie dar. Der Begriff „Endenergie“ bezieht sich dabei auf den Teil der Energie, der energetisch als thermische oder elektrische Energie zur Herstellung von Gütern oder zur Nutzung in den privaten Haushalten zur Verfügung steht.<br>Der Indikator „Primärenergieverbrauch“ gibt an, wie viel Energie in einem Land einerseits in den Energiesektoren zur Umwandlung sowie andererseits in der Produktion, den privaten Haushalten und im Verkehr verbraucht wurde.");
+        var propertyEditor = editor.getEditor('root.dns_indicator_definition');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: dns_indicator_definition');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.dns_indicator_definition'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('dns_indicator_intention', "Die Senkung des Energieverbrauchs durch eine Steigerung der Energieeffizienz ist neben dem Ausbau erneuerbarer Energien die zweite tragende Säule der Energiewende. Ziel ist es, mit möglichst wenig Energie viel wirtschaftliche Leistung zu erreichen. Energieeinsparung schont Klima und Umwelt, trägt zur Verbesserung der Versorgungssicherheit und zur Wettbewerbsfähigkeit der Industrie bei.<br>Dem Energiekonzept der Bundesregierung zufolge soll die Endenergieproduktivität in den Jahren 2008&nbsp;bis 2050&nbsp;jährlich um 2,1&nbsp;% <abbr title=\"beziehungsweise\" tabindex=\"0\">bzw.</abbr> um insgesamt 139&nbsp;% bis 2050&nbsp;erhöht werden. Gleichzeitig soll sich der Primärenergieverbrauch bis 2020&nbsp;um 20&nbsp;%, bis 2030&nbsp;um 30&nbsp;% und bis 2050&nbsp;um 50&nbsp;% gegenüber dem Jahr 2008&nbsp;verringern.");
+        var propertyEditor = editor.getEditor('root.dns_indicator_intention');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: dns_indicator_intention');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.dns_indicator_intention'));
 
     
@@ -849,12 +873,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/dns-indicators/assets/js/sdg.js?v=20250714135042'></script>
+<script src='/dns-indicators/assets/js/sdg.js?v=20250721131835'></script>
 
 
     
     
-    <script src="/dns-indicators/assets/js/custom.js?v=20250714135042"></script><script>
+    <script src="/dns-indicators/assets/js/custom.js?v=20250721131835"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
