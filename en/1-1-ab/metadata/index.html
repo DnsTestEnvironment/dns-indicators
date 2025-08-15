@@ -141,7 +141,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20250815135405">
+        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20250815140052">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -621,7 +621,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('dns_indicator_definition_new', "Die Indikatoren stellen den Anteil der Personen an der Gesamtbevölkerung (in Prozent) dar, der als materiell und sozial depriviert (1.1.a) <abbr title=\"beziehungsweise\" tabindex=\"0\">bzw.</abbr> als erheblich materiell und sozial depriviert (1.1.b) gilt. Materielle und soziale Deprivation (Entbehrung) beschreibt den unfreiwilligen Verzicht und Mangel an notwendigen und wünschenswerten Gegenständen und Tätigkeiten aus finanziellen Gründen.");
+        var currentValue = normalizeCurrentValue('dns_indicator_definition_new', "Die Indikatoren stellen den Anteil der Personen an der Gesamtbevölkerung (in Prozent) dar, der als materiell und sozial depriviert (1.1.a) bzw. als erheblich materiell und sozial depriviert (1.1.b) gilt. Materielle und soziale Deprivation (Entbehrung) beschreibt den unfreiwilligen Verzicht und Mangel an notwendigen und wünschenswerten Gegenständen und Tätigkeiten aus finanziellen Gründen.");
         var propertyEditor = editor.getEditor('root.dns_indicator_definition_new');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -649,7 +649,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('political_target', "1.1.a: Anteil der Personen, die materiell und sozial depriviert sind, bis 2030&nbsp;unter dem <abbr title=\"Europäische Union\" tabindex=\"0\">EU</abbr>-Durchschnitt halten<br>1.1.b: Anteil der Personen, die erheblich materiell und sozial depriviert sind, bis 2030&nbsp;unter dem <abbr title=\"Europäische Union\" tabindex=\"0\">EU</abbr>-Durchschnitt halten");
+        var currentValue = normalizeCurrentValue('political_target', "1.1.a: Anteil der Personen, die materiell und sozial depriviert sind, bis 2030&nbsp;unter dem EU-Durchschnitt halten<br>1.1.b: Anteil der Personen, die erheblich materiell und sozial depriviert sind, bis 2030&nbsp;unter dem EU-Durchschnitt halten");
         var propertyEditor = editor.getEditor('root.political_target');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -677,7 +677,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('target_description', "Sowohl der Anteil der Personen, die materiell und sozial depriviert sind (1.1.a), als auch der Anteil der Personen, die erheblich materiell und sozial depriviert sind (1.1.b), soll jedes Jahr unter dem entsprechenden Anteil in der <abbr title=\"Europäische Union\" tabindex=\"0\">EU</abbr> liegen.<br><br>Ausgehend von der Zielformulierung wird für jedes Jahr die Differenz zwischen dem <abbr title=\"Europäische Union\" tabindex=\"0\">EU</abbr>-Wert und dem Wert für Deutschland gebildet. Für beide Indikatoren werden (aufgrund methodischer Änderungen am Erhebungskonzept) die Indikatorwerte ab 2020&nbsp;betrachtet.<br><br>Die Differenz ist bei beiden Indikatoren für das Jahr 2024&nbsp;positiv, das heißt der Anteil in Deutschland ist jeweils niedriger als der Anteil in der <abbr title=\"Europäische Union\" tabindex=\"0\">EU</abbr>. Die politisch festgelegten Ziele sind in 2024&nbsp;erreicht, aber die Differenzen haben sich in den letzten fünf Jahren stetig verringert, sodass die Indikatoren für das Jahr 2024&nbsp;mit „Leicht bewölkt“ bewertet werden.<br><br><u>Hinweis:</u> Der Bezug auf die Anteile in der <abbr title=\"Europäische Union\" tabindex=\"0\">EU</abbr> als Zielgrößen bedeutet, dass die Indikatoren positiv bewertet werden können, auch wenn sich die Anteile der (erheblich) materiell und sozial deprivierten Bevölkerung in Deutschland erhöht haben.");
+        var currentValue = normalizeCurrentValue('target_description', "Sowohl der Anteil der Personen, die materiell und sozial depriviert sind (1.1.a), als auch der Anteil der Personen, die erheblich materiell und sozial depriviert sind (1.1.b), soll jedes Jahr unter dem entsprechenden Anteil in der EU liegen.<br><br>Ausgehend von der Zielformulierung wird für jedes Jahr die Differenz zwischen dem EU-Wert und dem Wert für Deutschland gebildet. Für beide Indikatoren werden (aufgrund methodischer Änderungen am Erhebungskonzept) die Indikatorwerte ab 2020 betrachtet.<br><br>Die Differenz ist bei beiden Indikatoren für das Jahr 2024 positiv, das heißt der Anteil in Deutschland ist jeweils niedriger als der Anteil in der EU. Die politisch festgelegten Ziele sind in 2024 erreicht, aber die Differenzen haben sich in den letzten fünf Jahren stetig verringert, sodass die Indikatoren für das Jahr 2024 mit „Leicht bewölkt“ bewertet werden.<br><br><u>Hinweis:</u> Der Bezug auf die Anteile in der EU als Zielgrößen bedeutet, dass die Indikatoren positiv bewertet werden können, auch wenn sich die Anteile der (erheblich) materiell und sozial deprivierten Bevölkerung in Deutschland erhöht haben.");
         var propertyEditor = editor.getEditor('root.target_description');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -849,12 +849,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/dns-indicators/assets/js/sdg.js?v=20250815135405'></script>
+<script src='/dns-indicators/assets/js/sdg.js?v=20250815140052'></script>
 
 
     
     
-    <script src="/dns-indicators/assets/js/custom.js?v=20250815135405"></script><script>
+    <script src="/dns-indicators/assets/js/custom.js?v=20250815140052"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
