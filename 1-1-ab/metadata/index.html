@@ -141,7 +141,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20250815140052">
+        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20250818082958">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -635,7 +635,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('dns_political_intention', "Der Indikator „(erhebliche) materielle und soziale Deprivation“ (auch: (erhebliche) materielle und soziale Entbehrung) soll durch die Identifikation individueller Mangelsituationen zur Abbildung armutsgefährdeter Lebenslagen dienen. Er ist auch Teil der ausführlichen Armuts- und Reichtumsberichterstattung der Bundesregierung.");
+        var currentValue = normalizeCurrentValue('dns_political_intention', "Der Indikator <i>(erhebliche) materielle und soziale Deprivation</i> (auch: (erhebliche) materielle und soziale Entbehrung) soll durch die Identifikation individueller Mangelsituationen zur Abbildung armutsgefährdeter Lebenslagen dienen. Er ist auch Teil der ausführlichen Armuts- und Reichtumsberichterstattung der Bundesregierung.");
         var propertyEditor = editor.getEditor('root.dns_political_intention');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -677,7 +677,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('target_description', "Sowohl der Anteil der Personen, die materiell und sozial depriviert sind (1.1.a), als auch der Anteil der Personen, die erheblich materiell und sozial depriviert sind (1.1.b), soll jedes Jahr unter dem entsprechenden Anteil in der EU liegen.<br><br>Ausgehend von der Zielformulierung wird für jedes Jahr die Differenz zwischen dem EU-Wert und dem Wert für Deutschland gebildet. Für beide Indikatoren werden (aufgrund methodischer Änderungen am Erhebungskonzept) die Indikatorwerte ab 2020 betrachtet.<br><br>Die Differenz ist bei beiden Indikatoren für das Jahr 2024 positiv, das heißt der Anteil in Deutschland ist jeweils niedriger als der Anteil in der EU. Die politisch festgelegten Ziele sind in 2024 erreicht, aber die Differenzen haben sich in den letzten fünf Jahren stetig verringert, sodass die Indikatoren für das Jahr 2024 mit „Leicht bewölkt“ bewertet werden.<br><br><u>Hinweis:</u> Der Bezug auf die Anteile in der EU als Zielgrößen bedeutet, dass die Indikatoren positiv bewertet werden können, auch wenn sich die Anteile der (erheblich) materiell und sozial deprivierten Bevölkerung in Deutschland erhöht haben.");
+        var currentValue = normalizeCurrentValue('target_description', "Sowohl der Anteil der Personen, die materiell und sozial depriviert sind (1.1.a), als auch der Anteil der Personen, die erheblich materiell und sozial depriviert sind (1.1.b), soll jedes Jahr unter dem entsprechenden EU-Durchschnitt liegen.<br><br>• Ausgehend von der Zielformulierung wird für jedes Jahr die Differenz zwischen dem EU-Wert und dem Wert für Deutschland berechnet. Aufgrund methodischer Änderungen im Erhebungskonzept werden für beide Indikatoren die Indikatorwerte ab 2020 betrachtet.<br>• Für beide Indikatoren ist die Differenz im Jahr 2024 positiv, das heißt, der Anteil in Deutschland liegt jeweils unter dem EU-Durchschnitt. Die politisch festgelegten Ziele sind somit für 2024 erreicht. Gleichzeitig haben sich die Differenzen in den letzten fünf Jahren kontinuierlich verringert, sodass die Indikatoren für das Jahr 2024 mit <b>leicht bewölkt</b> bewertet werden.<br><br><u>Hinweis:</u> Der Bezug auf die Anteile in der EU als Zielgröße bedeutet, dass die Indikatoren positiv bewertet werden können, selbst wenn der Anteil der (erheblich) materiell und sozial deprivierten Bevölkerung in Deutschland gestiegen ist.");
         var propertyEditor = editor.getEditor('root.target_description');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -849,12 +849,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/dns-indicators/assets/js/sdg.js?v=20250815140052'></script>
+<script src='/dns-indicators/assets/js/sdg.js?v=20250818082958'></script>
 
 
     
     
-    <script src="/dns-indicators/assets/js/custom.js?v=20250815140052"></script><script>
+    <script src="/dns-indicators/assets/js/custom.js?v=20250818082958"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

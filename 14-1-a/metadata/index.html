@@ -141,7 +141,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20250815140052">
+        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20250818082958">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -677,7 +677,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('target_description', "Der Stickstoffeintrag über die Zuflüsse in die Ostsee (14.1.aa) soll im gleitenden, abflussgewichteten Fünfjahresdurchschnitt jedes Jahr höchstens 2,6 Milligramm pro Liter im Jahr und über die Zuflüsse in die Nordsee (14.1.ab) höchstens 2,8 Milligramm pro Liter im Jahr betragen.<br><br>Ausgehend von der Zielformulierung wird der Indikator 14.1.aa für das Jahr 2023 mit „Wolke“ bewertet, weil der jährlich zu haltende politisch festgelegte Schwellenwert in 2023 überschritten wurde, die durchschnittliche Entwicklung der letzten sechs Jahre aber in die gewünschte Richtung weist.<br><br>Der Indikator 14.1.ab wird für das Jahr 2023 mit „Sonne“ bewertet, weil der jährlich zu haltende politisch festgelegte Schwellenwert in 2023 eingehalten wurde und die durchschnittliche Entwicklung der letzten sechs Jahre in die gewünschte Richtung weist.");
+        var currentValue = normalizeCurrentValue('target_description', "14.1.aa: Der Stickstoffeintrag über die Zuflüsse in die Ostsee soll im gleitenden, abflussgewichteten Fünfjahresdurchschnitt jedes Jahr höchstens 2,6 Milligramm pro Liter im Jahr betragen.<br>• Ausgehend von der Zielformulierung wird der Indikator 14.1.aa für das Jahr 2023 mit <b>Wolke</b> bewertet, da der jährlich einzuhaltende politisch festgelegte Schwellenwert 2023 überschritten wurde, die durchschnittliche Entwicklung der letzten sechs Jahre jedoch in die gewünschte Richtung weist.<br><br>14.1.ab: Der Stickstoffeintrag über die Zuflüsse in die Nordsee soll im gleitenden, abflussgewichteten Fünfjahresdurchschnitt jedes Jahr höchstens 2,8 Milligramm pro Liter im Jahr betragen.<br>• Der Indikator 14.1.ab wird für das Jahr 2023 mit <b>Sonne</b> bewertet, da der jährlich einzuhaltende politisch festgelegte Schwellenwert 2023 eingehalten wurde und die durchschnittliche Entwicklung der letzten sechs Jahre in die gewünschte Richtung weist.");
         var propertyEditor = editor.getEditor('root.target_description');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -849,12 +849,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/dns-indicators/assets/js/sdg.js?v=20250815140052'></script>
+<script src='/dns-indicators/assets/js/sdg.js?v=20250818082958'></script>
 
 
     
     
-    <script src="/dns-indicators/assets/js/custom.js?v=20250815140052"></script><script>
+    <script src="/dns-indicators/assets/js/custom.js?v=20250818082958"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
