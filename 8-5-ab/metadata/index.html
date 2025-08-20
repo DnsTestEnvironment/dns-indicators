@@ -141,7 +141,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20250818103051">
+        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20250820082348">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -621,7 +621,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('dns_indicator_definition_new', "Die Erwerbstätigenquote stellt bei Indikator 8.5.a den Anteil der Erwerbstätigen im Alter von 20&nbsp;bis 64&nbsp;Jahren (Insgesamt) und bei Indikator 8.5.b den Anteil der Erwerbstätigen im Alter von 55&nbsp;bis 64&nbsp;Jahren (Ältere) an allen Personen derselben Altersgruppe (in Prozent) dar.");
+        var currentValue = normalizeCurrentValue('dns_indicator_definition_new', "Die Erwerbstätigenquote stellt bei Indikator 8.5.a den Anteil der Erwerbstätigen im Alter von 20&nbsp;bis 64&nbsp;Jahren (Insgesamt) und bei Indikator 8.5.b den Anteil der Erwerbstätigen im Alter von 55&nbsp;bis 64&nbsp;Jahren (Ältere) an allen Personen derselben Altersgruppe (in %) dar.");
         var propertyEditor = editor.getEditor('root.dns_indicator_definition_new');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -649,7 +649,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('political_target', "8.5.a: Erhöhung auf 83&nbsp;Prozent bis 2030<br>8.5.b: Erhöhung auf 77&nbsp;Prozent bis 2030");
+        var currentValue = normalizeCurrentValue('political_target', "8.5.a: Erhöhung auf 83&nbsp;% bis 2030<br>8.5.b: Erhöhung auf 77&nbsp;% bis 2030");
         var propertyEditor = editor.getEditor('root.political_target');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -677,7 +677,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('target_description', "8.5.a: Bis 2030 soll die Erwerbstätigenquote insgesamt auf mindestens 83 Prozent erhöht werden.<br>• Ausgehend von der Zielformulierung wird der Indikator 8.5.a für das Jahr 2024 mit <b>Wolke</b> bewertet. Bei Fortsetzung der durchschnittlichen Entwicklung der Jahre 2019 bis 2024 wird der politisch festgelegte Zielwert in 2030 verfehlt.<br><br>8.5.b: Bis 2030 soll die Erwerbstätigenquote der Älteren auf mindestens 77 Prozent erhöht werden.<br>• Ausgehend von der Zielformulierung deutet die durchschnittliche Entwicklung der letzten sechs Jahre darauf hin, dass der politisch festgelegte Zielwert bereits vor 2030 erreicht wird. Der Indikator 8.5.b wird daher für das Jahr 2024 mit <b>Sonne</b> bewertet wird.");
+        var currentValue = normalizeCurrentValue('target_description', "8.5.a: Bis 2030 soll die Erwerbstätigenquote insgesamt auf mindestens 83 % erhöht werden.<br>• Ausgehend von der Zielformulierung wird der Indikator 8.5.a für das Jahr 2024 mit <b>Wolke</b> bewertet. Bei Fortsetzung der durchschnittlichen Entwicklung der Jahre 2019 bis 2024 wird der politisch festgelegte Zielwert in 2030 verfehlt.<br><br>8.5.b: Bis 2030 soll die Erwerbstätigenquote der Älteren auf mindestens 77 % erhöht werden.<br>• Ausgehend von der Zielformulierung deutet die durchschnittliche Entwicklung der letzten sechs Jahre darauf hin, dass der politisch festgelegte Zielwert bereits vor 2030 erreicht wird. Der Indikator 8.5.b wird daher für das Jahr 2024 mit <b>Sonne</b> bewertet wird.");
         var propertyEditor = editor.getEditor('root.target_description');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -849,12 +849,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/dns-indicators/assets/js/sdg.js?v=20250818103051'></script>
+<script src='/dns-indicators/assets/js/sdg.js?v=20250820082348'></script>
 
 
     
     
-    <script src="/dns-indicators/assets/js/custom.js?v=20250818103051"></script><script>
+    <script src="/dns-indicators/assets/js/custom.js?v=20250820082348"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
