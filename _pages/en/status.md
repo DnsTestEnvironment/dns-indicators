@@ -36,7 +36,7 @@ If a target value or a threshold is not to be reached at some time in the future
 
 This procedure is used also when an indicator is supposed to reach a concrete target value by an exact target year and has reached the goal already. In such cases the standard procedure cannot provide reliable information on the direction in which the indicator is moving.
 
-<h3 class="h3bold">Indicators with directional targets without specific target values</h3>
+<h3 class="h3bold">Indicators with a directional target without a specific target value</h3>
 
 In cases where only the targeted direction of the indicator trend is given but no concrete target value (for example [indicator 15.3.a](https://dns-indikatoren.de/en/15-3-ab/)), two pieces of information are combined for evaluation: primarily, the average change over the last five years and, subordinately, the last annual change.
 
@@ -49,6 +49,6 @@ In cases where only the targeted direction of the indicator trend is given but n
 
 If several targets are defined for one indicator that are to be reached at the same time (for example  [indicator 10.1](https://dns-indikatoren.de/en/10-1/)), the development is evaluated individually for each target. The most negative evaluation determines the weather symbol to be assigned to the indicator.
 
-<h3 class="h3bold">Comparison of evaluations over time</h3>
+<h3 class="h3bold">Comparison of assessments over time</h3>
 
 The synoptic table provides information also about the evaluation of an indicator in previous years. It shows if the weather symbol assigned to an indicator was rather stable or volatile in the past years.
