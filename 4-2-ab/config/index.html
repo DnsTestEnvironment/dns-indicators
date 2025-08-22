@@ -141,7 +141,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20250822131142">
+        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20250822134344">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -593,7 +593,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('graph_annotations', [{"series":"a) 0 to 2-year-olds","value":35,"label":{"content":"Ziel 2030","position":"left","backgroundColor":"transparent","color":"transparent"},"preset":"target_line","borderColor":"transparent"},{"series":"b) 3 to 5-year-olds","value":70,"label":{"content":"Ziel 2030","position":"left","backgroundColor":"transparent","color":"transparent"},"preset":"target_line","borderColor":"transparent"}]);
+        var currentValue = normalizeCurrentValue('graph_annotations', [{"value":35,"label":{"content":"Ziel 2030 - a) 0- bis 2-Jährige","position":"left","backgroundColor":"transparent","color":"transparent"},"preset":"target_line","borderColor":"transparent"},{"value":70,"label":{"content":"Ziel 2030 - b) 3- bis 5-Jährige","position":"left","backgroundColor":"transparent","color":"transparent"},"preset":"target_line","borderColor":"transparent"}]);
         var propertyEditor = editor.getEditor('root.graph_annotations');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -651,18 +651,6 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.graph_title'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('graph_titles', [{"series":"a) 0 to 2-year-olds","title":"Ganztagsbetreuung für Kinder"},{"series":"b) 3 to 5-year-olds","title":"Ganztagsbetreuung für Kinder"}]);
-        var propertyEditor = editor.getEditor('root.graph_titles');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: graph_titles');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.graph_titles'));
 
     
@@ -935,12 +923,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/dns-indicators/assets/js/sdg.js?v=20250822131142'></script>
+<script src='/dns-indicators/assets/js/sdg.js?v=20250822134344'></script>
 
 
     
     
-    <script src="/dns-indicators/assets/js/custom.js?v=20250822131142"></script><script>
+    <script src="/dns-indicators/assets/js/custom.js?v=20250822134344"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
