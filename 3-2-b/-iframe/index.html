@@ -146,7 +146,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20250825140441">
+        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20250827123207">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -735,6 +735,11 @@ data-event-label="Change to Table tab"
         
 
         
+          <dt><u></u>:</dt>
+          <dd>15.01.2025</dd>
+        
+
+        
           <dt><u>Geographische Abdeckung</u>:</dt>
           <dd>Deutschland</dd>
         
@@ -809,6 +814,11 @@ data-event-label="Change to Table tab"
         
           <dt><u>Datenquellen</u>:</dt>
           <dd><a href="https://www.umweltbundesamt.de/" target="_blank" onclick="return confirm_alert('des UBA', 'De')">Umweltbundesamt</a>, <a href="http://www.euro.who.int/de/home" target="_blank" onclick="return confirm_alert('der WHO', 'De')">Weltgesundheitsorganisation</a></dd>
+        
+
+        
+          <dt><u></u>:</dt>
+          <dd>15.01.2025</dd>
         
 
         
@@ -980,12 +990,6 @@ data-event-label="Change to indicator.sources tab"
   
       
         
-          
-      
-        
-          
-      
-        
       
 
       
@@ -994,8 +998,8 @@ data-event-label="Change to indicator.sources tab"
 
       
         
-          <tr id="everythingElse" >
-            <th scope="row" style="text-align: left; width: 130px;">Definition </th>
+          <tr id="everythingElse"  style="opacity: 0.5" >
+            <th scope="row" style="text-align: left; width: 130px;">Definition <small><br>(Text aus dem Indikatoren&shy;bericht 2022 - Stand 31.10.2022)</small> </th>
             <td>
               
                 <p>Der Indikator stellt den Anteil der Personen (in %) dar, der an seinem Wohnort im Jahresmittel einer Exposition von mehr als 10 Mikrogramm (µg) Feinstaub PM₂,₅ (Staubteilchen mit einem Durchmesser kleiner 2,5 Mikrometer) pro Kubikmeter (m³) Luft ausgesetzt war (nur Hintergrundbelastungen, ohne lokale Quellen).</p>
@@ -1012,6 +1016,37 @@ data-event-label="Change to indicator.sources tab"
       
     
   
+      
+        
+      
+
+      
+      
+
+
+      
+        
+          <tr id="everythingElse"  style="opacity: 0.5" >
+            <th scope="row" style="text-align: left; width: 130px;">Ziel und Intention <small><br>(Text aus dem Indikatoren&shy;bericht 2022 - Stand 31.10.2022)</small> </th>
+            <td>
+              
+                <p>Die langfristige Belastung des Menschen mit Feinstaub kann unter anderem zu Erkrankungen der Atemwege und des Herz-Kreislauf-Systems sowie zu einem erhöhten Risiko für Diabetes Mellitus Typ 2 und neurodegenerativen Erkrankungen führen. Zum besseren Schutz der Gesundheit soll daher bis zum Jahr 2030 erreicht werden, dass kein Mensch in Deutschland an seinem Wohnort einer Feinstaubkonzentration (PM₂,₅) von mehr als 10 Mikrogramm (µg) pro Kubikmeter (m³) Luft im Jahresmittel ausgesetzt ist. Der Zielwert von 10 µg/m³ entspricht dem Zwischenziel 4 aus den Empfehlungen der Weltgesundheitsorganisation (WHO) in den Air Quality Guidelines. Zudem wurde dieser Wert in der aktualisierten Luftqualitätsrichtlinie der Europäischen Union als gesetzlich einzuhaltender Grenzwert ab dem Jahr 2030 festgelegt. Der Indikator ermöglicht die kontinuierliche Überwachung der Trends bei der Entwicklung im Hinblick auf die Zielerreichung.</p>
+
+              
+            </td>
+          </tr>
+        
+      
+
+      <!-- weather -->
+      
+
+      
+    
+  
+      
+        
+          
       
         
       
@@ -1127,34 +1162,6 @@ data-event-label="Change to indicator.sources tab"
       
         
           
-      
-        
-      
-
-      
-      
-
-
-      
-        
-          <tr id="everythingElse" >
-            <th scope="row" style="text-align: left; width: 130px;">Datenstand </th>
-            <td>
-              
-                <p>15.01.2025</p>
-
-              
-            </td>
-          </tr>
-        
-      
-
-      <!-- weather -->
-      
-
-      
-    
-  
   
   
   
@@ -2779,7 +2786,6 @@ data-event-label="Change to indicator.sources tab"
   
   
   
-  
 </table>
 
       </article>
@@ -2808,7 +2814,6 @@ data-event-label="Change to indicator.sources tab"
       
       
 <table class="table" style="width:100%; table-layout: fixed;">
-  
   
   
   
@@ -4462,7 +4467,6 @@ data-event-label="Change to indicator.sources tab"
   
   
   
-  
       
         
       
@@ -4656,12 +4660,12 @@ data-event-label="Change to indicator.sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/dns-indicators/assets/js/sdg.js?v=20250825140441'></script>
+<script src='/dns-indicators/assets/js/sdg.js?v=20250827123207'></script>
 
 
     
     
-    <script src="/dns-indicators/assets/js/custom.js?v=20250825140441"></script><script>
+    <script src="/dns-indicators/assets/js/custom.js?v=20250827123207"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

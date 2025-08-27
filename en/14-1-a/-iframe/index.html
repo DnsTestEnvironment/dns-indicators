@@ -146,7 +146,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20250825140441">
+        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20250827123207">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -491,6 +491,11 @@ data-event-label="Change to Table tab"
         
 
         
+          <dt><u></u>:</dt>
+          <dd>12.05.2025</dd>
+        
+
+        
           <dt><u>Geographical Area</u>:</dt>
           <dd>Germany</dd>
         
@@ -565,6 +570,11 @@ data-event-label="Change to Table tab"
         
           <dt><u>Data source</u>:</dt>
           <dd><a href="https://www.umweltbundesamt.de/en" target="_blank" onclick="return confirm_alert('the German Environment Agency', 'En')">German Environment Agency (as reported by the Länder and by river basin commissions</a></dd>
+        
+
+        
+          <dt><u></u>:</dt>
+          <dd>12.05.2025</dd>
         
 
         
@@ -736,10 +746,60 @@ data-event-label="Change to indicator.sources tab"
   
       
         
-          
+      
+
+      
+      
+
+
       
         
-          
+          <tr id="everythingElse"  style="opacity: 0.5" >
+            <th scope="row" style="text-align: left; width: 130px;">Definition <small>(Text from the Indicator Report 2022 - State 31.10.2022)</small> </th>
+            <td>
+              
+                <p>The indicators shows the five-year moving average of discharge-weighted nitrogen concentrations in milligrams (mg) of nitrogen per litre (l) of water discharged from rivers into the North Sea (14.1.ab)<sup>1</sup> and Baltic Sea (14.1.aa)<sup>2</sup>.<br /><small><sup>1</sup> Eider, Elbe, Ems, Weser, Rhein, Treene, Aarlau, Bongsieler Kanal and Miele.<br /><sup>2</sup> Peene, Trave, Warnow, Langballigau, Füsinger Au, Koseler Au, Schwentine, Kossau, Goddesdorfer Au, Oldenburger Graben, Aalbeck, Schwartau, Lippingau, Hagener Au, Barthe, Duvenbaek, Hellbach, Maurine, Recknitz, Ryck, Stepenitz, Uecker, Wallensteingraben and Zarow.</small></p>
+
+              
+            </td>
+          </tr>
+        
+      
+
+      <!-- weather -->
+      
+
+      
+    
+  
+      
+        
+      
+
+      
+      
+
+
+      
+        
+          <tr id="everythingElse"  style="opacity: 0.5" >
+            <th scope="row" style="text-align: left; width: 130px;">Target and intention <small>(Text from the Indicator Report 2022 - State 31.10.2022)</small> </th>
+            <td>
+              
+                <p>High concentrations of nitrogen in the oceans can lead to eutrophication effects such as oxygen deficiency and thus to a loss of biodiversity and the destruction of fish migration areas. The management objectives of the Surface Waters Ordinance (OGewV 2016) agreed as part of the implementation of the EU Water Framework Directive (WFD 2000/60/EC) and the objectives of the EU Marine Strategy Framework Directive (MSFD 2008/56/EC) and the Baltic Sea Action Plan should apply to the input of nitrogen into the Baltic Sea and North Sea via tributaries.</p>
+
+              
+            </td>
+          </tr>
+        
+      
+
+      <!-- weather -->
+      
+
+      
+    
+  
       
         
       
@@ -883,34 +943,6 @@ data-event-label="Change to indicator.sources tab"
       
         
           
-      
-        
-      
-
-      
-      
-
-
-      
-        
-          <tr id="everythingElse" >
-            <th scope="row" style="text-align: left; width: 130px;">Data state </th>
-            <td>
-              
-                <p>12.05.2025</p>
-
-              
-            </td>
-          </tr>
-        
-      
-
-      <!-- weather -->
-      
-
-      
-    
-  
   
   
   
@@ -2535,7 +2567,6 @@ data-event-label="Change to indicator.sources tab"
   
   
   
-  
 </table>
 
       </article>
@@ -2564,7 +2595,6 @@ data-event-label="Change to indicator.sources tab"
       
       
 <table class="table" style="width:100%; table-layout: fixed;">
-  
   
   
   
@@ -3558,12 +3588,12 @@ data-event-label="Change to indicator.sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/dns-indicators/assets/js/sdg.js?v=20250825140441'></script>
+<script src='/dns-indicators/assets/js/sdg.js?v=20250827123207'></script>
 
 
     
     
-    <script src="/dns-indicators/assets/js/custom.js?v=20250825140441"></script><script>
+    <script src="/dns-indicators/assets/js/custom.js?v=20250827123207"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

@@ -146,7 +146,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20250825140441">
+        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20250827123207">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -703,6 +703,11 @@ data-event-label="Change to Table tab"
         
 
         
+          <dt><u></u>:</dt>
+          <dd>15.01.2025</dd>
+        
+
+        
           <dt><u>Geographische Abdeckung</u>:</dt>
           <dd>Deutschland</dd>
         
@@ -777,6 +782,11 @@ data-event-label="Change to Table tab"
         
           <dt><u>Datenquellen</u>:</dt>
           <dd><a href="https://www.bundesbank.de/de/" target="_blank" onclick="return confirm_alert('der BBk', 'De')">Deutsche Bundesbank</a>, <a href="https://www.destatis.de/DE/Home/_inhalt.html" target="_blank">Statistisches Bundesamt</a></dd>
+        
+
+        
+          <dt><u></u>:</dt>
+          <dd>15.01.2025</dd>
         
 
         
@@ -948,12 +958,6 @@ data-event-label="Change to indicator.sources tab"
   
       
         
-          
-      
-        
-          
-      
-        
       
 
       
@@ -962,8 +966,8 @@ data-event-label="Change to indicator.sources tab"
 
       
         
-          <tr id="everythingElse" >
-            <th scope="row" style="text-align: left; width: 130px;">Definition </th>
+          <tr id="everythingElse"  style="opacity: 0.5" >
+            <th scope="row" style="text-align: left; width: 130px;">Definition <small><br>(Text aus dem Indikatoren&shy;bericht 2022 - Stand 31.10.2022)</small> </th>
             <td>
               
                 <p>Die Verbraucherverschuldung stellt die Schulden der privaten Haushalte (nach Definition des Europäischen Systems Volkswirtschaftlicher Gesamtrechnungen (ESVG) ohne Wohnungsbaukredite) insgesamt in Relation zum Bruttoinlandsprodukt (BIP) (in %) dar. Einbezogen werden dabei sowohl Schulden von Privatpersonen als auch die Schulden von sogenannten privaten Organisationen ohne Erwerbszweck (z. B. Gewerkschaften, politische Parteien, Kirchen und Religionsgemeinschaften, soziale und kulturelle Vereinigungen, Wohlfahrtsverbände oder Sport- und Freizeitvereine etc.).</p>
@@ -980,6 +984,37 @@ data-event-label="Change to indicator.sources tab"
       
     
   
+      
+        
+      
+
+      
+      
+
+
+      
+        
+          <tr id="everythingElse"  style="opacity: 0.5" >
+            <th scope="row" style="text-align: left; width: 130px;">Ziel und Intention <small><br>(Text aus dem Indikatoren&shy;bericht 2022 - Stand 31.10.2022)</small> </th>
+            <td>
+              
+                <p>Ver- und Überschuldung von Verbraucherinnen und Verbrauchern engt das finanziell-selbstbestimmte Handeln ein. Eine übermäßig hohe Verschuldung der Verbraucherinnen und Verbraucher soll vermieden werden, um eine Überlastung zu vermeiden.</p>
+
+              
+            </td>
+          </tr>
+        
+      
+
+      <!-- weather -->
+      
+
+      
+    
+  
+      
+        
+          
       
         
       
@@ -1095,34 +1130,6 @@ data-event-label="Change to indicator.sources tab"
       
         
           
-      
-        
-      
-
-      
-      
-
-
-      
-        
-          <tr id="everythingElse" >
-            <th scope="row" style="text-align: left; width: 130px;">Datenstand </th>
-            <td>
-              
-                <p>15.01.2025</p>
-
-              
-            </td>
-          </tr>
-        
-      
-
-      <!-- weather -->
-      
-
-      
-    
-  
   
   
   
@@ -2747,7 +2754,6 @@ data-event-label="Change to indicator.sources tab"
   
   
   
-  
 </table>
 
       </article>
@@ -2776,7 +2782,6 @@ data-event-label="Change to indicator.sources tab"
       
       
 <table class="table" style="width:100%; table-layout: fixed;">
-  
   
   
   
@@ -4430,7 +4435,6 @@ data-event-label="Change to indicator.sources tab"
   
   
   
-  
       
         
       
@@ -4677,12 +4681,12 @@ data-event-label="Change to indicator.sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/dns-indicators/assets/js/sdg.js?v=20250825140441'></script>
+<script src='/dns-indicators/assets/js/sdg.js?v=20250827123207'></script>
 
 
     
     
-    <script src="/dns-indicators/assets/js/custom.js?v=20250825140441"></script><script>
+    <script src="/dns-indicators/assets/js/custom.js?v=20250827123207"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
