@@ -24,7 +24,7 @@
 
       {% unless var == 'dontShow' or indicator_metadata.name contains "_url_text" or indicator_metadata.name contains "_link_text" or indicator_metadata.name contains "_url_alert" %}
         {% if indicator_metadata.field.scope != 'content' %}
-           <tr id="everythingElse">  <!--{% if indicator_metadata.name == "dns_indicator_definition" or indicator_metadata.name == "dns_indicator_intention" %} style="opacity: 0.5" {% endif %}> -->
+           <tr id="everythingElse"> 
             <th scope="row" style="text-align: left; width: 130px;">{{ metadata_label }} </th>
             <td>
               {% if indicator_metadata.name contains "_url" or indicator_metadata.name contains "_link" %}
