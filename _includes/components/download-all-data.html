@@ -5,11 +5,10 @@
         </a>
     </div>
     <div>
-        {{ page.t.frontpage.download_all }}<br>
         {{ page.t.frontpage.file_size }}: {{ site.data.zip.size_human }}
         {% if site.data.zip.timestamp %}
             <br>
-            {{ page.t.metadata_fields.national_data_update_url }} - {{ site.data.zip.timestamp | t_date: 'standard' }}
+            {{ page.t.metadata_fields.national_data_update_url }} {{ site.data.zip.timestamp | t_date: 'standard' }}
         {% endif %}
     </div>
 </div>
