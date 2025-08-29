@@ -20,8 +20,7 @@ Aus der Differenz der beiden Werte ergibt sich die Zuordnung eines der folgenden
 <img src="http://sdg-indikatoren.de/public/Wettersymbole/Sonne.png" alt="Sonne" /> &nbsp; Bei Fortsetzung der Entwicklung würde der Zielwert erreicht oder
 um weniger als 5 % der Differenz zwischen Zielwert und aktuellem Wert verfehlt <i>(On-track-Indikator)</i>.
 
-<img src="http://sdg-indikatoren.de/public/Wettersymbole/Leicht bewölkt.png" alt="Leicht bewölkt" /> &nbsp;	Bei Fortsetzung der Entwicklung würde das Ziel v
-oraussichtlich um mindestens 5 %, jedoch höchstens um 20 % der Differenz zwischen Zielwert und aktuellem Wert verfehlt <i>(On-track-Indikator)</i>.
+<img src="http://sdg-indikatoren.de/public/Wettersymbole/Leicht bewölkt.png" alt="Leicht bewölkt" /> &nbsp;	Bei Fortsetzung der Entwicklung würde das Ziel voraussichtlich um mindestens 5 %, jedoch höchstens um 20 % der Differenz zwischen Zielwert und aktuellem Wert verfehlt <i>(On-track-Indikator)</i>.
 
 <img src="http://sdg-indikatoren.de/public/Wettersymbole/Wolke.png" alt="Wolke" /> &nbsp; Der Indikator entwickelt sich in die gewünschte Richtung.
 Bei Fortsetzung der Entwicklung würde das Ziel im Zieljahr jedoch um mehr als 20 % der Differenz zwischen Zielwert und aktuellem Wert verfehlt <i>(Off-track-Indikator)</i>.
@@ -65,7 +64,7 @@ werden für die Bewertung zwei Informationen herangezogen: vorrangig der Durchsc
 
 <h3 class="h3bold">Indikatoren mit mehreren Zielwerten</h3>
 
-Sind für einen Indikator mehrere Ziele festgelegt die gleichzeitig erfüllt werden sollen , (zum Beispiel [Indikator 10.1](https://dns-indikatoren.de/10-1/)),
+Sind für einen Indikator mehrere Ziele festgelegt die gleichzeitig erfüllt werden sollen, (zum Beispiel [Indikator 10.1](https://dns-indikatoren.de/10-1/)),
 wird die Entwicklung in Bezug auf jedes einzelne Ziel separat bewertet. Das Wettersymbol des Indikators richtet sich anschließend nach der negativsten Einzelbewertung.
 
 <h3 class="h3bold">Bewertungen im Zeitvergleich</h3>
