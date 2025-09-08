@@ -146,7 +146,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20250905142259">
+        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20250908134414">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -321,7 +321,7 @@ layout-indicator-iframe
   data-graphtype="line"
   data-graphtypes="null"
   data-geocoderegex=""
-  data-showmap="false"
+  data-showmap="true"
   data-startvalues="[{&quot;field&quot;:&quot;Series&quot;,&quot;value&quot;:&quot;&lt;u&gt;Zeitreihe des Indikators:&lt;/u&gt; Unbereinigter Gender Pay Gap&quot;}]"
   data-graphlimits="null"
   data-stackeddisaggregation=""
@@ -335,7 +335,7 @@ layout-indicator-iframe
   data-graphseriesbreaks="[{&quot;value&quot;:15.5}]"
   data-grapherrorbars="null"
   data-indicatordownloads="null"
-  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Jahr&quot;},{&quot;name&quot;:&quot;Units&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Prozent&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Units&quot;},{&quot;name&quot;:&quot;Series&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;&lt;u&gt;Zeitreihe des Indikators:&lt;/u&gt; Unbereinigter Gender Pay Gap&quot;,&quot;&lt;u&gt;Zusätzliche Zeitreihe:&lt;/u&gt; Bereinigter Gender Pay Gap&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Series&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
+  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Jahr&quot;},{&quot;name&quot;:&quot;Units&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Prozent&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Units&quot;},{&quot;name&quot;:&quot;Series&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;&lt;u&gt;Zeitreihe des Indikators:&lt;/u&gt; Unbereinigter Gender Pay Gap&quot;,&quot;&lt;u&gt;Zusätzliche Zeitreihe:&lt;/u&gt; Bereinigter Gender Pay Gap&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Series&quot;},{&quot;name&quot;:&quot;federal state&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Baden-Württemberg&quot;,&quot;Bayern&quot;,&quot;Berlin&quot;,&quot;Brandenburg&quot;,&quot;Bremen&quot;,&quot;Hamburg&quot;,&quot;Hessen&quot;,&quot;Mecklenburg-Vorpommern&quot;,&quot;Niedersachsen&quot;,&quot;Nordrhein-Westfalen&quot;,&quot;Rheinland-Pfalz&quot;,&quot;Saarland&quot;,&quot;Sachsen&quot;,&quot;Sachsen-Anhalt&quot;,&quot;Schleswig-Holstein&quot;,&quot;Thüringen&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Bundesland&quot;},{&quot;name&quot;:&quot;GeoCode&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;GeoCode&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
   data-compositebreakdownlabel=""
   data-precision="[{&quot;decimals&quot;:0.0}]"
   data-graphstepsize="null"
@@ -394,7 +394,11 @@ layout-indicator-iframe
         
         
         
-        <th scope="col" class="table-value">Series</th>
+        <th scope="col">Series</th>
+        
+        
+        
+        <th scope="col" class="table-value">GeoCode</th>
         
         
       </thead>
@@ -415,7 +419,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value"><u>Zeitreihe des Indikators:</u> Unbereinigter Gender Pay Gap</td>
+          <td><u>Zeitreihe des Indikators:</u> Unbereinigter Gender Pay Gap</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -435,7 +443,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value"><u>Zeitreihe des Indikators:</u> Unbereinigter Gender Pay Gap</td>
+          <td><u>Zeitreihe des Indikators:</u> Unbereinigter Gender Pay Gap</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -455,7 +467,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value"><u>Zeitreihe des Indikators:</u> Unbereinigter Gender Pay Gap</td>
+          <td><u>Zeitreihe des Indikators:</u> Unbereinigter Gender Pay Gap</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -475,7 +491,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value"><u>Zeitreihe des Indikators:</u> Unbereinigter Gender Pay Gap</td>
+          <td><u>Zeitreihe des Indikators:</u> Unbereinigter Gender Pay Gap</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -495,7 +515,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value"><u>Zeitreihe des Indikators:</u> Unbereinigter Gender Pay Gap</td>
+          <td><u>Zeitreihe des Indikators:</u> Unbereinigter Gender Pay Gap</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -515,7 +539,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value"><u>Zeitreihe des Indikators:</u> Unbereinigter Gender Pay Gap</td>
+          <td><u>Zeitreihe des Indikators:</u> Unbereinigter Gender Pay Gap</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -535,7 +563,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value"><u>Zeitreihe des Indikators:</u> Unbereinigter Gender Pay Gap</td>
+          <td><u>Zeitreihe des Indikators:</u> Unbereinigter Gender Pay Gap</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -555,7 +587,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value"><u>Zeitreihe des Indikators:</u> Unbereinigter Gender Pay Gap</td>
+          <td><u>Zeitreihe des Indikators:</u> Unbereinigter Gender Pay Gap</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -575,7 +611,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value"><u>Zeitreihe des Indikators:</u> Unbereinigter Gender Pay Gap</td>
+          <td><u>Zeitreihe des Indikators:</u> Unbereinigter Gender Pay Gap</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -595,7 +635,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value"><u>Zeitreihe des Indikators:</u> Unbereinigter Gender Pay Gap</td>
+          <td><u>Zeitreihe des Indikators:</u> Unbereinigter Gender Pay Gap</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -615,7 +659,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value"><u>Zeitreihe des Indikators:</u> Unbereinigter Gender Pay Gap</td>
+          <td><u>Zeitreihe des Indikators:</u> Unbereinigter Gender Pay Gap</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -635,7 +683,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value"><u>Zeitreihe des Indikators:</u> Unbereinigter Gender Pay Gap</td>
+          <td><u>Zeitreihe des Indikators:</u> Unbereinigter Gender Pay Gap</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -655,7 +707,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value"><u>Zeitreihe des Indikators:</u> Unbereinigter Gender Pay Gap</td>
+          <td><u>Zeitreihe des Indikators:</u> Unbereinigter Gender Pay Gap</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -675,7 +731,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value"><u>Zeitreihe des Indikators:</u> Unbereinigter Gender Pay Gap</td>
+          <td><u>Zeitreihe des Indikators:</u> Unbereinigter Gender Pay Gap</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -695,7 +755,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value"><u>Zeitreihe des Indikators:</u> Unbereinigter Gender Pay Gap</td>
+          <td><u>Zeitreihe des Indikators:</u> Unbereinigter Gender Pay Gap</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -715,7 +779,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value"><u>Zeitreihe des Indikators:</u> Unbereinigter Gender Pay Gap</td>
+          <td><u>Zeitreihe des Indikators:</u> Unbereinigter Gender Pay Gap</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -735,7 +803,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value"><u>Zeitreihe des Indikators:</u> Unbereinigter Gender Pay Gap</td>
+          <td><u>Zeitreihe des Indikators:</u> Unbereinigter Gender Pay Gap</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -755,7 +827,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value"><u>Zeitreihe des Indikators:</u> Unbereinigter Gender Pay Gap</td>
+          <td><u>Zeitreihe des Indikators:</u> Unbereinigter Gender Pay Gap</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -775,7 +851,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value"><u>Zeitreihe des Indikators:</u> Unbereinigter Gender Pay Gap</td>
+          <td><u>Zeitreihe des Indikators:</u> Unbereinigter Gender Pay Gap</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -795,7 +875,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value"><u>Zusätzliche Zeitreihe:</u> Bereinigter Gender Pay Gap</td>
+          <td><u>Zusätzliche Zeitreihe:</u> Bereinigter Gender Pay Gap</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -815,7 +899,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value"><u>Zusätzliche Zeitreihe:</u> Bereinigter Gender Pay Gap</td>
+          <td><u>Zusätzliche Zeitreihe:</u> Bereinigter Gender Pay Gap</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -835,7 +923,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value"><u>Zusätzliche Zeitreihe:</u> Bereinigter Gender Pay Gap</td>
+          <td><u>Zusätzliche Zeitreihe:</u> Bereinigter Gender Pay Gap</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -855,7 +947,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value"><u>Zusätzliche Zeitreihe:</u> Bereinigter Gender Pay Gap</td>
+          <td><u>Zusätzliche Zeitreihe:</u> Bereinigter Gender Pay Gap</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -875,7 +971,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value"><u>Zusätzliche Zeitreihe:</u> Bereinigter Gender Pay Gap</td>
+          <td><u>Zusätzliche Zeitreihe:</u> Bereinigter Gender Pay Gap</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -895,7 +995,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value"><u>Zusätzliche Zeitreihe:</u> Bereinigter Gender Pay Gap</td>
+          <td><u>Zusätzliche Zeitreihe:</u> Bereinigter Gender Pay Gap</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -915,7 +1019,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value"><u>Zusätzliche Zeitreihe:</u> Bereinigter Gender Pay Gap</td>
+          <td><u>Zusätzliche Zeitreihe:</u> Bereinigter Gender Pay Gap</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -935,7 +1043,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value"><u>Zusätzliche Zeitreihe:</u> Bereinigter Gender Pay Gap</td>
+          <td><u>Zusätzliche Zeitreihe:</u> Bereinigter Gender Pay Gap</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -955,7 +1067,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value"><u>Zusätzliche Zeitreihe:</u> Bereinigter Gender Pay Gap</td>
+          <td><u>Zusätzliche Zeitreihe:</u> Bereinigter Gender Pay Gap</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -975,7 +1091,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value"><u>Zusätzliche Zeitreihe:</u> Bereinigter Gender Pay Gap</td>
+          <td><u>Zusätzliche Zeitreihe:</u> Bereinigter Gender Pay Gap</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -995,7 +1115,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value"><u>Zusätzliche Zeitreihe:</u> Bereinigter Gender Pay Gap</td>
+          <td><u>Zusätzliche Zeitreihe:</u> Bereinigter Gender Pay Gap</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1015,7 +1139,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value"><u>Zusätzliche Zeitreihe:</u> Bereinigter Gender Pay Gap</td>
+          <td><u>Zusätzliche Zeitreihe:</u> Bereinigter Gender Pay Gap</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1035,7 +1163,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value"><u>Zusätzliche Zeitreihe:</u> Bereinigter Gender Pay Gap</td>
+          <td><u>Zusätzliche Zeitreihe:</u> Bereinigter Gender Pay Gap</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1055,7 +1187,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value"><u>Zusätzliche Zeitreihe:</u> Bereinigter Gender Pay Gap</td>
+          <td><u>Zusätzliche Zeitreihe:</u> Bereinigter Gender Pay Gap</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1075,7 +1211,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value"><u>Zusätzliche Zeitreihe:</u> Bereinigter Gender Pay Gap</td>
+          <td><u>Zusätzliche Zeitreihe:</u> Bereinigter Gender Pay Gap</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1095,7 +1235,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value"><u>Zusätzliche Zeitreihe:</u> Bereinigter Gender Pay Gap</td>
+          <td><u>Zusätzliche Zeitreihe:</u> Bereinigter Gender Pay Gap</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1115,7 +1259,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value"><u>Zusätzliche Zeitreihe:</u> Bereinigter Gender Pay Gap</td>
+          <td><u>Zusätzliche Zeitreihe:</u> Bereinigter Gender Pay Gap</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1135,7 +1283,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value"><u>Zusätzliche Zeitreihe:</u> Bereinigter Gender Pay Gap</td>
+          <td><u>Zusätzliche Zeitreihe:</u> Bereinigter Gender Pay Gap</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1155,7 +1307,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value"><u>Zusätzliche Zeitreihe:</u> Bereinigter Gender Pay Gap</td>
+          <td><u>Zusätzliche Zeitreihe:</u> Bereinigter Gender Pay Gap</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1241,6 +1397,32 @@ data-event-label="Change to Table tab"
         ><i class="fa fa-table" aria-hidden="true"></i>
       
     <span class="hidden-xs" style="color:black">Tabelle</span></button>
+  </li>
+  
+  <li role="presentation"
+    class="
+      nav-item
+      map
+      
+    ">
+    <button
+      class="nav-link "
+      data-bs-toggle="tab"
+      role="tab"
+      type="button"
+      
+        id="tab-mapview"
+        data-bs-target="#mapview"
+        aria-controls="mapview"
+        data-no-disagg="true"
+        data-on="click"
+data-event-category="Tab change"
+data-event-action="Change data view"
+data-event-label="Change to Map tab"
+
+        ><i class="fa fa-map" aria-hidden="true"></i>
+      
+    <span class="hidden-xs" style="color:black">Karte</span></button>
   </li>
   
 </ul>
@@ -1413,6 +1595,76 @@ data-event-label="Change to Table tab"
 </div>
 
 <div id="tableSelectionDownload" class="clearfix"></div>
+
+        </div>
+      
+    
+      
+        <div role="tabpanel" class="tab-pane " id="mapview" class="map">
+          
+
+<h4 id="map-heading" class="chart-title">Unterschied zwischen den durchschnittlichen Bruttostundenverdiensten von Frauen und Männern</h4>
+<h6 id="map-subheading" class="chart-subtitle">In Prozent der Verdienste der Männer</h6>
+<div id="map" aria-describedby="table-alternative">
+  <img class="map-loading-image" src="/dns-indicators/assets/img/loading.gif" alt="Karte wird geladen" />
+</div>
+
+
+
+
+
+
+
+<div id="mapFooter" class="table-footer-text">
+  <h5 class="sr-only">Chart details</h5>
+    <dl>
+        
+          <dt><u>Datenquelle</u>:</dt>
+          <dd><a href="https://www.destatis.de/DE/Home/_inhalt.html" target="_blank">Statistisches Bundesamt</a></dd>
+        
+
+        
+          <dt><u>Datenstand</u>:</dt>
+          <dd>13.02.2025</dd>
+        
+
+        
+          <dt><u>Geographische Abdeckung</u>:</dt>
+          <dd>Deutschland</dd>
+        
+
+        <dt class="data-controlled-footer-field unit-from-data"><u>Einheit</u>:</dt>
+        <dd class="data-controlled-footer-field unit-from-data"></dd>
+
+        
+
+        
+          <dt><u>Anmerkungen</u>:</dt>
+          <dd><br>• 2006 bis 2021: Verdienststrukturerhebung, fortgeschrieben mit Ergebnissen der vierteljährlichen Verdiensterhebung.<br>• Ab 2022: Ergebnisse der Verdiensterhebung.</dd>
+        
+
+        
+        
+        
+        
+        <dt
+          class="data-controlled-footer-field"
+          data-ts-attribute="COMMENT_TS"
+        ><u>Anmerkung</u>:</dt>
+        <dd
+          class="data-controlled-footer-field"
+          data-ts-attribute="COMMENT_TS"
+        ></dd>
+        
+        
+
+        
+        <dt><u>Copyright</u>:</dt>
+        <dd>&copy; Statistisches Bundesamt (Destatis), 2025</dd>
+        
+    </dl>
+</div>
+
 
         </div>
       
@@ -1674,7 +1926,7 @@ data-event-label="Change to indicator.sources tab"
             <th scope="row" style="text-align: left; width: 130px;">Bewertung </th>
             <td>
               
-                <p><u>Zielformulierung:</u><br />Der Verdienstabstand zwischen Frauen und Männern soll jedes Jahr höchstens 10 % des durchschnittlichen Verdienstes der Männer betragen.<br /><br /><u>Bewertung:</u><br />Ausgehend von der Zielformulierung würde der politisch festgelegte Zielwert seit 2021 jedes Jahr erreicht werden. Der Indikatorwert liegt jedoch dauerhaft deutlich über dem Zielwert. Der Indikator 5.1.a wird daher für das Jahr 2024 mit <b>Wolke</b> bewertet.<br /><br /><u>Datenstand zum Zeitpunkt der Bewertung:</u><br />13.02.2025<br /><br /><u>Anmerkung:</u><br />Die Bewertung <b>Gewitter</b> wird nicht vergeben, da die durchschnittliche Entwicklung der letzten sechs Jahre auf eine Verbesserung hindeutet.<br /><br /><a href="https://dnsTestEnvironment.github.io/dns-indicators/status"><img src="https://sdg-indikatoren.de/public/Wettersymbole/Wolke.png" title="Der Zielwert wurde in 2024&nbsp;nicht erreicht, aber die durchschnittliche Entwicklung wies in die gewünschte Richtung." alt="Wettersymbol Wolke" /></a></p>
+                <p><u>Zielformulierung:</u><br />Der Verdienstabstand zwischen Frauen und Männern soll jedes Jahr höchstens 10 % des durchschnittlichen Verdienstes der Männer betragen.<br /><br /><u>Bewertung:</u><br />Ausgehend von der Zielformulierung würde der politisch festgelegte Zielwert seit 2021 jedes Jahr erreicht werden. Der Indikatorwert liegt jedoch dauerhaft deutlich über dem Zielwert. Der Indikator 5.1.a wird daher für das Jahr 2024 mit <b>Wolke</b> bewertet.<br /><br /><u>Datenstand zum Zeitpunkt der Bewertung:</u><br />13.02.2025<br /><br /><u>Anmerkung:</u><br />Die Bewertung <b>Gewitter</b> wird nicht vergeben, da die durchschnittliche Entwicklung der letzten sechs Jahre auf eine Verbesserung hindeutet.</p>
 
               
             </td>
@@ -1690,7 +1942,32 @@ data-event-label="Change to indicator.sources tab"
   
       
         
-          
+      
+
+      
+      
+
+
+      
+        
+           <tr id="everythingElse"> 
+            <th scope="row" style="text-align: left; width: 130px;">Bewertung </th>
+            <td>
+              
+                <p><a href="https://dnsTestEnvironment.github.io/dns-indicators/status"><img src="https://sdg-indikatoren.de/public/Wettersymbole/Wolke.png" title="Der Zielwert wurde in 2024 nicht erreicht, aber die durchschnittliche Entwicklung wies in die gewünschte Richtung." alt="Wettersymbol Wolke" /></a></p>
+
+              
+            </td>
+          </tr>
+        
+      
+
+      <!-- weather -->
+      
+
+      
+    
+  
   
   
   
@@ -4373,6 +4650,15 @@ data-event-label="Change to indicator.sources tab"
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.2.2/dist/chartjs-plugin-annotation.min.js" integrity="sha256-XuHhf6q+GD7fscc96mTm/228GXf1Nn9wOYOE0EgeFzY=" crossorigin="anonymous"></script>
 
 
+<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet.zoomshowhide@0.1.0/dist/leaflet-zoom-show-hide.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/1.4.0/chroma.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/iso8601-js-period@0.2.1/iso8601.min.js"></script>
+<script src="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.min.js"></script>
+<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+<script src="https://cdn.jsdelivr.net/gh/torfsen/leaflet.zoomhome@master/dist/leaflet.zoomhome.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
 
@@ -4388,12 +4674,12 @@ data-event-label="Change to indicator.sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/dns-indicators/assets/js/sdg.js?v=20250905142259'></script>
+<script src='/dns-indicators/assets/js/sdg.js?v=20250908134414'></script>
 
 
     
     
-    <script src="/dns-indicators/assets/js/custom.js?v=20250905142259"></script><script>
+    <script src="/dns-indicators/assets/js/custom.js?v=20250908134414"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
