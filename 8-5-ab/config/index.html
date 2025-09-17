@@ -141,7 +141,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20250917124147">
+        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20250917130053">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -561,23 +561,11 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.data_notice_text'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('data_show_map', true);
-        var propertyEditor = editor.getEditor('root.data_show_map');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: data_show_map');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.data_show_map'));
 
     
       try {
-        var currentValue = normalizeCurrentValue('data_start_values', [{"field":"Series","value":"a) total (20 to 64-year-olds)"},{"field":"sex","value":"female"},{"field":"sex","value":"male"}]);
+        var currentValue = normalizeCurrentValue('data_start_values', [{"field":"time series","value":"a) total (20 to 64-year-olds)"},{"field":"time series","value":"b) older people (55 to 64-year-olds)"}]);
         var propertyEditor = editor.getEditor('root.data_start_values');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -601,23 +589,11 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.expected_disaggregations'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('footer_fields', [{"series":"b) older people (55 to 64-year-olds)","label":"Anmerkungen","value":"<br>• Aufgrund einer umfassenden Neugestaltung des Mikrozensus ist ein Vergleich der Daten des Erhebungsjahres 2020 mit den Vorjahren nur eingeschränkt möglich (Zeitreihenbruch).<br>• Zeitreihenbrüche in 2010, 2011, 2012, 2014, 2020 und 2021."},{"series":"a) total (20 to 64-year-olds)","label":"Anmerkungen","value":"<br>• Aufgrund einer umfassenden Neugestaltung des Mikrozensus ist ein Vergleich der Daten des Erhebungsjahres 2020 mit den Vorjahren nur eingeschränkt möglich (Zeitreihenbruch).<br>• Zeitreihenbrüche in 2010, 2011, 2012, 2014, 2020 und 2021."}]);
-        var propertyEditor = editor.getEditor('root.footer_fields');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: footer_fields');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.footer_fields'));
 
     
       try {
-        var currentValue = normalizeCurrentValue('graph_annotations', [{"series":"a) total (20 to 64-year-olds)","value":83,"label":{"content":"Ziel 2030","position":"left","backgroundColor":"transparent","color":"transparent"},"preset":"target_line","borderColor":"transparent"},{"series":"b) older people (55 to 64-year-olds)","value":77,"label":{"content":"Ziel 2030","position":"left","backgroundColor":"transparent","color":"transparent"},"preset":"target_line","borderColor":"transparent"}]);
+        var currentValue = normalizeCurrentValue('graph_annotations', [{"value":83,"label":{"content":"Ziel 2030 - a) Insgesamt (20-64-Jährige)","position":"left","backgroundColor":"transparent","color":"transparent"},"preset":"target_line","borderColor":"transparent"},{"value":77,"label":{"content":"Ziel 2030 - b) Ältere (55-64-Jährige)","position":"left","backgroundColor":"transparent","color":"transparent"},"preset":"target_line","borderColor":"transparent"}]);
         var propertyEditor = editor.getEditor('root.graph_annotations');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -675,18 +651,6 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.graph_title'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('graph_titles', [{"series":"a) total (20 to 64-year-olds)","title":"Erwerbstätigenquote"},{"series":"b) older people (55 to 64-year-olds)","title":"Erwerbstätigenquote"}]);
-        var propertyEditor = editor.getEditor('root.graph_titles');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: graph_titles');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.graph_titles'));
 
     
@@ -735,23 +699,11 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.indicator_tabs'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('national_geographical_coverage', "Deutschland");
-        var propertyEditor = editor.getEditor('root.national_geographical_coverage');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: national_geographical_coverage');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.national_geographical_coverage'));
 
     
       try {
-        var currentValue = normalizeCurrentValue('page_content', "\n");
+        var currentValue = normalizeCurrentValue('page_content', "");
         var propertyEditor = editor.getEditor('root.page_content');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -958,12 +910,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/dns-indicators/assets/js/sdg.js?v=20250917124147'></script>
+<script src='/dns-indicators/assets/js/sdg.js?v=20250917130053'></script>
 
 
     
     
-    <script src="/dns-indicators/assets/js/custom.js?v=20250917124147"></script><script>
+    <script src="/dns-indicators/assets/js/custom.js?v=20250917130053"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
