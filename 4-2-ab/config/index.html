@@ -141,7 +141,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20250917133618">
+        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20250917145721">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -551,6 +551,18 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.copyright'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('data_footnote', "Ganztagsbetreuung: Betreuungszeit von mehr als sieben Stunden.");
+        var propertyEditor = editor.getEditor('root.data_footnote');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: data_footnote');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.data_footnote'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.data_non_statistical'));
@@ -561,20 +573,20 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.data_notice_text'));
 
-    propertyEditorAccessibilityFixes(editor.getEditor('root.data_show_map'));
-
     
       try {
-        var currentValue = normalizeCurrentValue('data_start_values', [{"field":"time series","value":"a) 0 to 2-year-olds"},{"field":"time series","value":"b) 3 to 5-year-olds"}]);
-        var propertyEditor = editor.getEditor('root.data_start_values');
+        var currentValue = normalizeCurrentValue('data_show_map', true);
+        var propertyEditor = editor.getEditor('root.data_show_map');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
         
       }
       catch (e) {
         console.log(e.message);
-        console.log('Unable to set config key: data_start_values');
+        console.log('Unable to set config key: data_show_map');
       }
+    propertyEditorAccessibilityFixes(editor.getEditor('root.data_show_map'));
+
     propertyEditorAccessibilityFixes(editor.getEditor('root.data_start_values'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.embedded_feature_footer'));
@@ -593,7 +605,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('graph_annotations', [{"value":35,"label":{"content":"Ziel 2030 - a) 0- bis 2-Jährige","position":"left","backgroundColor":"transparent","color":"transparent"},"preset":"target_line","borderColor":"transparent"},{"value":70,"label":{"content":"Ziel 2030 - b) 3- bis 5-Jährige","position":"left","backgroundColor":"transparent","color":"transparent"},"preset":"target_line","borderColor":"transparent"}]);
+        var currentValue = normalizeCurrentValue('graph_annotations', [{"series":"a) 0 to 2-year-olds","value":35,"label":{"content":"Ziel 2030","position":"left","backgroundColor":"transparent","color":"transparent"},"preset":"target_line","borderColor":"transparent"},{"series":"b) 3 to 5-year-olds","value":70,"label":{"content":"Ziel 2030","position":"left","backgroundColor":"transparent","color":"transparent"},"preset":"target_line","borderColor":"transparent"}]);
         var propertyEditor = editor.getEditor('root.graph_annotations');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -607,7 +619,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('graph_limits', [{"maximum":100.0}]);
+        var currentValue = normalizeCurrentValue('graph_limits', [{"series":"a) 0 to 2-year-olds","maximum":100.0},{"series":"b) 3 to 5-year-olds","maximum":100.0}]);
         var propertyEditor = editor.getEditor('root.graph_limits');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -621,6 +633,18 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.graph_series_breaks'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('graph_stacked_disaggregation', "type of care");
+        var propertyEditor = editor.getEditor('root.graph_stacked_disaggregation');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: graph_stacked_disaggregation');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.graph_stacked_disaggregation'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.graph_target_lines'));
@@ -639,6 +663,18 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.graph_title'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('graph_titles', [{"series":"a) 0 to 2-year-olds","title":"Ganztagsbetreuung für Kinder"},{"series":"b) 3 to 5-year-olds","title":"Ganztagsbetreuung für Kinder"}]);
+        var propertyEditor = editor.getEditor('root.graph_titles');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: graph_titles');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.graph_titles'));
 
     
@@ -687,11 +723,23 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.indicator_tabs'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('national_geographical_coverage', "Deutschland");
+        var propertyEditor = editor.getEditor('root.national_geographical_coverage');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: national_geographical_coverage');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.national_geographical_coverage'));
 
     
       try {
-        var currentValue = normalizeCurrentValue('page_content', "");
+        var currentValue = normalizeCurrentValue('page_content', "\n");
         var propertyEditor = editor.getEditor('root.page_content');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -898,12 +946,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/dns-indicators/assets/js/sdg.js?v=20250917133618'></script>
+<script src='/dns-indicators/assets/js/sdg.js?v=20250917145721'></script>
 
 
     
     
-    <script src="/dns-indicators/assets/js/custom.js?v=20250917133618"></script><script>
+    <script src="/dns-indicators/assets/js/custom.js?v=20250917145721"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

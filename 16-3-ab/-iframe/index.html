@@ -146,7 +146,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20250917133618">
+        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20250917145721">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -311,9 +311,9 @@ layout-indicator-iframe
   data-id="16-3-ab"
   data-country="Germany"
   data-charttitle="Corruption Perceptions Index in Deutschland sowie in den Partnerländern der deutschen Entwicklungszusammenarbeit"
-  data-charttitles="null"
+  data-charttitles="[{&quot;series&quot;:&quot;a) Corruption Perceptions Index in Deutschland&quot;,&quot;title&quot;:&quot;a) Corruption Perceptions Index in Deutschland&quot;},{&quot;series&quot;:&quot;b) Anzahl der Partnerländern der deutschen Entwicklungszusammenarbeit mit verbessertem CPI&quot;,&quot;title&quot;:&quot;b) Corruption Perceptions Index in den Partnerländern der deutschen Entwicklungszusammenarbeit&quot;}]"
   data-chartsubtitle=""
-  data-chartsubtitles="null"
+  data-chartsubtitles="[{&quot;series&quot;:&quot;a) Corruption Perceptions Index in Deutschland&quot;,&quot;title&quot;:&quot;Indexwert des jeweiligen Jahres&quot;},{&quot;series&quot;:&quot;b) Anzahl der Partnerländern der deutschen Entwicklungszusammenarbeit mit verbessertem CPI&quot;,&quot;title&quot;:&quot;Partnerländer, mit verbesserter Bewertung gegenüber 2012&quot;}]"
   data-measurementunit=""
   data-xaxislabel=""
   data-showdata="true"
@@ -322,8 +322,8 @@ layout-indicator-iframe
   data-graphtypes="null"
   data-geocoderegex=""
   data-showmap="false"
-  data-startvalues="[{&quot;field&quot;:&quot;Zeitreihe&quot;,&quot;value&quot;:&quot;a) Corruption Perceptions Index in Deutschland&quot;},{&quot;field&quot;:&quot;Zeitreihe&quot;,&quot;value&quot;:&quot;b) Anzahl der Partnerländern der deutschen Entwicklungszusammenarbeit mit verbessertem CPI&quot;}]"
-  data-graphlimits="[{&quot;minimum&quot;:0.0,&quot;maximum&quot;:100.0}]"
+  data-startvalues="[{&quot;field&quot;:&quot;Series&quot;,&quot;value&quot;:&quot;a) Corruption Perceptions Index in Deutschland&quot;},{&quot;field&quot;:&quot;Series&quot;,&quot;value&quot;:&quot;b) Anzahl der Partnerländern der deutschen Entwicklungszusammenarbeit mit verbessertem CPI&quot;}]"
+  data-graphlimits="[{&quot;series&quot;:&quot;a) Corruption Perceptions Index in Deutschland&quot;,&quot;minimum&quot;:0.0,&quot;maximum&quot;:100.0}]"
   data-stackeddisaggregation=""
   data-showline="true"
   data-spangaps="true"
@@ -335,7 +335,7 @@ layout-indicator-iframe
   data-graphseriesbreaks="null"
   data-grapherrorbars="null"
   data-indicatordownloads="null"
-  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Jahr&quot;},{&quot;name&quot;:&quot;Units&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Anzahl&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Units&quot;},{&quot;name&quot;:&quot;time series&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;a) Corruption Perceptions Index in Deutschland&quot;,&quot;b) Anzahl der Partnerländern der deutschen Entwicklungszusammenarbeit mit verbessertem CPI&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Zeitreihe&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
+  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Jahr&quot;},{&quot;name&quot;:&quot;Units&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Anzahl&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Units&quot;},{&quot;name&quot;:&quot;Series&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;a) Corruption Perceptions Index in Deutschland&quot;,&quot;b) Anzahl der Partnerländern der deutschen Entwicklungszusammenarbeit mit verbessertem CPI&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Series&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
   data-compositebreakdownlabel=""
   data-precision="null"
   data-graphstepsize="null"
@@ -369,15 +369,571 @@ layout-indicator-iframe
   <div id="datatables">
 
     
+    <a role="button" href="https://DnsTestEnvironment.github.io/dns-data/de/headline/16-3-ab.csv" class="btn btn-primary btn-download" download="indicator_16-3-ab.csv" tabindex="0" role="button">Speichern der Headline im CSV-Format</a>
+    
     <a role="button" href="https://DnsTestEnvironment.github.io/dns-data/de/data/16-3-ab.csv" class="btn btn-primary btn-download" download='indicator_16-3-ab.csv' tabindex='0' role='button'>Daten im CSV-Format speichern</a>
 
     <p class="no-js-disaggregation-hint"></p>
 
     
     <h3></h3>
+    <table class="table-responsive table table-hover dataTable no-footer" role="grid">
+      <caption>Corruption Perceptions Index in Deutschland sowie in den Partnerländern der deutschen Entwicklungszusammenarbeit</caption>
+      <thead>
+        
+        
+        <th scope="col">Year</th>
+        
+        
+        
+        <th scope="col">Value</th>
+        
+        
+        
+        <th scope="col">Units</th>
+        
+        
+        
+        <th scope="col" class="table-value">Series</th>
+        
+        
+      </thead>
+      <tbody>
+        
+        <tr>
+          
+          
+          <td>2012</td>
+          
+          
+          
+          <td>79.0</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">a) Corruption Perceptions Index in Deutschland</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2013</td>
+          
+          
+          
+          <td>78.0</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">a) Corruption Perceptions Index in Deutschland</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2014</td>
+          
+          
+          
+          <td>79.0</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">a) Corruption Perceptions Index in Deutschland</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2015</td>
+          
+          
+          
+          <td>81.0</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">a) Corruption Perceptions Index in Deutschland</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2016</td>
+          
+          
+          
+          <td>81.0</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">a) Corruption Perceptions Index in Deutschland</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2017</td>
+          
+          
+          
+          <td>81.0</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">a) Corruption Perceptions Index in Deutschland</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2018</td>
+          
+          
+          
+          <td>80.0</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">a) Corruption Perceptions Index in Deutschland</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2019</td>
+          
+          
+          
+          <td>80.0</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">a) Corruption Perceptions Index in Deutschland</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2020</td>
+          
+          
+          
+          <td>80.0</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">a) Corruption Perceptions Index in Deutschland</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2021</td>
+          
+          
+          
+          <td>80.0</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">a) Corruption Perceptions Index in Deutschland</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2022</td>
+          
+          
+          
+          <td>79.0</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">a) Corruption Perceptions Index in Deutschland</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2023</td>
+          
+          
+          
+          <td>78.0</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">a) Corruption Perceptions Index in Deutschland</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2024</td>
+          
+          
+          
+          <td>75.0</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">a) Corruption Perceptions Index in Deutschland</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2012</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td>Anzahl</td>
+          
+          
+          
+          <td class="table-value">b) Anzahl der Partnerländern der deutschen Entwicklungszusammenarbeit mit verbessertem CPI</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2013</td>
+          
+          
+          
+          <td>16.0</td>
+          
+          
+          
+          <td>Anzahl</td>
+          
+          
+          
+          <td class="table-value">b) Anzahl der Partnerländern der deutschen Entwicklungszusammenarbeit mit verbessertem CPI</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2014</td>
+          
+          
+          
+          <td>30.0</td>
+          
+          
+          
+          <td>Anzahl</td>
+          
+          
+          
+          <td class="table-value">b) Anzahl der Partnerländern der deutschen Entwicklungszusammenarbeit mit verbessertem CPI</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2015</td>
+          
+          
+          
+          <td>30.0</td>
+          
+          
+          
+          <td>Anzahl</td>
+          
+          
+          
+          <td class="table-value">b) Anzahl der Partnerländern der deutschen Entwicklungszusammenarbeit mit verbessertem CPI</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2016</td>
+          
+          
+          
+          <td>31.0</td>
+          
+          
+          
+          <td>Anzahl</td>
+          
+          
+          
+          <td class="table-value">b) Anzahl der Partnerländern der deutschen Entwicklungszusammenarbeit mit verbessertem CPI</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2017</td>
+          
+          
+          
+          <td>32.0</td>
+          
+          
+          
+          <td>Anzahl</td>
+          
+          
+          
+          <td class="table-value">b) Anzahl der Partnerländern der deutschen Entwicklungszusammenarbeit mit verbessertem CPI</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2018</td>
+          
+          
+          
+          <td>31.0</td>
+          
+          
+          
+          <td>Anzahl</td>
+          
+          
+          
+          <td class="table-value">b) Anzahl der Partnerländern der deutschen Entwicklungszusammenarbeit mit verbessertem CPI</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2019</td>
+          
+          
+          
+          <td>34.0</td>
+          
+          
+          
+          <td>Anzahl</td>
+          
+          
+          
+          <td class="table-value">b) Anzahl der Partnerländern der deutschen Entwicklungszusammenarbeit mit verbessertem CPI</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2020</td>
+          
+          
+          
+          <td>36.0</td>
+          
+          
+          
+          <td>Anzahl</td>
+          
+          
+          
+          <td class="table-value">b) Anzahl der Partnerländern der deutschen Entwicklungszusammenarbeit mit verbessertem CPI</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2021</td>
+          
+          
+          
+          <td>36.0</td>
+          
+          
+          
+          <td>Anzahl</td>
+          
+          
+          
+          <td class="table-value">b) Anzahl der Partnerländern der deutschen Entwicklungszusammenarbeit mit verbessertem CPI</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2022</td>
+          
+          
+          
+          <td>30.0</td>
+          
+          
+          
+          <td>Anzahl</td>
+          
+          
+          
+          <td class="table-value">b) Anzahl der Partnerländern der deutschen Entwicklungszusammenarbeit mit verbessertem CPI</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2023</td>
+          
+          
+          
+          <td>34.0</td>
+          
+          
+          
+          <td>Anzahl</td>
+          
+          
+          
+          <td class="table-value">b) Anzahl der Partnerländern der deutschen Entwicklungszusammenarbeit mit verbessertem CPI</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2024</td>
+          
+          
+          
+          <td>32.0</td>
+          
+          
+          
+          <td>Anzahl</td>
+          
+          
+          
+          <td class="table-value">b) Anzahl der Partnerländern der deutschen Entwicklungszusammenarbeit mit verbessertem CPI</td>
+          
+          
+        </tr>
+        
+      </tbody>
+    </table>
     
   </div>
 
+  
+  <div id="datatableFooter">
+    
+    <p>Datenquelle: <a href="https://www.transparency.de/" target="_blank" onclick="return confirm_alert('von Transparency International', 'De')">Transparency International e.V.</a></p>
+    
+    
+    
+    
+  </div>
   
 
 </div>
@@ -463,8 +1019,8 @@ data-event-label="Change to Table tab"
     <div id="selectionsChart">
       <figure role="group">
         <div id="chart-canvas">
-          <h4 id="chart-heading" class="chart-title">Corruption Perceptions Index in Deutschland sowie in den Partnerländern der deutschen Entwicklungszusammenarbeit</h4>
-          <h6 id="chart-heading" class="chart-subtitle"></h6>
+          <h4 id="chart-heading" class="chart-title">a) Corruption Perceptions Index in Deutschland</h4>
+          <h6 id="chart-heading" class="chart-subtitle">Indexwert des jeweiligen Jahres</h6>
           <div id="chart" class="plot-container">
             <canvas
     role="img"
@@ -504,6 +1060,17 @@ data-event-label="Change to Table tab"
 
         
 
+        
+        
+        <dt
+          data-for-series="b) Anzahl der Partnerländern der deutschen Entwicklungszusammenarbeit mit verbessertem CPI"
+          data-for-unit=""
+        ><u>Anmerkungen</u>:</dt>
+        <dd
+          data-for-series="b) Anzahl der Partnerländern der deutschen Entwicklungszusammenarbeit mit verbessertem CPI"
+          data-for-unit=""
+        ><br>• Länderliste für die bilaterale staatliche Entwicklungszusammenarbeit des Bundesministeriums für wirtschaftliche Zusammenarbeit und Entwicklung wurde 2023 aktualisiert. Daten der Zeitreihe sind entsprechend korrigiert.<br>• 2023 und 2024 ohne Afghanistan, da die Zusammenarbeit ausgesetzt wurde.</dd>
+        
         
         
         
@@ -580,6 +1147,17 @@ data-event-label="Change to Table tab"
 
         
 
+        
+        
+        <dt
+          data-for-series="b) Anzahl der Partnerländern der deutschen Entwicklungszusammenarbeit mit verbessertem CPI"
+          data-for-unit=""
+        ><u>Anmerkungen</u>:</dt>
+        <dd
+          data-for-series="b) Anzahl der Partnerländern der deutschen Entwicklungszusammenarbeit mit verbessertem CPI"
+          data-for-unit=""
+        ><br>• Länderliste für die bilaterale staatliche Entwicklungszusammenarbeit des Bundesministeriums für wirtschaftliche Zusammenarbeit und Entwicklung wurde 2023 aktualisiert. Daten der Zeitreihe sind entsprechend korrigiert.<br>• 2023 und 2024 ohne Afghanistan, da die Zusammenarbeit ausgesetzt wurde.</dd>
+        
         
         
         
@@ -4507,12 +5085,12 @@ data-event-label="Change to indicator.sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/dns-indicators/assets/js/sdg.js?v=20250917133618'></script>
+<script src='/dns-indicators/assets/js/sdg.js?v=20250917145721'></script>
 
 
     
     
-    <script src="/dns-indicators/assets/js/custom.js?v=20250917133618"></script><script>
+    <script src="/dns-indicators/assets/js/custom.js?v=20250917145721"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
