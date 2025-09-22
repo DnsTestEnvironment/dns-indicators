@@ -2370,7 +2370,7 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
   }, this);
 
   if (headline.length > 0) {
-    dataset = makeHeadlineDataset(years, headline, defaultLabel, showLine, spanGaps, allObservationAttributes, mixedTypes);
+    dataset = makeHeadlineDataset(years, headline, defaultLabel, showLine, spanGaps, colors, allObservationAttributes, mixedTypes);
     datasets.unshift(dataset);
   }
   return datasets;
