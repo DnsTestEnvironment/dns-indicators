@@ -9,21 +9,6 @@
 {% endfor %}
 {% assign uniqSources = sources_list | uniq | join: ", " %}
 
-
-{% if page.indicator.special_evaluation == true %}
-  {% if sources_list.size < 2 %}
-    {% assign source = page.t.indicator.special_eval | append: ' ' | append: page.t.indicator.source %}
-  {% else %}
-    {% assign source = page.t.indicator.special_eval | append: ' ' | append: page.t.indicator.sources %}
-  {% endif %}
-{% else %}
-  {% if sources_list.size < 2 %}
-    {% assign source = page.t.indicator.source %}
-  {% else %}
-    {% assign source = page.t.indicator.sources %}
-  {% endif %}
-{% endif %}
-
 <div id="{{ include.footerId | default: 'selectionChartFooter' }}" class="table-footer-text">
   <h5 class="sr-only">Chart details</h5>
     <dl>
@@ -36,13 +21,8 @@
           <dd>{{ uniqSources }}</dd>
         {% endif %}
 
-        {% if page.indicator.data_state and page.indicator.data_state != '' %}
-          <dt><u>{{ page.t.indicator.data_state}}</u>:</dt>
-          <dd>{{ page.indicator.data_state }}</dd>
-        {% endif %}
-
         {% if page.indicator.national_geographical_coverage and page.indicator.national_geographical_coverage != '' %}
-          <dt><u>{{ page.t.indicator.geographical_area}}</u>:</dt>
+          <dt><u>{{ page.t.indicator.geographical_area }}</u>:</dt>
           <dd>{{ page.indicator.national_geographical_coverage }}</dd>
         {% endif %}
 
