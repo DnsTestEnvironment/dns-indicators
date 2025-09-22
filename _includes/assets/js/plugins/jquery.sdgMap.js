@@ -332,6 +332,7 @@
 
     // Get the data from a feature's properties, according to the current year.
     getData: function(props) {
+      console.log("Props",props);
       var ret = false;
       if (props.values && props.values.length && this.currentDisaggregation < props.values.length) {
         var value = props.values[this.currentDisaggregation][this.currentYear];
