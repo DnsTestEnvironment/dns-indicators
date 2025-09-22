@@ -34,7 +34,7 @@
             // TODO: Not all of this needs to be done
             // at every update.
             var features = this.getFeatures();
-            if (startValues && startValues.length > 0 && startValues != '""' ) {
+            if (startValues && startValues.length > 0) {
                 this.currentDisaggregation = this.getStartingDisaggregation(features, startValues);
                 this.displayedDisaggregation = this.currentDisaggregation;
                 this.needsMapUpdate = true;
@@ -61,7 +61,6 @@
             if (features.length === 0) {
                 return;
             }
-
             var disaggregations = features[0].properties.disaggregations,
                 fields = Object.keys(disaggregations[0]),
                 validStartValues = startValues.filter(function(startValue) {
