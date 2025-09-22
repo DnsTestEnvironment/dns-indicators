@@ -5461,7 +5461,7 @@ function createIndicatorDownloadButtons(indicatorDownloads, indicatorId, el) {
     MODEL.onFieldsComplete.attach(function (sender, args) {
 
         helpers.initialiseFields(args);
-
+        console.log("ARGS",args);
         if (args.hasGeoData && args.showMap) {
             VIEW._mapView = new mapView();
             VIEW._mapView.initialise(
