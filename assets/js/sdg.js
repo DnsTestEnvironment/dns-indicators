@@ -111,7 +111,6 @@ opensdg.autotrack = function(preset, category, action, label) {
     if (Array.isArray(options.mapOptions.colorRange[0])) {
       this.goalNumber = parseInt(options.indicatorId.slice(options.indicatorId.indexOf('_')+1,options.indicatorId.indexOf('-')));
       options.mapOptions.colorRange = options.mapOptions.colorRange[this.goalNumber-1];
-      console.log("goal: ",this.goalNumber);
     }
 
 
@@ -180,7 +179,10 @@ opensdg.autotrack = function(preset, category, action, label) {
         newSubtitle = this.modelHelpers.getChartTitle(currentSubtitle, this.chartSubtitles, currentUnit, currentSeries);
       }
       if (newTitle) {
-        $('#map-heading').text(newTitle);
+        if (this.proxy === 'proxy' || this.proxySerieses.includes(currentSeries)) {
+            newTitle += ' ' + this.viewHelpers.PROXY_PILL;
+        }
+        $('#map-heading').html(newTitle);
       }
       if (newSubtitle) {
         $('#map-subheading').text(newSubtitle);
@@ -237,6 +239,7 @@ opensdg.autotrack = function(preset, category, action, label) {
           }
         }
       }
+
       return tooltipContent;
     },
 
@@ -336,14 +339,23 @@ opensdg.autotrack = function(preset, category, action, label) {
         value = callback(value);
       });
       if (this._precision || this._precision === 0) {
-        value = Number((+(Math.round(+(value + 'e' + this._precision)) + 'e' + -this._precision)).toFixed(this._precision));
         value = Number.parseFloat(value).toFixed(this._precision);
       }
       if (this._decimalSeparator) {
-        value = value.toString().replace('.', this._decimalSeparator);
+        if(opensdg.language == 'de') {
+          value = value.toString().replace('.', this._decimalSeparator);
+        }
+        else {
+          value = value.toString();
+        }
       }
       if (this._thousandsSeparator) {
-        value = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, this._thousandsSeparator);
+        if(opensdg.language == 'de') {
+          value = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, this._thousandsSeparator);
+        }
+        else {
+          value = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        }
       }
       return value;
     },
@@ -612,7 +624,6 @@ opensdg.autotrack = function(preset, category, action, label) {
         }
         else {
           plugin.updateTitle();
-          plugin.updateFooterFields();
           plugin.updatePrecision();
         }
 
@@ -2886,10 +2897,9 @@ function inputEdges(edges) {
       if (configuredObservationAttributesFlat.includes(edge.To) || configuredObservationAttributesFlat.includes(edge.From)) {
         return false;
       }
-      return true;
+    return true;
     });
   }
-
   return edgesData;
 }
 
@@ -2944,8 +2954,10 @@ function getAllObservationAttributes(rows) {
         footnoteNumber: footnoteNumber,
       }
       footnoteNumber += 1;
+      console.log("obsAttributeHash[hashKey]: ",obsAttributeHash[hashKey]);
     });
   });
+  console.log("obsAttributeHash: ",obsAttributeHash);
   return obsAttributeHash;
 }
 
@@ -3544,11 +3556,23 @@ function updateObservationAttributes(obsAttributes) {
         return;
     }
     $listElement.show();
+    var listedAttributes = ["test", "test2"];
     Object.values(obsAttributes).forEach(function(obsAttribute) {
         var label = getObservationAttributeText(obsAttribute),
-            num = getObservationAttributeFootnoteSymbol(obsAttribute.footnoteNumber);
-        var $listItem = $('<dt id="observation-footnote-title-' + num + '">' + num + '</dt><dd id="observation-footnote-desc-' + num + '">' + label + '</dd>');
-        $listElement.append($listItem);
+            num = obsAttribute.footnoteNumber;
+
+        if (num == 0){
+          var $listItem = $('<dt><u>' + translations.t('+++symbols') + '</u>:</dt>');
+          $listElement.append($listItem);
+          var br = '<br>'
+        }
+        else
+          {var br = ''}
+        if (listedAttributes.indexOf(label) == -1) {
+          listedAttributes.push(label);
+          var $listItem = $('<dd id="observation-footnote-desc-' + num + '" style="margin-bottom: 0px">' + br + label + ' = ' +  translations.t('+++' + label) + '</dd>');
+          $listElement.append($listItem);
+        }
     });
 }
 
@@ -3563,9 +3587,17 @@ function getObservationAttributeText(obsAttribute) {
     if (!attributeConfig) {
         return '';
     }
-    var label = translations.t(obsAttribute.value);
+    // make sure we do not get 0.000 for obsValue
+    if (isNaN(parseInt(obsAttribute.value))) {
+      var label = translations.t(obsAttribute.value);
+    }
+    else{
+        var label = translations.t(String(parseInt(obsAttribute.value)));
+    }
+    //var label = translations.t(obsAttribute.value);
+
     if (attributeConfig.label) {
-        label = translations.t(attributeConfig.label) + ': ' + label;
+        label = translations.t(attributeConfig.label) + ' = ' + label;
     }
     return label;
 }
@@ -4653,8 +4685,9 @@ function alterTableConfig(config, info) {
  */
 function toCsv(tableData, selectedSeries, selectedUnit) {
     var lines = [],
-      dataHeadings = _.map(tableData.headings, function (heading) { return '"' + translations.t(heading) + '"'; }),
-      metaHeadings = [];
+        dataHeadings = _.map(tableData.headings, function (heading) { return '"' + translations.t(heading) + '"'; }),
+        metaHeadings = [];
+
     if (selectedSeries) {
         metaHeadings.push(translations.indicator.series);
     }
@@ -4677,6 +4710,7 @@ function toCsv(tableData, selectedSeries, selectedUnit) {
         if (selectedUnit) {
             line.push(JSON.stringify(translations.t(selectedUnit)));
         }
+
         lines.push(line.join(','));
     });
 
@@ -4693,6 +4727,7 @@ function initialiseDataTable(el, info) {
     for (var i = 1; i < info.table.headings.length; i++) {
         nonYearColumns.push(i);
     }
+
     var datatables_options = OPTIONS.datatables_options || {
         paging: false,
         bInfo: false,
@@ -4704,10 +4739,10 @@ function initialiseDataTable(el, info) {
             {
                 targets: nonYearColumns,
                 createdCell: function (td, cellData, rowData, row, col) {
-                  var additionalInfo = Object.assign({}, info);
-                  additionalInfo.row = row;
-                  additionalInfo.col = col;
-                  $(td).text(alterDataDisplay(cellData, rowData, 'table cell', additionalInfo));
+                    var additionalInfo = Object.assign({}, info);
+                    additionalInfo.row = row;
+                    additionalInfo.col = col;
+                    $(td).text(alterDataDisplay(cellData, rowData, 'table cell', additionalInfo));
                 },
             },
         ],
@@ -4815,17 +4850,70 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
         table_head += '</tr></thead>';
         currentTable.append(table_head);
         currentTable.append('<tbody></tbody>');
+        var row = -1;
 
         table.data.forEach(function (data) {
+            row += 1;
+            var col = -1;
             var row_html = '<tr>';
+            var obsValue = '';
+            console.log("observationAttributesTable: ", observationAttributesTable);
+            //(observationAttributesTable.data[row][1][0] !== undefined ? obsValue = observationAttributesTable.data[row][1][0].value : obsValue = '.');
             table.headings.forEach(function (heading, index) {
+                col += 1;
                 // For accessibility set the Year column to a "row" scope th.
+                // No observation values for years
+                if (col == 0) {
+                  obsValue = ''
+                }
+                // case: no obs attributes defined --> '' if we have a value and '.' if not
+                else if (observationAttributesTable.data[row][col].length == 0) {
+                  (data[index] !== null && data[index] !== undefined ?  obsValue = '' : obsValue = '.')
+                }
+                // case: Obs values are defined --> adding up all obs values separated by comma
+                else {
+                  obsValue = '';
+                  for (var i = 0; i <  observationAttributesTable.data[row][col].length; i++) {
+                    obsValue += (i == 0 ? observationAttributesTable.data[row][col][i].value : (', ' + observationAttributesTable.data[row][col][i].value));
+                  };
+                }
+                //(observationAttributesTable.data[row][1][0] !== undefined ? obsValue = observationAttributesTable.data[row][1][0].value : obsValue = '.');
                 var isYear = (index == 0);
-                var cell_prefix = (isYear) ? '<th scope="row"' : '<td';
+                var cell_prefix = (isYear) ? '<th scope="row" tabindex="0"' : '<td tabindex="0"';
                 var cell_suffix = (isYear) ? '</th>' : '</td>';
+
+                //var dateForTable = (data[index] == 0 && obsValue.indexOf('‒') > -1) ? ('‒' + obsValue.replace('‒, ','').replace(', ‒','').replace('[‒]','')) : (data[index] + ' ' + obsValue);
+                //var dateForTable = (data[index] == 0 && obsValue.indexOf('0') > -1) ? ('0' + obsValue.replace('0, ','').replace(', 0','').replace('[0]','')) : (data[index] + ' ' + obsValue);
+                // case: datapoint == 0 --> we do not want 0 plus obsValue in tabel but only 0 (or 0.00) or - feventually ollowed by other obs values
+                var dateForTable = ''
+                if (data[index] == 0){
+                  // case: only one obs-value (0 or -) --> show only the obs-value instead of the value
+                  if (obsValue.length == 1){
+                    dateForTable = obsValue;
+                  }
+                  // case: more than one obs-value --> setting the value to 0 or - and replace it in the obs-value by ''
+                  else{
+                    if (obsValue.indexOf('‒') > -1){
+                      dateForTable = '‒ [' + obsValue.replace('‒, ','').replace(', ‒','') + ']';
+                    }
+                    else{
+                      var deci = ['0', '0.0', '0.00', '0.000']
+                      for (var i = 0; i < deci.length; i++) {
+                        dateForTable = data[index] + ' [' + obsValue.replace('' + deci[i] + ', ','').replace(', ' + deci[i] + '','') + ']';
+                      }
+                      //dateForTable = data[index] + ' [' + obsValue.replace('0, ','').replace(', 0','') + ']';
+                    }
+                  }
+                }
+                // case: datapoint is not zero --> datapoint plus obs-value
+                else {
+                  dateForTable = (data[index] + ' ' + obsValue);
+                }
+
                 //var cell_content = (isYear) ? translations.t(data[index]) : data[index];
                 //row_html += cell_prefix + (isYear ? '' : ' class="table-value"') + '>' + (cell_content !== null &&  cell_content !== undefined ?  cell_content : '.') + cell_suffix;
-                row_html += cell_prefix + (isYear ? '' : ' class="table-value"') + '>' + (data[index] !== null &&  data[index] !== undefined ?  data[index] : '.') + cell_suffix;
+                //row_html += cell_prefix + (isYear ? '' : ' class="table-value"') + '>' + (data[index] !== null && data[index] !== undefined ?  (data[index] + ' ' + obsValue) : obsValue) + cell_suffix;
+                row_html += cell_prefix + (isYear ? '' : ' class="table-value"') + '>' + (data[index] !== null && data[index] !== undefined ?  dateForTable : obsValue) + cell_suffix;
             });
             row_html += '</tr>';
             currentTable.find('tbody').append(row_html);
@@ -4850,6 +4938,7 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
                 var sortDirection = $(this).attr('aria-sort');
                 $(this).find('span[role="button"]').attr('aria-sort', sortDirection);
             });
+
         let tableWrapper = document.querySelector('.dataTables_wrapper');
         if (tableWrapper) {
             tableWrapper.addEventListener('scroll', function(e) {
@@ -4857,13 +4946,13 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
                     tableWrapper.classList.add('scrolled-x');
                 }
                 else {
-                   tableWrapper.classList.remove('scrolled-x');
+                    tableWrapper.classList.remove('scrolled-x');
                 }
                 if (tableWrapper.scrollTop > 0) {
-                   tableWrapper.classList.add('scrolled-y');
+                    tableWrapper.classList.add('scrolled-y');
                 }
                 else {
-                   tableWrapper.classList.remove('scrolled-y');
+                    tableWrapper.classList.remove('scrolled-y');
                 }
             });
         }
@@ -4879,7 +4968,6 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
  * @return null
  */
 function setDataTableWidth(table) {
-
     table.find('thead th').each(function () {
         var textLength = $(this).text().length;
         for (var loop = 0; loop < VIEW._tableColumnDefs.length; loop++) {
@@ -6514,7 +6602,7 @@ $(function() {
             // TODO: Not all of this needs to be done
             // at every update.
             var features = this.getFeatures();
-            if (startValues && startValues.length > 0) {
+            if (startValues && startValues.length > 0 && startValues != '""' ) {
                 this.currentDisaggregation = this.getStartingDisaggregation(features, startValues);
                 this.displayedDisaggregation = this.currentDisaggregation;
                 this.needsMapUpdate = true;
@@ -6541,6 +6629,7 @@ $(function() {
             if (features.length === 0) {
                 return;
             }
+
             var disaggregations = features[0].properties.disaggregations,
                 fields = Object.keys(disaggregations[0]),
                 validStartValues = startValues.filter(function(startValue) {
