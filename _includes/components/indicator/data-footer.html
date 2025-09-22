@@ -28,7 +28,11 @@
   <h5 class="sr-only">Chart details</h5>
     <dl>
         {% if uniqSources != '' %}
-          <dt><u>{{ source }}</u>:</dt>
+          {% if sources_list.size < 2 %}
+            <dt><u>{{ page.t.indicator.source }}</u>:</dt>
+          {% else %}
+            <dt><u>{{ page.t.indicator.sources }}</u>:</dt>
+          {% endif %}
           <dd>{{ uniqSources }}</dd>
         {% endif %}
 
@@ -47,45 +51,63 @@
 
         {% if page.indicator.data_footnote and page.indicator.data_footnote != '' %}
           <dt><u>{{ page.t.indicator.footnote }}</u>:</dt>
-          <dd>{{ page.indicator.data_footnote }}</dd>
+          {% assign indent = '' %}
+          {% if page.indicator.data_footnote contains '<br>  -' %}
+            {% assign indent = ' style= "content: \a; white-space: pre;"' %}
+          {% endif %}
+          <dd {{ indent }}>{{ page.indicator.data_footnote }}</dd>
         {% endif %}
 
         {% if page.indicator.data_footnotes and page.indicator.data_footnotes != '' %}
           <dt><u>{{ page.t.indicator.footnotes }}</u>:</dt>
-          <dd><br>• {{ page.indicator.data_footnotes }}</dd>
+          {% assign indent = '' %}
+          {% if page.indicator.data_footnotes contains '<br>  -' %}
+            {% assign indent = ' style= "content: \a; white-space: pre;"' %}
+          {% endif %}
+          <dd {{ indent }}><br>• {{ page.indicator.data_footnotes }}</dd>
         {% endif %}
 
         {% if page.indicator.footer_fields and page.indicator.footer_fields.size > 0 %}
-        {% for footer_field in page.indicator.footer_fields %}
-        <dt
-          data-for-series={{ footer_field.series | default: "" | jsonify }}
-          data-for-unit={{ footer_field.unit | default: "" | jsonify }}
-        ><u>{{ footer_field.label | t  }}</u>:</dt>
-        <dd
-          data-for-series={{ footer_field.series | default: "" | jsonify }}
-          data-for-unit={{ footer_field.unit | default: "" | jsonify }}
-        >{{ footer_field.value | t  }}</dd>
-        {% endfor %}
+          {% for footer_field in page.indicator.footer_fields %}
+            {% if footer_field.value != '' %}
+              <dt
+                data-for-series={{ footer_field.series | default: "" | jsonify }}
+                data-for-unit={{ footer_field.unit | default: "" | jsonify }}
+              ><u>{{ footer_field.label | t  }}</u>:</dt>
+              {% assign indent = '' %}
+              {% if footer_field.value contains '<br>  -' %}
+                {% assign indent = ' style= "content: \a; white-space: pre;"' %}
+              {% endif %}
+
+              <dd
+                data-for-series={{ footer_field.series | default: "" | jsonify }}
+                data-for-unit={{ footer_field.unit | default: "" | jsonify }}
+                {{ indent }}
+              >{{ footer_field.value | t  }}</dd>
+            {% endif %}
+          {% endfor %}
         {% endif %}
-        {% if site.observation_attributes and site.observation_attributes.size > 0 %}
-          <dl class="observation-attribute-list"></dl>
-        {% endif %}
+
         {% if site.time_series_attributes and site.time_series_attributes.size > 0 %}
-        {% for ts_attribute in site.time_series_attributes %}
-        <dt
-          class="data-controlled-footer-field"
-          data-ts-attribute={{ ts_attribute.field | jsonify }}
-        ><u>{{ ts_attribute.label | t  }}</u>:</dt>
-        <dd
-          class="data-controlled-footer-field"
-          data-ts-attribute={{ ts_attribute.field | jsonify }}
-        ></dd>
-        {% endfor %}
+          {% for ts_attribute in site.time_series_attributes %}
+            <dt
+              class="data-controlled-footer-field"
+              data-ts-attribute={{ ts_attribute.field | jsonify }}
+            ><u>{{ ts_attribute.label | t  }}</u>:</dt>
+            <dd
+              class="data-controlled-footer-field"
+              data-ts-attribute={{ ts_attribute.field | jsonify }}
+            ></dd>
+          {% endfor %}
+        {% endif %}
+
+        {% if site.observation_attributes and site.observation_attributes.size > 0 %}
+          <dl class="observation-attribute-list" style= "margin-bottom: 10px;"></dl>
         {% endif %}
 
         {% if page.indicator.copyright and page.indicator.copyright != '' %}
-        <dt><u>{{ page.t.metadata_fields.copyright }}</u>:</dt>
-        <dd>{{ page.indicator.copyright }}</dd>
+          <dt><u>{{ page.t.metadata_fields.copyright }}</u>:</dt>
+          <dd>{{ page.indicator.copyright }}</dd>
         {% endif %}
     </dl>
 </div>
