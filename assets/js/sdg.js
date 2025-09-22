@@ -3040,7 +3040,9 @@ function getAllObservationAttributes(rows) {
 
   // general members:
   var that = this;
+  console.log("options.data: ",options.data);
   this.data = helpers.inputData(options.data);
+  console.log("this.data: ", this.data);
   this.edgesData = helpers.inputEdges(options.edgesData);
   this.hasHeadline = true;
   this.country = options.country;
@@ -3121,6 +3123,7 @@ function getAllObservationAttributes(rows) {
 
   // Before continuing, we may need to filter by Series, so set up all the Series stuff.
   this.allData = helpers.prepareData(this.data, { indicatorId: this.indicatorId });
+  console.log("this.allData_2: ",this.allData);
   this.allColumns = helpers.getColumnsFromData(this.allData);
   this.hasSerieses = helpers.dataHasSerieses(this.allColumns);
   this.serieses = this.hasSerieses ? helpers.getUniqueValuesByProperty(helpers.SERIES_COLUMN, this.allData) : [];
@@ -3139,6 +3142,7 @@ function getAllObservationAttributes(rows) {
   }
 
   // calculate some initial values:
+  console.log("this.allData: ",this.allData);
   this.allObservationAttributes = helpers.getAllObservationAttributes(this.allData);
   this.hasGeoData = helpers.dataHasGeoCodes(this.allColumns);
   this.hasUnits = helpers.dataHasUnits(this.allColumns);
@@ -3250,10 +3254,10 @@ function getAllObservationAttributes(rows) {
         this.selectedUnit = startingUnit;
       }
 
-      // Decide on starting field values if not changing series.
+      // Decide on a starting series.
       if (this.hasSerieses && !options.changingSeries) {
         var startingSeries = this.selectedSeries;
-        if (this.hasStartValues && !options.changingSeries) {
+        if (this.hasStartValues) {
           var seriesInStartValues = helpers.getSeriesFromStartValues(this.startValues);
           if (seriesInStartValues) {
             startingSeries = seriesInStartValues;
@@ -3273,9 +3277,9 @@ function getAllObservationAttributes(rows) {
         this.selectedSeries = startingSeries;
       }
 
-      // Decide on starting field values.
+      // Decide on starting field values if not changing series.
       var startingFields = this.selectedFields;
-      if (this.hasStartValues) {
+      if (this.hasStartValues && !options.changingSeries) {
         startingFields = helpers.selectFieldsFromStartValues(this.startValues, this.selectableFields);
       }
       else {
@@ -3379,8 +3383,8 @@ function getAllObservationAttributes(rows) {
       datasets: datasets.filter(function(dataset) { return dataset.excess !== true }),
       labels: this.years,
       headlineTable: helpers.getHeadlineTable(headline, this.selectedUnit),
-      observationAttributesTable: observationAttributesTable,
       selectionsTable: selectionsTable,
+      observationAttributesTable: observationAttributesTable,
       indicatorId: this.indicatorId,
       shortIndicatorId: this.shortIndicatorId,
       selectedUnit: this.selectedUnit,
@@ -3869,7 +3873,7 @@ function setPlotEvents(chartInfo) {
         $(VIEW._legendElement).html(generateChartLegend(VIEW._chartInstance));
     });
 
-    createDownloadButton(chartInfo.selectionsTable, 'Chart', chartInfo.indicatorId, '#chartSelectionDownload');
+    createDownloadButton(chartInfo.selectionsTable, 'Chart', chartInfo.indicatorId, '#chartSelectionDownload', chartInfo.selectedSeries, chartInfo.selectedUnit);
     createSourceButton(chartInfo.shortIndicatorId, '#chartSelectionDownload');
     createIndicatorDownloadButtons(chartInfo.indicatorDownloads, chartInfo.shortIndicatorId, '#chartSelectionDownload');
 
@@ -3938,9 +3942,9 @@ function createPlot(chartInfo, helpers) {
 
     }
     else {
-      //Override: No headline color
-      //updateHeadlineColor('default', chartConfig);
-      updateHeadlineColor('default', chartConfig, chartInfo.indicatorId);
+        //Override: No headline color
+        //updateHeadlineColor('default', chartConfig);
+        updateHeadlineColor('default', chartConfig, chartInfo.indicatorId);
     }
     refreshChartLineWrapping(chartConfig);
 
@@ -3961,7 +3965,6 @@ function createPlot(chartInfo, helpers) {
         createPlot(chartInfo);
         return;
     }
-
     updateIndicatorDataViewStatus(VIEW._chartInstance.data.datasets, updatedConfig.data.datasets);
     // Override: No headline color
     //updateHeadlineColor(isHighContrast() ? 'high' : 'default', updatedConfig);
@@ -5685,6 +5688,7 @@ var indicatorInit = function () {
                         measurementUnit: domData.measurementunit,
                         xAxisLabel: domData.xaxislabel,
                         showData: domData.showdata,
+                        showInfo: domData.showinfo,
                         graphType: domData.graphtype,
                         graphTypes: domData.graphtypes,
                         startValues: domData.startvalues,
