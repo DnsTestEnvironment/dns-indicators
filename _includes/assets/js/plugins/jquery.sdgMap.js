@@ -304,6 +304,7 @@
 
     // Alter data before displaying it.
     alterData: function(value) {
+      console.log("MapValue: ", value);
       opensdg.dataDisplayAlterations.forEach(function(callback) {
         value = callback(value);
       });
