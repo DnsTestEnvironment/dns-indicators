@@ -57,7 +57,7 @@
   function Plugin(element, options) {
 
     this.element = element;
-
+    console.log("ELEMENT",element);
     // Support colorRange map option in string format.
     if (typeof options.mapOptions.colorRange === 'string') {
       var colorRangeParts = options.mapOptions.colorRange.split('.'),
