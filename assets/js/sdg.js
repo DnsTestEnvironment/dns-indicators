@@ -88,7 +88,7 @@ opensdg.autotrack = function(preset, category, action, label) {
   function Plugin(element, options) {
 
     this.element = element;
-
+    console.log("ELEMENT",element);
     // Support colorRange map option in string format.
     if (typeof options.mapOptions.colorRange === 'string') {
       var colorRangeParts = options.mapOptions.colorRange.split('.'),
@@ -5461,7 +5461,7 @@ function createIndicatorDownloadButtons(indicatorDownloads, indicatorId, el) {
     MODEL.onFieldsComplete.attach(function (sender, args) {
 
         helpers.initialiseFields(args);
-        console.log("ARGS",args);
+
         if (args.hasGeoData && args.showMap) {
             VIEW._mapView = new mapView();
             VIEW._mapView.initialise(
