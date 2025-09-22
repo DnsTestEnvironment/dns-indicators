@@ -121,7 +121,15 @@ indicator_tabs:
 languages:
   - de
   - en
-  
+
+observation_attributes:
+  - field: COMMENT_OBS_0
+    label: ''
+  - field: COMMENT_OBS_1
+    label: ''
+  - field: COMMENT_OBS_2
+    label: ''
+
 languages_public: []
 logos:
   - src: assets/img/de/DNS_logo.png
