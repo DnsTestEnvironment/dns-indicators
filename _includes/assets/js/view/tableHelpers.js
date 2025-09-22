@@ -15,8 +15,9 @@ function alterTableConfig(config, info) {
  */
 function toCsv(tableData, selectedSeries, selectedUnit) {
     var lines = [],
-      dataHeadings = _.map(tableData.headings, function (heading) { return '"' + translations.t(heading) + '"'; }),
-      metaHeadings = [];
+        dataHeadings = _.map(tableData.headings, function (heading) { return '"' + translations.t(heading) + '"'; }),
+        metaHeadings = [];
+
     if (selectedSeries) {
         metaHeadings.push(translations.indicator.series);
     }
@@ -39,6 +40,7 @@ function toCsv(tableData, selectedSeries, selectedUnit) {
         if (selectedUnit) {
             line.push(JSON.stringify(translations.t(selectedUnit)));
         }
+
         lines.push(line.join(','));
     });
 
@@ -55,6 +57,7 @@ function initialiseDataTable(el, info) {
     for (var i = 1; i < info.table.headings.length; i++) {
         nonYearColumns.push(i);
     }
+
     var datatables_options = OPTIONS.datatables_options || {
         paging: false,
         bInfo: false,
@@ -66,10 +69,10 @@ function initialiseDataTable(el, info) {
             {
                 targets: nonYearColumns,
                 createdCell: function (td, cellData, rowData, row, col) {
-                  var additionalInfo = Object.assign({}, info);
-                  additionalInfo.row = row;
-                  additionalInfo.col = col;
-                  $(td).text(alterDataDisplay(cellData, rowData, 'table cell', additionalInfo));
+                    var additionalInfo = Object.assign({}, info);
+                    additionalInfo.row = row;
+                    additionalInfo.col = col;
+                    $(td).text(alterDataDisplay(cellData, rowData, 'table cell', additionalInfo));
                 },
             },
         ],
@@ -177,17 +180,70 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
         table_head += '</tr></thead>';
         currentTable.append(table_head);
         currentTable.append('<tbody></tbody>');
+        var row = -1;
 
         table.data.forEach(function (data) {
+            row += 1;
+            var col = -1;
             var row_html = '<tr>';
+            var obsValue = '';
+            console.log("observationAttributesTable: ", observationAttributesTable);
+            //(observationAttributesTable.data[row][1][0] !== undefined ? obsValue = observationAttributesTable.data[row][1][0].value : obsValue = '.');
             table.headings.forEach(function (heading, index) {
+                col += 1;
                 // For accessibility set the Year column to a "row" scope th.
+                // No observation values for years
+                if (col == 0) {
+                  obsValue = ''
+                }
+                // case: no obs attributes defined --> '' if we have a value and '.' if not
+                else if (observationAttributesTable.data[row][col].length == 0) {
+                  (data[index] !== null && data[index] !== undefined ?  obsValue = '' : obsValue = '.')
+                }
+                // case: Obs values are defined --> adding up all obs values separated by comma
+                else {
+                  obsValue = '';
+                  for (var i = 0; i <  observationAttributesTable.data[row][col].length; i++) {
+                    obsValue += (i == 0 ? observationAttributesTable.data[row][col][i].value : (', ' + observationAttributesTable.data[row][col][i].value));
+                  };
+                }
+                //(observationAttributesTable.data[row][1][0] !== undefined ? obsValue = observationAttributesTable.data[row][1][0].value : obsValue = '.');
                 var isYear = (index == 0);
-                var cell_prefix = (isYear) ? '<th scope="row"' : '<td';
+                var cell_prefix = (isYear) ? '<th scope="row" tabindex="0"' : '<td tabindex="0"';
                 var cell_suffix = (isYear) ? '</th>' : '</td>';
+
+                //var dateForTable = (data[index] == 0 && obsValue.indexOf('‒') > -1) ? ('‒' + obsValue.replace('‒, ','').replace(', ‒','').replace('[‒]','')) : (data[index] + ' ' + obsValue);
+                //var dateForTable = (data[index] == 0 && obsValue.indexOf('0') > -1) ? ('0' + obsValue.replace('0, ','').replace(', 0','').replace('[0]','')) : (data[index] + ' ' + obsValue);
+                // case: datapoint == 0 --> we do not want 0 plus obsValue in tabel but only 0 (or 0.00) or - feventually ollowed by other obs values
+                var dateForTable = ''
+                if (data[index] == 0){
+                  // case: only one obs-value (0 or -) --> show only the obs-value instead of the value
+                  if (obsValue.length == 1){
+                    dateForTable = obsValue;
+                  }
+                  // case: more than one obs-value --> setting the value to 0 or - and replace it in the obs-value by ''
+                  else{
+                    if (obsValue.indexOf('‒') > -1){
+                      dateForTable = '‒ [' + obsValue.replace('‒, ','').replace(', ‒','') + ']';
+                    }
+                    else{
+                      var deci = ['0', '0.0', '0.00', '0.000']
+                      for (var i = 0; i < deci.length; i++) {
+                        dateForTable = data[index] + ' [' + obsValue.replace('' + deci[i] + ', ','').replace(', ' + deci[i] + '','') + ']';
+                      }
+                      //dateForTable = data[index] + ' [' + obsValue.replace('0, ','').replace(', 0','') + ']';
+                    }
+                  }
+                }
+                // case: datapoint is not zero --> datapoint plus obs-value
+                else {
+                  dateForTable = (data[index] + ' ' + obsValue);
+                }
+
                 //var cell_content = (isYear) ? translations.t(data[index]) : data[index];
                 //row_html += cell_prefix + (isYear ? '' : ' class="table-value"') + '>' + (cell_content !== null &&  cell_content !== undefined ?  cell_content : '.') + cell_suffix;
-                row_html += cell_prefix + (isYear ? '' : ' class="table-value"') + '>' + (data[index] !== null &&  data[index] !== undefined ?  data[index] : '.') + cell_suffix;
+                //row_html += cell_prefix + (isYear ? '' : ' class="table-value"') + '>' + (data[index] !== null && data[index] !== undefined ?  (data[index] + ' ' + obsValue) : obsValue) + cell_suffix;
+                row_html += cell_prefix + (isYear ? '' : ' class="table-value"') + '>' + (data[index] !== null && data[index] !== undefined ?  dateForTable : obsValue) + cell_suffix;
             });
             row_html += '</tr>';
             currentTable.find('tbody').append(row_html);
@@ -212,6 +268,7 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
                 var sortDirection = $(this).attr('aria-sort');
                 $(this).find('span[role="button"]').attr('aria-sort', sortDirection);
             });
+
         let tableWrapper = document.querySelector('.dataTables_wrapper');
         if (tableWrapper) {
             tableWrapper.addEventListener('scroll', function(e) {
@@ -219,13 +276,13 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
                     tableWrapper.classList.add('scrolled-x');
                 }
                 else {
-                   tableWrapper.classList.remove('scrolled-x');
+                    tableWrapper.classList.remove('scrolled-x');
                 }
                 if (tableWrapper.scrollTop > 0) {
-                   tableWrapper.classList.add('scrolled-y');
+                    tableWrapper.classList.add('scrolled-y');
                 }
                 else {
-                   tableWrapper.classList.remove('scrolled-y');
+                    tableWrapper.classList.remove('scrolled-y');
                 }
             });
         }
@@ -241,7 +298,6 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
  * @return null
  */
 function setDataTableWidth(table) {
-
     table.find('thead th').each(function () {
         var textLength = $(this).text().length;
         for (var loop = 0; loop < VIEW._tableColumnDefs.length; loop++) {

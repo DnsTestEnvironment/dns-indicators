@@ -34,7 +34,7 @@
             // TODO: Not all of this needs to be done
             // at every update.
             var features = this.getFeatures();
-            if (startValues && startValues.length > 0) {
+            if (startValues && startValues.length > 0 && startValues != '""' ) {
                 this.currentDisaggregation = this.getStartingDisaggregation(features, startValues);
                 this.displayedDisaggregation = this.currentDisaggregation;
                 this.needsMapUpdate = true;
@@ -61,8 +61,12 @@
             if (features.length === 0) {
                 return;
             }
+
             var disaggregations = features[0].properties.disaggregations,
                 fields = Object.keys(disaggregations[0]),
+                validStartValues = startValues.filter(function(startValue) {
+                    return fields.includes(startValue.field);
+                }),
                 weighted = _.sortBy(disaggregations.map(function(disaggregation, index) {
                     var disaggClone = Object.assign({}, disaggregation);
                     disaggClone.emptyFields = 0;
@@ -75,7 +79,7 @@
                     return disaggClone;
                 }), 'emptyFields').reverse(),
                 match = weighted.find(function(disaggregation) {
-                    return _.every(startValues, function(startValue) {
+                    return _.every(validStartValues, function(startValue) {
                         return disaggregation[startValue.field] === startValue.value;
                     });
                 });
@@ -448,6 +452,11 @@
                 validFields = Object.keys(disaggregations[0]),
                 invalidFields = [this.seriesColumn, this.unitsColumn],
                 allDisaggregations = [];
+            if (this.plugin.configObsAttributes && this.plugin.configObsAttributes.length > 0) {
+                this.plugin.configObsAttributes.forEach(function(obsAttribute) {
+                    invalidFields.push(obsAttribute.field);
+                });
+            }
 
             this.fieldsInOrder.forEach(function(field) {
                 if (!(invalidFields.includes(field)) && validFields.includes(field)) {
@@ -458,6 +467,9 @@
                                 return disaggregation[field];
                             })),
                         };
+                    if (typeof sortedValues === 'undefined') {
+                        return;
+                    }
                     item.values.sort(function(a, b) {
                         return sortedValues.indexOf(a) - sortedValues.indexOf(b);
                     });
