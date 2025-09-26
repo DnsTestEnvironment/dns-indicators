@@ -382,6 +382,7 @@ function makeDataset(years, rows, combination, labelFallback, color, background,
        prepared = prepareDataForDataset(years, rows, allObservationAttributes),
        data = prepared.data,
        obsAttributes = prepared.observationAttributes;
+  console.log("getCOmType:", getCombinationType(combination, labelFallback, mixedTypes) );
   return Object.assign(dataset, {
     label: getCombinationDescription(combination, labelFallback),
     combination: combination,
@@ -393,7 +394,7 @@ function makeDataset(years, rows, combination, labelFallback, color, background,
     pointBorderColor: color,
     pointBackgroundColor: background,
     borderDash: border,
-    borderWidth: 2,
+    borderWidth: getCombinationType(combination, labelFallback, mixedTypes) == 'line' ? 2 : 0,
     headline: false,
     pointStyle: 'circle',
     data: data,
