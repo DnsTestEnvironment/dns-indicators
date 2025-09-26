@@ -525,7 +525,7 @@ function makeHeadlineDataset(years, rows, label, showLine, spanGaps, colors, all
     backgroundColor: '#a9e13e',//getHeadlineColor(colors),
     pointBorderColor: '#a9e13e',//getHeadlineColor(colors),
     pointBackgroundColor: '#a9e13e',//getHeadlineColor(colors),
-    borderWidth: getCombinationType(combination, labelFallback, mixedTypes) == 'line' ? 4: 0,
+    borderWidth: getCombinationType([], '', mixedTypes) == 'line' ? 4 : 0,
     headline: true,
     pointStyle: 'circle',
     data: data,
