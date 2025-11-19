@@ -46,7 +46,6 @@
 
 <script>
   function getChart() {
-    $("#btnSave").click(function () {
         var filename = 'chart.png',
             element = document.getElementById('chart-canvas'),
             height = element.clientHeight + 50,
@@ -91,6 +90,5 @@
                 saveAs(blob, filename);
             });
         });
-    });
-  }
+    };
 </script>
