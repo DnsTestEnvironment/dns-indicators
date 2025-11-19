@@ -1,0 +1,14 @@
+{% if page.language == 'de' %}
+  {% assign language = 'De' %}
+{% else %}
+  {% assign language = 'En'' %}
+{% endif %}
+<table class="table" style="width:100%; table-layout: fixed;">
+  <tr id="everythingElse">
+   <th scope="row" style="text-align: left; width: 130px;">
+     Test
+   </th>
+   <td>
+     <a role="button" href="{{ page.remote_data_prefix }}/data/{{ page.indicator.slug }}.csv" class="btn btn-primary btn-download" download='indicator_{{ page.indicator.slug }}.csv' tabindex='0' role='button'>{{ page.t.indicator.download_source }}</a>
+   </td>
+ </tr>

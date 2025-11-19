@@ -234,9 +234,9 @@ metadata_tabs:
   - scope: content
     title: indicator.contentAndProgress
     description: ''
-  # - scope: history_1
-  #   title: indicator.history
-  #   description: indicator.history_blurb
+  - scope: downloads
+    title: indicator.downloads
+    description: indicator.download_blurb
   - scope: sources
     title: indicator.sources
     description: ''
