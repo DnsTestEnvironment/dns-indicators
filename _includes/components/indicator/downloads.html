@@ -19,9 +19,15 @@
     Grafik herunterladen
   </th>
   <td>
-    <a class="btn btn-primary btn-download" href="{{ button_href }}">
-      {{ include.card.button_label }}
-    </a>
+    <div id="chartSelectionDownload" class="clearfix">
+      <button
+        id="btnSave"
+        title="{{ page.t.indicator.download_chart_image_title }}"
+        aria-label="{{ page.t.indicator.download_chart_image_title }}"
+        class='btn btn-primary btn-download'>
+        {{ page.t.indicator.download_chart_image }}
+      </button>
+    </div>
   </td>
 </tr>
 
