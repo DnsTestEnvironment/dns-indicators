@@ -9,24 +9,24 @@
      Indikator
    </th>
    <td>
-     <a role="button" href="https://dnstestenvironment.github.io/dns-indicators/public/indicator_download_de/{{ page.indicator.slug }}.pdf" class="btn btn-primary btn-download" tabindex='0' role='button'>
-       Indikator herunterladen
+     <a role="button" href="https://dnstestenvironment.github.io/dns-indicators/public/indicator_downloads_de/{{ page.indicator.slug }}.pdf" class="btn btn-primary btn-download" tabindex='0' role='button'>
+       Indikaor herunterladen
      </a>
    </td>
  </tr>
   <tr id="everythingElse">
    <th scope="row" style="text-align: left; width: 130px;">
-     Daten im CSV-Format herunterladen
+     Daten
    </th>
    <td>
      <a role="button" href="{{ page.remote_data_prefix }}/data/{{ page.indicator.slug }}.csv" class="btn btn-primary btn-download" download='indicator_{{ page.indicator.slug }}.csv' tabindex='0' role='button'>
-       {{ page.t.indicator.download_source }}
+       Daten im CSV-Format herunterladen
      </a>
    </td>
  </tr>
  <tr id="everythingElse">
   <th scope="row" style="text-align: left; width: 130px;">
-    Grafik herunterladen
+    Grafik
   </th>
   <td>
     <div id="chartSelectionDownload" class="clearfix">
@@ -36,7 +36,7 @@
         aria-label="{{ page.t.indicator.download_chart_image_title }}"
         class='btn btn-primary btn-download'
         onclick='getChart()'>
-        {{ page.t.indicator.download_chart_image }}
+        Grafik herunterladen
       </button>
     </div>
   </td>
