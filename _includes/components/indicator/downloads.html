@@ -6,27 +6,27 @@
 <table class="table" style="width:100%; table-layout: fixed;">
   <tr id="everythingElse">
    <th scope="row" style="text-align: left; width: 130px;">
-     Indikator
+     {{ page.t.indicator.indicator }}
    </th>
    <td>
-     <a role="button" href="https://dnstestenvironment.github.io/dns-indicators/public/indicator_downloads_de/{{ page.indicator.slug }}.pdf" class="btn btn-primary btn-download" tabindex='0' role='button'>
-       Indikaor herunterladen
+     <a role="button" href="https://dnstestenvironment.github.io/dns-indicators/public/indicator_downloads_de/{{ page.indicator.slug }}.pdf" class="btn btn-primary btn-download" tabindex='0' role='button' style="width: 300px;" >
+       {{ page.t.indicator.download_indicator }}
      </a>
    </td>
  </tr>
   <tr id="everythingElse">
    <th scope="row" style="text-align: left; width: 130px;">
-     Daten
+     {{ page.t.indicator.data }}
    </th>
    <td>
-     <a role="button" href="{{ page.remote_data_prefix }}/data/{{ page.indicator.slug }}.csv" class="btn btn-primary btn-download" style="margin-top: 0px;" download='indicator_{{ page.indicator.slug }}.csv' tabindex='0' role='button'>
-       Daten im CSV-Format herunterladen
+     <a role="button" href="{{ page.remote_data_prefix }}/data/{{ page.indicator.slug }}.csv" class="btn btn-primary btn-download" download='indicator_{{ page.indicator.slug }}.csv' tabindex='0' role='button' style="width: 300px;">
+       {{ page.t.indicator.download_data }}
      </a>
    </td>
  </tr>
  <tr id="everythingElse">
   <th scope="row" style="text-align: left; width: 130px;">
-    Grafik
+    {{ page.t.indicator.cart }}
   </th>
   <td>
     <div id="chartSelectionDownload" class="clearfix">
@@ -35,9 +35,9 @@
         title="{{ page.t.indicator.download_chart_image_title }}"
         aria-label="{{ page.t.indicator.download_chart_image_title }}"
         class='btn btn-primary btn-download'
-        style= 'margin-top: 0px'
+        style= 'margin-top: 0px; width: 300px;"'
         onclick='getChart()'>
-        Grafik herunterladen
+        {{ page.t.indicator.download_chart }}
       </button>
     </div>
   </td>
