@@ -6,10 +6,25 @@
 <table class="table" style="width:100%; table-layout: fixed;">
   <tr id="everythingElse">
    <th scope="row" style="text-align: left; width: 130px;">
-     Test
+     Daten im CSV-Format herunterladen
    </th>
    <td>
-     <a role="button" href="{{ page.remote_data_prefix }}/data/{{ page.indicator.slug }}.csv" class="btn btn-primary btn-download" download='indicator_{{ page.indicator.slug }}.csv' tabindex='0' role='button'>{{ page.t.indicator.download_source }}</a>
+     <a role="button" href="{{ page.remote_data_prefix }}/data/{{ page.indicator.slug }}.csv" class="btn btn-primary btn-download" download='indicator_{{ page.indicator.slug }}.csv' tabindex='0' role='button'>
+       {{ page.t.indicator.download_source }}
+     </a>
    </td>
  </tr>
+ <tr id="everythingElse">
+  <th scope="row" style="text-align: left; width: 130px;">
+    Grafik herunterladen
+  </th>
+  <td>
+    <a class="btn btn-primary btn-download" href="{{ button_href }}">
+      {{ include.card.button_label }}
+    </a>
+  </td>
+</tr>
+
+
+
 </table>
