@@ -19,7 +19,7 @@
      Daten
    </th>
    <td>
-     <a role="button" href="{{ page.remote_data_prefix }}/data/{{ page.indicator.slug }}.csv" class="btn btn-primary btn-download" style="margin-top:0px;" download='indicator_{{ page.indicator.slug }}.csv' tabindex='0' role='button'>
+     <a role="button" href="{{ page.remote_data_prefix }}/data/{{ page.indicator.slug }}.csv" class="btn btn-primary btn-download" style="margin-top: 0px;" download='indicator_{{ page.indicator.slug }}.csv' tabindex='0' role='button'>
        Daten im CSV-Format herunterladen
      </a>
    </td>
@@ -35,6 +35,7 @@
         title="{{ page.t.indicator.download_chart_image_title }}"
         aria-label="{{ page.t.indicator.download_chart_image_title }}"
         class='btn btn-primary btn-download'
+        style= 'margin-top: 0px'
         onclick='getChart()'>
         Grafik herunterladen
       </button>
