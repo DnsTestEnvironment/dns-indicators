@@ -6,6 +6,16 @@
 <table class="table" style="width:100%; table-layout: fixed;">
   <tr id="everythingElse">
    <th scope="row" style="text-align: left; width: 130px;">
+     Indikator
+   </th>
+   <td>
+     <a role="button" href="https://dnstestenvironment.github.io/dns-indicators/public/{{ page.indicator.slug }}.pdf" class="btn btn-primary btn-download" tabindex='0' role='button'>
+       Indikator herunterladen
+     </a>
+   </td>
+ </tr>
+  <tr id="everythingElse">
+   <th scope="row" style="text-align: left; width: 130px;">
      Daten im CSV-Format herunterladen
    </th>
    <td>
@@ -37,7 +47,7 @@
 <script>
   function getChart() {
     $("#btnSave").click(function () {
-        var filename = chartInfo.indicatorId + '.png',
+        var filename = 'chart.png',
             element = document.getElementById('chart-canvas'),
             height = element.clientHeight + 50,
             width = element.clientWidth + 50;
