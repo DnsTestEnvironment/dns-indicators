@@ -4,16 +4,18 @@
   {% assign language = 'En'' %}
 {% endif %}
 <table class="table" style="width:100%; table-layout: fixed;">
-  <tr id="everythingElse">
-   <th scope="row" style="text-align: left; width: 130px;">
-     {{ page.t.indicator.indicator }}
-   </th>
-   <td>
-     <a role="button" href="https://dnstestenvironment.github.io/dns-indicators/public/indicator_downloads_de/{{ page.indicator.slug }}.pdf" class="btn btn-primary btn-download" tabindex='0' role='button' style="width: 300px;" >
-       {{ page.t.indicator.download_indicator }}
-     </a>
-   </td>
- </tr>
+  {% if page.indicator.download_content %}
+    <tr id="everythingElse">
+     <th scope="row" style="text-align: left; width: 130px;">
+       {{ page.t.indicator.indicator }}
+     </th>
+     <td>
+       <a role="button" href="{{ page.indicator.download_content }}" target="_blank" class="btn btn-primary btn-download" tabindex='0' role='button' style="width: 300px;" >
+         {{ page.t.indicator.download_indicator }}
+       </a>
+     </td>
+   </tr>
+  {% endif %}
   <tr id="everythingElse">
    <th scope="row" style="text-align: left; width: 130px;">
      {{ page.t.indicator.data }}
