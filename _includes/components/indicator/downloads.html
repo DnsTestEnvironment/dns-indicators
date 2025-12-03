@@ -10,7 +10,7 @@
        {{ page.t.indicator.indicator }}
      </th>
      <td>
-       <a href="{{ page.indicator.download_content }}" target="_blank" class="btn btn-primary btn-download" tabindex='0' style="width: 350px;" >
+       <a href="{{ page.indicator.download_content }}" target="_blank" tabindex='0' >
          {{ page.t.indicator.download_indicator }}
        </a>
        <small> {{ page.t.indicator.download_indicator_addition}}</small>
@@ -22,7 +22,7 @@
      {{ page.t.indicator.data }}
    </th>
    <td>
-     <a href="{{ page.remote_data_prefix }}/data/{{ page.indicator.slug }}.csv" download='indicator_{{ page.indicator.slug }}.csv' tabindex='0' role='button' style="width: 350px;">
+     <a href="{{ page.remote_data_prefix }}/data/{{ page.indicator.slug }}.csv" download='indicator_{{ page.indicator.slug }}.csv' tabindex='0'
        {{ page.t.indicator.download_data }}
      </a>
    </td>
