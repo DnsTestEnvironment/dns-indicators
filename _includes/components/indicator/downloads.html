@@ -10,10 +10,10 @@
        {{ page.t.indicator.indicator }}
      </th>
      <td>
-       <a role="button" href="{{ page.indicator.download_content }}" target="_blank" class="btn btn-primary btn-download" tabindex='0' role='button' style="width: 350px;" >
+       <a href="{{ page.indicator.download_content }}" target="_blank" class="btn btn-primary btn-download" tabindex='0' style="width: 350px;" >
          {{ page.t.indicator.download_indicator }}
        </a>
-       {{ page.t.indicator.download_indicator_addition}}
+       <small> {{ page.t.indicator.download_indicator_addition}}</small>
      </td>
    </tr>
   {% endif %}
@@ -22,7 +22,7 @@
      {{ page.t.indicator.data }}
    </th>
    <td>
-     <a role="button" href="{{ page.remote_data_prefix }}/data/{{ page.indicator.slug }}.csv" class="btn btn-primary btn-download" download='indicator_{{ page.indicator.slug }}.csv' tabindex='0' role='button' style="width: 350px;">
+     <a href="{{ page.remote_data_prefix }}/data/{{ page.indicator.slug }}.csv" download='indicator_{{ page.indicator.slug }}.csv' tabindex='0' role='button' style="width: 350px;">
        {{ page.t.indicator.download_data }}
      </a>
    </td>
@@ -33,15 +33,10 @@
   </th>
   <td>
     <div id="chartSelectionDownload" class="clearfix">
-      <button
-        id="btnSave"
-        title="{{ page.t.indicator.download_chart_image_title }}"
-        aria-label="{{ page.t.indicator.download_chart_image_title }}"
-        class='btn btn-primary btn-download'
-        style= 'margin-top: 0px; width: 350px;"'
+      <a href="javascript:void(0);"
         onclick='getChart()'>
         {{ page.t.indicator.download_chart }}
-      </button>
+      </a>
     </div>
   </td>
 </tr>
