@@ -10,10 +10,10 @@
        {{ page.t.indicator.indicator }}
      </th>
      <td>
-       <a href="{{ page.indicator.download_content }}" target="_blank" tabindex='0' >
+       <a href="{{ page.indicator.download_content }}" target="_blank">
          {{ page.t.indicator.download_indicator }}
        </a>
-       <small> {{ page.t.indicator.download_indicator_addition}}</small>
+       <small style="margin-left: 15px;">{{ page.t.indicator.download_indicator_addition}}</small>
      </td>
    </tr>
   {% endif %}
@@ -22,7 +22,7 @@
      {{ page.t.indicator.data }}
    </th>
    <td>
-     <a href="{{ page.remote_data_prefix }}/data/{{ page.indicator.slug }}.csv" download='indicator_{{ page.indicator.slug }}.csv' tabindex='0'>
+     <a href="{{ page.remote_data_prefix }}/data/{{ page.indicator.slug }}.csv" download='indicator_{{ page.indicator.slug }}.csv'>
        {{ page.t.indicator.download_data }}
      </a>
    </td>
