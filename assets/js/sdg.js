@@ -5222,8 +5222,7 @@ function getObservationAttributeFootnoteSymbol(obsAttribute) {
  */
 function getBrowserDecimalSeparator() {
     var browserDecimal = 1.1;
-    console.log(opensdg.language_numbers);
-    browserDecimal = browserDecimal.toLocaleString(opensdg.language_numbers).substring(1, 2);
+    browserDecimal = browserDecimal.toLocaleString(2).substring(1, 2);
     return browserDecimal;
 }
 
