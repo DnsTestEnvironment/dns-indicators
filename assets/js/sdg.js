@@ -353,7 +353,7 @@ opensdg.autotrack = function(preset, category, action, label) {
             localeOpts.minimumFractionDigits = this._precision;
             localeOpts.maximumFractionDigits = this._precision;
         }
-        value = value.toLocaleString(opensdg.language_numbers, localeOpts);
+        value = value.toLocaleString("de", localeOpts);
         // Still use the custom decimal separator if it is there.
         if (this._decimalSeparator) {
           value = value.toString().replace(this._browserDecimalSeparator, this._decimalSeparator);
@@ -5140,7 +5140,7 @@ function alterDataDisplay(value, info, context, additionalInfo) {
             localeOpts.minimumFractionDigits = VIEW._precision;
             localeOpts.maximumFractionDigits = VIEW._precision;
         }
-        altered = altered.toLocaleString(opensdg.language_numbers, localeOpts);
+        altered = altered.toLocaleString("de", localeOpts);
         // Still use the custom decimal separator if it is there.
         if (OPTIONS.decimalSeparator) {
             altered = altered.toString().replace(VIEW._browserDecimalSeparator, OPTIONS.decimalSeparator);
