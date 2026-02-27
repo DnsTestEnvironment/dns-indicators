@@ -101,6 +101,7 @@
     this.startValues = options.startValues;
     this.configObsAttributes = {{ site.observation_attributes | jsonify }};
     this.allObservationAttributes = options.allObservationAttributes;
+    this._browserDecimalSeparator = this.viewHelpers.getBrowserDecimalSeparator();
 
     // Require at least one geoLayer.
     if (!options.mapLayers || !options.mapLayers.length) {
@@ -304,27 +305,27 @@
 
     // Alter data before displaying it.
     alterData: function(value) {
-      console.log("MapValue: ", value);
       opensdg.dataDisplayAlterations.forEach(function(callback) {
         value = callback(value);
       });
-      if (this._precision || this._precision === 0) {
-        value = Number.parseFloat(value).toFixed(this._precision);
-      }
-      if (this._decimalSeparator) {
-        if(opensdg.language == 'de') {
+      if (typeof value !== 'number') {
+        if (this._precision || this._precision === 0) {
+          value = Number.parseFloat(value).toFixed(this._precision);
+        }
+        if (this._decimalSeparator) {
           value = value.toString().replace('.', this._decimalSeparator);
         }
-        else {
-          value = value.toString();
-        }
       }
-      if (this._thousandsSeparator) {
-        if(opensdg.language == 'de') {
-          value = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, this._thousandsSeparator);
+      else {
+        var localeOpts = {};
+        if (this._precision || this._precision === 0) {
+            localeOpts.minimumFractionDigits = this._precision;
+            localeOpts.maximumFractionDigits = this._precision;
         }
-        else {
-          value = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        value = value.toLocaleString(opensdg.language_numbers, localeOpts);
+        // Still use the custom decimal separator if it is there.
+        if (this._decimalSeparator) {
+          value = value.toString().replace(this._browserDecimalSeparator, this._decimalSeparator);
         }
       }
       return value;

@@ -15,6 +15,7 @@ var indicatorView = function (model, options) {
     VIEW._legendElement = OPTIONS.legendElement;
     VIEW._precision = undefined;
     VIEW._chartInstances = {};
+    VIEW._browserDecimalSeparator = helpers.getBrowserDecimalSeparator();
     VIEW._graphStepsize = undefined;
 
     var chartHeight = screen.height < OPTIONS.maxChartHeight ? screen.height : OPTIONS.maxChartHeight;
