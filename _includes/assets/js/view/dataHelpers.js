@@ -145,6 +145,6 @@ function getObservationAttributeFootnoteSymbol(obsAttribute) {
  */
 function getBrowserDecimalSeparator() {
     var browserDecimal = 1.1;
-    browserDecimal = browserDecimal.toLocaleString(2).substring(1, 2);
+    browserDecimal = browserDecimal.toLocaleString("de").substring(1, 2);
     return browserDecimal;
 }
