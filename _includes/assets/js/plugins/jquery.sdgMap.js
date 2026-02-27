@@ -322,7 +322,7 @@
             localeOpts.minimumFractionDigits = this._precision;
             localeOpts.maximumFractionDigits = this._precision;
         }
-        value = value.toLocaleString("de", localeOpts);
+        value = value.toLocaleString(opensdg.language, localeOpts);
         // Still use the custom decimal separator if it is there.
         if (this._decimalSeparator) {
           value = value.toString().replace(this._browserDecimalSeparator, this._decimalSeparator);
