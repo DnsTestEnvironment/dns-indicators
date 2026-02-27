@@ -63,7 +63,7 @@ function alterDataDisplay(value, info, context, additionalInfo) {
             localeOpts.minimumFractionDigits = VIEW._precision;
             localeOpts.maximumFractionDigits = VIEW._precision;
         }
-        altered = altered.toLocaleString(opensdg.language_numbers, localeOpts);
+        altered = altered.toLocaleString("de", localeOpts);
         // Still use the custom decimal separator if it is there.
         if (OPTIONS.decimalSeparator) {
             altered = altered.toString().replace(VIEW._browserDecimalSeparator, OPTIONS.decimalSeparator);
