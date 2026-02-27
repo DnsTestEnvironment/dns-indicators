@@ -88,7 +88,7 @@ opensdg.autotrack = function(preset, category, action, label) {
   function Plugin(element, options) {
 
     this.element = element;
-
+    console.log("ELEMENT",element);
     // Support colorRange map option in string format.
     if (typeof options.mapOptions.colorRange === 'string') {
       var colorRangeParts = options.mapOptions.colorRange.split('.'),
@@ -132,6 +132,7 @@ opensdg.autotrack = function(preset, category, action, label) {
     this.startValues = options.startValues;
     this.configObsAttributes = [{"field":"COMMENT_OBS_0","label":""},{"field":"COMMENT_OBS_1","label":""},{"field":"COMMENT_OBS_2","label":""}];
     this.allObservationAttributes = options.allObservationAttributes;
+    this._browserDecimalSeparator = this.viewHelpers.getBrowserDecimalSeparator();
 
     // Require at least one geoLayer.
     if (!options.mapLayers || !options.mapLayers.length) {
@@ -338,23 +339,24 @@ opensdg.autotrack = function(preset, category, action, label) {
       opensdg.dataDisplayAlterations.forEach(function(callback) {
         value = callback(value);
       });
-      if (this._precision || this._precision === 0) {
-        value = Number.parseFloat(value).toFixed(this._precision);
-      }
-      if (this._decimalSeparator) {
-        if(opensdg.language == 'de') {
+      if (typeof value !== 'number') {
+        if (this._precision || this._precision === 0) {
+          value = Number.parseFloat(value).toFixed(this._precision);
+        }
+        if (this._decimalSeparator) {
           value = value.toString().replace('.', this._decimalSeparator);
         }
-        else {
-          value = value.toString();
-        }
       }
-      if (this._thousandsSeparator) {
-        if(opensdg.language == 'de') {
-          value = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, this._thousandsSeparator);
+      else {
+        var localeOpts = {};
+        if (this._precision || this._precision === 0) {
+            localeOpts.minimumFractionDigits = this._precision;
+            localeOpts.maximumFractionDigits = this._precision;
         }
-        else {
-          value = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        value = value.toLocaleString(opensdg.language, localeOpts);
+        // Still use the custom decimal separator if it is there.
+        if (this._decimalSeparator) {
+          value = value.toString().replace(this._browserDecimalSeparator, this._decimalSeparator);
         }
       }
       return value;
@@ -362,6 +364,7 @@ opensdg.autotrack = function(preset, category, action, label) {
 
     // Get the data from a feature's properties, according to the current year.
     getData: function(props) {
+      console.log("Props",props);
       var ret = false;
       if (props.values && props.values.length && this.currentDisaggregation < props.values.length) {
         var value = props.values[this.currentDisaggregation][this.currentYear];
@@ -5122,28 +5125,26 @@ function alterDataDisplay(value, info, context, additionalInfo) {
     // precision and decimal separator.
     if (typeof altered !== 'number') {
         // Now apply our custom precision control if needed.
-
-        if (precision || precision === 0) {
-            altered = Number.parseFloat(altered).toFixed(precision);
+        if (VIEW._precision || VIEW._precision === 0) {
+            altered = Number.parseFloat(altered).toFixed(VIEW._precision);
         }
         // Now apply our custom decimal separator if needed.
         if (OPTIONS.decimalSeparator) {
             altered = altered.toString().replace('.', OPTIONS.decimalSeparator);
         }
-        // Apply thousands seperator if needed
-        if (OPTIONS.thousandsSeparator && precision <=3){
-            altered = altered.toString().replace(/\B(?=(\d{3})+(?!\d))/g, OPTIONS.thousandsSeparator);
-        }
     }
-
     // Otherwise if we have a number, use toLocaleString instead.
     else {
         var localeOpts = {};
         if (VIEW._precision || VIEW._precision === 0) {
-            localeOpts.minimumFractionDigits = precision;
-            localeOpts.maximumFractionDigits = precision;
+            localeOpts.minimumFractionDigits = VIEW._precision;
+            localeOpts.maximumFractionDigits = VIEW._precision;
         }
         altered = altered.toLocaleString(opensdg.language, localeOpts);
+        // Still use the custom decimal separator if it is there.
+        if (OPTIONS.decimalSeparator) {
+            altered = altered.toString().replace(VIEW._browserDecimalSeparator, OPTIONS.decimalSeparator);
+        }
         // Apply thousands seperator if needed
         if (OPTIONS.thousandsSeparator && precision <=3 && opensdg.language == 'de'){
             altered = altered.replaceAll('.', OPTIONS.thousandsSeparator);
@@ -5212,6 +5213,17 @@ function getObservationAttributeFootnoteSymbol(obsAttribute) {
     }
 
     //return '[' + translations.indicator.note + ' ' + (num + 1) + ']';
+}
+
+/**
+ * Figure out what the browser will be using for the decimal separator.
+ *
+ * @returns {string} The decimal separator the browser will use.
+ */
+function getBrowserDecimalSeparator() {
+    var browserDecimal = 1.1;
+    browserDecimal = browserDecimal.toLocaleString(opensdg.language).substring(1, 2);
+    return browserDecimal;
 }
 
   /**
