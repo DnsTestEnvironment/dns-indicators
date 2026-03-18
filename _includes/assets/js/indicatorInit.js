@@ -40,6 +40,7 @@ var indicatorInit = function () {
                         startValues: domData.startvalues,
                         graphLimits: domData.graphlimits,
                         stackedDisaggregation: domData.stackeddisaggregation,
+                        fill: domData.fill,
                         showLine: domData.showline,
                         mixedTypes: domData.mixedtypes,
                         spanGaps: domData.spangaps,
