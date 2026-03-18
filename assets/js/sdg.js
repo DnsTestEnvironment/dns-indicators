@@ -2576,7 +2576,7 @@ function makeDataset(years, rows, combination, labelFallback, color, background,
        prepared = prepareDataForDataset(years, rows, allObservationAttributes),
        data = prepared.data,
        obsAttributes = prepared.observationAttributes;
-  console.log("getCOmType:", getCombinationType(combination, labelFallback, mixedTypes) );
+
   return Object.assign(dataset, {
     label: getCombinationDescription(combination, labelFallback),
     combination: combination,
@@ -4217,6 +4217,7 @@ opensdg.chartTypes.base = function(info) {
             responsive: true,
             maintainAspectRatio: false,
             spanGaps: true,
+            fill: 'origin',
             scrollX: true,
             scrollCollapse: true,
             sScrollXInner: '150%',
