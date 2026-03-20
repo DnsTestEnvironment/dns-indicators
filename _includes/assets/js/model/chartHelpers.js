@@ -401,8 +401,8 @@ function makeDataset(years, rows, combination, labelFallback, color, background,
     excess: excess,
     fill: {
       target: fill.target,
-      above: fill.above,
-      below: fill.below
+      above: 'rgb(0, 0, 255)',
+      below: 'rgb(0, 0, 255)'
     },
     spanGaps: spanGaps,
     showLine: showLine,
@@ -557,8 +557,8 @@ function makeHeadlineDataset(years, rows, label, fill, showLine, spanGaps, color
     observationAttributes: obsAttributes,
     fill: {
       target: fill.target,
-      above: fill.above,
-      below: fill.below
+      above: 'rgb(0, 0, 255)',
+      below: 'rgb(0, 0, 255)'
     },
     showLine: showLine,
     spanGaps: spanGaps,
