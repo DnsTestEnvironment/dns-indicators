@@ -509,8 +509,8 @@ function getFilling(fill) {
   if (fill) {
     return {
       target: 'origin',
-      above: fill.above,
-      below: fill.below,
+      above: 'rgb(255, 0, 0)',   // Area will be red above the origin
+      below: 'rgb(0, 0, 255)'    // And blue below the origin
     }
   }
   else {
