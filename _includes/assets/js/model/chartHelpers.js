@@ -506,13 +506,13 @@ function getCombinationDescription(combination, fallback) {
  * TODO: Make this dynamic to support high-contrast.
  */
 function getFilling(fill) {
+  console.log(fill, fill.above);
   if (fill) {
     return {
       target: 'origin',
       above: fill.above,
       below: fill.below,
-    };
-    console.log(fill, fill.above);
+    }
   }
   else {
     return false
