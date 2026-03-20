@@ -50,6 +50,8 @@ var indicatorModel = function (options) {
   this.graphLimits = options.graphLimits;
   this.stackedDisaggregation = options.stackedDisaggregation;
   this.fill = options.fill;
+  this.fillAbove = options.fillAbove;
+  this.fillBelow = options.fillBelow;
   this.showLine = options.showLine;
   this.mixedTypes = options.mixedTypes; // ? options.showLine : true;
   this.spanGaps = options.spanGaps;
@@ -342,7 +344,7 @@ var indicatorModel = function (options) {
     }
 
     var combinations = helpers.getCombinationData(this.selectedFields, this.dataSchema);
-    var datasets = helpers.getDatasets(headline, filteredData, combinations, this.years, translations.data.total, this.colors, this.selectableFields, this.colorAssignments, this.fill, this.showLine, this.spanGaps, this.allObservationAttributes, this.mixedTypes);
+    var datasets = helpers.getDatasets(headline, filteredData, combinations, this.years, translations.data.total, this.colors, this.selectableFields, this.colorAssignments, this.fill, this.fillAbove, this.fillBelow, this.showLine, this.spanGaps, this.allObservationAttributes, this.mixedTypes);
     var selectionsTable = helpers.tableDataFromDatasets(datasets, this.years);
     var observationAttributesTable = helpers.observationAttributesTableFromDatasets(datasets, this.years);
 
