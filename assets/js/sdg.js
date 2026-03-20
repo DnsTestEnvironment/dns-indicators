@@ -2705,7 +2705,8 @@ function getFilling(fill) {
       target: 'origin',
       above: fill.above,
       below: fill.below,
-    }
+    };
+    console.log(fill, fill.above);
   }
   else {
     return false
