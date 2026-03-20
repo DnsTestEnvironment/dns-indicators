@@ -2593,11 +2593,7 @@ function makeDataset(years, rows, combination, labelFallback, color, background,
     pointStyle: 'circle',
     data: data,
     excess: excess,
-    fill: {
-      target: fill.target,
-      above: 'rgb(0, 0, 255)',
-      below: 'rgb(0, 0, 255)'
-    },
+    fill: fill.field,
     spanGaps: spanGaps,
     showLine: showLine,
     observationAttributes: obsAttributes,
@@ -2749,11 +2745,7 @@ function makeHeadlineDataset(years, rows, label, fill, showLine, spanGaps, color
     pointStyle: 'circle',
     data: data,
     observationAttributes: obsAttributes,
-    fill: {
-      target: fill.field,
-      above: 'rgb(0, 0, 255)',
-      below: 'rgb(0, 0, 255)'
-    },
+    fill: fill.field,
     showLine: showLine,
     spanGaps: spanGaps,
     type: getCombinationType([], '', mixedTypes),
