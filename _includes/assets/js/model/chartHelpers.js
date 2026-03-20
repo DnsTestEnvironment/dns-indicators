@@ -399,7 +399,11 @@ function makeDataset(years, rows, combination, labelFallback, color, background,
     pointStyle: 'circle',
     data: data,
     excess: excess,
-    fill: getFilling(fill),
+    fill: {
+      target: fill.target,
+      above: fill.above,
+      below: fill.below
+    },
     spanGaps: spanGaps,
     showLine: showLine,
     observationAttributes: obsAttributes,
@@ -507,11 +511,11 @@ function getCombinationDescription(combination, fallback) {
  */
 function getFilling(fill) {
   if (fill) {
-    return [{
+    return {
       target: 'origin',
       above: 'rgb(255, 0, 0)',   // Area will be red above the origin
       below: 'rgb(0, 0, 255)'    // And blue below the origin
-    }]
+    }
   }
   else {
     return false
@@ -551,7 +555,11 @@ function makeHeadlineDataset(years, rows, label, fill, showLine, spanGaps, color
     pointStyle: 'circle',
     data: data,
     observationAttributes: obsAttributes,
-    fill: getFilling(fill),
+    fill: {
+      target: fill.target,
+      above: fill.above,
+      below: fill.below
+    },
     showLine: showLine,
     spanGaps: spanGaps,
     type: getCombinationType([], '', mixedTypes),
