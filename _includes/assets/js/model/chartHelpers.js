@@ -556,7 +556,7 @@ function makeHeadlineDataset(years, rows, label, fill, showLine, spanGaps, color
     data: data,
     observationAttributes: obsAttributes,
     fill: {
-      target: fill.target,
+      target: fill.field,
       above: 'rgb(0, 0, 255)',
       below: 'rgb(0, 0, 255)'
     },
