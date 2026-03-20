@@ -506,7 +506,6 @@ function getCombinationDescription(combination, fallback) {
  * TODO: Make this dynamic to support high-contrast.
  */
 function getFilling(fill) {
-  console.log(fill, fill.above);
   if (fill) {
     return {
       target: 'origin',
