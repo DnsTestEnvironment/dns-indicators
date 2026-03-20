@@ -399,7 +399,7 @@ function makeDataset(years, rows, combination, labelFallback, color, background,
     pointStyle: 'circle',
     data: data,
     excess: excess,
-    fill: fill,
+    fill: getFilling(fill),
     spanGaps: spanGaps,
     showLine: showLine,
     observationAttributes: obsAttributes,
@@ -505,6 +505,17 @@ function getCombinationDescription(combination, fallback) {
  *
  * TODO: Make this dynamic to support high-contrast.
  */
+function getFilling(fill) {
+  console.log(fill);
+  return fill
+}
+
+
+/**
+ * @return {string} Hex number of headline color
+ *
+ * TODO: Make this dynamic to support high-contrast.
+ */
 function getHeadlineColor() {
   return HEADLINE_COLOR;
 }
@@ -532,7 +543,7 @@ function makeHeadlineDataset(years, rows, label, fill, showLine, spanGaps, color
     pointStyle: 'circle',
     data: data,
     observationAttributes: obsAttributes,
-    fill: fill,
+    fill: getFilling(fill),
     showLine: showLine,
     spanGaps: spanGaps,
     type: getCombinationType([], '', mixedTypes),
