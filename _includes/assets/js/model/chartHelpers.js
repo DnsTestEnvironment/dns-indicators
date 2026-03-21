@@ -419,11 +419,7 @@ function getBaseDataset() {
     pointHoverRadius: 5,
     pointHoverBorderWidth: 1,
     tension: 0,
-    fill: {
-      target: fill,
-      above: fillAbove,
-      below: fillBelow
-    },
+    fill: false,
     spanGaps: true,
     showLine: true,
     maxBarThickness: 150,
