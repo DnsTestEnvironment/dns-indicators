@@ -2576,7 +2576,7 @@ function makeDataset(years, rows, combination, labelFallback, color, background,
        prepared = prepareDataForDataset(years, rows, allObservationAttributes),
        data = prepared.data,
        obsAttributes = prepared.observationAttributes;
-  console.log("fill, fillAbove, fillBelow:", fill, fillAbove, fillBelow, typeof fill, fillAbove, fillBelow);
+  console.log("fill, fillAbove, fillBelow:", fill, fillAbove, fillBelow, typeof fill);
   return Object.assign(dataset, {
 
     label: getCombinationDescription(combination, labelFallback),
@@ -2594,7 +2594,11 @@ function makeDataset(years, rows, combination, labelFallback, color, background,
     pointStyle: 'circle',
     data: data,
     excess: excess,
-    fill, fillAbove, fillBelow: fill, fillAbove, fillBelow,
+    fill: {
+      target: fill,
+      above: fillAbove,
+      below: fillBelow
+    },
     spanGaps: spanGaps,
     showLine: showLine,
     observationAttributes: obsAttributes,
