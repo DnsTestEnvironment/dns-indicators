@@ -339,7 +339,7 @@ opensdg.autotrack = function(preset, category, action, label) {
       opensdg.dataDisplayAlterations.forEach(function(callback) {
         value = callback(value);
       });
-      
+
       if (typeof value !== 'number') {
         if (this._precision || this._precision === 0) {
           value = Number.parseFloat(value).toFixed(this._precision);
@@ -365,6 +365,7 @@ opensdg.autotrack = function(preset, category, action, label) {
 
     // Get the data from a feature's properties, according to the current year.
     getData: function(props) {
+      console.log("PROPS:", props);
       var ret = false;
       if (props.values && props.values.length && this.currentDisaggregation < props.values.length) {
         var value = props.values[this.currentDisaggregation][this.currentYear];
