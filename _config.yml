@@ -20,7 +20,8 @@ collections:
     output: true
   goals:
     output: true
-
+ignored_disaggregations:
+  - COMMENT_OBS_0
 # Tell Jekyll to use the Remote Theme plugin.
 plugins:
   - jekyll-remote-theme
