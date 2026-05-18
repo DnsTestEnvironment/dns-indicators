@@ -335,10 +335,11 @@
 
     // Get the data from a feature's properties, according to the current year.
     getData: function(props) {
-      console.log("Props",props);
       var ret = false;
       if (props.values && props.values.length && this.currentDisaggregation < props.values.length) {
         var value = props.values[this.currentDisaggregation][this.currentYear];
+        //get rid of observationAttributes
+        value = value.replace(text.match(/\[(.*?)\]/)[0],'')/1;
         if (typeof value === 'number') {
           ret = opensdg.dataRounding(value, { indicatorId: this.indicatorId });
         }
@@ -510,9 +511,9 @@
             .attr('href', plugin.getGeoJsonUrl(plugin.mapLayers[i].subfolder))
             .attr('download', '')
             .attr('class', 'btn btn-primary btn-download')
-            .attr('title', translations.indicator.download_geojson_title + ' - ' + downloadLabel)
-            .attr('aria-label', translations.indicator.download_geojson_title + ' - ' + downloadLabel)
-            .text(translations.indicator.download_geojson + ' - ' + downloadLabel);
+            .attr('title', translations.indicator.download_geojson_title + ' -- ' + downloadLabel)
+            .attr('aria-label', translations.indicator.download_geojson_title + ' --- ' + downloadLabel)
+            .text(translations.indicator.download_geojson + ' ---- ' + downloadLabel);
           $(plugin.element).parent().append(downloadButton);
 
           // Keep track of the minimums and maximums.
