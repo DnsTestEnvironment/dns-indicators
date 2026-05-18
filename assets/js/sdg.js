@@ -3011,6 +3011,7 @@ function getAllObservationAttributes(rows) {
     YEAR_COLUMN: YEAR_COLUMN,
     VALUE_COLUMN: VALUE_COLUMN,
     GRAPH_TITLE_FROM_SERIES: GRAPH_TITLE_FROM_SERIES,
+    COMMENT_OBS_0: COMMENT_OBS_0,
     convertJsonFormatToRows: convertJsonFormatToRows,
     getUniqueValuesByProperty: getUniqueValuesByProperty,
     dataHasUnits: dataHasUnits,
