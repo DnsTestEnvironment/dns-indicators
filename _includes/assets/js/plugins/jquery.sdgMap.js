@@ -309,7 +309,7 @@
         value = callback(value);
       });
       //get rid of observationAttributes
-      value = value.replace(text.match(/\[(.*?)\]/)[0],'')/1;
+      value = value.replace(value.match(/\[(.*?)\]/)[0],'')/1;
       if (typeof value !== 'number') {
         if (this._precision || this._precision === 0) {
           value = Number.parseFloat(value).toFixed(this._precision);
@@ -343,7 +343,7 @@
         }
         if (typeof value === 'string') {
           //get rid of observationAttributes
-          value = value.replace(text.match(/\[(.*?)\]/)[0],'')/1;
+          value = value.replace(value.match(/\[(.*?)\]/)[0],'')/1;
           ret = opensdg.dataRounding(value, { indicatorId: this.indicatorId });
         }
       }
