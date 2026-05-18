@@ -16,9 +16,7 @@ var indicatorModel = function (options) {
 
   // general members:
   var that = this;
-  console.log("options.data: ",options.data);
   this.data = helpers.inputData(options.data);
-  console.log("this.data: ", this.data);
   this.edgesData = helpers.inputEdges(options.edgesData);
   this.hasHeadline = true;
   this.country = options.country;
@@ -102,7 +100,6 @@ var indicatorModel = function (options) {
 
   // Before continuing, we may need to filter by Series, so set up all the Series stuff.
   this.allData = helpers.prepareData(this.data, { indicatorId: this.indicatorId });
-  console.log("this.allData_2: ",this.allData);
   this.allColumns = helpers.getColumnsFromData(this.allData);
   this.hasSerieses = helpers.dataHasSerieses(this.allColumns);
   this.serieses = this.hasSerieses ? helpers.getUniqueValuesByProperty(helpers.SERIES_COLUMN, this.allData) : [];
@@ -121,7 +118,6 @@ var indicatorModel = function (options) {
   }
 
   // calculate some initial values:
-  console.log("this.allData: ",this.allData);
   this.allObservationAttributes = helpers.getAllObservationAttributes(this.allData);
   this.hasGeoData = helpers.dataHasGeoCodes(this.allColumns);
   this.hasUnits = helpers.dataHasUnits(this.allColumns);
