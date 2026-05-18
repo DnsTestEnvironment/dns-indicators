@@ -308,7 +308,8 @@
       opensdg.dataDisplayAlterations.forEach(function(callback) {
         value = callback(value);
       });
-      console.log("Value: ", value);
+      //get rid of observationAttributes
+      value = value.replace(text.match(/\[(.*?)\]/)[0],'')/1;
       if (typeof value !== 'number') {
         if (this._precision || this._precision === 0) {
           value = Number.parseFloat(value).toFixed(this._precision);
