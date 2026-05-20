@@ -1308,7 +1308,7 @@ var indicatorModel = function (options) {
 var UNIT_COLUMN = 'Units';
 var SERIES_COLUMN = 'Series';
 var GEOCODE_COLUMN = 'GeoCode';
-var COMMENT_OBS_0_COLUMN = 'COMMENT_OBS_0';
+//var COMMENT_OBS_0_COLUMN = 'COMMENT_OBS_0';
 var YEAR_COLUMN = 'Year';
 var VALUE_COLUMN = 'Value';
 // Note this headline color is overridden in indicatorView.js.
@@ -3012,7 +3012,7 @@ function getAllObservationAttributes(rows) {
     YEAR_COLUMN: YEAR_COLUMN,
     VALUE_COLUMN: VALUE_COLUMN,
     GRAPH_TITLE_FROM_SERIES: GRAPH_TITLE_FROM_SERIES,
-    COMMENT_OBS_0_COLUMN: COMMENT_OBS_0_COLUMN,
+    //COMMENT_OBS_0_COLUMN: COMMENT_OBS_0_COLUMN,
     convertJsonFormatToRows: convertJsonFormatToRows,
     getUniqueValuesByProperty: getUniqueValuesByProperty,
     dataHasUnits: dataHasUnits,
