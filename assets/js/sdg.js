@@ -1308,6 +1308,7 @@ var indicatorModel = function (options) {
 var UNIT_COLUMN = 'Units';
 var SERIES_COLUMN = 'Series';
 var GEOCODE_COLUMN = 'GeoCode';
+var COMMENT_OBS_0_COLUMN = 'COMMENT_OBS_0';
 var YEAR_COLUMN = 'Year';
 var VALUE_COLUMN = 'Value';
 // Note this headline color is overridden in indicatorView.js.
