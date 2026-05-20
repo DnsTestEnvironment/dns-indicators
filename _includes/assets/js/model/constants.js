@@ -4,7 +4,7 @@
 var UNIT_COLUMN = '{{ site.data_fields.units | default: "Units" }}';
 var SERIES_COLUMN = '{{ site.data_fields.series | default: "Series" }}';
 var GEOCODE_COLUMN = 'GeoCode';
-var COMMENT_OBS_0_COLUMN = 'COMMENT_OBS_0';
+//var COMMENT_OBS_0_COLUMN = 'COMMENT_OBS_0';
 var YEAR_COLUMN = 'Year';
 var VALUE_COLUMN = 'Value';
 // Note this headline color is overridden in indicatorView.js.
