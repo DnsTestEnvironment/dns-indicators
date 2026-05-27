@@ -2728,14 +2728,6 @@ body.contrast-high #search-bar-on-page button:hover {
 body.contrast-high.layout-search form input, body.contrast-high.layout-search form label {
   color: black; }
 
-.image-wrapper {
-  width: auto;
-  height: 80;
-  max-width: 300;
-  display: flex;
-  align-items: center;
-  justify-content: center; }
-
 .layout-status_summary .reporting-status-description {
   margin-bottom: 25px; }
 .layout-status_summary #main-content .statuses strong {
