@@ -1,4 +1,13 @@
-;//---status summary---start------------------------
+.image-wrapper{
+  width: auto;
+  height: 80;
+  max-width: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+//---status summary---start------------------------
 .layout-status_summary {
     .reporting-status-description {
         margin-bottom: 25px;
