@@ -197,16 +197,18 @@
             footnoteNumbers = [];
         console.log("obsAtts:", obsAtts);
         if (obsAtts) {
+          var tooltipAtts = []
           Object.keys(obsAtts).forEach(function(field) {
             if (obsAtts[field]) {
-              var hashKey = field + '|' + obsAtts[field];
-              var footnoteNumber = plugin.allObservationAttributes[hashKey].footnoteNumber;
-              footnoteNumbers.push(plugin.viewHelpers.getObservationAttributeFootnoteSymbol(footnoteNumber));
+              tooltipAtts.push(obsAtts[field]);
+              //var hashKey = field + '|' + obsAtts[field];
+              //var footnoteNumber = plugin.allObservationAttributes[hashKey].footnoteNumber;
+              //footnoteNumbers.push(plugin.viewHelpers.getObservationAttributeFootnoteSymbol(footnoteNumber));
             }
           });
           if (footnoteNumbers.length > 0) {
             console.log("Footnotenumbers:", footnoteNumbers);
-            tooltipContent += ' ' + footnoteNumbers.join(' ');
+            tooltipContent += ' [' + footnoteNumbers.join(', ') + ']';
           }
         }
       }
