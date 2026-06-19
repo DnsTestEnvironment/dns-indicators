@@ -158,7 +158,7 @@ map_options:
   tileOptions:
     id: mapbox.light
     accessToken: pk.eyJ1IjoibW9ib3NzZSIsImEiOiJjazU1M2trazQwYnFwM2trYmdwNm9rOWxkIn0.u36w-RJPqoTGmivl_zED1w
-    attribution: <a href="https://www.openstreetmap.org/copyright">&copy; OpenStreetMap</a> contributors |<br class="visible-xs"> <a href="https://www.bkg.bund.de">&copy; GeoBasis-De / BKG 2024</a> |<br class="hidden-lg"> <a href="https://www.destatis.de/DE/Home/_inhalt.html">&copy; Statistisches Bundesamt (Destatis), 2024</a>
+    attribution: <a href="https://www.openstreetmap.org/copyright">&copy; OpenStreetMap</a> contributors |<br class="visible-xs"> <a href="https://www.bkg.bund.de">&copy; GeoBasis-De / BKG 2026</a> |<br class="hidden-lg"> <a href="https://www.destatis.de/DE/Home/_inhalt.html">&copy; Statistisches Bundesamt (Destatis), 2026</a>
   colorRange: [["#FCE9EB", "#F7BDC4", "#F2929D", "#ED6676", "#E83A4F", "#E5243B", "#B71D2F", "#891623", "#5C0E18", "#2E070C"],
               ["#FCF8EB", "#F7E9C2", "#F2DB9A", "#EDCD72", "#E8BE49", "#E5B735", "#CEA530", "#A08025", "#735C1B", "#453710"],
               ["#EDF5EB", "#C9E2C3", "#A6CF9C", "#82BC74", "#5EA94C", "#4C9F38", "#3D7F2D", "#2E5F22", "#1E4016", "#0F200B"],

@@ -195,7 +195,6 @@
       if (feature.properties.observation_attributes) {
         var obsAtts = feature.properties.observation_attributes[plugin.currentDisaggregation][plugin.currentYear],
             footnoteNumbers = [];
-        console.log("obsAtts:", feature.properties.observation_attributes);
         if (obsAtts) {
           var tooltipAtts = []
           Object.keys(obsAtts).forEach(function(field) {
@@ -207,7 +206,6 @@
             }
           });
           if (tooltipAtts.length > 0) {
-            console.log("tooltipAtts:", tooltipAtts);
             tooltipContent += ' [' + tooltipAtts.join(', ') + ']';
           }
         }
