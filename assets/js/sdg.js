@@ -88,7 +88,6 @@ opensdg.autotrack = function(preset, category, action, label) {
   function Plugin(element, options) {
 
     this.element = element;
-    console.log("ELEMENT",element);
     // Support colorRange map option in string format.
     if (typeof options.mapOptions.colorRange === 'string') {
       var colorRangeParts = options.mapOptions.colorRange.split('.'),
@@ -227,6 +226,7 @@ opensdg.autotrack = function(preset, category, action, label) {
       if (feature.properties.observation_attributes) {
         var obsAtts = feature.properties.observation_attributes[plugin.currentDisaggregation][plugin.currentYear],
             footnoteNumbers = [];
+        console.log("obsAtts:", obsAtts);
         if (obsAtts) {
           Object.keys(obsAtts).forEach(function(field) {
             if (obsAtts[field]) {
@@ -366,7 +366,6 @@ opensdg.autotrack = function(preset, category, action, label) {
 
     // Get the data from a feature's properties, according to the current year.
     getData: function(props) {
-      console.log("PROPS:", props, this.currentDisaggregation, props.values.length);
       var ret = false;
       if (props.values && props.values.length && this.currentDisaggregation < props.values.length) {
         var value = props.values[this.currentDisaggregation][this.currentYear];
