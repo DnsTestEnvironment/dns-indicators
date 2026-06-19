@@ -237,7 +237,7 @@ opensdg.autotrack = function(preset, category, action, label) {
               //footnoteNumbers.push(plugin.viewHelpers.getObservationAttributeFootnoteSymbol(footnoteNumber));
             }
           });
-          if (footnoteNumbers.length > 0) {
+          if (tooltipAtts.length > 0) {
             console.log("tooltipAtts:", tooltipAtts);
             tooltipContent += ' [' + tooltipAtts.join(', ') + ']';
           }
