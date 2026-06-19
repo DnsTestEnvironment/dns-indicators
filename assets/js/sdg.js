@@ -236,6 +236,7 @@ opensdg.autotrack = function(preset, category, action, label) {
             }
           });
           if (footnoteNumbers.length > 0) {
+            console.log("Footnotenumbers:", footnoteNumbers);
             tooltipContent += ' ' + footnoteNumbers.join(' ');
           }
         }
