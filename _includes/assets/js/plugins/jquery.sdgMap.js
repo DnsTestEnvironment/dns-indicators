@@ -195,7 +195,7 @@
       if (feature.properties.observation_attributes) {
         var obsAtts = feature.properties.observation_attributes[plugin.currentDisaggregation][plugin.currentYear],
             footnoteNumbers = [];
-        console.log("obsAtts:", obsAtts);
+        console.log("obsAtts:", feature.properties.observation_attributes);
         if (obsAtts) {
           var tooltipAtts = []
           Object.keys(obsAtts).forEach(function(field) {
