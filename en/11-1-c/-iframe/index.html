@@ -148,7 +148,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20261006071844">
+        <link rel="stylesheet" href="/dns-indicators/assets/css/style.css?v=20261009135735">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -339,7 +339,7 @@ layout-indicator-iframe
   data-graphseriesbreaks="[{&quot;value&quot;:15.5}]"
   data-grapherrorbars="null"
   data-indicatordownloads="null"
-  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;Units&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;2000 = 100&quot;,&quot;Inhabitants per km² settlement and transport area&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Units&quot;},{&quot;name&quot;:&quot;COMMENT_OBS_0&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;COMMENT_OBS_0&quot;},{&quot;name&quot;:&quot;degree of urbanisation&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Non-rural areas&quot;,&quot;Rural areas&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Degree of urbanisation&quot;},{&quot;name&quot;:&quot;länder&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Baden-Wuerttemberg&quot;,&quot;Bavaria&quot;,&quot;Berlin&quot;,&quot;Brandenburg&quot;,&quot;Bremen&quot;,&quot;Hamburg&quot;,&quot;Hesse&quot;,&quot;Mecklenburg Western Pomerania&quot;,&quot;Lower Saxony&quot;,&quot;North Rhine-Westphalia&quot;,&quot;Rhineland Palatinate&quot;,&quot;Saarland&quot;,&quot;Saxony&quot;,&quot;Saxony-Anhalt&quot;,&quot;Schleswig-Holstein&quot;,&quot;Thuringia&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Länder&quot;},{&quot;name&quot;:&quot;GeoCode&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;GeoCode&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
+  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;Units&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;2000 = 100&quot;,&quot;Inhabitants per km² settlement and transport area&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Units&quot;},{&quot;name&quot;:&quot;COMMENT_OBS_0&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;COMMENT_OBS_0&quot;},{&quot;name&quot;:&quot;COMMENT_OBS_1&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;COMMENT_OBS_1&quot;},{&quot;name&quot;:&quot;degree of urbanisation&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Non-rural areas&quot;,&quot;Rural areas&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Degree of urbanisation&quot;},{&quot;name&quot;:&quot;länder&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Baden-Wuerttemberg&quot;,&quot;Bavaria&quot;,&quot;Berlin&quot;,&quot;Brandenburg&quot;,&quot;Bremen&quot;,&quot;Hamburg&quot;,&quot;Hesse&quot;,&quot;Mecklenburg Western Pomerania&quot;,&quot;Lower Saxony&quot;,&quot;North Rhine-Westphalia&quot;,&quot;Rhineland Palatinate&quot;,&quot;Saarland&quot;,&quot;Saxony&quot;,&quot;Saxony-Anhalt&quot;,&quot;Schleswig-Holstein&quot;,&quot;Thuringia&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Länder&quot;},{&quot;name&quot;:&quot;GeoCode&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;GeoCode&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
   data-compositebreakdownlabel=""
   data-precision="[{&quot;decimals&quot;:1.0}]"
   data-graphstepsize="[{&quot;unit&quot;:&quot;2000 = 100&quot;,&quot;step&quot;:5.0},{&quot;unit&quot;:&quot;Inhabitants per km² settlement and transport area&quot;,&quot;step&quot;:500.0}]"
@@ -403,7 +403,11 @@ layout-indicator-iframe
         
         
         
-        <th scope="col" class="table-value">COMMENT_OBS_0</th>
+        <th scope="col">COMMENT_OBS_0</th>
+        
+        
+        
+        <th scope="col" class="table-value">COMMENT_OBS_1</th>
         
         
       </thead>
@@ -421,6 +425,10 @@ layout-indicator-iframe
           
           
           <td>2000 = 100</td>
+          
+          
+          
+          <td></td>
           
           
           
@@ -452,6 +460,10 @@ layout-indicator-iframe
           
           
           
+          <td></td>
+          
+          
+          
           <td class="table-value"></td>
           
           
@@ -469,6 +481,10 @@ layout-indicator-iframe
           
           
           <td>2000 = 100</td>
+          
+          
+          
+          <td></td>
           
           
           
@@ -500,6 +516,10 @@ layout-indicator-iframe
           
           
           
+          <td></td>
+          
+          
+          
           <td class="table-value"></td>
           
           
@@ -517,6 +537,10 @@ layout-indicator-iframe
           
           
           <td>2000 = 100</td>
+          
+          
+          
+          <td></td>
           
           
           
@@ -548,6 +572,10 @@ layout-indicator-iframe
           
           
           
+          <td></td>
+          
+          
+          
           <td class="table-value"></td>
           
           
@@ -565,6 +593,10 @@ layout-indicator-iframe
           
           
           <td>2000 = 100</td>
+          
+          
+          
+          <td></td>
           
           
           
@@ -596,6 +628,10 @@ layout-indicator-iframe
           
           
           
+          <td></td>
+          
+          
+          
           <td class="table-value"></td>
           
           
@@ -613,6 +649,10 @@ layout-indicator-iframe
           
           
           <td>2000 = 100</td>
+          
+          
+          
+          <td></td>
           
           
           
@@ -644,6 +684,10 @@ layout-indicator-iframe
           
           
           
+          <td></td>
+          
+          
+          
           <td class="table-value"></td>
           
           
@@ -661,6 +705,10 @@ layout-indicator-iframe
           
           
           <td>2000 = 100</td>
+          
+          
+          
+          <td></td>
           
           
           
@@ -692,6 +740,10 @@ layout-indicator-iframe
           
           
           
+          <td></td>
+          
+          
+          
           <td class="table-value"></td>
           
           
@@ -704,7 +756,7 @@ layout-indicator-iframe
           
           
           
-          <td>89.792</td>
+          <td>89.702</td>
           
           
           
@@ -713,6 +765,10 @@ layout-indicator-iframe
           
           
           <td></td>
+          
+          
+          
+          <td>r</td>
           
           
           
@@ -728,7 +784,7 @@ layout-indicator-iframe
           
           
           
-          <td>89.64</td>
+          <td>89.445</td>
           
           
           
@@ -737,6 +793,10 @@ layout-indicator-iframe
           
           
           <td></td>
+          
+          
+          
+          <td>r</td>
           
           
           
@@ -752,7 +812,7 @@ layout-indicator-iframe
           
           
           
-          <td>89.571</td>
+          <td>89.269</td>
           
           
           
@@ -761,6 +821,10 @@ layout-indicator-iframe
           
           
           <td></td>
+          
+          
+          
+          <td>r</td>
           
           
           
@@ -776,7 +840,7 @@ layout-indicator-iframe
           
           
           
-          <td>90.332</td>
+          <td>89.884</td>
           
           
           
@@ -785,6 +849,10 @@ layout-indicator-iframe
           
           
           <td></td>
+          
+          
+          
+          <td>r</td>
           
           
           
@@ -800,7 +868,7 @@ layout-indicator-iframe
           
           
           
-          <td>90.394</td>
+          <td>89.784</td>
           
           
           
@@ -812,7 +880,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">|</td>
+          <td>|</td>
+          
+          
+          
+          <td class="table-value">r</td>
           
           
         </tr>
@@ -824,7 +896,7 @@ layout-indicator-iframe
           
           
           
-          <td>90.232</td>
+          <td>89.489</td>
           
           
           
@@ -833,6 +905,10 @@ layout-indicator-iframe
           
           
           <td></td>
+          
+          
+          
+          <td>r</td>
           
           
           
@@ -848,7 +924,7 @@ layout-indicator-iframe
           
           
           
-          <td>89.909</td>
+          <td>89.025</td>
           
           
           
@@ -857,6 +933,10 @@ layout-indicator-iframe
           
           
           <td></td>
+          
+          
+          
+          <td>r</td>
           
           
           
@@ -872,7 +952,7 @@ layout-indicator-iframe
           
           
           
-          <td>89.773</td>
+          <td>88.733</td>
           
           
           
@@ -881,6 +961,10 @@ layout-indicator-iframe
           
           
           <td></td>
+          
+          
+          
+          <td>r</td>
           
           
           
@@ -896,7 +980,7 @@ layout-indicator-iframe
           
           
           
-          <td>89.379</td>
+          <td>88.191</td>
           
           
           
@@ -905,6 +989,10 @@ layout-indicator-iframe
           
           
           <td></td>
+          
+          
+          
+          <td>r</td>
           
           
           
@@ -920,7 +1008,7 @@ layout-indicator-iframe
           
           
           
-          <td>89.095</td>
+          <td>87.706</td>
           
           
           
@@ -929,6 +1017,10 @@ layout-indicator-iframe
           
           
           <td></td>
+          
+          
+          
+          <td>r</td>
           
           
           
@@ -944,7 +1036,7 @@ layout-indicator-iframe
           
           
           
-          <td>90.014</td>
+          <td>88.691</td>
           
           
           
@@ -953,6 +1045,10 @@ layout-indicator-iframe
           
           
           <td></td>
+          
+          
+          
+          <td>r</td>
           
           
           
@@ -968,11 +1064,43 @@ layout-indicator-iframe
           
           
           
-          <td>89.945</td>
+          <td>88.657</td>
           
           
           
           <td>2000 = 100</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td>r</td>
+          
+          
+          
+          <td class="table-value"></td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2024</td>
+          
+          
+          
+          <td>88.436</td>
+          
+          
+          
+          <td>2000 = 100</td>
+          
+          
+          
+          <td></td>
           
           
           
@@ -1004,6 +1132,10 @@ layout-indicator-iframe
           
           
           
+          <td></td>
+          
+          
+          
           <td class="table-value"></td>
           
           
@@ -1021,6 +1153,10 @@ layout-indicator-iframe
           
           
           <td>Inhabitants per km² settlement and transport area</td>
+          
+          
+          
+          <td></td>
           
           
           
@@ -1052,6 +1188,10 @@ layout-indicator-iframe
           
           
           
+          <td></td>
+          
+          
+          
           <td class="table-value"></td>
           
           
@@ -1069,6 +1209,10 @@ layout-indicator-iframe
           
           
           <td>Inhabitants per km² settlement and transport area</td>
+          
+          
+          
+          <td></td>
           
           
           
@@ -1100,6 +1244,10 @@ layout-indicator-iframe
           
           
           
+          <td></td>
+          
+          
+          
           <td class="table-value"></td>
           
           
@@ -1117,6 +1265,10 @@ layout-indicator-iframe
           
           
           <td>Inhabitants per km² settlement and transport area</td>
+          
+          
+          
+          <td></td>
           
           
           
@@ -1148,6 +1300,10 @@ layout-indicator-iframe
           
           
           
+          <td></td>
+          
+          
+          
           <td class="table-value"></td>
           
           
@@ -1165,6 +1321,10 @@ layout-indicator-iframe
           
           
           <td>Inhabitants per km² settlement and transport area</td>
+          
+          
+          
+          <td></td>
           
           
           
@@ -1196,6 +1356,10 @@ layout-indicator-iframe
           
           
           
+          <td></td>
+          
+          
+          
           <td class="table-value"></td>
           
           
@@ -1213,6 +1377,10 @@ layout-indicator-iframe
           
           
           <td>Inhabitants per km² settlement and transport area</td>
+          
+          
+          
+          <td></td>
           
           
           
@@ -1244,6 +1412,10 @@ layout-indicator-iframe
           
           
           
+          <td></td>
+          
+          
+          
           <td class="table-value"></td>
           
           
@@ -1268,6 +1440,10 @@ layout-indicator-iframe
           
           
           
+          <td></td>
+          
+          
+          
           <td class="table-value"></td>
           
           
@@ -1280,7 +1456,7 @@ layout-indicator-iframe
           
           
           
-          <td>1664.274</td>
+          <td>1662.588</td>
           
           
           
@@ -1289,6 +1465,10 @@ layout-indicator-iframe
           
           
           <td></td>
+          
+          
+          
+          <td>r</td>
           
           
           
@@ -1304,7 +1484,7 @@ layout-indicator-iframe
           
           
           
-          <td>1661.45</td>
+          <td>1657.841</td>
           
           
           
@@ -1313,6 +1493,10 @@ layout-indicator-iframe
           
           
           <td></td>
+          
+          
+          
+          <td>r</td>
           
           
           
@@ -1328,7 +1512,7 @@ layout-indicator-iframe
           
           
           
-          <td>1660.161</td>
+          <td>1654.5631</td>
           
           
           
@@ -1337,6 +1521,10 @@ layout-indicator-iframe
           
           
           <td></td>
+          
+          
+          
+          <td>r</td>
           
           
           
@@ -1352,7 +1540,7 @@ layout-indicator-iframe
           
           
           
-          <td>1674.273</td>
+          <td>1665.979</td>
           
           
           
@@ -1361,6 +1549,10 @@ layout-indicator-iframe
           
           
           <td></td>
+          
+          
+          
+          <td>r</td>
           
           
           
@@ -1376,7 +1568,7 @@ layout-indicator-iframe
           
           
           
-          <td>1675.431</td>
+          <td>1664.126</td>
           
           
           
@@ -1388,7 +1580,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">|</td>
+          <td>|</td>
+          
+          
+          
+          <td class="table-value">r</td>
           
           
         </tr>
@@ -1400,7 +1596,7 @@ layout-indicator-iframe
           
           
           
-          <td>1672.418</td>
+          <td>1658.642</td>
           
           
           
@@ -1409,6 +1605,10 @@ layout-indicator-iframe
           
           
           <td></td>
+          
+          
+          
+          <td>r</td>
           
           
           
@@ -1424,7 +1624,7 @@ layout-indicator-iframe
           
           
           
-          <td>1666.437</td>
+          <td>1650.047</td>
           
           
           
@@ -1433,6 +1633,10 @@ layout-indicator-iframe
           
           
           <td></td>
+          
+          
+          
+          <td>r</td>
           
           
           
@@ -1448,7 +1652,7 @@ layout-indicator-iframe
           
           
           
-          <td>1663.907</td>
+          <td>1644.635</td>
           
           
           
@@ -1457,6 +1661,10 @@ layout-indicator-iframe
           
           
           <td></td>
+          
+          
+          
+          <td>r</td>
           
           
           
@@ -1472,7 +1680,7 @@ layout-indicator-iframe
           
           
           
-          <td>1656.618</td>
+          <td>1644.635</td>
           
           
           
@@ -1481,6 +1689,10 @@ layout-indicator-iframe
           
           
           <td></td>
+          
+          
+          
+          <td>r</td>
           
           
           
@@ -1496,7 +1708,7 @@ layout-indicator-iframe
           
           
           
-          <td>1651.338</td>
+          <td>1625.606</td>
           
           
           
@@ -1505,6 +1717,10 @@ layout-indicator-iframe
           
           
           <td></td>
+          
+          
+          
+          <td>r</td>
           
           
           
@@ -1520,7 +1736,7 @@ layout-indicator-iframe
           
           
           
-          <td>1668.389</td>
+          <td>1643.859</td>
           
           
           
@@ -1529,6 +1745,10 @@ layout-indicator-iframe
           
           
           <td></td>
+          
+          
+          
+          <td>r</td>
           
           
           
@@ -1544,11 +1764,43 @@ layout-indicator-iframe
           
           
           
-          <td>1667.11</td>
+          <td>1643.221</td>
           
           
           
           <td>Inhabitants per km² settlement and transport area</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td>r</td>
+          
+          
+          
+          <td class="table-value"></td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2024</td>
+          
+          
+          
+          <td>1639.134</td>
+          
+          
+          
+          <td>Inhabitants per km² settlement and transport area</td>
+          
+          
+          
+          <td></td>
           
           
           
@@ -6001,12 +6253,12 @@ data-event-label="Change to indicator.sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/dns-indicators/assets/js/sdg.js?v=20261006071844'></script>
+<script src='/dns-indicators/assets/js/sdg.js?v=20261009135735'></script>
 
 
     
     
-    <script src="/dns-indicators/assets/js/custom.js?v=20261006071844"></script><script>
+    <script src="/dns-indicators/assets/js/custom.js?v=20261009135735"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
