@@ -341,7 +341,8 @@
         if (typeof value === 'number') {
           ret = opensdg.dataRounding(value, { indicatorId: this.indicatorId });
         }
-        if (typeof value === 'string' && value.match !== 0) {
+        if (typeof value === 'string') {
+          console.log("X", value.match, value.match == null);
           //get rid of observationAttributes
           value = value.replace(value.match(/\[(.*?)\]/)[0],'')/1;
           ret = opensdg.dataRounding(value, { indicatorId: this.indicatorId });
