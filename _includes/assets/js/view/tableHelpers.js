@@ -197,7 +197,6 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
             var col = -1;
             var row_html = '<tr>';
             var obsValue = '';
-            console.log("observationAttributesTable: ", observationAttributesTable);
             //(observationAttributesTable.data[row][1][0] !== undefined ? obsValue = observationAttributesTable.data[row][1][0].value : obsValue = '.');
             table.headings.forEach(function (heading, index) {
                 col += 1;
