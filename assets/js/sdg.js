@@ -373,9 +373,8 @@ opensdg.autotrack = function(preset, category, action, label) {
           ret = opensdg.dataRounding(value, { indicatorId: this.indicatorId });
         }
         if (typeof value === 'string') {
-          console.log("X", value, value == null);
           //get rid of observationAttributes
-          value = value.replace(/\[.*?\]/g, "Ersatz")/1;
+          value = value.replace(/\[.*?\]/g, "")/1;
           ret = opensdg.dataRounding(value, { indicatorId: this.indicatorId });
         }
       }
