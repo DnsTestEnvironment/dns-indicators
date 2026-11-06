@@ -2351,7 +2351,6 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
   var datasets = [], index = 0, dataset, colorIndex, color, background, border, striped, excess, combinationKey, colorAssignment, fill, fillAbove, fillBelow, showLine, spanGaps, mixedTypes;
   var numColors = colors.length,
       maxColorAssignments = numColors * 2;
-  console.log("allObservationAttributes in getDatasets: ", allObservationAttributes);
   prepareColorAssignments(colorAssignments, maxColorAssignments);
   setAllColorAssignmentsReadyForEviction(colorAssignments);
 
@@ -2444,7 +2443,6 @@ function getDataMatchingCombination(data, combination, selectableFields) {
  * @return {Object|undefined} Color assignment object if found.
  */
 function getColorAssignmentByCombination(colorAssignments, combination) {
-  console.log("colorAssignement: ", colorAssignments);
   return colorAssignments.find(function(assignment) {
     return assignment.combination === combination;
   });
@@ -2584,7 +2582,6 @@ function makeDataset(years, rows, combination, labelFallback, color, background,
        prepared = prepareDataForDataset(years, rows, allObservationAttributes),
        data = prepared.data,
        obsAttributes = prepared.observationAttributes;
-  console.log("fill, fillAbove, fillBelow:", fill, fillAbove, fillBelow, typeof fill);
   return Object.assign(dataset, {
 
     label: getCombinationDescription(combination, labelFallback),
@@ -2658,7 +2655,6 @@ function getCombinationType(combination, fallback, mixedTypes) {
  * @return {string} Human-readable description of combo
  */
 function getCombinationDescription(combination, fallback) {
-  //console.log("what does getCombinationDescp recive?", combination);
   var keys = Object.keys(combination);
   if (keys.length === 0) {
     return fallback;
@@ -2992,10 +2988,8 @@ function getAllObservationAttributes(rows) {
         footnoteNumber: footnoteNumber,
       }
       footnoteNumber += 1;
-      console.log("obsAttributeHash[hashKey]: ",obsAttributeHash[hashKey]);
     });
   });
-  console.log("obsAttributeHash: ",obsAttributeHash);
   return obsAttributeHash;
 }
 
@@ -3869,7 +3863,6 @@ function getHeadlineColor(contrast, goalNumber) {
   var headlineColors = ["#e5243b", "#dda63a", "#4c9f38", "#c5192d", "#ff3a21", "#26bde2", "#fcc30b", "#a21942", "#fd6925", "#dd1367", "#fd9d24", "#bf8b2e", "#3f7e44", "#0a97d9", "#56c02b", "#00689d", "#19486a"];
   var headlineColor = headlineColors[goalNumber-1];
   var htmlString = '' + headlineColor + '';
-  console.log("goalNumber: ", htmlString);
     return isHighContrast(contrast) ? '#55a6e5' : htmlString;
 }
 
@@ -4220,7 +4213,6 @@ opensdg.chartTypes.base = function(info) {
 
     var gridColor = getGridColor();
     var tickColor = getTickColor();
-    console.log('info.datasets: ', info.datasets);
     var config = {
         type: null,
         data: {
@@ -4593,7 +4585,6 @@ opensdg.chartTypes.base = function(info) {
         borderWidth: 0,
     };
     if (info.stackedDisaggregation) {
-        console.log('Stacked', info.stackedDisaggregation, typeof info.stackedDisaggregation);
         overrides.options = {
             scales: {
                 x: { stacked: true },
@@ -4918,7 +4909,6 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
             var col = -1;
             var row_html = '<tr>';
             var obsValue = '';
-            console.log("observationAttributesTable: ", observationAttributesTable);
             //(observationAttributesTable.data[row][1][0] !== undefined ? obsValue = observationAttributesTable.data[row][1][0].value : obsValue = '.');
             table.headings.forEach(function (heading, index) {
                 col += 1;
@@ -5531,7 +5521,6 @@ function createIndicatorDownloadButtons(indicatorDownloads, indicatorId, el) {
     MODEL.onFieldsComplete.attach(function (sender, args) {
 
         helpers.initialiseFields(args);
-        console.log("X", args);
         if (args.hasGeoData && args.showMap) {
             VIEW._mapView = new mapView();
             VIEW._mapView.initialise(
